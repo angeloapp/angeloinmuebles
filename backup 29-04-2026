@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -3682,47 +3680,1502 @@
   </div>
 </div>
 
-        <!-- ══════════ QUIVIRA ══════════ -->
+<!-- ══════════ QUIVIRA ══════════ -->
 <div id="tab-quivira" class="tab-content">
   <div class="properties-grid">
 
-    <div class="property-card reveal" data-category="quivira" data-name="La Laguna 4-4A" data-price="4420500" data-mls="25-3642" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Terreno" data-zone="Quivira · Pacific">
+   <div class="property-card reveal" data-category="quivira" data-name="St Regis Residences 26-882" data-price="4700000" data-mls="26-882" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260220191915737011000000-o.jpg" data-type="Ultra-Lujo" data-zone="St. Regis · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="La Laguna 4-4A">
-        <div class="property-overlay"><span class="property-type">Terreno Estratégico</span></div>
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260220191915737011000000-o.jpg" alt="St Regis Residences 26-882">
+        <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
       </div>
       <div class="property-content">
-        <h3>Quivira / La Laguna 4-4A</h3>
-        <div class="property-price">$4,420,500 USD</div>
-        <div class="property-specs">Quivira · Pacific Corridor<br>MLS #25-3642</div>
+        <h3>St. Regis Residences</h3>
+        <div class="property-price">$4,700,000 USD</div>
+        <div class="property-specs">4,723 sqft · 4 rec · 5 baños<br>MLS #26-882</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20La%20Laguna%204-4A%20-%20MLS%20%2325-3642" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20Residences%20-%20MLS%20%2326-882" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20La%20Laguna%20Quivira&body=Hola%20Angelo%2C%20solicito%20detalles%20de%20este%20terreno." class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com?subject=Consulta%20St.%20Regis%20Residences%2026-882&body=Hola%20Angelo%2C%20deseo%20una%20presentación%20privada%20de%20St.%20Regis." class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
-
-    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Lote Laguna" data-price="2200000" data-mls="26-308" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Terreno" data-zone="Quivira">
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="St Regis Residences 22-3363" data-price="4650000" data-mls="22-3363" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20220830161411725453000000-o.jpg" data-type="Ultra-Lujo" data-zone="St. Regis · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Lote Laguna">
-        <div class="property-overlay"><span class="property-type">Terreno</span></div>
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20220830161411725453000000-o.jpg" alt="St Regis Residences 22-3363">
+        <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
       </div>
       <div class="property-content">
-        <h3>Lote Laguna</h3>
+        <h3>St. Regis Residences</h3>
+        <div class="property-price">$4,650,000 USD</div>
+        <div class="property-specs">4,390 sqft · 3 rec · 4 baños<br>MLS #22-3363</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20Residences%20-%20MLS%20%2322-3363" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Consulta%20St.%20Regis%20Residences%2022-3363&body=Hola%20Angelo%2C%20deseo%20una%20presentación%20privada%20de%20St.%20Regis." class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="St Regis Los Cabos 22-4851" data-price="4300000" data-mls="22-4851" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20221227192431173288000000-o.jpg" data-type="Ultra-Lujo" data-zone="St. Regis · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20221227192431173288000000-o.jpg" alt="St Regis Los Cabos 22-4851">
+        <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
+      </div>
+      <div class="property-content">
+        <h3>St. Regis Residences Los Cabos</h3>
+        <div class="property-price">$4,300,000 USD</div>
+        <div class="property-specs">4,863 sqft · 4 rec · 5 baños<br>MLS #22-4851</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20Los%20Cabos%20-%20MLS%20%2322-4851" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Consulta%20St.%20Regis%20Los%20Cabos%2022-4851&body=Hola%20Angelo%2C%20deseo%20una%20presentación%20privada%20de%20St.%20Regis." class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="St Regis Los Cabos 25-1787" data-price="3950000" data-mls="25-1787" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250402183641649316000000-o.jpg" data-type="Ultra-Lujo" data-zone="St. Regis · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250402183641649316000000-o.jpg" alt="St Regis Los Cabos 25-1787">
+        <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
+      </div>
+      <div class="property-content">
+        <h3>St. Regis Residences Los Cabos</h3>
+        <div class="property-price">$3,950,000 USD</div>
+        <div class="property-specs">4,476 sqft · 3 rec · 4 baños<br>MLS #25-1787</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20Los%20Cabos%20-%20MLS%20%2325-1787" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Consulta%20St.%20Regis%20Los%20Cabos%2025-1787&body=Hola%20Angelo%2C%20deseo%20una%20presentación%20privada%20de%20St.%20Regis." class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="ALVAR at QUIVIRA 25-337" data-price="3204666" data-mls="25-337" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250120183625896700000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250120183625896700000000-o.jpg" alt="ALVAR at QUIVIRA 25-337">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>ALVAR at QUIVIRA</h3>
+        <div class="property-price">$3,204,666 USD</div>
+        <div class="property-specs">3,727 sqft · 4 rec · 5 baños<br>MLS #25-337</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20ALVAR%20at%20QUIVIRA%20-%20MLS%20%2325-337" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20ALVAR%20at%20QUIVIRA%2025-337" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar Tower 6 25-2629" data-price="3159898" data-mls="25-2629" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250518225330102366000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250518225330102366000000-o.jpg" alt="Alvar Tower 6 25-2629">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar Tower 6</h3>
+        <div class="property-price">$3,159,898 USD</div>
+        <div class="property-specs">3,697 sqft · 4 rec · 5 baños<br>MLS #25-2629</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Tower%206%20-%20MLS%20%2325-2629" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20Tower%206%2025-2629" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Alvar Tower 7 3Bed 25-357" data-price="3151512" data-mls="25-357" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250627184530536043000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250627184530536043000000-o.jpg" alt="Alvar Tower 7 3Bed 25-357">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Tower 7, Alvar at Quivira 5th fl 3 bed</h3>
+        <div class="property-price">$3,151,512 USD</div>
+        <div class="property-specs">3,182 sqft · 3 rec · 4 baños<br>MLS #25-357</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Tower%207%203Bed%20-%20MLS%20%2325-357" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20Tower%207%203Bed%2025-357" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar 4 Bdrm Oceanview 25-5580" data-price="3000000" data-mls="25-5580" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251204225447716880000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251204225447716880000000-o.jpg" alt="Alvar 4 Bdrm Oceanview 25-5580">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar 4 Bdrm Oceanview Condo</h3>
+        <div class="property-price">$3,000,000 USD</div>
+        <div class="property-specs">3,834 sqft · 4 rec · 5 baños<br>MLS #25-5580</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%204%20Bdrm%20Oceanview%20-%20MLS%20%2325-5580" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%204%20Bdrm%20Oceanview%2025-5580" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar Oceanview 4 Bdrm PH 25-5545" data-price="2950000" data-mls="25-5545" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251203210214321760000000-o.jpg" data-type="Penthouse" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251203210214321760000000-o.jpg" alt="Alvar Oceanview 4 Bdrm PH 25-5545">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar Oceanview 4 Bdrm PH</h3>
+        <div class="property-price">$2,950,000 USD</div>
+        <div class="property-specs">3,689 sqft · 4 rec · 5 baños<br>MLS #25-5545</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Oceanview%20PH%20-%20MLS%20%2325-5545" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20Oceanview%20PH%2025-5545" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Alvar 4 BDR PENTHOUSE 24-3036" data-price="2890000" data-mls="24-3036" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250320180801528514000000-o.jpg" data-type="Penthouse" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250320180801528514000000-o.jpg" alt="Alvar 4 BDR PENTHOUSE 24-3036">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar 4 BDR PENTHOUSE</h3>
+        <div class="property-price">$2,890,000 USD</div>
+        <div class="property-specs">3,724 sqft · 4 rec · 5 baños<br>MLS #24-3036</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%204%20BDR%20PH%20-%20MLS%20%2324-3036" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%204%20BDR%20PH%2024-3036" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar 4-bedrooms Condo 25-2221" data-price="2867700" data-mls="25-2221" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250425013700831156000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250425013700831156000000-o.jpg" alt="Alvar 4-bedrooms Condo 25-2221">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar 4-bedrooms Condo</h3>
+        <div class="property-price">$2,867,700 USD</div>
+        <div class="property-specs">3,724 sqft · 4 rec · 5 baños<br>MLS #25-2221</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%204%20Condo%20-%20MLS%20%2325-2221" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%204%20Condo%2025-2221" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="ALVAR 4B OWNER FINANCE 25-3122" data-price="2799000" data-mls="25-3122" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260226031559389079000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260226031559389079000000-o.jpg" alt="ALVAR 4B OWNER FINANCE 25-3122">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>ALVAR 4B OWNER FINANCE 0%</h3>
+        <div class="property-price">$2,799,000 USD</div>
+        <div class="property-specs">3,724 sqft · 4 rec · 5 baños<br>MLS #25-3122</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20ALVAR%20OWNER%20FINANCE%20-%20MLS%20%2325-3122" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20ALVAR%20OWNER%20FINANCE%2025-3122" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Alvar 3Bed PH 25-5462" data-price="2700000" data-mls="25-5462" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251201171851055315000000-o.jpg" data-type="Penthouse" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251201171851055315000000-o.jpg" alt="Alvar 3Bed PH 25-5462">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar 3Bed PH Exceptional Opp.</h3>
+        <div class="property-price">$2,700,000 USD</div>
+        <div class="property-specs">3,096 sqft · 3 rec · 4 baños<br>MLS #25-5462</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%203Bed%20PH%20-%20MLS%20%2325-5462" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%203Bed%20PH%2025-5462" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Quivira Alvar PH Financing 25-3801" data-price="2694999" data-mls="25-3801" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251230222344953899000000-o.jpg" data-type="Penthouse" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251230222344953899000000-o.jpg" alt="Quivira Alvar PH Financing 25-3801">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Quivira Alvar PH Financing</h3>
+        <div class="property-price">$2,694,999 USD</div>
+        <div class="property-specs">3,164 sqft · 3 rec · 4 baños<br>MLS #25-3801</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Quivira%20Alvar%20PH%20Financing%20-%20MLS%20%2325-3801" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Quivira%20Alvar%20PH%20Financing%2025-3801" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar at Quivira 3Bed 25-5801" data-price="2586702" data-mls="25-5801" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251217223427616035000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251217223427616035000000-o.jpg" alt="Alvar at Quivira 3Bed 25-5801">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar at Quivira</h3>
+        <div class="property-price">$2,586,702 USD</div>
+        <div class="property-specs">3,219 sqft · 3 rec · 4 baños<br>MLS #25-5801</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20at%20Quivira%20-%20MLS%20%2325-5801" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20at%20Quivira%2025-5801" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Alvar Tower 5 3Bed 22-2902" data-price="2393658" data-mls="22-2902" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20220718220221367074000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20220718220221367074000000-o.jpg" alt="Alvar Tower 5 3Bed 22-2902">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Tower 5 4th floor 3 bed Luxury Condo, Alvar at Quivira</h3>
+        <div class="property-price">$2,393,658 USD</div>
+        <div class="property-specs">3,214 sqft · 3 rec · 4 baños<br>MLS #22-2902</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Tower%205%203Bed%20-%20MLS%20%2322-2902" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20Tower%205%203Bed%2022-2902" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar Luxury 3-Bedroom 25-2218" data-price="2344100" data-mls="25-2218" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260406214824754191000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260406214824754191000000-o.jpg" alt="Alvar Luxury 3-Bedroom 25-2218">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar Luxury 3-Bedroom Condo</h3>
+        <div class="property-price">$2,344,100 USD</div>
+        <div class="property-specs">3,246 sqft · 3 rec · 4 baños<br>MLS #25-2218</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Luxury%203Bed%20-%20MLS%20%2325-2218" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20Luxury%203Bed%2025-2218" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar at Quivira 3Bed 26-379" data-price="2249000" data-mls="26-379" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260120002807855011000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260120002807855011000000-o.jpg" alt="Alvar at Quivira 3Bed 26-379">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar at Quivira</h3>
+        <div class="property-price">$2,249,000 USD</div>
+        <div class="property-specs">3,188 sqft · 3 rec · 4 baños<br>MLS #26-379</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20at%20Quivira%203Bed%20-%20MLS%20%2326-379" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20at%20Quivira%203Bed%2026-379" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="ALVAR Luxury Garden-Level 26-861" data-price="2200000" data-mls="26-861" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260219202644456071000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260219202644456071000000-o.jpg" alt="ALVAR Luxury Garden-Level 26-861">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>ALVAR Significant Price Adjustment!, Luxury Garden-Level Masterpiece</h3>
         <div class="property-price">$2,200,000 USD</div>
-        <div class="property-specs">Quivira · MLS #26-308</div>
+        <div class="property-specs">4,609 sqft · 3 rec · 4 baños<br>MLS #26-861</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Lote%20Laguna%20-%20MLS%20%2326-308" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20ALVAR%20Garden%20Level%20-%20MLS%20%2326-861" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Lote%20Laguna&body=Hola%20Angelo%2C%20me%20interesa%20esta%20ubicación%20en%20Quivira." class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20ALVAR%20Garden%20Level%2026-861" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar Pentgarden 3 Bed 26-1235" data-price="2195000" data-mls="26-1235" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260312041055132387000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260312041055132387000000-o.jpg" alt="Alvar Pentgarden 3 Bed 26-1235">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Ocean View Luxury Residence Condo, Alvar Pentgarden 3 Bedroom</h3>
+        <div class="property-price">$2,195,000 USD</div>
+        <div class="property-specs">3,229 sqft · 3 rec · 4 baños<br>MLS #26-1235</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Pentgarden%203%20Bed%20-%20MLS%20%2326-1235" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20Pentgarden%203%20Bed%2026-1235" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar Luxury 3 BED OV 25-4058" data-price="2085000" data-mls="25-4058" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250821231016412240000000-o.jpg" data-type="Condominio" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250821231016412240000000-o.jpg" alt="Alvar Luxury 3 BED OV 25-4058">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar Luxury 3 BED Ocean View</h3>
+        <div class="property-price">$2,085,000 USD</div>
+        <div class="property-specs">3,163 sqft · 3 rec · 4 baños<br>MLS #25-4058</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%203%20Bed%20OV%20-%20MLS%20%2325-4058" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%203%20Bed%20OV%2025-4058" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Copala at Quivira 3Bed 25-5987" data-price="997000" data-mls="25-5987" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251229174718975362000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251229174718975362000000-o.jpg" alt="Copala at Quivira 3Bed 25-5987">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Cópala at Quivira</h3>
+        <div class="property-price">$997,000 USD</div>
+        <div class="property-specs">2,167 sqft · 3 rec · 3 baños<br>MLS #25-5987</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%203Bed%20-%20MLS%20%2325-5987" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%203Bed%2025-5987" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Copala Ocean View C 25-3833" data-price="895000" data-mls="25-3833" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250806021258922847000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250806021258922847000000-o.jpg" alt="Copala Ocean View C 25-3833">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala at Quivira Ocean View C</h3>
+        <div class="property-price">$895,000 USD</div>
+        <div class="property-specs">2,124 sqft · 3 rec · 3 baños<br>MLS #25-3833</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20Ocean%20View%20C%20-%20MLS%20%2325-3833" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20Ocean%20View%20C%2025-3833" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila T5 Pentgarden 25-2985" data-price="893137" data-mls="25-2985" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608033922271826000000-o.jpg" data-type="Pentgarden" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608033922271826000000-o.jpg" alt="Mavila T5 Pentgarden 25-2985">
+        <div class="property-overlay"><span class="property-type">Pentgarden</span></div>
+      </div>
+      <div class="property-content">
+        <h3>3 Bed Pentgarden, Mavila Ocean View Tower 5</h3>
+        <div class="property-price">$893,137 USD</div>
+        <div class="property-specs">24,156 sqft · 3 rec · 3 baños<br>MLS #25-2985</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20T5%20Pentgarden%20-%20MLS%20%2325-2985" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20T5%20Pentgarden%2025-2985" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Torres 3Bed 25-2846" data-price="882713" data-mls="25-2846" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602190326956055000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602190326956055000000-o.jpg" alt="Mavila Torres 3Bed 25-2846">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Torres ar Quivira</h3>
+        <div class="property-price">$882,713 USD</div>
+        <div class="property-specs">1,872 sqft · 3 rec · 3 baños<br>MLS #25-2846</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Torres%203Bed%20-%20MLS%20%2325-2846" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Torres%203Bed%2025-2846" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Penthouse Del Mar 2 BD 24-5614" data-price="865000" data-mls="24-5614" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20241203224957245325000000-o.jpg" data-type="Penthouse" data-zone="Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20241203224957245325000000-o.jpg" alt="Penthouse Del Mar 2 BD 24-5614">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Penthouse Del Mar - 2 BD PH</h3>
+        <div class="property-price">$865,000 USD</div>
+        <div class="property-specs">2,420 sqft · 2 rec · 2 baños<br>MLS #24-5614</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Penthouse%20Del%20Mar%20-%20MLS%20%2324-5614" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Penthouse%20Del%20Mar%2024-5614" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala PH With Rooftop 24-5649" data-price="865000" data-mls="24-5649" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20241209185823248156000000-o.jpg" data-type="Penthouse" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20241209185823248156000000-o.jpg" alt="Copala PH With Rooftop 24-5649">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Quivira Penthouse With Rooftop</h3>
+        <div class="property-price">$865,000 USD</div>
+        <div class="property-specs">2,420 sqft · 2 rec · 2 baños<br>MLS #24-5649</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20PH%20Rooftop%20-%20MLS%20%2324-5649" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20PH%20Rooftop%2024-5649" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Copala 3 Bed 26-1705" data-price="850000" data-mls="26-1705" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260406210043241775000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260406210043241775000000-o.jpg" alt="Copala 3 Bed 26-1705">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala</h3>
+        <div class="property-price">$850,000 USD</div>
+        <div class="property-specs">2,223 sqft · 3 rec · 4 baños<br>MLS #26-1705</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%203%20Bed%20-%20MLS%20%2326-1705" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%203%20Bed%2026-1705" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Towers 3 Bed 25-2912" data-price="849258" data-mls="25-2912" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250603223807806988000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250603223807806988000000-o.jpg" alt="Mavila Towers 3 Bed 25-2912">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Towers, 3 beds condo</h3>
+        <div class="property-price">$849,258 USD</div>
+        <div class="property-specs">1,872 sqft · 3 rec · 3 baños<br>MLS #25-2912</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Towers%203%20Bed%20-%20MLS%20%2325-2912" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Towers%203%20Bed%2025-2912" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Penthouse Private Rooftop 26-521" data-price="825000" data-mls="26-521" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260129011324163429000000-o.jpg" data-type="Penthouse" data-zone="Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260129011324163429000000-o.jpg" alt="Penthouse Private Rooftop 26-521">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Penthouse Private Rooftop</h3>
+        <div class="property-price">$825,000 USD</div>
+        <div class="property-specs">3,195 sqft · 2 rec · 2 baños<br>MLS #26-521</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20PH%20Private%20Rooftop%20-%20MLS%20%2326-521" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20PH%20Private%20Rooftop%2026-521" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Tower 4 Condo 4102 26-123" data-price="795000" data-mls="26-123" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260110013619234347000000-o.jpg" data-type="Condominio Ocean View" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260110013619234347000000-o.jpg" alt="Mavila Tower 4 Condo 4102 26-123">
+        <div class="property-overlay"><span class="property-type">Condominio Ocean View</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Tower 4 Condo 4102 OV</h3>
+        <div class="property-price">$795,000 USD</div>
+        <div class="property-specs">1,450 sqft · 2 rec · 2 baños<br>MLS #26-123</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Tower%204%204102%20-%20MLS%20%2326-123" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Tower%204%204102%2026-123" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Copala 3 Bed 26-278" data-price="790000" data-mls="26-278" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260116002538112102000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260116002538112102000000-o.jpg" alt="Copala 3 Bed 26-278">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala</h3>
+        <div class="property-price">$790,000 USD</div>
+        <div class="property-specs">2,132 sqft · 3 rec · 3 baños<br>MLS #26-278</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%203%20Bed%20-%20MLS%20%2326-278" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%203%20Bed%2026-278" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala Casa Hugo 25-4372" data-price="789000" data-mls="25-4372" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251022174042389468000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251022174042389468000000-o.jpg" alt="Copala Casa Hugo 25-4372">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala at Quivira, Casa Hugo</h3>
+        <div class="property-price">$789,000 USD</div>
+        <div class="property-specs">1,595 sqft · 2 rec · 2 baños<br>MLS #25-4372</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20Casa%20Hugo%20-%20MLS%20%2325-4372" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20Casa%20Hugo%2025-4372" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Quivira Penthouse w/ Rooftop 25-4097" data-price="779777" data-mls="25-4097" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250904000607789029000000-o.jpg" data-type="Penthouse" data-zone="Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250904000607789029000000-o.jpg" alt="Quivira Penthouse w/ Rooftop 25-4097">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Quivira Penthouse With Rooftop</h3>
+        <div class="property-price">$779,777 USD</div>
+        <div class="property-specs">2,069 sqft · 2 rec · 2 baños<br>MLS #25-4097</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Quivira%20PH%20Rooftop%2025-4097%20-%20MLS%20%2325-4097" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Quivira%20PH%20Rooftop%2025-4097" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Copala Quivira 2 Bed 25-5698" data-price="775000" data-mls="25-5698" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251213185434666661000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251213185434666661000000-o.jpg" alt="Copala Quivira 2 Bed 25-5698">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala Quivira</h3>
+        <div class="property-price">$775,000 USD</div>
+        <div class="property-specs">1,904 sqft · 2 rec · 2 baños<br>MLS #25-5698</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20Quivira%202%20Bed%20-%20MLS%20%2325-5698" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20Quivira%202%20Bed%2025-5698" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila towers condo 5404 25-2855" data-price="767057" data-mls="25-2855" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602200047449728000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602200047449728000000-o.jpg" alt="Mavila towers condo 5404 25-2855">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila towers condo 5404</h3>
+        <div class="property-price">$767,057 USD</div>
+        <div class="property-specs">1,538 sqft · 2 rec · 2 baños<br>MLS #25-2855</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%205404%20-%20MLS%20%2325-2855" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%205404%2025-2855" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Copala Pentgarden 26-320" data-price="765000" data-mls="26-320" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260116231350112686000000-o.jpg" data-type="Pentgarden" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260116231350112686000000-o.jpg" alt="Copala Pentgarden 26-320">
+        <div class="property-overlay"><span class="property-type">Pentgarden</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala Pentgarden</h3>
+        <div class="property-price">$765,000 USD</div>
+        <div class="property-specs">1,566 sqft · 2 rec · 2 baños<br>MLS #26-320</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20Pentgarden%20-%20MLS%20%2326-320" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20Pentgarden%2026-320" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Turnkey Ground 3BD Pool 25-5776" data-price="764500" data-mls="25-5776" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251213234913729052000000-o.jpg" data-type="Condominio" data-zone="Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251213234913729052000000-o.jpg" alt="Turnkey Ground 3BD Pool 25-5776">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Turnkey Ground 3BD Pool Access</h3>
+        <div class="property-price">$764,500 USD</div>
+        <div class="property-specs">1,979 sqft · 3 rec · 3 baños<br>MLS #25-5776</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Turnkey%20Ground%203BD%20-%20MLS%20%2325-5776" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Turnkey%20Ground%203BD%2025-5776" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala 5504 26-582" data-price="760000" data-mls="26-582" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260130231209261042000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260130231209261042000000-o.jpg" alt="Copala 5504 26-582">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala 5504</h3>
+        <div class="property-price">$760,000 USD</div>
+        <div class="property-specs">1,524 sqft · 2 rec · 2 baños<br>MLS #26-582</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%205504%20-%20MLS%20%2326-582" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%205504%2026-582" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Condo Tower 1 3B 25-4563" data-price="750000" data-mls="25-4563" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251016224047557625000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251016224047557625000000-o.jpg" alt="Mavila Condo Tower 1 3B 25-4563">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Tower 1 - 3 Bed, 3bath, Mavila Condo at Quivira</h3>
+        <div class="property-price">$750,000 USD</div>
+        <div class="property-specs">1,853 sqft · 3 rec · 3 baños<br>MLS #25-4563</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Tower%201%203B%20-%20MLS%20%2325-4563" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Tower%201%203B%2025-4563" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Copala Garden Level 26-127" data-price="749000" data-mls="26-127" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260111031407040578000000-o.jpg" data-type="Condominio Planta Baja" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260111031407040578000000-o.jpg" alt="Copala Garden Level 26-127">
+        <div class="property-overlay"><span class="property-type">Condominio Planta Baja</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala Garden Level</h3>
+        <div class="property-price">$749,000 USD</div>
+        <div class="property-specs">1,566 sqft · 2 rec · 2 baños<br>MLS #26-127</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20Garden%20Level%20-%20MLS%20%2326-127" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20Garden%20Level%2026-127" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala Ocean PH 26-314" data-price="736000" data-mls="26-314" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260131205729790702000000-o.jpg" data-type="Penthouse" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260131205729790702000000-o.jpg" alt="Copala Ocean PH 26-314">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala Seller Financing, Ocean PH Private Rooftop</h3>
+        <div class="property-price">$736,000 USD</div>
+        <div class="property-specs">2,420 sqft · 2 rec · 2 baños<br>MLS #26-314</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20Ocean%20PH%20-%20MLS%20%2326-314" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20Ocean%20PH%2026-314" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Tower condo 5103 25-2849" data-price="729172" data-mls="25-2849" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602193117546641000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602193117546641000000-o.jpg" alt="Mavila Tower condo 5103 25-2849">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Tower condo 5103 TYPE C</h3>
+        <div class="property-price">$729,172 USD</div>
+        <div class="property-specs">1,893 sqft · 2 rec · 2 baños<br>MLS #25-2849</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%205103%20-%20MLS%20%2325-2849" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%205103%2025-2849" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Torre 5 25-5515" data-price="729172" data-mls="25-5515" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251203180109574309000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251203180109574309000000-o.jpg" alt="Mavila Torre 5 25-5515">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila at Quivira Torre 5</h3>
+        <div class="property-price">$729,172 USD</div>
+        <div class="property-specs">1,895 sqft · 2 rec · 2 baños<br>MLS #25-5515</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Torre%205%20-%20MLS%20%2325-5515" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Torre%205%2025-5515" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila 3 Bed 25-4320" data-price="729000" data-mls="25-4320" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251021155937944761000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251021155937944761000000-o.jpg" alt="Mavila 3 Bed 25-4320">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila</h3>
+        <div class="property-price">$729,000 USD</div>
+        <div class="property-specs">1,558 sqft · 3 rec · 3 baños<br>MLS #25-4320</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%203%20Bed%20-%20MLS%20%2325-4320" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%203%20Bed%2025-4320" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Townhome 25-3908" data-price="729000" data-mls="25-3908" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250828041136443545000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250828041136443545000000-o.jpg" alt="Mavila Townhome 25-3908">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Townhome</h3>
+        <div class="property-price">$729,000 USD</div>
+        <div class="property-specs">1,800 sqft · 3 rec · 3 baños<br>MLS #25-3908</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Townhome%20-%20MLS%20%2325-3908" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Townhome%2025-3908" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Torres 2 Bed PH 26-1741" data-price="726986" data-mls="26-1741" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260408210442196746000000-o.jpg" data-type="Penthouse" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260408210442196746000000-o.jpg" alt="Mavila Torres 2 Bed PH 26-1741">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Torres 2 bedroom P.H</h3>
+        <div class="property-price">$726,986 USD</div>
+        <div class="property-specs">1,538 sqft · 2 rec · 2 baños<br>MLS #26-1741</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Torres%202%20Bed%20PH%20-%20MLS%20%2326-1741" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Torres%202%20Bed%20PH%2026-1741" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Tower 4 T4503 23-1850" data-price="726986" data-mls="23-1850" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20230430213830959569000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20230430213830959569000000-o.jpg" alt="Mavila Tower 4 T4503 23-1850">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Tower 4 T4503</h3>
+        <div class="property-price">$726,986 USD</div>
+        <div class="property-specs">1,547 sqft · 2 rec · 2 baños<br>MLS #23-1850</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Tower%204%20T4503%20-%20MLS%20%2323-1850" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Tower%204%20T4503%2023-1850" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Tower 5 2 Bed PH 25-2984" data-price="722418" data-mls="25-2984" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608031725962666000000-o.jpg" data-type="Penthouse Ocean View" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608031725962666000000-o.jpg" alt="Mavila Tower 5 2 Bed PH 25-2984">
+        <div class="property-overlay"><span class="property-type">Penthouse Ocean View</span></div>
+      </div>
+      <div class="property-content">
+        <h3>2 Bed PH, Mavila Ocean View Tower 5</h3>
+        <div class="property-price">$722,418 USD</div>
+        <div class="property-specs">1,450 sqft · 2 rec · 2 baños<br>MLS #25-2984</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20T5%202%20Bed%20PH%20-%20MLS%20%2325-2984" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20T5%202%20Bed%20PH%2025-2984" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Tower 5 Type B 25-2941" data-price="722418" data-mls="25-2941" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250605183436392797000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250605183436392797000000-o.jpg" alt="Mavila Tower 5 Type B 25-2941">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Tower 5, Type B</h3>
+        <div class="property-price">$722,418 USD</div>
+        <div class="property-specs">1,450 sqft · 2 rec · 2 baños<br>MLS #25-2941</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20T5%20Type%20B%20-%20MLS%20%2325-2941" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20T5%20Type%20B%2025-2941" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Ocean & Sunset PH 26-1342" data-price="709000" data-mls="26-1342" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260318182206184803000000-o.jpg" data-type="Penthouse" data-zone="Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260318182206184803000000-o.jpg" alt="Ocean & Sunset PH 26-1342">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Ocean & Sunset PH w Rooftop</h3>
+        <div class="property-price">$709,000 USD</div>
+        <div class="property-specs">2,100 sqft · 3 rec · 3 baños<br>MLS #26-1342</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Ocean%20%26%20Sunset%20PH%20-%20MLS%20%2326-1342" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Ocean%20%26%20Sunset%20PH%2026-1342" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Tower 2 Bed 25-2860" data-price="703651" data-mls="25-2860" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602201447414410000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602201447414410000000-o.jpg" alt="Mavila Tower 2 Bed 25-2860">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>2 bed Mavila Tower</h3>
+        <div class="property-price">$703,651 USD</div>
+        <div class="property-specs">1,538 sqft · 2 rec · 2 baños<br>MLS #25-2860</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Tower%202%20Bed%20-%20MLS%20%2325-2860" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Tower%202%20Bed%2025-2860" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Tower 5 5303 26-485" data-price="703651" data-mls="26-485" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260126212939079560000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260126212939079560000000-o.jpg" alt="Mavila Tower 5 5303 26-485">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Tower 5, 5303 Type C</h3>
+        <div class="property-price">$703,651 USD</div>
+        <div class="property-specs">1,548 sqft · 2 rec · 2 baños<br>MLS #26-485</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20T5%205303%20-%20MLS%20%2326-485" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20T5%205303%2026-485" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala Luxury Condo 7504 26-350" data-price="695000" data-mls="26-350" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260119214550609347000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260119214550609347000000-o.jpg" alt="Copala Luxury Condo 7504 26-350">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala Luxury Condo #7504</h3>
+        <div class="property-price">$695,000 USD</div>
+        <div class="property-specs">1,524 sqft · 2 rec · 2 baños<br>MLS #26-350</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%207504%20-%20MLS%20%2326-350" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%207504%2026-350" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Copala 2 Bed Tower 7 25-4105" data-price="690000" data-mls="25-4105" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250905001806189632000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250905001806189632000000-o.jpg" alt="Copala 2 Bed Tower 7 25-4105">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala 2 bed Tower 7</h3>
+        <div class="property-price">$690,000 USD</div>
+        <div class="property-specs">1,530 sqft · 2 rec · 2 baños<br>MLS #25-4105</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%202%20Bed%20T7%20-%20MLS%20%2325-4105" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%202%20Bed%20T7%2025-4105" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Tower 5 Type C 25-2936" data-price="687505" data-mls="25-2936" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250605010657369013000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250605010657369013000000-o.jpg" alt="Mavila Tower 5 Type C 25-2936">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Tower 5, Type C</h3>
+        <div class="property-price">$687,505 USD</div>
+        <div class="property-specs">1,548 sqft · 2 rec · 2 baños<br>MLS #25-2936</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20T5%20Type%20C%20-%20MLS%20%2325-2936" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20T5%20Type%20C%2025-2936" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Torres 5204 24-2050" data-price="687505" data-mls="24-2050" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20240426030606784120000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20240426030606784120000000-o.jpg" alt="Mavila Torres 5204 24-2050">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Torres 5204</h3>
+        <div class="property-price">$687,505 USD</div>
+        <div class="property-specs">1,450 sqft · 2 rec · 2 baños<br>MLS #24-2050</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Torres%205204%20-%20MLS%20%2324-2050" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Torres%205204%2024-2050" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Condo Copala 1504 w/ Vehicle 25-1142" data-price="680000" data-mls="25-1142" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250227190426847945000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250227190426847945000000-o.jpg" alt="Condo Copala 1504 w/ Vehicle 25-1142">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Condo Copala #1504 w/ Vehicle</h3>
+        <div class="property-price">$680,000 USD</div>
+        <div class="property-specs">1,527 sqft · 2 rec · 2 baños<br>MLS #25-1142</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Condo%20Copala%201504%20-%20MLS%20%2325-1142" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Condo%20Copala%201504%2025-1142" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="COPALA 2 BED THIRD FLOOR 25-3899" data-price="675000" data-mls="25-3899" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250813054446832586000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250813054446832586000000-o.jpg" alt="COPALA 2 BED THIRD FLOOR 25-3899">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>COPALA 2 BED THIRD FLOOR</h3>
+        <div class="property-price">$675,000 USD</div>
+        <div class="property-specs">1,522 sqft · 2 rec · 2 baños<br>MLS #25-3899</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20COPALA%202%20Bed%20T3%20-%20MLS%20%2325-3899" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20COPALA%202%20Bed%20T3%2025-3899" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala Tower 5 4th Floor 25-4227" data-price="673000" data-mls="25-4227" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250918032740907555000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250918032740907555000000-o.jpg" alt="Copala Tower 5 4th Floor 25-4227">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala at Quivira Tower 5, fourth floor</h3>
+        <div class="property-price">$673,000 USD</div>
+        <div class="property-specs">1,603 sqft · 2 rec · 2 baños<br>MLS #25-4227</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20T5%204th%20Floor%20-%20MLS%20%2325-4227" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20T5%204th%20Floor%2025-4227" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila 2 Bed Condo 5305 25-2852" data-price="668906" data-mls="25-2852" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602194615385404000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602194615385404000000-o.jpg" alt="Mavila 2 Bed Condo 5305 25-2852">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila 2 bed condo 5305 Type B</h3>
+        <div class="property-price">$668,906 USD</div>
+        <div class="property-specs">1,441 sqft · 2 rec · 2 baños<br>MLS #25-2852</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%205305%20-%20MLS%20%2325-2852" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%205305%2025-2852" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="COPALA 4202 25-103" data-price="650000" data-mls="25-103" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260207064321366841000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260207064321366841000000-o.jpg" alt="COPALA 4202 25-103">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>COPALA 4202</h3>
+        <div class="property-price">$650,000 USD</div>
+        <div class="property-specs">1,548 sqft · 2 rec · 2 baños<br>MLS #25-103</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20COPALA%204202%20-%20MLS%20%2325-103" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20COPALA%204202%2025-103" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala Tower 3 3105 26-542" data-price="650000" data-mls="26-542" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260130200617886487000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260130200617886487000000-o.jpg" alt="Copala Tower 3 3105 26-542">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala Tower 3 3105</h3>
+        <div class="property-price">$650,000 USD</div>
+        <div class="property-specs">2,138 sqft · 3 rec · 3 baños<br>MLS #26-542</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20T3%203105%20-%20MLS%20%2326-542" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20T3%203105%2026-542" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Copala Ocean View 2 Bdrm 25-5696" data-price="650000" data-mls="25-5696" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251107025139518332000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251107025139518332000000-o.jpg" alt="Copala Ocean View 2 Bdrm 25-5696">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala Ocean View Condo 2 Bdrm</h3>
+        <div class="property-price">$650,000 USD</div>
+        <div class="property-specs">1,521 sqft · 2 rec · 3 baños<br>MLS #25-5696</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20OV%202%20Bdrm%20-%20MLS%20%2325-5696" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20OV%202%20Bdrm%2025-5696" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Condo Copala 25-2606" data-price="649000" data-mls="25-2606" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250515231206389756000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250515231206389756000000-o.jpg" alt="Condo Copala 25-2606">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Condo, Copala</h3>
+        <div class="property-price">$649,000 USD</div>
+        <div class="property-specs">1,524 sqft · 2 rec · 2 baños<br>MLS #25-2606</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Condo%20Copala%20-%20MLS%20%2325-2606" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Condo%20Copala%2025-2606" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala 5304 25-4675" data-price="635000" data-mls="25-4675" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251021201010391341000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251021201010391341000000-o.jpg" alt="Copala 5304 25-4675">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala 5304</h3>
+        <div class="property-price">$635,000 USD</div>
+        <div class="property-specs">1,481 sqft · 2 rec · 2 baños<br>MLS #25-4675</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%205304%20-%20MLS%20%2325-4675" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%205304%2025-4675" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="PH Mavila Quivira 26-1806" data-price="625000" data-mls="26-1806" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260413235126973910000000-o.jpg" data-type="Penthouse" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260413235126973910000000-o.jpg" alt="PH Mavila Quivira 26-1806">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>PH Mavila Quivira</h3>
+        <div class="property-price">$625,000 USD</div>
+        <div class="property-specs">1,923 sqft · 2 rec · 2 baños<br>MLS #26-1806</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20PH%20Mavila%20-%20MLS%20%2326-1806" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20PH%20Mavila%2026-1806" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="COPALA 5502 26-11" data-price="625000" data-mls="26-11" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260101202109685905000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260101202109685905000000-o.jpg" alt="COPALA 5502 26-11">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>COPALA 5502</h3>
+        <div class="property-price">$625,000 USD</div>
+        <div class="property-specs">1,594 sqft · 2 rec · 2 baños<br>MLS #26-11</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20COPALA%205502%20-%20MLS%20%2326-11" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20COPALA%205502%2026-11" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Torres 2 Bed 26-1742" data-price="624559" data-mls="26-1742" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260408214223281728000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260408214223281728000000-o.jpg" alt="Mavila Torres 2 Bed 26-1742">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Torres</h3>
+        <div class="property-price">$624,559 USD</div>
+        <div class="property-specs">1,538 sqft · 2 rec · 2 baños<br>MLS #26-1742</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Torres%202%20Bed%20-%20MLS%20%2326-1742" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Torres%202%20Bed%2026-1742" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Pueblito 2B1 24-2131" data-price="620843" data-mls="24-2131" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20240501214218390034000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20240501214218390034000000-o.jpg" alt="Mavila Pueblito 2B1 24-2131">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Pueblito 2B1</h3>
+        <div class="property-price">$620,843 USD</div>
+        <div class="property-specs">1,901 sqft · 2 rec · 2 baños<br>MLS #24-2131</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Pueblito%202B1%20-%20MLS%20%2324-2131" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Pueblito%202B1%2024-2131" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Pueblito Phase 2B-1 25-2929" data-price="614736" data-mls="25-2929" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250604201233388249000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250604201233388249000000-o.jpg" alt="Mavila Pueblito Phase 2B-1 25-2929">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila-Pueblito Phase 2B-1</h3>
+        <div class="property-price">$614,736 USD</div>
+        <div class="property-specs">1,848 sqft · 2 rec · 2 baños<br>MLS #25-2929</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%202B-1%20-%20MLS%20%2325-2929" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%202B-1%2025-2929" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Pueblito Phase 2A3 23-2062" data-price="610854" data-mls="23-2062" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20230512163858842178000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20230512163858842178000000-o.jpg" alt="Mavila Pueblito Phase 2A3 23-2062">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Pueblito Phase 2A3</h3>
+        <div class="property-price">$610,854 USD</div>
+        <div class="property-specs">1,939 sqft · 2 rec · 2 baños<br>MLS #23-2062</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%202A3%20-%20MLS%20%2323-2062" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%202A3%2023-2062" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Copala Ocean View 2 Bdrm 25-3883" data-price="590000" data-mls="25-3883" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250812190033140160000000-o.jpg" data-type="Condominio" data-zone="Copala · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250812190033140160000000-o.jpg" alt="Copala Ocean View 2 Bdrm 25-3883">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Copala Ocean View 2 Bdrm Condo</h3>
+        <div class="property-price">$590,000 USD</div>
+        <div class="property-specs">1,521 sqft · 2 rec · 2 baños<br>MLS #25-3883</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20OV%202%20Bdrm%20-%20MLS%20%2325-3883" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20OV%202%20Bdrm%2025-3883" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Quivira 2B1 24-2020" data-price="569210" data-mls="24-2020" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20240424205831937249000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20240424205831937249000000-o.jpg" alt="Mavila Quivira 2B1 24-2020">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Quivira Los Cabos 2B1</h3>
+        <div class="property-price">$569,210 USD</div>
+        <div class="property-specs">1,482 sqft · 2 rec · 2 baños<br>MLS #24-2020</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Quivira%202B1%20-%20MLS%20%2324-2020" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Quivira%202B1%2024-2020" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Pueblito 2Bed/2Bath 24-2300" data-price="563785" data-mls="24-2300" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20240511022931532249000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20240511022931532249000000-o.jpg" alt="Mavila Pueblito 2Bed/2Bath 24-2300">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Pueblito 2Bed/2Bath</h3>
+        <div class="property-price">$563,785 USD</div>
+        <div class="property-specs">1,263 sqft · 2 rec · 2 baños<br>MLS #24-2300</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%202Bed/2Bath%20-%20MLS%20%2324-2300" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%202Bed/2Bath%2024-2300" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Pueblito Tower 40 25-2957" data-price="560954" data-mls="25-2957" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250606180426509937000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250606180426509937000000-o.jpg" alt="Mavila Pueblito Tower 40 25-2957">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Pueblito Tower 40</h3>
+        <div class="property-price">$560,954 USD</div>
+        <div class="property-specs">1,572 sqft · 2 rec · 3 baños<br>MLS #25-2957</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Tower%2040%20-%20MLS%20%2325-2957" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Tower%2040%2025-2957" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Golf Ocean Sunset View 2 BED 26-134" data-price="549000" data-mls="26-134" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260119021229850623000000-o.jpg" data-type="Condominio" data-zone="Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260119021229850623000000-o.jpg" alt="Golf Ocean Sunset View 2 BED 26-134">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Golf Ocean Sunset View 2 BED</h3>
+        <div class="property-price">$549,000 USD</div>
+        <div class="property-specs">1,450 sqft · 2 rec · 2 baños<br>MLS #26-134</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Golf%20Ocean%20Sunset%20-%20MLS%20%2326-134" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Golf%20Ocean%20Sunset%2026-134" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Tower 2 Unit 2202 26-1210" data-price="545000" data-mls="26-1210" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260309234337352651000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260309234337352651000000-o.jpg" alt="Mavila Tower 2 Unit 2202 26-1210">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Tower 2 Unit 2202</h3>
+        <div class="property-price">$545,000 USD</div>
+        <div class="property-specs">1,450 sqft · 2 rec · 2 baños<br>MLS #26-1210</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20T2%20U2202%20-%20MLS%20%2326-1210" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20T2%20U2202%2026-1210" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Tower 1 2nd floor 25-4119" data-price="525000" data-mls="25-4119" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250907222019296942000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250907222019296942000000-o.jpg" alt="Mavila Tower 1 2nd floor 25-4119">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Tower 1 2nd floor</h3>
+        <div class="property-price">$525,000 USD</div>
+        <div class="property-specs">1,451 sqft · 2 rec · 2 baños<br>MLS #25-4119</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20T1%202nd%20floor%20-%20MLS%20%2325-4119" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20T1%202nd%20floor%2025-4119" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Pueblito 2 Bed 25-2822" data-price="516358" data-mls="25-2822" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250601233554266323000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250601233554266323000000-o.jpg" alt="Mavila Pueblito 2 Bed 25-2822">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Pueblito 2 bed Condo</h3>
+        <div class="property-price">$516,358 USD</div>
+        <div class="property-specs">1,355 sqft · 2 rec · 3 baños<br>MLS #25-2822</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Pueblito%202%20Bed%20-%20MLS%20%2325-2822" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Pueblito%202%20Bed%2025-2822" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="mavila 2 bed Condo 25-2845" data-price="512208" data-mls="25-2845" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602190211115476000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602190211115476000000-o.jpg" alt="mavila 2 bed Condo 25-2845">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>mavila 2 bed Condo</h3>
+        <div class="property-price">$512,208 USD</div>
+        <div class="property-specs">1,592 sqft · 2 rec · 3 baños<br>MLS #25-2845</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%202%20Bed%2025-2845%20-%20MLS%20%2325-2845" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%202%20Bed%2025-2845" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Pueblito 2nd Floor 25-2987" data-price="512208" data-mls="25-2987" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608042637803288000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608042637803288000000-o.jpg" alt="Mavila Pueblito 2nd Floor 25-2987">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Pueblito 2nd Floor</h3>
+        <div class="property-price">$512,208 USD</div>
+        <div class="property-specs">1,597 sqft · 2 rec · 3 baños<br>MLS #25-2987</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Pueblito%202nd%20Floor%20-%20MLS%20%2325-2987" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Pueblito%202nd%20Floor%2025-2987" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Jacarandas 25-4533" data-price="470000" data-mls="25-4533" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250924215920544272000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250924215920544272000000-o.jpg" alt="Mavila Jacarandas 25-4533">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Jacarandas, Mavila at Quivira</h3>
+        <div class="property-price">$470,000 USD</div>
+        <div class="property-specs">1,473 sqft · 2 rec · 3 baños<br>MLS #25-4533</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Jacarandas%20-%20MLS%20%2325-4533" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Jacarandas%2025-4533" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Condo 25-3909" data-price="449000" data-mls="25-3909" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250828035859108594000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250828035859108594000000-o.jpg" alt="Mavila Condo 25-3909">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Condo</h3>
+        <div class="property-price">$449,000 USD</div>
+        <div class="property-specs">1,180 sqft · 2 rec · 2 baños<br>MLS #25-3909</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Condo%20-%20MLS%20%2325-3909" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Condo%2025-3909" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila Condo 25-4948" data-price="449000" data-mls="25-4948" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251105040253835095000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251105040253835095000000-o.jpg" alt="Mavila Condo 25-4948">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Condo</h3>
+        <div class="property-price">$449,000 USD</div>
+        <div class="property-specs">1,193 sqft · 2 rec · 2 baños<br>MLS #25-4948</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Condo%20-%20MLS%20%2325-4948" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Condo%2025-4948" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila Condo 25-4947" data-price="449000" data-mls="25-4947" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251105025759336795000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251105025759336795000000-o.jpg" alt="Mavila Condo 25-4947">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila Condo</h3>
+        <div class="property-price">$449,000 USD</div>
+        <div class="property-specs">1,381 sqft · 2 rec · 4 baños<br>MLS #25-4947</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Condo%20-%20MLS%20%2325-4947" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Condo%2025-4947" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila at Quivira 26-1703" data-price="439000" data-mls="26-1703" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260407000142220483000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260407000142220483000000-o.jpg" alt="Mavila at Quivira 26-1703">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila at Quivira</h3>
+        <div class="property-price">$439,000 USD</div>
+        <div class="property-specs">1,538 sqft · 2 rec · 3 baños<br>MLS #26-1703</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20at%20Quivira%20-%20MLS%20%2326-1703" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20at%20Quivira%2026-1703" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="Mavila 1 bed Condo 25-2823" data-price="394476" data-mls="25-2823" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602003239620769000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602003239620769000000-o.jpg" alt="Mavila 1 bed Condo 25-2823">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila At Quivira 1 bed condo</h3>
+        <div class="property-price">$394,476 USD</div>
+        <div class="property-specs">1,194 sqft · 1 rec · 2 baños<br>MLS #25-2823</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%201%20Bed%20-%20MLS%20%2325-2823" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%201%20Bed%2025-2823" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="mavila 1 bed Condo 25-2843" data-price="394476" data-mls="25-2843" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602182852242651000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250602182852242651000000-o.jpg" alt="mavila 1 bed Condo 25-2843">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>mavila 1 bed Condo</h3>
+        <div class="property-price">$394,476 USD</div>
+        <div class="property-specs">1,194 sqft · 1 rec · 2 baños<br>MLS #25-2843</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%201%20Bed%2025-2843%20-%20MLS%20%2325-2843" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%201%20Bed%2025-2843" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila 1 bed 25-4854" data-price="339000" data-mls="25-4854" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251101005114749529000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251101005114749529000000-o.jpg" alt="Mavila 1 bed 25-4854">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Mavila at Quivira</h3>
+        <div class="property-price">$339,000 USD</div>
+        <div class="property-specs">1,196 sqft · 1 rec · 2 baños<br>MLS #25-4854</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%201%20Bed%2025-4854%20-%20MLS%20%2325-4854" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%201%20Bed%2025-4854" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal" data-category="quivira" data-name="1 BD Penthouse Mavila 093 26-1056" data-price="329000" data-mls="26-1056" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260302152806274736000000-o.jpg" data-type="Penthouse" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260302152806274736000000-o.jpg" alt="1 BD Penthouse Mavila 093 26-1056">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>1 BD Penthouse Mavila 093</h3>
+        <div class="property-price">$329,000 USD</div>
+        <div class="property-specs">1,196 sqft · 1 rec · 2 baños<br>MLS #26-1056</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%201%20BD%20PH%20Mavila%20-%20MLS%20%2326-1056" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%201%20BD%20PH%20Mavila%2026-1056" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="MAVILA AT QUIVIRA 011-B 25-4572" data-price="285000" data-mls="25-4572" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251017053608504375000000-o.jpg" data-type="Condominio" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251017053608504375000000-o.jpg" alt="MAVILA AT QUIVIRA 011-B 25-4572">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>MAVILA AT QUIVIRA 011-B</h3>
+        <div class="property-price">$285,000 USD</div>
+        <div class="property-specs">459 sqft · 1 rec · 1 baños<br>MLS #25-4572</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20MAVILA%20011-B%20-%20MLS%20%2325-4572" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20MAVILA%20011-B%2025-4572" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Pueblito Studio 25-2986" data-price="257197" data-mls="25-2986" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608040623902315000000-o.jpg" data-type="Condominio Planta Baja" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608040623902315000000-o.jpg" alt="Mavila Pueblito Studio 25-2986">
+        <div class="property-overlay"><span class="property-type">Condominio Planta Baja</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Studio, Mavila Pueblito Garden Level</h3>
+        <div class="property-price">$257,197 USD</div>
+        <div class="property-specs">459 sqft · 0 rec · 1 baños<br>MLS #25-2986</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Studio%20-%20MLS%20%2325-2986" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Studio%2025-2986" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="St Regis Residences" data-price="5200000" data-mls="23-3600" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Condominio" data-zone="St. Regis · Quivira">
+    <div class="property-card reveal" data-category="quivira" data-name="St. Regis Residences" data-price="5200000" data-mls="23-3600" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20230921212111917072000000-o.jpg" data-type="Condo Ultra-Lujo" data-zone="St. Regis · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="St. Regis">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20230921212111917072000000-o.jpg" alt="St. Regis Residences">
         <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
       </div>
       <div class="property-content">
@@ -3732,31 +5185,116 @@
         <div class="bubble-cta-group">
           <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20Residences%20-%20MLS%20%2323-3600" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Consulta%20St.%20Regis%20Residences&body=Hola%20Angelo%2C%20deseo%20una%20presentación%20privada%20de%20St.%20Regis." class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com?subject=Consulta%20St.%20Regis%20Residences" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal" data-category="quivira" data-name="Alvar Front Row PH" data-price="3970000" data-mls="25-4680" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Penthouse" data-zone="Alvar · Quivira">
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="St. Regis Residences" data-price="4700000" data-mls="26-882" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260220191915737011000000-o.jpg" data-type="Condo Ultra-Lujo" data-zone="St. Regis · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Alvar PH">
-        <div class="property-overlay"><span class="property-type">Penthouse Front Row</span></div>
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20260220191915737011000000-o.jpg" alt="St. Regis Residences">
+        <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
       </div>
       <div class="property-content">
-        <h3>Alvar Ocean View PH</h3>
+        <h3>St. Regis Residences</h3>
+        <div class="property-price">$4,700,000 USD</div>
+        <div class="property-specs">4,723 sqft · 4 rec · 5 baños<br>MLS #26-882</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20Residences%20-%20MLS%20%2326-882" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="St. Regis Residences" data-price="4650000" data-mls="22-3363" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20220830161411725453000000-o.jpg" data-type="Condo Ultra-Lujo" data-zone="St. Regis · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20220830161411725453000000-o.jpg" alt="St. Regis Residences">
+        <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
+      </div>
+      <div class="property-content">
+        <h3>St. Regis Residences</h3>
+        <div class="property-price">$4,650,000 USD</div>
+        <div class="property-specs">4,390 sqft · 3 rec · 4 baños<br>MLS #22-3363</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20Residences%20-%20MLS%20%2322-3363" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-card reveal" data-category="quivira" data-name="Quivira La Laguna" data-price="4420500" data-mls="25-3642" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250721200120806449000000-o.jpg" data-type="Terreno" data-zone="Pacific">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250721200120806449000000-o.jpg" alt="Quivira La Laguna">
+        <div class="property-overlay"><span class="property-type">Terreno</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Quivira / La Laguna 4-4A</h3>
+        <div class="property-price">$4,420,500 USD</div>
+        <div class="property-specs">Pacific Corridor · Quivira<br>MLS #25-3642</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20La%20Laguna%20-%20MLS%20%2325-3642" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="St Regis Los Cabos" data-price="4300000" data-mls="22-4851" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20221227192431173288000000-o.jpg" data-type="Condo Ultra-Lujo" data-zone="St. Regis · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20221227192431173288000000-o.jpg" alt="St Regis Los Cabos">
+        <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
+      </div>
+      <div class="property-content">
+        <h3>St. Regis Residences Los Cabos</h3>
+        <div class="property-price">$4,300,000 USD</div>
+        <div class="property-specs">4,863 sqft · 4 rec · 5 baños<br>MLS #22-4851</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20-%20MLS%20%2322-4851" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar Front Row PH" data-price="3970000" data-mls="25-4680" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251022183032780320000000-o.jpg" data-type="Penthouse" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251022183032780320000000-o.jpg" alt="Alvar PH">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar Front Row Ocean View PH</h3>
         <div class="property-price">$3,970,000 USD</div>
         <div class="property-specs">3,834 sqft · 4 rec · 5 baños<br>MLS #25-4680</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Front%20Row%20PH%20-%20MLS%20%2325-4680" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20PH%20-%20MLS%20%2325-4680" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20PH&body=Hola%20Angelo%2C%20me%20interesa%20este%20Penthouse%20en%20Alvar." class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar Tower 7" data-price="3855463" data-mls="25-2219" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Condominio" data-zone="Alvar · Quivira">
+    <div class="property-card reveal" data-category="quivira" data-name="St Regis Residences" data-price="3950000" data-mls="25-1787" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250402183641649316000000-o.jpg" data-type="Condo Ultra-Lujo" data-zone="St. Regis · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Alvar Tower 7">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250402183641649316000000-o.jpg" alt="St. Regis Residences">
+        <div class="property-overlay"><span class="property-type">Ultra-Lujo</span></div>
+      </div>
+      <div class="property-content">
+        <h3>St. Regis Residences Los Cabos</h3>
+        <div class="property-price">$3,950,000 USD</div>
+        <div class="property-specs">4,476 sqft · 3 rec · 4 baños<br>MLS #25-1787</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20St.%20Regis%20-%20MLS%20%2325-1787" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar Tower 7" data-price="3855463" data-mls="25-2219" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250425010824841793000000-o.jpg" data-type="Condo" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250425010824841793000000-o.jpg" alt="Alvar Tower 7">
         <div class="property-overlay"><span class="property-type">Condominio</span></div>
       </div>
       <div class="property-content">
@@ -3764,33 +5302,33 @@
         <div class="property-price">$3,855,463 USD</div>
         <div class="property-specs">3,766 sqft · 4 rec · 5 baños<br>MLS #25-2219</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Tower%207%20-%20MLS%20%2325-2219" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20T7%20-%20MLS%20%2325-2219" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Consulta%20Alvar%20Tower%207&body=Hola%20Angelo%2C%20me%20interesa%20esta%20propiedad." class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar Baby Penthouse" data-price="3525133" data-mls="25-356" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Penthouse" data-zone="Alvar · Quivira">
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar Baby PH" data-price="3525133" data-mls="25-356" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250627191612812835000000-o.jpg" data-type="Penthouse" data-zone="Alvar · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Alvar Baby PH">
-        <div class="property-overlay"><span class="property-type">Baby Penthouse</span></div>
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250627191612812835000000-o.jpg" alt="Alvar Baby PH">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
       </div>
       <div class="property-content">
-        <h3>Alvar Baby Penthouse</h3>
+        <h3>Tower 7 Baby Penthouse, Alvar</h3>
         <div class="property-price">$3,525,133 USD</div>
         <div class="property-specs">3,689 sqft · 4 rec · 5 baños<br>MLS #25-356</div>
         <div class="bubble-cta-group">
           <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Baby%20PH%20-%20MLS%20%2325-356" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20Baby%20PH" class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal" data-category="quivira" data-name="Alvar 4 Bedroom" data-price="3349493" data-mls="25-2214" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Condominio" data-zone="Alvar · Quivira">
+    <div class="property-card reveal" data-category="quivira" data-name="Alvar 4-Bedroom" data-price="3349493" data-mls="25-2214" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250425000627629202000000-o.jpg" data-type="Condo" data-zone="Alvar · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Alvar 4BD">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250425000627629202000000-o.jpg" alt="Alvar 4-Bedroom">
         <div class="property-overlay"><span class="property-type">Condominio</span></div>
       </div>
       <div class="property-content">
@@ -3798,162 +5336,128 @@
         <div class="property-price">$3,349,493 USD</div>
         <div class="property-specs">3,699 sqft · 4 rec · 5 baños<br>MLS #25-2214</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%204BD%20-%20MLS%20%2325-2214" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%204BR%20-%20MLS%20%2325-2214" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%204BD" class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar Forever PH" data-price="3016094" data-mls="25-5767" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Penthouse" data-zone="Alvar · Quivira">
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar Quivira" data-price="3204666" data-mls="25-337" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250120183625896700000000-o.jpg" data-type="Condo" data-zone="Alvar · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Alvar Forever PH">
-        <div class="property-overlay"><span class="property-type">Penthouse Forever View</span></div>
-      </div>
-      <div class="property-content">
-        <h3>Alvar Forever Ocean View</h3>
-        <div class="property-price">$3,016,094 USD</div>
-        <div class="property-specs">3,279 sqft · 3 rec · 4 baños<br>MLS #25-5767</div>
-        <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20Forever%20PH%20-%20MLS%20%2325-5767" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
-          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Alvar%20Forever%20PH" class="bubble-btn btn-email">Email</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala 5BD PH" data-price="1650000" data-mls="25-5173" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Penthouse" data-zone="Copala · Quivira">
-      <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Copala PH">
-        <div class="property-overlay"><span class="property-type">Penthouse Único</span></div>
-      </div>
-      <div class="property-content">
-        <h3>Copala 5 BD Penthouse</h3>
-        <div class="property-price">$1,650,000 USD</div>
-        <div class="property-specs">4,748 sqft · 5 rec · 4 baños<br>MLS #25-5173</div>
-        <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%205BD%20PH%20-%20MLS%20%2325-5173" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
-          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%205BD%20PH" class="bubble-btn btn-email">Email</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="property-card reveal" data-category="quivira" data-name="Quivira Dream Condo" data-price="1490000" data-mls="26-1845" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Condominio" data-zone="Quivira">
-      <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Dream Condo">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250120183625896700000000-o.jpg" alt="Alvar Quivira">
         <div class="property-overlay"><span class="property-type">Condominio</span></div>
       </div>
       <div class="property-content">
-        <h3>Quivira Dream Condo</h3>
-        <div class="property-price">$1,490,000 USD</div>
-        <div class="property-specs">2,079 sqft · 3 rec · 3 baños<br>MLS #26-1845</div>
+        <h3>ALVAR at QUIVIRA</h3>
+        <div class="property-price">$3,204,666 USD</div>
+        <div class="property-specs">3,727 sqft · 4 rec · 5 baños<br>MLS #25-337</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Quivira%20Dream%20Condo%20-%20MLS%20%2326-1845" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20-%20MLS%20%2325-337" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Quivira%20Dream%20Condo" class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Mavila T4" data-price="1011000" data-mls="26-165" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Condominio" data-zone="Mavila · Quivira">
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar Tower 6" data-price="3159898" data-mls="25-2629" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250518225330102366000000-o.jpg" data-type="Condo" data-zone="Alvar · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Mavila T4">
-        <div class="property-overlay"><span class="property-type">Condominio Ocean View</span></div>
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250518225330102366000000-o.jpg" alt="Alvar Tower 6">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
       </div>
       <div class="property-content">
-        <h3>Mavila Tower 4 Condo 4105</h3>
-        <div class="property-price">$1,011,000 USD</div>
-        <div class="property-specs">1,853 sqft · 3 rec · 3 baños<br>MLS #26-165</div>
+        <h3>ALVAR TOWER 6</h3>
+        <div class="property-price">$3,159,898 USD</div>
+        <div class="property-specs">3,697 sqft · 4 rec · 5 baños<br>MLS #25-2629</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Tower%204%20-%20MLS%20%2326-165" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20T6%20-%20MLS%20%2325-2629" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Tower%204" class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala Ground Floor" data-price="918000" data-mls="25-4141" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Condominio" data-zone="Copala · Quivira">
+    <div class="property-card reveal" data-category="quivira" data-name="Alvar Tower 7" data-price="3151512" data-mls="25-357" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250627184530536043000000-o.jpg" data-type="Condo" data-zone="Alvar · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Copala Ground">
-        <div class="property-overlay"><span class="property-type">Condominio Planta Baja</span></div>
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250627184530536043000000-o.jpg" alt="Alvar Tower 7">
+        <div class="property-overlay"><span class="property-type">Condominio</span></div>
       </div>
       <div class="property-content">
-        <h3>Copala Ground Floor Condo</h3>
-        <div class="property-price">$918,000 USD</div>
-        <div class="property-specs">2,887 sqft · 3 rec · 3 baños<br>MLS #25-4141</div>
+        <h3>Tower 7, Alvar at Quivira 5th Fl</h3>
+        <div class="property-price">$3,151,512 USD</div>
+        <div class="property-specs">3,182 sqft · 3 rec · 4 baños<br>MLS #25-357</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20Ground%20Floor%20-%20MLS%20%2325-4141" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20T7%20-%20MLS%20%2325-357" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20Ground%20Floor" class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal" data-category="quivira" data-name="Mavila T5 PH" data-price="978419" data-mls="25-2983" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Penthouse" data-zone="Mavila · Quivira">
+    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Alvar PH Forever View" data-price="3016094" data-mls="25-5767" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251216203434968040000000-o.jpg" data-type="Penthouse" data-zone="Alvar · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Mavila PH">
-        <div class="property-overlay"><span class="property-type">Penthouse Ocean View</span></div>
-      </div>
-      <div class="property-content">
-        <h3>3 Bed PH, Mavila Tower 5</h3>
-        <div class="property-price">$978,419 USD</div>
-        <div class="property-specs">1,872 sqft · 3 rec · 3 baños<br>MLS #25-2983</div>
-        <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Tower%205%20PH%20-%20MLS%20%2325-2983" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
-          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Tower%205%20PH" class="bubble-btn btn-email">Email</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="property-card reveal reveal-delay-1" data-category="quivira" data-name="Copala Turnkey" data-price="849000" data-mls="26-787" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Condominio" data-zone="Copala · Quivira">
-      <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Copala Turnkey">
-        <div class="property-overlay"><span class="property-type">Condominio Amueblado</span></div>
-      </div>
-      <div class="property-content">
-        <h3>Turnkey Corner 3 BD Copala</h3>
-        <div class="property-price">$849,000 USD</div>
-        <div class="property-specs">2,887 sqft · 3 rec · 3 baños<br>MLS #26-787</div>
-        <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20Turnkey%20-%20MLS%20%2326-787" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
-          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20Turnkey" class="bubble-btn btn-email">Email</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Copala PH Vista" data-price="834900" data-mls="25-3826" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Penthouse" data-zone="Copala · Quivira">
-      <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Copala Casa Vista">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251216203434968040000000-o.jpg" alt="Alvar PH">
         <div class="property-overlay"><span class="property-type">Penthouse</span></div>
       </div>
       <div class="property-content">
-        <h3>Copala PH, Casa Vista</h3>
-        <div class="property-price">$834,900 USD</div>
-        <div class="property-specs">2,089 sqft · 2 rec · 2 baños<br>MLS #25-3826</div>
+        <h3>Alvar Forever Ocean View PH</h3>
+        <div class="property-price">$3,016,094 USD</div>
+        <div class="property-specs">3,279 sqft · 3 rec · 4 baños<br>MLS #25-5767</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Copala%20PH%20Casa%20Vista%20-%20MLS%20%2325-3826" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20PH%20-%20MLS%20%2325-5767" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Copala%20PH%20Casa%20Vista" class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
 
-    <div class="property-card reveal" data-category="quivira" data-name="Mavila Pueblito" data-price="799000" data-mls="25-4106" data-img="https://i.imgur.com/yBhoQaR.png" data-type="Condominio" data-zone="Mavila · Quivira">
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Alvar 4 BDRM Oceanview" data-price="3000000" data-mls="25-5580" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251204225447716880000000-o.jpg" data-type="Condo" data-zone="Alvar · Quivira">
       <div class="property-img">
-        <img src="https://i.imgur.com/yBhoQaR.png" alt="Mavila Pueblito">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251204225447716880000000-o.jpg" alt="Alvar Condo">
         <div class="property-overlay"><span class="property-type">Condominio</span></div>
       </div>
       <div class="property-content">
-        <h3>Mavila Pueblito 3 Beds Condo</h3>
-        <div class="property-price">$799,000 USD</div>
-        <div class="property-specs">2,020 sqft · 3 rec · 3 baños<br>MLS #25-4106</div>
+        <h3>Alvar 4 BDRM Oceanview Condo</h3>
+        <div class="property-price">$3,000,000 USD</div>
+        <div class="property-specs">3,834 sqft · 4 rec · 5 baños<br>MLS #25-5580</div>
         <div class="bubble-cta-group">
-          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Pueblito%20-%20MLS%20%2325-4106" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%204BD%20-%20MLS%20%2325-5580" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
           <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
-          <a href="mailto:angelo@caboapp.com?subject=Interés%20en%20Mavila%20Pueblito" class="bubble-btn btn-email">Email</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-card reveal" data-category="quivira" data-name="Alvar PH Oceanview" data-price="2950000" data-mls="25-5545" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251203210214321760000000-o.jpg" data-type="Penthouse" data-zone="Alvar · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20251203210214321760000000-o.jpg" alt="Alvar PH">
+        <div class="property-overlay"><span class="property-type">Penthouse</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Alvar Oceanview 4 BDRM PH</h3>
+        <div class="property-price">$2,950,000 USD</div>
+        <div class="property-specs">3,689 sqft · 4 rec · 5 baños<br>MLS #25-5545</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Alvar%20PH%20-%20MLS%20%2325-5545" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="property-card reveal reveal-delay-2" data-category="quivira" data-name="Mavila Studio Garden" data-price="257197" data-mls="25-2986" data-img="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608040623902315000000-o.jpg" data-type="Condo" data-zone="Mavila · Quivira">
+      <div class="property-img">
+        <img src="https://cdn.resize.sparkplatform.com/cab/640x480/true/20250608040623902315000000-o.jpg" alt="Mavila Studio">
+        <div class="property-overlay"><span class="property-type">Studio</span></div>
+      </div>
+      <div class="property-content">
+        <h3>Studio, Mavila Pueblito Garden Level</h3>
+        <div class="property-price">$257,197 USD</div>
+        <div class="property-specs">459 sqft · 0 rec · 1 baños<br>MLS #25-2986</div>
+        <div class="bubble-cta-group">
+          <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20me%20interesa%20Mavila%20Studio%20-%20MLS%20%2325-2986" target="_blank" class="bubble-btn btn-gold">WhatsApp</a>
+          <a href="tel:+526244334131" class="bubble-btn btn-outline-dark">Llamar</a>
+          <a href="mailto:angelo@caboapp.com" class="bubble-btn btn-email">Email</a>
         </div>
       </div>
     </div>
