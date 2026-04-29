@@ -96,41 +96,12 @@
       display: flex; align-items: center; justify-content: center;
       text-align: center; overflow: hidden;
     }
-.hero {
-  position: relative;
-  min-height: 100vh;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.hero-video iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 177.78vh;
-  height: 56.25vw;
-  min-width: 100vw;
-  min-height: 100vh;
-  border: 0;
-  transform: translate(-50%, -50%) scale(1.18);
-  pointer-events: none;
-  transition: transform 10s ease;
-}
-
-.hero:hover .hero-video iframe {
-  transform: translate(-50%, -50%) scale(1.12);
-}
+    .hero-video { position:absolute; inset:0; width:100%; height:100%; z-index:1; overflow:hidden; }
+    .hero-video iframe {
+      width:100%; height:100%; border:none;
+      transform: scale(1.08); transition: transform 12s ease;
+    }
+    #hero:hover .hero-video iframe { transform: scale(1.0); }
     .hero-overlay {
       position:absolute; inset:0; z-index:2;
       background: linear-gradient(160deg, rgba(10,31,63,.65) 0%, rgba(19,42,74,.55) 50%, rgba(10,31,63,.75) 100%);
@@ -886,88 +857,51 @@
 @media (max-width: 680px) {
   .nav-logo img { height: 48px; }
 }
-/* --- LUXURY ACQUISITION PANEL STYLES --- */
+/* --- LUXURY ADVERTISING CONSOLIDATED --- */
 #luxury-video-ad {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 360px;
-    background: rgba(10, 31, 63, 0.85);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    border-radius: 28px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    z-index: 99999;
-    display: none; /* Aparece por JS a los 3s */
+    width: 350px;
+    background: rgba(10, 31, 63, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    z-index: 2147483647 !important; /* El nivel más alto posible para que no desaparezca al publicar */
+    display: none; 
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    touch-action: none; /* Previene conflictos en móvil */
 }
 
 .ad-header {
-    height: 35px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
     cursor: move;
-    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
 
-.close-ad-btn {
+.ad-close {
     cursor: pointer;
+    color: #fff;
     font-size: 24px;
-    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    line-height: 1;
     transition: color 0.3s;
 }
-.close-ad-btn:hover { color: #d4af37; }
+.ad-close:hover { color: #d4af37; }
 
-.btn-call-float {
-    position: absolute;
-    top: 45px;
-    right: 15px;
-    width: 45px;
-    height: 45px;
-    background: #00A8CC;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    box-shadow: 0 0 20px rgba(0, 168, 204, 0.6);
-    animation: pulse-gold 2s infinite;
-    cursor: pointer;
-    z-index: 10;
-    text-decoration: none;
-}
-
-@keyframes pulse-gold {
-    0% { box-shadow: 0 0 0 0 rgba(0, 168, 204, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(0, 168, 204, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 168, 204, 0); }
-}
-
-.options-trigger {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(90deg, #132A4A, #2A4666);
-    color: #fff;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Menú de Opciones Adaptativo */
 .options-menu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    background: rgba(5, 15, 30, 0.4);
+    transition: max-height 0.6s cubic-bezier(0.19, 1, 0.22, 1), padding 0.3s;
+    background: rgba(5, 15, 30, 0.6);
 }
 
 .options-menu.expanded {
@@ -975,146 +909,30 @@
     padding: 15px;
 }
 
-.btn-buy-full {
-    width: 100%;
-    background: linear-gradient(135deg, #d4af37, #f9f295);
-    color: #0a1f3f;
-    padding: 14px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 11px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    text-decoration: none;
-    display: block;
-}
-
-.row-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.btn-split {
-    padding: 12px 5px;
-    border-radius: 10px;
-    font-size: 9px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.btn-wa { background: rgba(37, 211, 102, 0.15); color: #25d366; }
-.btn-dossier { background: rgba(0, 168, 204, 0.15); color: #4bc6e0; border: none; cursor: pointer; }
-
-/* Galería Ken Burns */
-.gallery-item {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-.gallery-item.active { opacity: 1; }
-/* --- LUXURY PANEL ADDITIONS --- */
-#luxury-video-ad {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 350px;
-    background: rgba(10, 31, 63, 0.9);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    z-index: 999999;
-    display: none; /* Se activa a los 3s por JS */
-    overflow: hidden;
-    transition: all 0.5s ease;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.ad-header {
-    height: 35px;
-    background: rgba(255,255,255,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-    cursor: move;
-}
-
-.btn-call-float {
-    position: absolute;
-    top: 50px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    background: #00A8CC;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    animation: pulse-blue 2s infinite;
-    z-index: 100;
-}
-
-@keyframes pulse-blue {
-    0% { box-shadow: 0 0 0 0 rgba(0, 168, 204, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(0, 168, 204, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 168, 204, 0); }
-}
-
-.options-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    background: rgba(5, 15, 30, 0.5);
-}
-
-.options-menu.expanded { max-height: 250px; padding: 15px; }
-
 .btn-buy-gold {
     display: block;
     background: linear-gradient(135deg, #d4af37, #f9f295);
     color: #0a1f3f;
     padding: 12px;
     text-align: center;
-    border-radius: 8px;
-    font-weight: 700;
+    border-radius: 12px;
+    font-weight: 800;
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 11px;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.gallery-item {
-    width: 100%; height: 100%;
-    background-size: cover; background-position: center;
-    position: absolute; opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-.gallery-item.active { opacity: 1; }
-/* Esta es la clave para que se vea cuando hagas clic */
-.options-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out; /* Animación suave */
-    background: rgba(5, 15, 30, 0.7);
-    border-radius: 0 0 24px 24px;
-}
-
-.options-menu.expanded {
-    max-height: 300px !important; /* Forzamos la apertura */
-    padding: 15px;
-    border-top: 1px solid rgba(255, 215, 0, 0.1);
+.row-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.btn-mini {
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.1);
 }
   </style>
 </head>
@@ -1310,7 +1128,7 @@
   <!-- PROPIEDADES -->
   <section id="propiedades">
     <div class="container">
-      <p class="section-label reveal" style="text-align:center;">Billion Dollar Portafolio</p>
+      <p class="section-label reveal" style="text-align:center;">Portafolio Exclusivo</p>
       <span class="gold-line reveal"></span>
       <h2 class="reveal">Propiedades que Definen tu <em>Legado</em></h2>
       <p class="reveal" style="text-align:center; max-width:680px; margin:0.8rem auto 2rem; color:var(--text-mid); font-size:clamp(0.95rem,1.2vw,1.05rem);">
@@ -6009,145 +5827,8 @@
       </div>
     </div>
   </div>
-<div id="luxury-video-ad">
-    <div class="ad-header" id="drag-handle">
-        <span style="font-size: 8px; color: #d4af37; letter-spacing: 2px; font-family: Montserrat;">• PANEL DE ADQUISICIÓN •</span>
-        <div class="close-ad-btn" onclick="document.getElementById('luxury-video-ad').style.display='none'">&times;</div>
-    </div>
 
-    <a href="tel:+526244334131" class="btn-call-float" title="Llamada Directa">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    </a>
-    
-    <div class="ad-video-wrapper">
-        <div style="position:relative; width:1px; min-width:100%;padding-bottom:56.25%;">
-            <iframe allow="autoplay" class='spotlightr' src="https://angeloam.cdn.spotlightr.com/watch/MTk3MzA4NA==?fallback=true&s=4" style="width:1px; min-width:100%; height: 100%; position:absolute;" frameborder="0"></iframe>
-        </div>
-    </div>
-
-    <button class="options-trigger" id="toggle-options">
-        Opciones <span id="arrow-icon" style="margin-left:8px;">▾</span>
-    </button>
-
-    <div class="options-menu" id="menu-content">
-        <a href="mailto:angelo@caboapp.com?subject=ORDEN DE COMPRA: VILLA VEGAS DAVE 1&body=Deseo iniciar formalmente el proceso de adquisición de Villa Vegas Dave 1 en Pedregal." class="btn-buy-full">
-            Quiero Comprar Villa Vegas Dave 1
-        </a>
-        <div class="row-split">
-            <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20estoy%20listo%20para%20iniciar%20la%20compra%20de%20Villa%20Vegas%20Dave%201." target="_blank" class="btn-split btn-wa">WhatsApp Compra</a>
-            <button id="trigger-dossier" class="btn-split btn-dossier">Dossier Lujo</button>
-        </div>
-    </div>
-</div>
-
-<div id="property-dossier" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 15, 30, 0.98); z-index: 1000000; overflow-y: auto; padding: 60px 20px;">
-    <div id="close-dossier" style="position:fixed; top:20px; right:40px; color:#fff; font-size:45px; cursor:pointer; z-index: 1000001;">&times;</div>
-    
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start;">
-        <div id="ken-burns-gallery" style="position: relative; height: 500px; border-radius: 20px; overflow: hidden;">
-            <div class="gallery-item active" style="background-image:url('https://www.cabovillavegasdave.com/wp-content/uploads/2024/08/Vegas-Dave-1-0992-copia.jpg')"></div>
-            <div class="gallery-item" style="background-image:url('https://www.cabovillavegasdave.com/wp-content/uploads/2024/08/Vegas-Dave-1-0985-copia.jpg')"></div>
-            <div class="gallery-item" style="background-image:url('https://www.cabovillavegasdave.com/wp-content/uploads/2024/08/Vegas-Dave-1_DSC5434-Low-Res.jpg')"></div>
-            <div class="gallery-item" style="background-image:url('https://www.cabovillavegasdave.com/wp-content/uploads/2024/08/Vegas-Dave-1_DSC5516-Low-Res.jpg')"></div>
-            <div class="gallery-item" style="background-image:url('https://www.cabovillavegasdave.com/wp-content/uploads/2024/08/Vegas-Dave-1DJI_0016-Low-Res.jpg')"></div>
-        </div>
-        
-        <div style="color: white; font-family: Montserrat;">
-            <h2 style="font-family: 'Cormorant Garamond'; font-size: 3rem; color: #d4af37;">Villa Vegas Dave 1</h2>
-            <p style="color: #4bc6e0; letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 30px;">PEDREGAL | CABO SAN LUCAS</p>
-            <ul style="list-style: none; padding: 0;">
-                <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">Superficie <span style="color: #d4af37;">6,500 sq ft</span></li>
-                <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">Recámaras <span style="color: #d4af37;">7 Luxury Suites</span></li>
-                <li style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">Vistas <span style="color: #d4af37;">Océano y Marina</span></li>
-            </ul>
-        </div>
-    </div>
-</div>
   <script>
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const adContainer = document.getElementById('luxury-video-ad');
-    const dragHandle = document.getElementById('drag-handle');
-    const toggleBtn = document.getElementById('toggle-options');
-    const menuContent = document.getElementById('menu-content');
-    const dossierTrigger = document.getElementById('trigger-dossier');
-    const dossierModal = document.getElementById('property-dossier');
-    const closeDossier = document.getElementById('close-dossier');
-    let galleryInterval;
-
-    // 1. Mostrar a los 3 segundos
-    window.addEventListener('load', () => {
-        setTimeout(() => { if(adContainer) adContainer.style.display = 'block'; }, 3000);
-    });
-
-    // 2. Toggle Opciones
-    if (toggleBtn) {
-        toggleBtn.onclick = () => {
-            menuContent.classList.toggle('expanded');
-            document.getElementById('arrow-icon').innerText = menuContent.classList.contains('expanded') ? '▴' : '▾';
-        };
-    }
-
-    // 3. Dossier e Intervalo Ken Burns
-    if (dossierTrigger) {
-        dossierTrigger.onclick = () => {
-            dossierModal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            startKenBurns();
-        };
-    }
-
-    if (closeDossier) {
-        closeDossier.onclick = () => {
-            dossierModal.style.display = 'none';
-            document.body.style.overflow = '';
-            clearInterval(galleryInterval);
-        };
-    }
-
-    function startKenBurns() {
-        const items = document.querySelectorAll('.gallery-item');
-        let current = 0;
-        clearInterval(galleryInterval);
-        galleryInterval = setInterval(() => {
-            items[current].classList.remove('active');
-            current = (current + 1) % items.length;
-            items[current].classList.add('active');
-        }, 4000);
-    }
-
-    // 4. Draggable (Movimiento suave)
-    let isDragging = false;
-    let currentX, currentY, initialX, initialY, xOffset = 0, yOffset = 0;
-
-    if (dragHandle) {
-        dragHandle.onmousedown = (e) => {
-            initialX = e.clientX - xOffset;
-            initialY = e.clientY - yOffset;
-            if (e.target === dragHandle) {
-                isDragging = true;
-                adContainer.style.transition = 'none';
-            }
-        };
-
-        document.onmousemove = (e) => {
-            if (isDragging) {
-                e.preventDefault();
-                currentX = e.clientX - initialX;
-                currentY = e.clientY - initialY;
-                xOffset = currentX;
-                yOffset = currentY;
-                adContainer.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
-            }
-        };
-
-        document.onmouseup = () => {
-            isDragging = false;
-            adContainer.style.transition = 'all 0.5s cubic-bezier(0.19, 1, 0.22, 1)';
-        };
-    }
-});
-</script>
     // ── Navbar scroll ──────────────────────────────────────────
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -6305,126 +5986,103 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   </script>   
   </script>
-<div id="luxury-video-ad">
+  <div id="luxury-video-ad">
     <div class="ad-header" id="drag-handle">
-        <span style="font-size: 7px; color: #d4af37; letter-spacing: 2px;">• PANEL DE ADQUISICIÓN •</span>
-        <div style="cursor:pointer; color:white; font-size:20px;" onclick="document.getElementById('luxury-video-ad').style.display='none'">&times;</div>
+        <span style="font-size: 8px; color: #d4af37; letter-spacing: 2px; font-family: Montserrat;">• EXCLUSIVE LISTING •</span>
+        <div class="ad-close" id="btn-close-ad">&times;</div>
     </div>
-
-    <a href="tel:+526244334131" class="btn-call-float">
-        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    </a>
 
     <div style="position:relative; padding-bottom:56.25%; background:#000;">
-        <iframe src="https://angeloam.cdn.spotlightr.com/watch/MTk3MzA4NA==?fallback=true&s=4" style="position:absolute; width:100%; height:100%; border:0;" allow="autoplay" allowfullscreen></iframe>
+        <iframe src="https://angeloam.cdn.spotlightr.com/watch/MTk3MzA4NA==?fallback=true&s=4" 
+                style="position:absolute; width:100%; height:100%; border:0;" 
+                allow="autoplay" allowfullscreen></iframe>
     </div>
 
-    <button id="btn-options" style="width:100%; padding:12px; background:#132A4A; color:white; border:none; cursor:pointer; font-weight:600; text-transform:uppercase; font-size:12px;">
-        Opciones <span id="arrow">▾</span>
+    <button id="main-opt-btn" style="width:100%; padding:14px; background:#132A4A; color:#fff; border:none; cursor:pointer; font-weight:600; text-transform:uppercase; font-size:12px; font-family:Montserrat;">
+        Opciones <span id="opt-arrow">▾</span>
     </button>
 
-    <div class="options-menu" id="menu-options">
-        <a href="mailto:angelo@caboapp.com?subject=ORDEN%20DE%20COMPRA%3A%20VILLA%20VEGAS%20DAVE%201&body=Deseo%20iniciar%20el%20proceso%20de%20compra" class="btn-buy-gold">Quiero Comprar Villa Vegas Dave 1</a>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <a href="https://wa.me/526244334131?text=Hola%2C%20estoy%20listo%20para%20comprar%20Villa%20Vegas%20Dave%201" target="_blank" style="background:rgba(37,211,102,0.2); color:#25d366; text-decoration:none; text-align:center; padding:10px; border-radius:6px; font-size:10px; font-weight:700;">WHATSAPP</a>
-            <div id="btn-dossier-trigger" style="background:rgba(0,168,204,0.2); color:#4bc6e0; text-align:center; padding:10px; border-radius:6px; font-size:10px; font-weight:700; cursor:pointer;">DOSSIER LUJO</div>
-        </div>
-    </div>
-</div>
-
-<div id="property-dossier" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 15, 30, 0.98); z-index: 1000000; overflow-y: auto; padding: 60px 20px;">
-    <div id="close-dossier" style="position:fixed; top:20px; right:40px; color:#fff; font-size:45px; cursor:pointer;">&times;</div>
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-        <div id="ken-burns-gallery" style="position: relative; height: 500px; border-radius: 20px; overflow: hidden;">
-            <div class="gallery-item active" style="background-image:url('https://www.cabovillavegasdave.com/wp-content/uploads/2024/08/Vegas-Dave-1-0992-copia.jpg')"></div>
-            <div class="gallery-item" style="background-image:url('https://www.cabovillavegasdave.com/wp-content/uploads/2024/08/Vegas-Dave-1-0985-copia.jpg')"></div>
-            <div class="gallery-item" style="background-image:url('https://www.cabovillavegasdave.com/wp-content/uploads/2024/08/Vegas-Dave-1_DSC5434-Low-Res.jpg')"></div>
-        </div>
-        <div style="color: white; font-family: Montserrat;">
-            <h2 style="font-family: 'Cormorant Garamond'; font-size: 3rem; color: #d4af37;">Villa Vegas Dave 1</h2>
-            <p style="color: #4bc6e0; letter-spacing: 4px; margin-bottom: 20px;">PEDREGAL | CABO SAN LUCAS</p>
-            <p>6,500 sq ft • 7 Suites • Vista al Océano</p>
+    <div class="options-menu" id="panel-options">
+        <a href="mailto:angelo@caboapp.com?subject=ORDEN%20DE%20COMPRA%3A%20VILLA%20VEGAS%20DAVE%201" class="btn-buy-gold">Quiero Comprar Villa Vegas Dave 1</a>
+        <div class="row-mini">
+            <a href="https://wa.me/526244334131?text=Hola%20Angelo%2C%20estoy%20listo%20para%20comprar" target="_blank" class="btn-mini" style="background:rgba(37,211,102,0.1); color:#25d366;">WHATSAPP</a>
+            <div id="open-dossier-lux" class="btn-mini" style="background:rgba(0,168,204,0.1); color:#4bc6e0; cursor:pointer;">DOSSIER</div>
         </div>
     </div>
 </div>
 <script>
 (function() {
-    // 1. Mostrar a los 3 segundos
-    setTimeout(() => {
-        const widget = document.getElementById('luxury-video-ad');
-        if(widget) widget.style.display = 'block';
-    }, 3000);
-
-    // 2. Menú Opciones
-const btnOpt = document.getElementById('btn-options');
-const menuOpt = document.getElementById('menu-options');
-const arrow = document.getElementById('arrow');
-
-if (btnOpt && menuOpt) {
-    btnOpt.addEventListener('click', function(e) {
-        e.preventDefault(); // Evita cualquier acción por defecto
-        
-        // Toggle de la clase expanded
-        menuOpt.classList.toggle('expanded');
-        
-        // Cambio visual de la flecha
-        if (arrow) {
-            arrow.innerText = menuOpt.classList.contains('expanded') ? '▴' : '▾';
-        }
-        
-        console.log("Menú clickeado, clase actual:", menuOpt.className); // Para que revises en consola
-    });
-}
-    // 3. Dossier y Galería
-    const btnDossier = document.getElementById('btn-dossier-trigger');
-    const modal = document.getElementById('property-dossier');
-    const closeM = document.getElementById('close-dossier');
-    let galleryInt;
-
-    if(btnDossier) {
-        btnDossier.onclick = () => {
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            let current = 0;
-            const items = document.querySelectorAll('.gallery-item');
-            galleryInt = setInterval(() => {
-                items[current].classList.remove('active');
-                current = (current + 1) % items.length;
-                items[current].classList.add('active');
-            }, 4000);
-        };
-    }
-
-    if(closeM) {
-        closeM.onclick = () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-            clearInterval(galleryInt);
-        };
-    }
-
-    // 4. Drag (Mover)
     const ad = document.getElementById('luxury-video-ad');
     const handle = document.getElementById('drag-handle');
-    let isDragging = false;
-    let ox, oy;
+    const closeBtn = document.getElementById('btn-close-ad');
+    const optBtn = document.getElementById('main-opt-btn');
+    const panel = document.getElementById('panel-options');
+    const arrow = document.getElementById('opt-arrow');
 
-    if(handle) {
-        handle.onmousedown = (e) => {
-            isDragging = true;
-            ox = e.clientX - ad.getBoundingClientRect().left;
-            oy = e.clientY - ad.getBoundingClientRect().top;
-            ad.style.transition = 'none';
+    // 1. Mostrar a los 3 segundos
+    setTimeout(() => {
+        if(ad) {
+            ad.style.display = 'block';
+            ad.style.opacity = '0';
+            setTimeout(() => ad.style.opacity = '1', 10);
+        }
+    }, 3000);
+
+    // 2. Cerrar ventana
+    if(closeBtn) closeBtn.onclick = () => ad.style.display = 'none';
+
+    // 3. Menú Opciones (Toggle corregido)
+    if(optBtn) {
+        optBtn.onclick = (e) => {
+            e.stopPropagation();
+            panel.classList.toggle('expanded');
+            arrow.innerText = panel.classList.contains('expanded') ? '▴' : '▾';
         };
-        document.onmousemove = (e) => {
-            if(!isDragging) return;
-            ad.style.left = (e.clientX - ox) + 'px';
-            ad.style.top = (e.clientY - oy) + 'px';
-            ad.style.bottom = 'auto'; ad.style.right = 'auto';
-        };
-        document.onmouseup = () => {
-            isDragging = false;
-            ad.style.transition = 'all 0.5s ease';
+    }
+
+    // 4. Draggable Indestructible (Funciona al publicar)
+    let isDragging = false;
+    let startX, startY, initialLeft, initialTop;
+
+    handle.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+
+    function startDrag(e) {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        const rect = ad.getBoundingClientRect();
+        initialLeft = rect.left;
+        initialTop = rect.top;
+        ad.style.transition = 'none';
+    }
+
+    function drag(e) {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        
+        ad.style.left = (initialLeft + dx) + 'px';
+        ad.style.top = (initialTop + dy) + 'px';
+        ad.style.bottom = 'auto';
+        ad.style.right = 'auto';
+    }
+
+    function stopDrag() {
+        isDragging = false;
+        ad.style.transition = 'all 0.5s cubic-bezier(0.19, 1, 0.22, 1)';
+    }
+
+    // Vincular con tu Dossier existente
+    const dosBtn = document.getElementById('open-dossier-lux');
+    if(dosBtn) {
+        dosBtn.onclick = () => {
+            const modal = document.getElementById('property-dossier');
+            if(modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
         };
     }
 })();
