@@ -686,23 +686,230 @@
       .modal-btn { min-width: unset; }
       .contact-grid { grid-template-columns: 1fr; max-width: 320px; }
     }
+
+/* RESTAURA 4 COLUMNAS */
+
+.properties-grid{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:18px !important;
+}
+
+.property-card{
+  width:100% !important;
+}
+
+.property-img{
+  height:210px !important;
+}
+
+@media (max-width:1300px){
+  .properties-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  }
+}
+
+@media (max-width:980px){
+  .properties-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media (max-width:680px){
+  .properties-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+/* ─── NAVBAR ULTRA LUJO ───────────────────────────────────── */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links.left  { justify-content: flex-start; flex: 1; }
+.nav-links.right { justify-content: flex-end;   flex: 1; }
+
+.nav-logo img {
+  height: 58px;
+  transition: all 0.4s ease;
+}
+
+.nav-logo:hover img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 8px 25px rgba(0,168,204,0.5));
+}
+
+/* Botón MENU elegante */
+.menu-trigger {
+  display: none;
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.8rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-trigger:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.trigger-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Fullscreen Menu */
+.fullscreen-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 31, 63, 0.97);
+  backdrop-filter: blur(20px);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fullscreen-menu.open {
+  display: flex;
+  opacity: 1;
+}
+
+.fullscreen-menu-content {
+  text-align: center;
+  color: white;
+}
+
+.fullscreen-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fullscreen-menu li {
+  margin: 1.2rem 0;
+}
+
+.fullscreen-menu a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.fullscreen-menu a:hover {
+  color: var(--accent-light);
+  letter-spacing: 0.08em;
+}
+
+.menu-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.menu-close:hover {
+  color: var(--accent-light);
+  transform: rotate(90deg);
+}
+
+/* Responsivo */
+@media (max-width: 980px) {
+  .nav-links { display: none; }
+  .menu-trigger { display: flex; }
+}
+
+@media (max-width: 680px) {
+  .nav-logo img { height: 48px; }
+}
   </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <nav id="navbar">
+<nav id="navbar">
+  <div class="nav-inner container">
+    
+    <!-- Links Izquierda -->
+    <ul class="nav-links left">
+      <li><a href="#proposito">Propósito</a></li>
+      <li><a href="#confianza">Confianza</a></li>
+    </ul>
+
+    <!-- Logo Centro -->
     <a href="#propiedades" class="nav-logo" id="logo-link">
       <img src="https://i.imgur.com/o1scyYD.png" alt="Angelo Logo" />
     </a>
-    <ul class="nav-links">
-      <li><a href="#proposito">Propósito</a></li>
-      <li><a href="#confianza">Confianza</a></li>
+
+    <!-- Links Derecha -->
+    <ul class="nav-links right">
       <li><a href="#exclusividad">Exclusividad</a></li>
       <li><a href="#propiedades">Propiedades</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-  </nav>
+
+    <!-- Botón MENU elegante (visible en móvil) -->
+<button class="menu-trigger luxury-menu" id="menu-trigger" aria-label="Abrir menú">
+  <span class="trigger-text">MENU</span>
+  <span class="trigger-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+      <path d="M5 7.5H19" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+      <path d="M8 12H19" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+      <path d="M5 16.5H19" stroke="currentColor" stroke-width="1.25" stroke-linecap="square"/>
+    </svg>
+  </span>
+</button>
+  </div>
+</nav>
+
+<!-- FULLSCREEN MENU -->
+<div id="fullscreen-menu" class="fullscreen-menu">
+  <div class="fullscreen-menu-content">
+    <button class="menu-close" id="menu-close">✕</button>
+    <ul>
+      <li><a href="#proposito" class="menu-link">Propósito</a></li>
+      <li><a href="#confianza" class="menu-link">Confianza</a></li>
+      <li><a href="#exclusividad" class="menu-link">Exclusividad</a></li>
+      <li><a href="#propiedades" class="menu-link">Propiedades</a></li>
+      <li><a href="#contacto" class="menu-link">Contacto</a></li>
+    </ul>
+  </div>
+</div>
 
   <!-- HERO -->
   <section id="hero">
@@ -5671,6 +5878,36 @@
         if (!e.target.closest('a')) openModal(this);
       });
     });
+     document.querySelectorAll('.property-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (!e.target.closest('a')) openModal(this);
+      });
+    });
+
+    // ── Fullscreen Menu Ultra Lujo ─────────────────────────────
+    const menuTrigger = document.getElementById('menu-trigger');
+    const fullscreenMenu = document.getElementById('fullscreen-menu');
+    const menuClose = document.getElementById('menu-close');
+
+    if (menuTrigger && fullscreenMenu && menuClose) {
+        menuTrigger.addEventListener('click', () => {
+            fullscreenMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            fullscreenMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                fullscreenMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+  </script>   
   </script>
 </body>
 </html>
