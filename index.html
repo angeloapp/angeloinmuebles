@@ -686,6 +686,40 @@
       .modal-btn { min-width: unset; }
       .contact-grid { grid-template-columns: 1fr; max-width: 320px; }
     }
+
+/* RESTAURA 4 COLUMNAS */
+
+.properties-grid{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:18px !important;
+}
+
+.property-card{
+  width:100% !important;
+}
+
+.property-img{
+  height:210px !important;
+}
+
+@media (max-width:1300px){
+  .properties-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  }
+}
+
+@media (max-width:980px){
+  .properties-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media (max-width:680px){
+  .properties-grid{
+    grid-template-columns:1fr !important;
+  }
+}
   </style>
 </head>
 <body>
