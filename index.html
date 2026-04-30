@@ -6189,25 +6189,50 @@
 
     document.onmouseup = () => { isDragging = false; ad.style.transition = 'all 0.5s ease'; };
 
-    // 5. Dossier y Ken Burns
-    let galInt;
-    document.getElementById('btn-open-dossier').onclick = () => {
-        document.getElementById('property-dossier').style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        let curr = 0;
-        const items = document.querySelectorAll('.gallery-item');
-        galInt = setInterval(() => {
-            items[curr].classList.remove('active');
-            curr = (curr + 1) % items.length;
-            items[curr].classList.add('active');
-        }, 4000);
-    };
+// 5. Dossier y Ken Burns
+    const dossier = document.getElementById('property-dossier');
+    const closeDossierBtn = document.getElementById('close-dossier-btn');
+    const openDossierBtn = document.getElementById('btn-open-dossier');
+    const items = document.querySelectorAll('#property-dossier .gallery-item');
 
-    document.getElementById('close-dossier-btn').onclick = () => {
-        document.getElementById('property-dossier').style.display = 'none';
-        document.body.style.overflow = '';
-        clearInterval(galInt);
-    };
-})();
+    let galInt = null;
+    let curr = 0;
+
+    function stopKenBurns() {
+      if (galInt) { clearInterval(galInt); galInt = null; }
+    }
+
+    function startKenBurns() {
+      if (!items.length) return;
+      stopKenBurns();
+      items.forEach(el => el.classList.remove('active'));
+      curr = 0;
+      items[curr].classList.add('active');
+      galInt = setInterval(() => {
+        items[curr].classList.remove('active');
+        curr = (curr + 1) % items.length;
+        items[curr].classList.add('active');
+      }, 4000);
+    }
+
+    function openDossier() {
+      if (!dossier) return;
+      dossier.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      startKenBurns();
+    }
+
+    function closeDossier() {
+      if (!dossier) return;
+      dossier.classList.remove('open');
+      document.body.style.overflow = '';
+      stopKenBurns();
+    }
+
+    if (openDossierBtn) openDossierBtn.addEventListener('click', openDossier);
+    if (closeDossierBtn) closeDossierBtn.addEventListener('click', closeDossier);
+    if (dossier) dossier.addEventListener('click', e => { if (e.target === dossier) closeDossier(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && dossier?.classList.contains('open')) closeDossier(); });
+    })();
 </script>
 </html>
