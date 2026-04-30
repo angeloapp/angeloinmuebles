@@ -6179,14 +6179,14 @@
 @media(max-width:420px){#iAngelo-panel{width:calc(100vw - 24px);right:12px}}
 </style>
 
-<div id="iAngelo-btn" onclick="iAngeloToggle()" title="Habla con iAngelo">🏡<span class="iAngelo-notif">1</span></div>
+<div id="iAngelo-btn" onclick="iAngeloToggle()" title="Habla con Amsita">🏡<span class="iAngelo-notif">1</span></div>
 
 <div id="iAngelo-panel">
   <div id="iAngelo-header">
     <div id="iAngelo-avatar">🤖</div>
     <div id="iAngelo-info">
-      <h4>iAngelo</h4>
-      <p>Agente Inmobiliario · Angelo Inmuebles</p>
+      <h4>Amsita</h4>
+      <p>Agente Inmobiliario</p>
     </div>
     <button id="iAngelo-close" onclick="iAngeloToggle()">✕</button>
   </div>
@@ -6199,29 +6199,20 @@
 
 <script>
 (function(){
-    const SYS = `Eres iAngelo, un agente inmobiliario mexicano altamente inteligente, proactivo, amable y experto. Trabajas para Angelo Inmuebles (angeloinmuebles.vercel.app).
+    const SYS = `Eres Amsita, un agente inmobiliario mexicano altamente inteligente, proactivo, amable y experto. Trabajas para Angelo Inmuebles.
 
-Tu misión principal es ayudar a los usuarios a encontrar, evaluar y avanzar en la compra, renta o inversión de propiedades en México de la forma más efectiva posible.
+Tu misión principal es ayudar a los usuarios a encontrar, evaluar y avanzar en la compra, renta o inversión de propiedades en México.
 
 Reglas importantes:
-- Siempre habla en español mexicano natural (usa palabras como casa, depa, fraccionamiento, colonia, terreno, etc.).
-- Sé claro, honesto y útil. Si no hay buenas opciones dentro del presupuesto, díselo directamente y ofrece alternativas.
-- Haz preguntas una por una para no abrumar al usuario.
-- Mantén el enfoque en avanzar en el objetivo inmobiliario del usuario.
-
-Tareas específicas:
-1. Entender la necesidad: tipo de propiedad, zona, presupuesto, propósito (vivir/rentar/invertir), recámaras, amenidades.
-2. Buscar y recomendar propiedades con información clara: precio, ubicación, m², recámaras, baños, estacionamientos y por qué es buena opción.
-3. Comparar propiedades cuando sea necesario.
-4. Ayudar con cálculos: hipoteca, costos de cierre, rentabilidad.
-5. Apoyar los siguientes pasos: redactar mensajes para vendedores, preparar preguntas para visitas, explicar trámites en México.
-
-Sé entusiasta pero profesional. Siempre termina ofreciendo el siguiente paso lógico.
+- Siempre habla en español mexicano natural.
+- Sé claro, honesto y útil.
+- Haz preguntas una por una.
+- Mantén el enfoque en ayudar con propiedades.
 
 Empieza saludando y pregunta: ¿En qué te puedo ayudar hoy con propiedades?`;
 
-    const KEY = 'xai-NjmU62QwQDLMWuBXxeocRmvott5YNMm8BqqNmnX8VtTaEQnrFFag9GeFB7ng4qhwcHQlIcMTkfz5Qntr';
-    const MODEL = 'grok-4.20-reasoning';   // Puedes cambiar a 'grok-3-fast-beta' si quieres ahorrar
+    const MODEL = "grok-4.20-0309-reasoning";
+    const KEY = "xai-sab2zXSrRX3meOmCi8YjxWPJveMpqzrxvZcVZwQkn9rJDTj0nEfRz1Ip7cnZe9QWHCv9sNe6Uwa12pMQ";     
 
     let hist = [];
     let started = false;
@@ -6235,11 +6226,9 @@ Empieza saludando y pregunta: ¿En qué te puedo ayudar hoy con propiedades?`;
 
         if(p.classList.contains('open') && !started){
             started = true;
-            iAngeloAddMsg('bot', '¡Hola! Soy iAngelo 🤖\n\nTu agente inmobiliario de Angelo Inmuebles.\n¿En qué te puedo ayudar hoy con propiedades?');
+            iAngeloAddMsg('bot', '¡Hola! Soy Amsita 🤖\n\n¿En qué te puedo ayudar hoy con propiedades?');
         }
     }
-
-    window.iAngeloToggle = iAngeloToggle;
 
     function iAngeloAddMsg(role, text){
         const c = document.getElementById('iAngelo-msgs');
@@ -6261,59 +6250,50 @@ Empieza saludando y pregunta: ¿En qué te puedo ayudar hoy con propiedades?`;
     }
 
     async function iAngeloSend(){
-    const inp = document.getElementById('iAngelo-input');
-    const txt = inp.value.trim();
-    if(!txt) return;
+        const inp = document.getElementById('iAngelo-input');
+        const txt = inp.value.trim();
+        if(!txt) return;
 
-    inp.value = '';
-    iAngeloAddMsg('user', txt);
-    hist.push({role:'user', content:txt});
+        inp.value = '';
+        iAngeloAddMsg('user', txt);
+        hist.push({role:'user', content:txt});
 
-    const typ = iAngeloTyping();
+        const typ = iAngeloTyping();
 
-    try{
-        const res = await fetch('https://api.x.ai/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + KEY
-            },
-            body: JSON.stringify({
-                model: MODEL,
-                messages: [{role:'system', content: SYS}, ...hist],
-                max_tokens: 800,
-                temperature: 0.75
-            })
-        });
+        try{
+            const res = await fetch('https://api.x.ai/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${KEY}`
+                },
+                body: JSON.stringify({
+                    model: MODEL,
+                    messages: [{role:'system', content: SYS}, ...hist],
+                    max_tokens: 800,
+                    temperature: 0.75
+                })
+            });
 
-        const data = await res.json();
+            const data = await res.json();
+            const reply = data.choices?.[0]?.message?.content || "Lo siento, estoy teniendo problemas para responder ahora.";
 
-        if (!res.ok) {
-            console.error("API Error:", data);
-            throw new Error(data.error?.message || "Error en la API");
+            hist.push({role:'assistant', content:reply});
+            typ.remove();
+            iAngeloAddMsg('bot', reply);
+
+        } catch(e){
+            console.error("Error:", e);
+            typ.remove();
+            iAngeloAddMsg('bot', 'Lo siento, hubo un problema técnico. Inténtalo de nuevo.');
         }
-
-        if (!data.choices || !data.choices[0] || !data.choices[0].message?.content) {
-            console.error("Respuesta inválida:", data);
-            throw new Error("La API no devolvió respuesta válida");
-        }
-
-        const reply = data.choices[0].message.content;
-
-        hist.push({role:'assistant', content:reply});
-        typ.remove();
-        iAngeloAddMsg('bot', reply);
-
-    } catch(e){
-        console.error("Error completo:", e);
-        typ.remove();
-        iAngeloAddMsg('bot', 'Lo siento, hubo un problema técnico. Inténtalo de nuevo en unos segundos.');
     }
-}
 
-window.iAngeloSend = iAngeloSend;
+    window.iAngeloToggle = iAngeloToggle;
+    window.iAngeloSend = iAngeloSend;
+
 })();
-</script> 
+</script>
 </body>
 <script>
 (function() {
