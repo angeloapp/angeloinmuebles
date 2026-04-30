@@ -6179,13 +6179,13 @@
 @media(max-width:420px){#iAngelo-panel{width:calc(100vw - 24px);right:12px}}
 </style>
 
-<div id="iAngelo-btn" onclick="iAngeloToggle()" title="Habla con Amsita">🏡<span class="iAngelo-notif">1</span></div>
+<div id="iAngelo-btn" onclick="iAngeloToggle()" title="Habla con iAngelo">🏡<span class="iAngelo-notif">1</span></div>
 
 <div id="iAngelo-panel">
   <div id="iAngelo-header">
     <div id="iAngelo-avatar">🤖</div>
     <div id="iAngelo-info">
-      <h4>Amsita</h4>
+      <h4>iAngelo</h4>
       <p>Agente Inmobiliario · Angelo Inmuebles</p>
     </div>
     <button id="iAngelo-close" onclick="iAngeloToggle()">✕</button>
@@ -6199,7 +6199,7 @@
 
 <script>
 (function(){
-    const SYS = `Eres Amsita, un agente inmobiliario mexicano altamente inteligente, proactivo, amable y experto. Trabajas para Angelo Inmuebles (angeloinmuebles.vercel.app).
+    const SYS = `Eres iAngelo, un agente inmobiliario mexicano altamente inteligente, proactivo, amable y experto. Trabajas para Angelo Inmuebles (angeloinmuebles.vercel.app).
 
 Tu misión principal es ayudar a los usuarios a encontrar, evaluar y avanzar en la compra, renta o inversión de propiedades en México de la forma más efectiva posible.
 
@@ -6235,7 +6235,7 @@ Empieza saludando y pregunta: ¿En qué te puedo ayudar hoy con propiedades?`;
 
         if(p.classList.contains('open') && !started){
             started = true;
-            iAngeloAddMsg('bot', '¡Hola! Soy Amsita 🤖\n\nTu agente inmobiliario de Angelo Inmuebles.\n¿En qué te puedo ayudar hoy con propiedades?');
+            iAngeloAddMsg('bot', '¡Hola! Soy iAngelo 🤖\n\nTu agente inmobiliario de Angelo Inmuebles.\n¿En qué te puedo ayudar hoy con propiedades?');
         }
     }
 
@@ -6302,7 +6302,8 @@ Empieza saludando y pregunta: ¿En qué te puedo ayudar hoy con propiedades?`;
 
     window.iAngeloSend = iAngeloSend;
 })();
-</script></body>
+</script> 
+</body>
 <script>
 (function() {
     const ad = document.getElementById('luxury-video-ad');
