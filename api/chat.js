@@ -3,32 +3,30 @@
 // La API key NUNCA sale al cliente; se lee desde variables de entorno de Vercel.
 
 export default async function handler(req, res) {
-  // Solo aceptar POST
+  // Preflight CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.status(200).end();
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed. Use POST.' });
   }
 
-  // Leer la API key desde la variable de entorno de Vercel
   const apiKey = process.env.XAI_API_KEY;
   if (!apiKey) {
     return res.status(500).json({
-      error: 'XAI_API_KEY no configurada. Agrégala en Vercel → Settings → Environment Variables.'
+      error: 'XAI_API_KEY no configurada en Vercel Environment Variables.'
     });
   }
 
   try {
-    const { messages, model, systemPrompt } = req.body;
+    const { messages, model, systemPrompt, max_tokens, temperature } = req.body;
 
-    // Construir el array de mensajes
     const finalMessages = [];
-    if (systemPrompt) {
-      finalMessages.push({ role: 'system', content: systemPrompt });
-    }
-    if (Array.isArray(messages)) {
-      finalMessages.push(...messages);
-    }
+    if (systemPrompt) finalMessages.push({ role: 'system', content: systemPrompt });
+    if (Array.isArray(messages)) finalMessages.push(...messages);
 
-    // Llamar a la API de xAI
     const xaiResponse = await fetch('https://api.x.ai/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -39,19 +37,13 @@ export default async function handler(req, res) {
         model: model || 'grok-3-mini',
         messages: finalMessages,
         stream: false,
+        ...(max_tokens && { max_tokens }),
+        ...(temperature !== undefined && { temperature }),
       }),
     });
 
     const data = await xaiResponse.json();
-
-    if (!xaiResponse.ok) {
-      return res.status(xaiResponse.status).json({ error: data });
-    }
-
-    // Headers CORS para que tu frontend pueda llamarlo
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    if (!xaiResponse.ok) return res.status(xaiResponse.status).json({ error: data });
 
     return res.status(200).json(data);
   } catch (err) {
