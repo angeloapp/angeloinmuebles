@@ -1042,6 +1042,110 @@
     font-size: 0.9rem;
 }
 .tech-list li span { color: #d4af37; font-weight: 600; }
+    /* ── FOOTER BLACK-CARD (NIVEL EXPERTO) ── */
+.footer-boveda {
+  background: rgba(5, 4, 3, 0.95);
+  border-top: 1px solid rgba(201, 168, 76, 0.3);
+  color: #e8d5a0;
+  padding: 60px 20px 40px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 100;
+}
+
+.footer-boveda .footer-logo {
+  margin-bottom: 5px;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+}
+
+.footer-boveda .logo-i {
+  color: #ffffff;
+}
+
+.footer-boveda .logo-name {
+  color: #c9a84c;
+}
+
+.footer-boveda .footer-tagline {
+  margin-bottom: 35px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #8a7a55;
+  letter-spacing: 0.05em;
+}
+
+.footer-boveda .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+.footer-boveda .link-col {
+  min-width: 160px;
+  margin-bottom: 15px;
+}
+
+.footer-boveda .col-title {
+  color: #c9a84c;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  padding-bottom: 4px;
+}
+
+.footer-boveda .col-content {
+  color: #8a7a55;
+}
+
+.footer-boveda .col-content a {
+  color: #8a7a55;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover interactivo */
+.footer-boveda .col-content a:hover {
+  color: #c9a84c;
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.6);
+}
+
+.footer-boveda .separator {
+  color: rgba(201, 168, 76, 0.5);
+  margin: 0 4px;
+}
+
+.footer-boveda .gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  width: 50%;
+  margin: 0 auto 30px;
+  opacity: 0.6;
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+}
+
+.footer-boveda .footer-copy {
+  font-size: 11px;
+  opacity: 0.6;
+  color: #8a7a55;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.05em;
+}
   </style>
 <style>/* ===== DOSSIER LUXURY OVERRIDE ===== */#property-dossier{color:#f5ede0!important;font-family:var(--serif)!important;letter-spacing:.02em!important;}#property-dossier h1,#property-dossier h2,#property-dossier h3{font-family:var(--serif);font-weight:300;letter-spacing:.04em;color:#f5ede0;margin-bottom:.5em;}#property-dossier p{color:rgba(245,237,224,.8);line-height:1.8;font-size:1.05rem;}#property-dossier .dossier-info{background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.18);border-radius:16px;padding:2.5rem;backdrop-filter:blur(8px);}#close-dossier-btn{position:fixed;top:28px;right:32px;z-index:10000001;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);color:#d4af37;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;backdrop-filter:blur(6px);}#close-dossier-btn:hover{background:rgba(212,175,55,.25);transform:scale(1.1);}.tech-list li{font-size:.9rem;letter-spacing:.03em;}.tech-list li span{color:#d4af37;font-weight:600;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em;}</style></head>
 <body>
@@ -5909,68 +6013,67 @@
     </div>
   </section>
 
-<footer style="background: rgba(5, 4, 3, 0.95); border-top: 1px solid rgba(201, 168, 76, 0.3); color: #e8d5a0; padding: 60px 20px 40px; text-align: center; backdrop-filter: blur(10px); position: relative; z-index: 100;">
+<footer class="footer-boveda">
+  
+  <p class="footer-logo">
+    <span class="logo-i">i</span><span class="logo-name">Angelo</span>
+  </p>
+  
+  <p class="footer-tagline">
+    Arquitecto de Realidades Patrimoniales
+  </p>
+  
+  <div class="footer-links">
     
-    <p class="footer-logo" style="margin-bottom: 5px; font-family: 'Cinzel Decorative', serif; font-size: 2rem; font-weight: 900; letter-spacing: 0.1em; text-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);">
-      <span style="color: #ffffff;">i</span><span style="color: #c9a84c;">Angelo</span>
-    </p>
-    
-    <p class="footer-tagline" style="margin-bottom: 35px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: #8a7a55; letter-spacing: 0.05em;">
-      Arquitecto de Realidades Patrimoniales
-    </p>
-    
-    <div class="footer-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto 40px; font-family: 'Cinzel', serif; font-size: 11px; line-height: 2; letter-spacing: 0.1em;">
-      
-      <div style="min-width: 160px; margin-bottom: 15px;">
-        <span style="color: #c9a84c; font-weight: 700; display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 12px; border-bottom: 1px solid rgba(201, 168, 76, 0.2); padding-bottom: 4px;">Legal</span>
-        <div style="color: #8a7a55;">
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/aviso-de-privacidad.html">Aviso de Privacidad</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/politica-de-privacidad.html">Política de Privacidad</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/proteccion-de-datos-personales.html">Protección de Datos</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/derechos-arco.html">Derechos ARCO</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/cookies.html">Política de Cookies</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/gdpr.html">GDPR</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/lfpdppp.html">Ley Federal (LFPD)</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/enlaces-de-terceros.html">Enlaces de Terceros</a>
-        </div>
+    <div class="link-col">
+      <span class="col-title">Legal</span>
+      <div class="col-content">
+        <a href="http://angelo.am/aviso-de-privacidad.html">Aviso de Privacidad</a> <span class="separator">/</span>
+        <a href="http://angelo.am/politica-de-privacidad.html">Política de Privacidad</a> <span class="separator">/</span>
+        <a href="http://angelo.am/proteccion-de-datos-personales.html">Protección de Datos</a> <span class="separator">/</span>
+        <a href="http://angelo.am/derechos-arco.html">Derechos ARCO</a> <span class="separator">/</span>
+        <a href="http://angelo.am/cookies.html">Política de Cookies</a> <span class="separator">/</span>
+        <a href="http://angelo.am/gdpr.html">GDPR</a> <span class="separator">/</span>
+        <a href="http://angelo.am/lfpdppp.html">Ley Federal (LFPD)</a> <span class="separator">/</span>
+        <a href="http://angelo.am/enlaces-de-terceros.html">Enlaces de Terceros</a>
       </div>
-
-      <div style="min-width: 160px; margin-bottom: 15px;">
-        <span style="color: #c9a84c; font-weight: 700; display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 12px; border-bottom: 1px solid rgba(201, 168, 76, 0.2); padding-bottom: 4px;">Empresa</span>
-        <div style="color: #8a7a55;">
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/sobre-nosotros.html">Sobre nosotros</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/nuestra-mision.html">Misión</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/nuestros-valores.html">Valores</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/nuestro-enfoque.html">Enfoque</a>
-        </div>
-      </div>
-
-      <div style="min-width: 160px; margin-bottom: 15px;">
-        <span style="color: #c9a84c; font-weight: 700; display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 12px; border-bottom: 1px solid rgba(201, 168, 76, 0.2); padding-bottom: 4px;">Negocio</span>
-        <div style="color: #8a7a55;">
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/formacion-de-lideres.html">Formación de Líderes</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/afiliados.html">Afiliados</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/expectativas-de-ingreso.html">Expectativas de Ingreso</a> <span style="color: rgba(201,168,76,0.5);">/</span>
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/unete-a-nosotros.html">Únete a nosotros</a>
-        </div>
-      </div>
-
-      <div style="min-width: 160px;">
-        <span style="color: #c9a84c; font-weight: 700; display: block; margin-bottom: 8px; text-transform: uppercase; font-size: 12px; border-bottom: 1px solid rgba(201, 168, 76, 0.2); padding-bottom: 4px;">Soporte</span>
-        <div style="color: #8a7a55;">
-          <a style="color: #8a7a55; text-decoration: none; transition: color 0.3s;" href="http://angelo.am/preguntas-frecuentes.html">Preguntas Frecuentes</a>
-        </div>
-      </div>
-
     </div>
 
-    <div class="gold-line" style="height: 1px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); width: 50%; margin: 0 auto 30px; opacity: 0.6; box-shadow: 0 0 10px rgba(201,168,76,0.4);"></div>
-    
-    <p class="footer-copy" style="font-size: 11px; opacity: 0.6; color: #8a7a55; font-family: 'Outfit', sans-serif; letter-spacing: 0.05em;">
-      © 2026 Angelo · Gestión Patrimonial de Alto Nivel · Todos los derechos reservados
-    </p>
-  </footer>
+    <div class="link-col">
+      <span class="col-title">Empresa</span>
+      <div class="col-content">
+        <a href="http://angelo.am/sobre-nosotros.html">Sobre nosotros</a> <span class="separator">/</span>
+        <a href="http://angelo.am/nuestra-mision.html">Misión</a> <span class="separator">/</span>
+        <a href="http://angelo.am/nuestros-valores.html">Valores</a> <span class="separator">/</span>
+        <a href="http://angelo.am/nuestro-enfoque.html">Enfoque</a>
+      </div>
+    </div>
 
+    <div class="link-col">
+      <span class="col-title">Negocio</span>
+      <div class="col-content">
+        <a href="http://angelo.am/formacion-de-lideres.html">Formación de Líderes</a> <span class="separator">/</span>
+        <a href="http://angelo.am/afiliados.html">Afiliados</a> <span class="separator">/</span>
+        <a href="http://angelo.am/expectativas-de-ingreso.html">Expectativas de Ingreso</a> <span class="separator">/</span>
+        <a href="http://angelo.am/unete-a-nosotros.html">Únete a nosotros</a>
+      </div>
+    </div>
+
+    <div class="link-col" style="margin-bottom: 0;">
+      <span class="col-title">Soporte</span>
+      <div class="col-content">
+        <a href="http://angelo.am/preguntas-frecuentes.html">Preguntas Frecuentes</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gold-line"></div>
+  
+  <p class="footer-copy">
+    © 2026 Angelo · Gestión Patrimonial de Alto Nivel · Todos los derechos reservados
+  </p>
+</footer>
   <div id="property-modal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
       <button id="modal-close-btn" class="modal-close" aria-label="Cerrar">✕</button>
