@@ -1005,7 +1005,7 @@
     display: none;
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: #050f1e;
+    background: linear-gradient(160deg,#080c1a 0%,#12082e 55%,#080f1c 100%);
     z-index: 10000000;
     overflow-y: auto;
     padding: 40px;
@@ -1023,7 +1023,7 @@
 .ken-burns-container {
     position: relative;
     height: 500px;
-    border-radius: 20px;
+    border-radius: 14px; box-shadow: 0 30px 80px rgba(0,0,0,0.65), inset 0 0 0 1px rgba(212,175,55,0.12);
     overflow: hidden;
 }
 
@@ -1037,13 +1037,13 @@
 .tech-list { list-style: none; padding: 0; }
 .tech-list li { 
     padding: 10px 0; 
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(212,175,55,0.25);
     display: flex; justify-content: space-between;
     font-size: 0.9rem;
 }
 .tech-list li span { color: #d4af37; font-weight: 600; }
   </style>
-</head>
+<style>/* ===== DOSSIER LUXURY OVERRIDE ===== */#property-dossier{color:#f5ede0!important;font-family:var(--serif)!important;letter-spacing:.02em!important;}#property-dossier h1,#property-dossier h2,#property-dossier h3{font-family:var(--serif);font-weight:300;letter-spacing:.04em;color:#f5ede0;margin-bottom:.5em;}#property-dossier p{color:rgba(245,237,224,.8);line-height:1.8;font-size:1.05rem;}#property-dossier .dossier-info{background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.18);border-radius:16px;padding:2.5rem;backdrop-filter:blur(8px);}#close-dossier-btn{position:fixed;top:28px;right:32px;z-index:10000001;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);color:#d4af37;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;backdrop-filter:blur(6px);}#close-dossier-btn:hover{background:rgba(212,175,55,.25);transform:scale(1.1);}.tech-list li{font-size:.9rem;letter-spacing:.03em;}.tech-list li span{color:#d4af37;font-weight:600;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em;}</style></head>
 <body>
 
   <!-- NAVBAR -->
