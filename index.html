@@ -6261,46 +6261,57 @@ Empieza saludando y pregunta: ¿En qué te puedo ayudar hoy con propiedades?`;
     }
 
     async function iAngeloSend(){
-        const inp = document.getElementById('iAngelo-input');
-        const txt = inp.value.trim();
-        if(!txt) return;
+    const inp = document.getElementById('iAngelo-input');
+    const txt = inp.value.trim();
+    if(!txt) return;
 
-        inp.value = '';
-        iAngeloAddMsg('user', txt);
-        hist.push({role:'user', content:txt});
+    inp.value = '';
+    iAngeloAddMsg('user', txt);
+    hist.push({role:'user', content:txt});
 
-        const typ = iAngeloTyping();
+    const typ = iAngeloTyping();
 
-        try{
-            const res = await fetch('https://api.x.ai/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + KEY
-                },
-                body: JSON.stringify({
-                    model: MODEL,
-                    messages: [{role:'system', content: SYS}, ...hist],
-                    max_tokens: 800,
-                    temperature: 0.75
-                })
-            });
+    try{
+        const res = await fetch('https://api.x.ai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + KEY
+            },
+            body: JSON.stringify({
+                model: MODEL,
+                messages: [{role:'system', content: SYS}, ...hist],
+                max_tokens: 800,
+                temperature: 0.75
+            })
+        });
 
-            const data = await res.json();
-            const reply = data.choices && data.choices[0] && data.choices[0].message 
-                        ? data.choices[0].message.content 
-                        : 'Lo siento, hubo un error. Intenta de nuevo.';
+        const data = await res.json();
 
-            hist.push({role:'assistant', content:reply});
-            typ.remove();
-            iAngeloAddMsg('bot', reply);
-        } catch(e){
-            typ.remove();
-            iAngeloAddMsg('bot', 'Hubo un problema de conexión. Intenta de nuevo en un momento.');
+        if (!res.ok) {
+            console.error("API Error:", data);
+            throw new Error(data.error?.message || "Error en la API");
         }
-    }
 
-    window.iAngeloSend = iAngeloSend;
+        if (!data.choices || !data.choices[0] || !data.choices[0].message?.content) {
+            console.error("Respuesta inválida:", data);
+            throw new Error("La API no devolvió respuesta válida");
+        }
+
+        const reply = data.choices[0].message.content;
+
+        hist.push({role:'assistant', content:reply});
+        typ.remove();
+        iAngeloAddMsg('bot', reply);
+
+    } catch(e){
+        console.error("Error completo:", e);
+        typ.remove();
+        iAngeloAddMsg('bot', 'Lo siento, hubo un problema técnico. Inténtalo de nuevo en unos segundos.');
+    }
+}
+
+window.iAngeloSend = iAngeloSend;
 })();
 </script> 
 </body>
