@@ -1323,6 +1323,8 @@
         
         <div class="du-badge">PORTAFOLIO EXCLUSIVO</div>
         
+        <button id="du-reset-zoom" class="du-reset-btn" onclick="resetZoom()" style="display:none;" aria-label="Resetear Zoom">⟲ Restaurar Vista</button>
+
         <div class="du-nav">
           <button onclick="duMove(-1)" aria-label="Anterior">❮</button>
           <button id="du-play-pause" onclick="duTogglePlay()" aria-label="Pausar/Reproducir" style="font-size: 14px;">⏸</button>
@@ -1373,7 +1375,6 @@
 /* Estilos Ultra-Lujo (Fondo Gradiente) */
 .dossier-ultra-section {
   width: 100%;
-  /* Gradiente exterior de lujo */
   background: linear-gradient(135deg, #050a14 0%, #0A1F3F 100%);
   padding: 40px 20px;
   box-sizing: border-box;
@@ -1388,7 +1389,6 @@
   display: grid;
   grid-template-columns: 55% 45%;
   min-height: 85vh;
-  /* Cero esquinas puntiagudas en el contenedor principal */
   border-radius: 40px;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0,0,0,0.6);
@@ -1401,8 +1401,13 @@
   overflow: hidden;
   background: #000;
   z-index: 10;
-  /* Touch action para facilitar el swipe en móviles */
+  /* El pan-y está bien para el scroll vertical global, pero lo deshabilitamos temporalmente al hacer zoom */
   touch-action: pan-y; 
+  cursor: grab;
+}
+
+.du-visual:active {
+  cursor: grabbing;
 }
 
 .du-track {
@@ -1415,27 +1420,30 @@
 .du-slide {
   position: absolute;
   inset: 0;
-  background-position: center;
-  background-size: cover;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
+  overflow: hidden; /* Para contener la imagen al hacer zoom */
 }
 
 .du-slide.active {
   opacity: 1;
+  z-index: 5;
 }
 
-/* Zoom Cinemático */
+/* Imagen base para el Zoom */
 .du-slide-img {
   width: 100%;
   height: 100%;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  transform: scale(1);
+  transform-origin: center center;
+  /* La transición se maneja por JS cuando hay interacción, y por CSS para el Ken Burns */
   transition: transform 10s linear;
+  will-change: transform;
 }
 
-.du-slide.active .du-slide-img {
+.du-slide.active.ken-burns .du-slide-img {
   transform: scale(1.08);
 }
 
@@ -1443,7 +1451,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, transparent 50%, rgba(10,31,63,0.95) 100%);
-  z-index: 2;
+  z-index: 8;
   pointer-events: none;
 }
 
@@ -1461,6 +1469,28 @@
   z-index: 10;
   border-radius: 30px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.du-reset-btn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: rgba(10,31,63,0.8);
+  border: 1px solid var(--gold, #D4AF37);
+  color: var(--gold, #D4AF37);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 15;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.du-reset-btn:hover {
+  background: var(--gold, #D4AF37);
+  color: #000;
 }
 
 /* Controles de Navegación */
@@ -1552,7 +1582,7 @@
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(212,175,55,0.2);
   padding: 25px;
-  border-radius: 25px; /* Bordes suaves */
+  border-radius: 25px;
   margin-bottom: 30px;
 }
 
@@ -1573,11 +1603,11 @@
   margin: 0;
 }
 
-/* Envoltura del mapa realista (Sin filtros) */
+/* Envoltura del mapa */
 .du-map-wrapper {
   width: 100%;
   height: 250px;
-  border-radius: 25px; /* Cero esquinas puntiagudas */
+  border-radius: 25px;
   overflow: hidden;
   border: 2px solid rgba(212,175,55,0.4);
   margin-bottom: 40px;
@@ -1589,7 +1619,6 @@
   width: 100%;
   height: 100%;
   border: none;
-  /* Eliminado el filtro para que se vea el pin rojo y colores realistas */
 }
 
 .du-action-area {
@@ -1617,7 +1646,7 @@
   align-items: center;
   justify-content: center;
   padding: 18px;
-  border-radius: 20px; /* Redondeado suave */
+  border-radius: 20px;
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(212,175,55,0.2);
 }
@@ -1666,7 +1695,6 @@
     background: linear-gradient(to top, rgba(3,7,14,1) 0%, transparent 60%);
   }
 
-  /* Efecto Bottom-Sheet (Superposición tipo iPhone) */
   .du-data {
     margin-top: -50px; 
     border-radius: 40px 40px 0 0;
@@ -1682,7 +1710,7 @@
     bottom: 70px; 
     right: 0;
     left: 0;
-    justify-content: center; /* Centrado en móvil */
+    justify-content: center;
   }
 }
 </style>
@@ -1691,11 +1719,21 @@
 (function(){
 
 const luxuryData = [
-  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor.", lat: "23.009318", lng: "-109.727416", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg" },
-  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", lat: "23.003035", lng: "-109.729046", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg" },
-  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", lat: "23.003049", lng: "-109.727499", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg" },
-  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", lat: "23.003075", lng: "-109.726638", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg" },
-  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", lat: "23.002441", lng: "-109.727652", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg" }
+  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor...", maps: "https://maps.google.com/maps?q=23.009318,-109.727416&t=k&z=16&output=embed", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg"
+  ]},
+  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", maps: "https://maps.google.com/maps?q=23.003035,-109.729046&t=k&z=16&output=embed", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg"
+  ]},
+  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", maps: "https://maps.google.com/maps?q=23.003049,-109.727499&t=k&z=16&output=embed", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg"
+  ]},
+  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", maps: "https://maps.google.com/maps?q=23.003075,-109.726638&t=k&z=16&output=embed", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg"
+  ]},
+  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", maps: "https://maps.google.com/maps?q=23.002441,-109.727652&t=k&z=16&output=embed", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg"
+  ]}
 ];
 
 let duCurrent = 0;
@@ -1703,10 +1741,17 @@ const duTrack = document.getElementById("du-track");
 let isPlaying = true;
 let slideInterval;
 
-// Generar DOM de diapositivas
+// Variables para Pan y Zoom
+let scale = 1;
+let translateX = 0;
+let translateY = 0;
+let isDragging = false;
+let startX, startY;
+
+// Generar DOM de diapositivas usando la primera imagen de cada propiedad
 duTrack.innerHTML = luxuryData.map((p, i) => `
-  <div class="du-slide ${i === 0 ? 'active' : ''}">
-    <div class="du-slide-img" style="background-image: url('${p.img}')"></div>
+  <div class="du-slide ${i === 0 ? 'active ken-burns' : ''}" id="slide-${i}">
+    <div class="du-slide-img" id="img-${i}" style="background-image: url('${p.imgs}');"></div>
   </div>
 `).join("");
 
@@ -1719,59 +1764,183 @@ function updateDuDossier() {
   document.getElementById("du-price").textContent = p.price;
   document.getElementById("du-overview").textContent = p.overview;
   
-  // Mapa realista y con Pin Rojo automático (Eliminado el filtro CSS)
-  const mapUrl = `https://maps.google.com/maps?q=$${p.lat},${p.lng}&t=k&z=16&ie=UTF8&iwloc=&output=embed`;
-  document.getElementById("du-map-frame").src = mapUrl;
+  // Mapa realista
+  document.getElementById("du-map-frame").src = p.maps;
 
   // Botones
   document.getElementById("du-cta").href = `https://wa.me/526244334131?text=Hola%20Angelo%2C%20deseo%20el%20dossier%20HD%20de%20${encodeURIComponent(p.name)}%20(MLS%20${p.mls})`;
-  // Enlace directo al buscador MLS
   document.getElementById("du-mls-link").href = `https://caboone.com/property-detail?mls=${p.mls}`;
+  
+  // Resetear transformaciones visuales
+  resetZoom();
 }
 
+// Lógica de Movimiento
 window.duMove = function(step) {
   const slides = duTrack.children;
-  slides[duCurrent].classList.remove('active');
+  slides[duCurrent].classList.remove('active', 'ken-burns');
   
   duCurrent = (duCurrent + step + slides.length) % slides.length;
   
-  slides[duCurrent].classList.add('active');
+  slides[duCurrent].classList.add('active', 'ken-burns');
   updateDuDossier();
 }
 
 // Botón Stop/Play
-window.duTogglePlay = function() {
+window.duTogglePlay = function(forcePause = false) {
   const btn = document.getElementById("du-play-pause");
-  if(isPlaying) {
+  if(isPlaying || forcePause) {
     clearInterval(slideInterval);
-    btn.innerHTML = "▶"; // Cambia a Play
+    btn.innerHTML = "▶"; // Play
     isPlaying = false;
-  } else {
+  } else if(!forcePause) {
+    // Restaurar clase ken-burns si reanudamos y no hay zoom manual
+    if(scale === 1) {
+      document.getElementById(`slide-${duCurrent}`).classList.add('ken-burns');
+    }
     slideInterval = setInterval(() => duMove(1), 7000);
-    btn.innerHTML = "⏸"; // Cambia a Pausa
+    btn.innerHTML = "⏸"; // Pausa
     isPlaying = true;
     duMove(1);
   }
 }
 
-// Swipe táctil tipo iPhone
+// --- LÓGICA DE PAN & ZOOM ---
+const visualArea = document.getElementById('du-visual-touch');
+const resetBtn = document.getElementById('du-reset-zoom');
+
+function getActiveImage() {
+  return document.getElementById(`img-${duCurrent}`);
+}
+
+function applyTransform() {
+  const img = getActiveImage();
+  if(!img) return;
+  // Deshabilitar la transición css para que el drag sea instantáneo
+  img.style.transition = 'none';
+  img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+  
+  if (scale > 1) {
+    resetBtn.style.display = 'block';
+    visualArea.style.touchAction = 'none'; // Deshabilita scroll en móviles mientras hay zoom
+    // Pausar auto-play si hay zoom
+    if(isPlaying) duTogglePlay(true);
+    document.getElementById(`slide-${duCurrent}`).classList.remove('ken-burns');
+  } else {
+    resetBtn.style.display = 'none';
+    visualArea.style.touchAction = 'pan-y';
+  }
+}
+
+window.resetZoom = function() {
+  scale = 1;
+  translateX = 0;
+  translateY = 0;
+  const img = getActiveImage();
+  if(img) {
+      img.style.transition = 'transform 0.5s ease-out';
+      img.style.transform = 'scale(1) translate(0px, 0px)';
+  }
+  resetBtn.style.display = 'none';
+  visualArea.style.touchAction = 'pan-y';
+  // Restaurar el Ken Burns si la imagen no está interactuada
+  setTimeout(() => {
+     if(scale === 1) document.getElementById(`slide-${duCurrent}`).classList.add('ken-burns');
+  }, 500);
+}
+
+// Zoom con Scroll (Rueda del ratón)
+visualArea.addEventListener('wheel', (e) => {
+  e.preventDefault(); // Prevenir scroll de la página sobre la imagen
+  const zoomFactor = 0.1;
+  if (e.deltaY < 0) {
+    scale += zoomFactor;
+  } else {
+    scale -= zoomFactor;
+  }
+  scale = Math.max(1, Math.min(scale, 4)); // Limitar entre 1x y 4x
+  if(scale === 1) { translateX = 0; translateY = 0; }
+  applyTransform();
+}, { passive: false });
+
+// Arrastrar (Ratón)
+visualArea.addEventListener('mousedown', (e) => {
+  // Solo arrastrar si hay zoom, si no, lo ignoramos o podríamos usarlo para el swipe
+  if (scale > 1) {
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+    visualArea.style.cursor = 'grabbing';
+  } else {
+     // Lógica para swipe en escritorio
+     touchstartX = e.clientX;
+  }
+});
+
+visualArea.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  translateX = e.clientX - startX;
+  translateY = e.clientY - startY;
+  applyTransform();
+});
+
+visualArea.addEventListener('mouseup', (e) => {
+  isDragging = false;
+  visualArea.style.cursor = 'grab';
+  
+  // Lógica swipe escritorio
+  if(scale === 1 && touchstartX !== 0) {
+     touchendX = e.clientX;
+     if (touchendX < touchstartX - 50) { duMove(1); if(isPlaying) duTogglePlay(true); }
+     if (touchendX > touchstartX + 50) { duMove(-1); if(isPlaying) duTogglePlay(true); }
+     touchstartX = 0;
+  }
+});
+
+visualArea.addEventListener('mouseleave', () => {
+  isDragging = false;
+  visualArea.style.cursor = 'grab';
+});
+
+// Arrastrar / Swipe (Táctil)
 let touchstartX = 0;
 let touchendX = 0;
-const touchArea = document.getElementById('du-visual-touch');
 
-touchArea.addEventListener('touchstart', e => {
-  touchstartX = e.changedTouches.screenX;
+visualArea.addEventListener('touchstart', e => {
+  if(e.touches.length === 1) {
+    if(scale > 1) {
+      isDragging = true;
+      startX = e.touches.clientX - translateX;
+      startY = e.touches.clientY - translateY;
+    } else {
+      touchstartX = e.touches.clientX;
+    }
+  }
 }, {passive: true});
 
-touchArea.addEventListener('touchend', e => {
-  touchendX = e.changedTouches.screenX;
-  if (touchendX < touchstartX - 40) {
-    duMove(1); // Swipe izquierda -> Siguiente
-    if(isPlaying) duTogglePlay(); // Pausa auto al interactuar
-  }
-  if (touchendX > touchstartX + 40) {
-    duMove(-1); // Swipe derecha -> Anterior
-    if(isPlaying) duTogglePlay(); // Pausa auto al interactuar
+visualArea.addEventListener('touchmove', e => {
+  if (!isDragging || e.touches.length !== 1) return;
+  // Si hay zoom, prevenimos el comportamiento por defecto para poder mover la imagen
+  e.preventDefault(); 
+  translateX = e.touches.clientX - startX;
+  translateY = e.touches.clientY - startY;
+  applyTransform();
+}, {passive: false});
+
+visualArea.addEventListener('touchend', e => {
+  isDragging = false;
+  if(scale === 1 && touchstartX !== 0) {
+    touchendX = e.changedTouches.clientX;
+    if (touchendX < touchstartX - 40) {
+      duMove(1); 
+      if(isPlaying) duTogglePlay(true); 
+    }
+    if (touchendX > touchstartX + 40) {
+      duMove(-1); 
+      if(isPlaying) duTogglePlay(true); 
+    }
+    touchstartX = 0;
   }
 }, {passive: true});
 
