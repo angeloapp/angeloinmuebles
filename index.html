@@ -1172,48 +1172,7 @@
 @media(max-width:680px){.property-inline-actions{flex-wrap:wrap;}.property-inline-actions .bubble-btn{flex:1 1 100%;}.modal-gallery-tools{flex-direction:column;}.modal-gallery-btn,.modal-map-btn{width:100%;}}
 
   </style>
-<style>/* ===== DOSSIER LUXURY OVERRIDE ===== */#property-dossier{color:#f5ede0!important;font-family:var(--serif)!important;letter-spacing:.02em!important;}#property-dossier h1,#property-dossier h2,#property-dossier h3{font-family:var(--serif);font-weight:300;letter-spacing:.04em;color:#f5ede0;margin-bottom:.5em;}#property-dossier p{color:rgba(245,237,224,.8);line-height:1.8;font-size:1.05rem;}#property-dossier .dossier-info{background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.18);border-radius:16px;padding:2.5rem;backdrop-filter:blur(8px);}#close-dossier-btn{position:fixed;top:28px;right:32px;z-index:10000001;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);color:#d4af37;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;backdrop-filter:blur(6px);}#close-dossier-btn:hover{background:rgba(212,175,55,.25);transform:scale(1.1);}.tech-list li{font-size:.9rem;letter-spacing:.03em;}.tech-list li span{color:#d4af37;font-weight:600;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em;}
-/* --- LUXURY CAROUSEL CSS --- */
-.fc-section {
-  position: relative; width: 100%; height: 520px;
-  background: #050a14; border-radius: 20px; overflow: hidden;
-  box-shadow: 0 30px 70px rgba(10,31,63,0.3); z-index: 5;
-}
-.fc-track { position: absolute; inset: 0; z-index: 1; }
-.fc-slide {
-  position: absolute; inset: 0; opacity: 0;
-  transition: opacity 1.2s ease-in-out; pointer-events: none;
-}
-.fc-slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
-.fc-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  transition: transform 8s linear;
-}
-.fc-slide.active.fc-bg { transform: scale(1.15); }
-.fc-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(10,31,63,0.9) 0%, transparent 60%);
-  z-index: 3;
-}
-.fc-arrow {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: rgba(255,255,255,0.1); border: none; color: #fff;
-  width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
-  backdrop-filter: blur(10px); z-index: 10; transition: 0.3s;
-}
-.fc-arrow:hover { background: #00A8CC; }
-.fc-prev { left: 20px; }
-.fc-next { right: 20px; }
-.fc-progress {
-  position: absolute; top: 0; left: 0; height: 3px;
-  background: #D4AF37; width: 0%; z-index: 15;
-}
-.fc-info-strip {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 65px;
-  background: rgba(10, 31, 63, 0.95); display: flex; align-items: center;
-  padding: 0 25px; border-top: 1px solid rgba(255,255,255,0.1); z-index: 10;
-}
-</style></head>
+<style>/* ===== DOSSIER LUXURY OVERRIDE ===== */#property-dossier{color:#f5ede0!important;font-family:var(--serif)!important;letter-spacing:.02em!important;}#property-dossier h1,#property-dossier h2,#property-dossier h3{font-family:var(--serif);font-weight:300;letter-spacing:.04em;color:#f5ede0;margin-bottom:.5em;}#property-dossier p{color:rgba(245,237,224,.8);line-height:1.8;font-size:1.05rem;}#property-dossier .dossier-info{background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.18);border-radius:16px;padding:2.5rem;backdrop-filter:blur(8px);}#close-dossier-btn{position:fixed;top:28px;right:32px;z-index:10000001;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);color:#d4af37;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;backdrop-filter:blur(6px);}#close-dossier-btn:hover{background:rgba(212,175,55,.25);transform:scale(1.1);}.tech-list li{font-size:.9rem;letter-spacing:.03em;}.tech-list li span{color:#d4af37;font-weight:600;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em;}</style></head>
 <body>
 
   <!-- NAVBAR -->
@@ -1312,7 +1271,7 @@
   </div>
 
   <!-- PROPÓSITO -->
-<section id="proposito" class="du-main-section">
+ <section id="proposito" class="du-main-section">
   <div class="du-wrapper">
     <div class="du-grid">
       
@@ -1346,7 +1305,7 @@
           </div>
 
           <div class="du-map-container">
-            <img id="du-map-img" src="" alt="Ubicación" class="du-map-render">
+            <iframe id="du-map-frame" src="" style="width: 100%; height: 100%; border: none;" allowfullscreen="" loading="lazy"></iframe>
           </div>
 
           <div class="du-footer">
@@ -1398,7 +1357,7 @@
 
 .du-grid {
   display: grid;
-  grid-template-columns: 58% 42%;
+  grid-template-columns: 55% 45%;
   min-height: 85vh;
   background: linear-gradient(180deg, var(--navy-lux) 0%, #03070E 100%);
   border-radius: 40px;
@@ -1415,7 +1374,7 @@
   width: 100%; height: 100%; background-position: center; background-size: cover;
   transition: transform 10s linear;
 }
-.du-slide.active .du-slide-img { transform: scale(1.1); }
+.du-slide.active .du-slide-img { transform: scale(1.08); }
 
 .du-overlay-gradient {
   position: absolute; inset: 0;
@@ -1426,7 +1385,7 @@
 .du-badge-top {
   position: absolute; top: 30px; left: 30px; z-index: 10;
   background: var(--gold-main); color: var(--navy-dark);
-  padding: 8px 18px; border-radius: 30px; font-weight: 700; font-size: 10px; letter-spacing: 2px;
+  padding: 8px 18px; border-radius: 30px; font-weight: 700; font-size: 11px; letter-spacing: 2px;
 }
 
 .du-nav-group {
@@ -1447,24 +1406,23 @@
 .du-prop-title { color: var(--gold-main); font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin: 0; font-weight: 500;}
 .du-gold-line { width: 60px; height: 3px; background: var(--gold-main); margin: 15px 0 25px; border-radius: 10px; }
 
-.du-text-zone { color: var(--blue-lux); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; margin-bottom: 5px; }
+.du-text-zone { color: var(--blue-lux); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; margin-bottom: 5px; }
 .du-text-name { font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 2.5rem; margin: 0 0 10px; line-height: 1.1; font-weight: 400; }
 .du-text-price { color: #fff; font-size: 1.6rem; font-weight: 300; margin-bottom: 30px; }
 
-.du-specs-card { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 25px; border: 1px solid rgba(212,175,55,0.15); margin-bottom: 25px; }
+.du-specs-card { background: rgba(255,255,255,0.04); padding: 25px; border-radius: 25px; border: 1px solid rgba(212,175,55,0.2); margin-bottom: 25px; }
 .du-specs-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .du-label { color: var(--gold-main); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
-.du-mls-tag { background: var(--gold-main); color: #000; padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 800; }
-.du-desc-text { color: rgba(255,255,255,0.8); font-size: 13.5px; line-height: 1.7; margin: 0; font-weight: 300; }
+.du-mls-tag { background: var(--gold-main); color: #000; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; }
+.du-desc-text { color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.7; margin: 0; font-weight: 300; }
 
-.du-map-container { width: 100%; height: 250px; border-radius: 25px; overflow: hidden; border: 1px solid rgba(212,175,55,0.3); margin-bottom: 30px; background: #000; }
-.du-map-render { width: 100%; height: 100%; object-fit: cover; display: block; }
+.du-map-container { width: 100%; height: 260px; border-radius: 25px; overflow: hidden; border: 2px solid rgba(212,175,55,0.4); margin-bottom: 30px; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
-.du-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; text-align: center; }
-.du-actions { display: flex; flex-direction: column; gap: 10px; }
-.du-btn-gold { background: var(--gold-main); color: #000; text-align: center; padding: 18px; border-radius: 15px; font-weight: 700; text-decoration: none; transition: 0.3s; font-size: 12px; letter-spacing: 1px;}
-.du-btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 16px; border-radius: 15px; cursor: pointer; transition: 0.3s; font-size: 11px; font-weight: 600; letter-spacing: 1px;}
-.du-btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212,175,55,0.2); }
+.du-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: rgba(255,255,255,0.7); margin-bottom: 25px; text-align: center; }
+.du-actions { display: flex; flex-direction: column; gap: 12px; }
+.du-btn-gold { background: var(--gold-main); color: #000; text-align: center; padding: 20px; border-radius: 18px; font-weight: 700; text-decoration: none; transition: 0.3s; font-size: 13px; letter-spacing: 1px;}
+.du-btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 18px; border-radius: 18px; cursor: pointer; transition: 0.3s; font-size: 12px; font-weight: 600; letter-spacing: 1px;}
+.du-btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(212,175,55,0.3); }
 .du-btn-outline:hover { border-color: var(--gold-main); color: var(--gold-main); }
 
 /* Modal Gallery */
@@ -1476,19 +1434,20 @@
 .du-modal-viewport { width: 90vw; height: 75vh; overflow: hidden; position: relative; border-radius: 20px; cursor: grab; }
 .du-zoom-engine { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transition: transform 0.1s ease-out; }
 .du-zoom-target { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }
-.du-close-modal { position: absolute; top: 30px; right: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; }
+.du-close-modal { position: absolute; top: 30px; right: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; transition: 0.3s;}
+.du-close-modal:hover { background: var(--gold-main); color: #000; border-color: var(--gold-main);}
 .du-modal-nav { display: flex; align-items: center; gap: 30px; margin-top: 30px; color: #fff; }
 .du-modal-nav button { background: none; border: 1px solid rgba(255,255,255,0.4); color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; transition: 0.3s; }
 .du-modal-nav button:hover { border-color: var(--gold-main); color: var(--gold-main); }
-.du-gal-hint { color: var(--gold-main); font-size: 10px; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+.du-gal-hint { color: var(--gold-main); font-size: 11px; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
 
 @media (max-width: 992px) {
   .du-grid { grid-template-columns: 1fr; border-radius: 30px; }
-  .du-visual-box { height: 50vh; border-radius: 0 0 30px 30px; }
+  .du-visual-box { height: 55vh; border-radius: 0 0 35px 35px; }
   .du-overlay-gradient { background: linear-gradient(to top, #0A1F3F 0%, transparent 60%); }
-  .du-info-panel { margin-top: -50px; border-radius: 35px 35px 0 0; background: var(--navy-lux); }
+  .du-info-panel { margin-top: -60px; border-radius: 40px 40px 0 0; background: var(--navy-lux); }
   .du-content-wrapper { padding: 40px 25px; }
-  .du-nav-group { bottom: 70px; left: 0; right: 0; justify-content: center; }
+  .du-nav-group { bottom: 80px; left: 0; right: 0; justify-content: center; }
 }
 </style>
 
@@ -1496,7 +1455,7 @@
 (function(){
 
 const luxuryData = [
-  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor...", maps: "https://googleusercontent.com/maps.google.com/0", imgs: [
+  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor.", lat: "23.009318", lng: "-109.727416", imgs: [
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg",
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182029171459000000-o.jpg",
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182044560635000000-o.jpg",
@@ -1507,24 +1466,24 @@ const luxuryData = [
     "https://cdn2.photos.sparkplatform.com/cab/20250628182057306229000000.jpg",
     "https://cdn2.photos.sparkplatform.com/cab/20250628182103175363000000.jpg"
   ]},
-  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", maps: "https://googleusercontent.com/maps.google.com/1", imgs: [
+  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", lat: "23.003035", lng: "-109.729046", imgs: [
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg",
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235440681322000000-o.jpg",
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235532991468000000-o.jpg",
     "https://cdn0.photos.sparkplatform.com/cab/20251004195157259617000000.jpg",
     "https://cdn0.photos.sparkplatform.com/cab/20251105235440681322000000.jpg"
   ]},
-  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", maps: "https://googleusercontent.com/maps.google.com/2", imgs: [
+  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", lat: "23.003049", lng: "-109.727499", imgs: [
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg",
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232150414885000000-o.jpg",
     "https://cdn1.photos.sparkplatform.com/cab/20250115232139984971000000.jpg"
   ]},
-  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", maps: "https://googleusercontent.com/maps.google.com/3", imgs: [
+  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", lat: "23.003075", lng: "-109.726638", imgs: [
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg",
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240326170759392368000000-o.jpg",
     "https://cdn1.photos.sparkplatform.com/cab/20240217203155858915000000.jpg"
   ]},
-  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", maps: "https://googleusercontent.com/maps.google.com/4", imgs: [
+  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", lat: "23.002441", lng: "-109.727652", imgs: [
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg",
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215323913287000000-o.jpg",
     "https://cdn1.photos.sparkplatform.com/cab/20250115215308812065000000.jpg"
@@ -1541,7 +1500,7 @@ const modal = document.getElementById("du-gallery-modal");
 const engine = document.getElementById("du-zoom-engine");
 const targetImg = document.getElementById("du-zoom-target");
 
-// Iniciar Portadas (SOLO LA FOTO 0)
+// Renderizar Slides (Carga solo la primera imagen imgs)
 track.innerHTML = luxuryData.map((p, i) => `
   <div class="du-slide ${i === 0 ? 'active' : ''}">
     <div class="du-slide-img" style="background-image: url('${p.imgs}');"></div>
@@ -1556,10 +1515,10 @@ function updateDossierUI() {
   document.getElementById("du-mls").textContent = "MLS #" + p.mls;
   document.getElementById("du-overview").textContent = p.overview;
   
-  // Mapa realista desde tu array con enlace seguro HTTPS
-  document.getElementById("du-map-img").src = p.maps;
+  // MAPA OFICIAL DE GOOGLE: Generado con latitud y longitud, 100% visible
+  document.getElementById("du-map-frame").src = `https://maps.google.com/maps?q=${p.lat},${p.lng}&t=k&z=15&output=embed`;
 
-  // Link WA
+  // WhatsApp Link
   document.getElementById("du-wa-link").href = `https://wa.me/526244334131?text=Hola%20Angelo%2C%20requiero%20presentaci%C3%B3n%20HD%20de%20${encodeURIComponent(p.name)}%20(MLS%20${p.mls})`;
 }
 
@@ -1581,7 +1540,7 @@ window.duTogglePlay = function() {
   isPlaying = !isPlaying;
 }
 
-/* LÓGICA DE INTERACTIVIDAD (ZOOM & PAN) */
+/* ─── LÓGICA DE GALERÍA (ZOOM Y PANEO) ─── */
 let sc = 1, mX = 0, mY = 0, sX = 0, sY = 0, isD = false;
 
 window.openInteractiveGallery = function() {
@@ -1612,7 +1571,7 @@ window.changeGalleryImg = function(step) {
   syncGallery();
 }
 
-// Zoom Wheel
+// Rueda del Ratón para Zoom
 modal.addEventListener('wheel', e => {
   e.preventDefault();
   const d = e.deltaY > 0 ? -0.2 : 0.2;
@@ -1621,24 +1580,97 @@ modal.addEventListener('wheel', e => {
   engine.style.transform = `translate(${mX}px, ${mY}px) scale(${sc})`;
 }, { passive: false });
 
-// Pan Drag
+// Arrastrar Imagen (Pan)
 const vpt = document.querySelector('.du-modal-viewport');
-vpt.onmousedown = (e) => {
+
+vpt.addEventListener('mousedown', e => {
   if(sc > 1) { isD = true; sX = e.clientX - mX; sY = e.clientY - mY; vpt.style.cursor = "grabbing"; }
-};
-window.onmousemove = (e) => {
+});
+window.addEventListener('mousemove', e => {
   if(!isD) return;
   mX = e.clientX - sX; mY = e.clientY - sY;
   engine.style.transform = `translate(${mX}px, ${mY}px) scale(${sc})`;
-};
-window.onmouseup = () => { isD = false; vpt.style.cursor = "grab"; };
+});
+window.addEventListener('mouseup', () => { isD = false; vpt.style.cursor = "grab"; });
 
-// Iniciar
+// Arrastrar Imagen (Touch)
+vpt.addEventListener('touchstart', e => {
+  if(sc > 1) { isD = true; sX = e.touches.clientX - mX; sY = e.touches.clientY - mY; }
+}, {passive: true});
+window.addEventListener('touchmove', e => {
+  if(!isD) return;
+  mX = e.touches.clientX - sX; mY = e.touches.clientY - sY;
+  engine.style.transform = `translate(${mX}px, ${mY}px) scale(${sc})`;
+}, {passive: false});
+window.addEventListener('touchend', () => { isD = false; });
+
+// Inicializar Slider Principal
 updateDossierUI();
 slideTimer = setInterval(() => duMove(1), 7000);
 
 })();
 </script>
+  <!-- CONFIANZA -->
+  <section id="confianza">
+    <div class="container">
+      <p class="section-label reveal" style="text-align:center;">El Patrimonio en Buenas Manos</p>
+      <span class="gold-line reveal"></span>
+      <h2 class="reveal">
+        ¿Por qué dejar su patrimonio<br/>
+        <em>en mis manos?</em>
+      </h2>
+      <p class="reveal">
+        Porque entiendo que no estoy gestionando metros cuadrados, sino el esfuerzo de una vida. Busco la perfección con la misma pasión con la que usted construyó su éxito.
+      </p>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <div class="pillar-icon"><img src="https://i.imgur.com/iIM06oL.png" alt="Visión Estratégica" /></div>
+          <h3>Visión Estratégica</h3>
+          <p>Identifico oportunidades donde otros ven complejidad. Mi análisis va más allá del precio: evalúo potencial, contexto y legado.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-1">
+          <div class="pillar-icon"><img src="https://i.imgur.com/zaxJvcM.png" alt="Discreción Total" /></div>
+          <h3>Discreción Total</h3>
+          <p>La confidencialidad no es una política, es un principio. Su información, sus activos y sus decisiones permanecen en el más estricto ámbito privado.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-2">
+          <div class="pillar-icon"><img src="https://i.imgur.com/vxJqTQr.png" alt="Resultados Medibles" /></div>
+          <h3>Resultados Medibles</h3>
+          <p>No trabajo con estimaciones vagas. Cada proyecto tiene métricas claras, plazos definidos y un compromiso personal con la excelencia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXCLUSIVIDAD -->
+  <section id="exclusividad">
+    <div class="container">
+      <p class="section-label reveal">Compromiso de Excelencia</p>
+      <span class="gold-line reveal"></span>
+      <h2 class="reveal">
+        Proyectos que merecen<br/>
+        <em>atención singular</em>
+      </h2>
+      <p class="reveal">
+        La excelencia requiere enfoque. Por esa razón, trabajo con un número selecto de clientes que comparten la misma visión de largo plazo. No es exclusión; es dedicación absoluta.
+      </p>
+      <div class="commitment-card reveal">
+        <p class="commitment-eyebrow">Filtro de Inversión · Estándar de Acceso</p>
+        <h3 class="commitment-title">Gestión de Proyectos Exclusivos</h3>
+        <div class="commitment-divider"></div>
+        <span class="commitment-amount"><sup>desde</sup> $22,000 <sup>USD</sup></span>
+        <p class="commitment-desc">
+          Presupuesto de inversión mensual · Proyectos patrimoniales de alto nivel<br/>
+          Selección rigurosa · Atención personaAngeloada · Resultados extraordinarios
+        </p>
+        <div class="commitment-divider"></div>
+        <a href="https://wa.me/526244334131" target="_blank" rel="noopener" class="btn btn-gold">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Iniciar Conversación Estratégica
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- PROPIEDADES -->
   <section id="propiedades">
@@ -6780,104 +6812,7 @@ slideTimer = setInterval(() => duMove(1), 7000);
   loadMLS();
 })();
 </script>
-<script>
-(function() {
-    // Lista Maestra de iAngelo Aranda Montaño (Sin Hashtags)
-const featuredMLS = [
-  "#25-3368","#25-4408","#25-907","#24-774","#25-906",
-  "#26-475","#25-1340","#25-4077","#25-4777","#25-3336",
-  "#26-587","#24-1148","#25-5618","#26-1764","#26-929",
-  "#24-630","#24-635","#24-636","#23-289","#26-860",
-  "#26-1836","#25-5347","#25-1142","#25-3899","#25-4227",
-  "#25-103","#26-542","#25-5696","#25-2606","#25-4675"
-];
-    let currentIdx = 0;
-    const slideInterval = 7000;
 
-    function buildCarousel() {
-        // SEGURIDAD: Reintentar si jdata (el JSON) aún no se ha cargado en el buscador
-        if (!window.jdata |
-
-| window.jdata.length === 0) {
-            setTimeout(buildCarousel, 1000);
-            return;
-        }
-
-        const track = document.getElementById('fc-track');
-        const slidesHTML = featuredMLS.map((id, i) => {
-            // Búsqueda exacta en el JSON sin hashtags
-            const p = window.jdata.find(item => item.mls === id);
-            if (!p) return '';
-
-            // Filtrar imágenes rotas y seleccionar la principal
-            const validImgs = p.images.filter(img =>!img.includes('20160127015633'));
-            const mainImg = validImgs |
-
-| 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80';
-            const priceLabel = p.price? `$${parseFloat(p.price).toLocaleString()} USD` : "Consultar Precio";
-
-            return `
-                <div class="fc-slide ${i === 0? 'active' : ''}" data-mls="${id}">
-                    <div class="fc-bg" style="background-image: url('${mainImg}')"></div>
-                    <div class="fc-overlay"></div>
-                    <div style="position:absolute; bottom:85px; left:30px; z-index:5; color:#fff;">
-                        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; margin:0;">${p.name}</h3>
-                        <p style="color:#00A8CC; font-weight:600; margin:5px 0 15px; font-family:'Montserrat',sans-serif;">${priceLabel}</p>
-                        <button class="btn btn-gold" onclick="fcOpenPopup('${id}')" style="font-size:9px; padding:8px 22px; border-radius:50px;">EXPLORAR PROPIEDAD</button>
-                    </div>
-                </div>`;
-        }).join('');
-
-        track.innerHTML = slidesHTML;
-        startAutoRotation();
-    }
-
-    window.fcMove = function(step) {
-        const slides = document.querySelectorAll('.fc-slide');
-        if(!slides.length) return;
-        slides[currentIdx].classList.remove('active');
-        currentIdx = (currentIdx + step + slides.length) % slides.length;
-        slides[currentIdx].classList.add('active');
-        
-        // Actualizar tira técnica
-        document.getElementById('fc-mls-val').textContent = `MLS # ${featuredMLS[currentIdx]}`;
-        resetBar();
-    };
-
-    function startAutoRotation() {
-        setInterval(() => fcMove(1), slideInterval);
-        resetBar();
-    }
-
-    function resetBar() {
-        const prog = document.getElementById('fc-progress');
-        if(!prog) return;
-        prog.style.transition = 'none';
-        prog.style.width = '0%';
-        setTimeout(() => {
-            prog.style.transition = `width ${slideInterval}ms linear`;
-            prog.style.width = '100%';
-        }, 50);
-    }
-
-    // DISPARADOR DEL POPUP (Usa tu función openModal existente)
-    window.fcOpenPopup = function(mlsId) {
-        const p = window.jdata.find(item => item.mls === mlsId);
-        if (p && typeof openModal === 'function') {
-            const fakeCard = document.createElement('div');
-            fakeCard.dataset.mls = p.mls;
-            fakeCard.dataset.name = p.name;
-            fakeCard.dataset.price = p.price;
-            fakeCard.dataset.gallery = JSON.stringify(p.images);
-            fakeCard.dataset.overview = p.overview;
-            fakeCard.dataset.mapurl = p.googleMapsUrl;
-            openModal(fakeCard);
-        }
-    };
-
-    document.addEventListener('DOMContentLoaded', buildCarousel);
-})();
-</script>
 </body>
 <script>
 (function() {
