@@ -1146,39 +1146,50 @@
   font-family: 'Outfit', sans-serif;
   letter-spacing: 0.05em;
 }
-  
-/* ── Luxury Carousel iAngelo ── */
+ /* ── Luxury Carousel iAngelo Corregido ── */
+#proposito.proposito-img { min-height: 520px; background: #050a14; }
+
 .fc-section {
   position: relative; width: 100%; height: 520px;
   background: #050a14; border-radius: 20px; overflow: hidden;
   box-shadow: 0 30px 70px rgba(10,31,63,0.3);
 }
+
+.fc-track { position: absolute; inset: 0; z-index: 1; }
+
 .fc-slide {
   position: absolute; inset: 0; opacity: 0;
   transition: opacity 1s ease-in-out; pointer-events: none;
+  z-index: 1;
 }
-.fc-slide.active { opacity: 1; pointer-events: auto; }
+
+.fc-slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+
 .fc-bg {
   position: absolute; inset: 0;
   background-size: cover; background-position: center;
   transition: transform 8s linear;
-}
-.fc-slide.active.fc-bg { transform: scale(1.1); }
-.fc-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(10,31,63,0.9) 0%, transparent 70%);
-}
-.fc-info-strip {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
-  background: rgba(10, 31, 63, 0.9); display: flex; align-items: center;
-  padding: 0 20px; border-top: 1px solid rgba(255,255,255,0.1);
-}
-.fc-info-val { color: #fff; font-size: 12px; font-weight: 600; font-family: 'Montserrat', sans-serif; }
-.fc-progress {
-  position: absolute; top: 0; left: 0; height: 3px;
-  background: #00A8CC; width: 0%; z-index: 10;
+  z-index: 1;
 }
 
+.fc-slide.active.fc-bg { transform: scale(1.1); }
+
+.fc-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(10,31,63,0.9) 0%, rgba(10,31,63,0.2) 60%, transparent 100%);
+  z-index: 2;
+}
+
+.fc-overlay-content {
+  position: absolute; bottom: 85px; left: 35px; right: 35px;
+  z-index: 10; color: #fff;
+}
+
+.fc-info-strip {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+  background: rgba(10, 31, 63, 0.95); display: flex; align-items: center;
+  padding: 0 25px; border-top: 1px solid rgba(255,255,255,0.1); z-index: 20;
+} 
 /* ===== MLS GALLERY & RICH CARD ENHANCEMENT ===== */
 .property-rich-group{display:flex;flex-direction:column;gap:0.9rem;margin-top:auto;}
 .property-inline-description{font-family:var(--sans);font-size:0.8rem;line-height:1.8;color:var(--text-mid);background:linear-gradient(180deg,rgba(0,168,204,.05),rgba(10,31,63,.03));border:1px solid rgba(0,168,204,.12);border-radius:16px;padding:0.95rem 1rem;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
@@ -1202,8 +1213,8 @@
 .lightbox-arrow.left{left:24px;top:50%;transform:translateY(-50%);}
 .lightbox-arrow.right{right:24px;top:50%;transform:translateY(-50%);}
 @media(max-width:680px){.property-inline-actions{flex-wrap:wrap;}.property-inline-actions .bubble-btn{flex:1 1 100%;}.modal-gallery-tools{flex-direction:column;}.modal-gallery-btn,.modal-map-btn{width:100%;}}
-  </style>
 
+  </style>
 <style>/* ===== DOSSIER LUXURY OVERRIDE ===== */#property-dossier{color:#f5ede0!important;font-family:var(--serif)!important;letter-spacing:.02em!important;}#property-dossier h1,#property-dossier h2,#property-dossier h3{font-family:var(--serif);font-weight:300;letter-spacing:.04em;color:#f5ede0;margin-bottom:.5em;}#property-dossier p{color:rgba(245,237,224,.8);line-height:1.8;font-size:1.05rem;}#property-dossier .dossier-info{background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.18);border-radius:16px;padding:2.5rem;backdrop-filter:blur(8px);}#close-dossier-btn{position:fixed;top:28px;right:32px;z-index:10000001;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);color:#d4af37;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;backdrop-filter:blur(6px);}#close-dossier-btn:hover{background:rgba(212,175,55,.25);transform:scale(1.1);}.tech-list li{font-size:.9rem;letter-spacing:.03em;}.tech-list li span{color:#d4af37;font-weight:600;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em;}</style></head>
 <body>
 
@@ -1302,25 +1313,28 @@
     </blockquote>
   </div>
 
+  <!-- PROPÓSITO -->
 <section id="proposito">
   <div class="container">
+    
     <div class="proposito-img reveal">
-      <div class="fc-section">
+      <div class="fc-section" id="fc-container">
         <div class="fc-progress" id="fc-progress"></div>
-        <div class="fc-track" id="fc-track">
-          </div>
         
-        <button class="fc-arrow fc-arrow-prev" onclick="fcMove(-1)">&#8249;</button>
-        <button class="fc-arrow fc-arrow-next" onclick="fcMove(1)">&#8250;</button>
-
+        <div class="fc-track" id="fc-track">
+          <div class="fc-loading-state" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-family:var(--sans); font-size:10px; letter-spacing:2px; text-transform:uppercase;">
+            Sincronizando Base de Datos...
+          </div>
+        </div>
+        
         <div class="fc-info-strip">
           <div class="fc-info-zone">
-            <span class="fc-info-label">Ubicación</span>
-            <span class="fc-info-val" id="fc-zone-val">Los Cabos</span>
+            <span class="fc-info-label" style="display:block; font-size:8px; color:#D4AF37; letter-spacing:1px; text-transform:uppercase;">Ubicación</span>
+            <span class="fc-info-val" id="fc-zone-val" style="color:#fff; font-size:12px; font-weight:600;">Los Cabos</span>
           </div>
           <div class="fc-info-mls">
-            <span class="fc-info-label">MLS #</span>
-            <span class="fc-info-val" id="fc-mls-val">--</span>
+            <span class="fc-info-label" style="display:block; font-size:8px; color:#D4AF37; letter-spacing:1px; text-transform:uppercase;">MLS #</span>
+            <span class="fc-info-val" id="fc-mls-val" style="color:#fff; font-size:12px; font-weight:600;">--</span>
           </div>
         </div>
       </div>
@@ -1330,36 +1344,20 @@
       <p class="section-label reveal">Propósito</p>
       <span class="gold-line gold-line--left reveal"></span>
       <h2 class="reveal">Mi sueño es la<br/><em>materialización del tuyo</em></h2>
+      
       <p class="reveal reveal-delay-1">
-        He dedicado mi carrera a ser el puente entre el capital de mis clientes y el espacio donde verán crecer su futuro. No es una transacción; es una alianza estratégica construida sobre confianza, visión y una comprensión profunda de lo que realmente importa.[1, 2, 3]
+        He dedicado mi carrera a ser el puente entre el capital de mis clientes y el espacio donde verán crecer su futuro. No es una transacción; es una alianza estratégica construida sobre confianza, visión y una comprensión profunda.[1, 2]
       </p>
+      
       <p class="reveal reveal-delay-2">
-        Como <strong>Arquitecto Patrimonial</strong>, utilizo tecnología de <strong>Gemelos Digitales</strong> en Unreal Engine 5 y estructuras de <strong>Security-Based Loans (SBL)</strong> para garantizar que su inversión sea tan sólida como su legado.
+        Como <strong>Arquitecto Patrimonial</strong>, entiendo que tener el capital es solo el inicio. Saber dónde colocarlo, apoyado en tecnología de <strong>Gemelos Digitales</strong> y estructuras financieras de <strong>SBL</strong>, es la verdadera maestría que pongo a su disposición.[3, 4]
       </p>
+      
       <div class="proposito-quote reveal reveal-delay-3">
         <p>Cada activo que selecciono lleva el estándar de rigor <strong>ISO 9001</strong> que define mi marca personal: <strong>iAngelo Aranda Montaño</strong>.</p>
       </div>
     </div>
-  </div>
-</section>
 
-    <div class="proposito-text">
-      <p class="section-label reveal">Propósito</p>
-      <span class="gold-line gold-line--left reveal"></span>
-      <h2 class="reveal">
-        Mi sueño es la<br/>
-        <em>materialización del tuyo</em>
-      </h2>
-      <p class="reveal reveal-delay-1">
-        He dedicado mi carrera a ser el puente entre el capital de mis clientes y el espacio donde verán crecer su futuro. No es una transacción; es una alianza estratégica construida sobre confianza, visión y una comprensión profunda de lo que realmente importa.[1, 2]
-      </p>
-      <p class="reveal reveal-delay-2">
-        Como <strong>Arquitecto Patrimonial</strong>, entiendo que tener el capital es solo el inicio. Saber dónde colocarlo, apoyado en tecnología de <strong>Gemelos Digitales</strong> y estructuras financieras de <strong>SBL</strong>, es la verdadera maestría que pongo a su disposición.
-      </p>
-      <div class="proposito-quote reveal reveal-delay-3">
-        <p>Cada proyecto que acepto lleva mi nombre: <strong>iAngelo Aranda Montaño</strong>. Por eso selecciono cada activo con la misma rigurosidad con la que usted ha construido su patrimonio.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -6567,6 +6565,7 @@
 </script>
 <script>
 (function() {
+    // Lista Maestra iAngelo Aranda Montaño
     const featuredMLS = [
         "25-3368","25-4408","25-907","24-774","25-906","26-475","25-1340","25-4077","25-4777","25-3336",
         "26-587","24-1148","25-5618","26-1764","26-929","24-630","24-635","24-636","23-289","26-860",
@@ -6574,48 +6573,39 @@
     ];
 
     let current = 0;
-    const interval = 7000;
+    const interval = 6500;
 
-    function startLuxuryCarousel() {
+    function buildCarousel() {
         const track = document.getElementById('fc-track');
-        // Verificamos si jdata existe (esperamos a que el buscador cargue el JSON)
+        // REINTENTAR si jdata no está listo (esto evita la ventana negra)
         if (!window.jdata |
 
 | window.jdata.length === 0) {
-            console.warn("iAngelo: Esperando carga de base de datos...");
-            setTimeout(startLuxuryCarousel, 1500);
+            setTimeout(buildCarousel, 1000);
             return;
         }
 
-        const slidesHTML = featuredMLS.map((id, i) => {
-            // Buscamos ignorando el '#' para evitar errores de coincidencia
-            const p = window.jdata.find(item => item.mls.replace('#','') === id.replace('#',''));
-            
-            // Imagen de respaldo de alta gama por si falla el JSON
-            const fallback = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80';
-            
-            let mainImg = fallback;
-            let name = "Residencia Exclusiva";
-            let price = "Precio a Consultar";
+        const slidesHTML = featuredMLS.map((mlsId, i) => {
+            // Buscamos coincidencia exacta limpiando el '#'
+            const p = window.jdata.find(item => item.mls.replace('#','') === mlsId.replace('#',''));
+            if (!p) return '';
 
-            if (p) {
-                const validImgs = p.images.filter(img =>!img.includes('20160127015633'));
-                if (validImgs.length > 0) mainImg = validImgs;
-                name = p.name |
+            // Filtrar imágenes con error 20160127015633
+            const validImgs = p.images.filter(img =>!img.includes('20160127015633'));
+            const mainImg = validImgs |
 
-| name;
-                price = p.price? `$${parseFloat(p.price).toLocaleString()} USD` : price;
-            }
+| 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80';
+            const priceFmt = p.price? `$${parseFloat(p.price).toLocaleString()} USD` : "Precio a Consultar";
 
             return `
-                <div class="fc-slide ${i === 0? 'active' : ''}" data-mls="${id}">
+                <div class="fc-slide ${i === 0? 'active' : ''}" data-mls="${mlsId}">
                     <div class="fc-bg" style="background-image: url('${mainImg}')"></div>
                     <div class="fc-overlay"></div>
-                    <div class="fc-featured-tag" style="position:absolute; top:20px; right:20px; color:#D4AF37; border:1px solid #D4AF37; padding:5px 15px; border-radius:20px; font-size:10px; text-transform:uppercase; letter-spacing:2px;">Destacado</div>
-                    <div class="fc-overlay-content" style="position:absolute; bottom:80px; left:30px; color:#fff; z-index:5;">
-                        <h3 style="font-family:'Cormorant Garamond',serif; font-size:2rem; margin-bottom:5px;">${name}</h3>
-                        <div class="fc-overlay-price" style="color:#00A8CC; font-weight:600; font-size:1.2rem; margin-bottom:15px;">${price}</div>
-                        <button class="btn btn-gold" onclick="fcOpenPopup('${id}')" style="padding:10px 25px; font-size:10px;">
+                    <div class="fc-featured-tag" style="position:absolute; top:20px; right:20px; color:#D4AF37; border:1px solid #D4AF37; padding:5px 15px; border-radius:20px; font-size:10px; text-transform:uppercase; letter-spacing:2px; z-index:5;">DESTACADO</div>
+                    <div class="fc-overlay-content">
+                        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; margin-bottom:5px;">${p.name}</h3>
+                        <div style="color:#00A8CC; font-weight:600; font-size:1.2rem; margin-bottom:15px;">${priceFmt}</div>
+                        <button class="btn btn-gold" onclick="fcOpenPopup('${mlsId}')" style="padding:10px 25px; font-size:10px; border-radius:99px;">
                             EXPLORAR PROPIEDAD
                         </button>
                     </div>
@@ -6624,30 +6614,29 @@
         }).join('');
 
         track.innerHTML = slidesHTML;
-        runTimer();
+        
+        // Iniciar el temporizador una vez que hay slides
+        if(slidesHTML!== "") startTimer();
     }
 
-    window.fcMove = function(step) {
-        const slides = document.querySelectorAll('.fc-slide');
-        if (slides.length === 0) return;
-        slides[current].classList.remove('active');
-        current = (current + step + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        
-        // Actualizar datos en la tira técnica inferior
-        const activeMLS = featuredMLS[current];
-        const mlsEl = document.getElementById('fc-mls-val');
-        if (mlsEl) mlsEl.textContent = activeMLS;
-        
-        resetProgressBar();
-    };
-
-    function runTimer() {
-        setInterval(() => fcMove(1), interval);
-        resetProgressBar();
+    function startTimer() {
+        setInterval(() => {
+            const slides = document.querySelectorAll('.fc-slide');
+            if (slides.length === 0) return;
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+            
+            // Actualizar Strip
+            const activeMls = featuredMLS[current];
+            document.getElementById('fc-mls-val').textContent = activeMls;
+            
+            resetProgress();
+        }, interval);
+        resetProgress();
     }
 
-    function resetProgressBar() {
+    function resetProgress() {
         const prog = document.getElementById('fc-progress');
         if (!prog) return;
         prog.style.transition = 'none';
@@ -6658,11 +6647,10 @@
         }, 50);
     }
 
-    window.fcOpenPopup = function(id) {
-        // Buscamos la propiedad en el JSON global para disparar el modal con data completa
-        const p = window.jdata.find(item => item.mls.replace('#','') === id.replace('#',''));
+    // Vinculación con tu Popup Original
+    window.fcOpenPopup = function(mlsId) {
+        const p = window.jdata.find(item => item.mls.replace('#','') === mlsId.replace('#',''));
         if (p && typeof openModal === 'function') {
-            // Creamos un objeto que imite la estructura de una card para tu función openModal
             const fakeCard = document.createElement('div');
             fakeCard.dataset.mls = p.mls;
             fakeCard.dataset.name = p.name;
@@ -6678,10 +6666,9 @@
         }
     };
 
-    document.addEventListener('DOMContentLoaded', startLuxuryCarousel);
+    document.addEventListener('DOMContentLoaded', buildCarousel);
 })();
 </script>
-
 </body>
 <script>
 (function() {
