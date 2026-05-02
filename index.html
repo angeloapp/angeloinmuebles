@@ -1271,123 +1271,173 @@
   </div>
 
   <!-- PROPÓSITO -->
-<script>
-(function(){
+<section id="proposito">
+  <div class="container">
+    
+    <div class="proposito-img reveal">
+      <div style="position:relative;width:100%;height:520px;background:#050a14;border-radius:24px;overflow:hidden;box-shadow:0 30px 70px rgba(10,31,63,0.4);">
 
+        <!-- TRACK -->
+        <div id="fc-track" style="position:absolute;inset:0;"></div>
+
+        <!-- OVERLAY -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,31,63,0.85), transparent);z-index:2;"></div>
+
+        <!-- INFO -->
+        <div style="position:absolute;bottom:0;left:0;right:0;height:65px;background:#0A1F3F;display:flex;align-items:center;padding:0 25px;z-index:3;">
+          <div style="margin-right:20px;">
+            <span style="color:#D4AF37;font-size:10px;">Ubicación</span><br>
+            <span id="fc-zone-val" style="color:#fff;">--</span>
+          </div>
+          <div>
+            <span style="color:#D4AF37;font-size:10px;">MLS</span><br>
+            <span id="fc-mls-val" style="color:#fff;">--</span>
+          </div>
+        </div>
+
+        <!-- FLECHAS -->
+        <button onclick="fcMove(-1)" style="position:absolute;left:15px;top:50%;transform:translateY(-50%);z-index:4;">‹</button>
+        <button onclick="fcMove(1)" style="position:absolute;right:15px;top:50%;transform:translateY(-50%);z-index:4;">›</button>
+
+      </div>
+    </div>
+
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+// 🔥 15 PROPIEDADES
 const luxuryAssets = [
 
-{ mls:"25-3368", name:"El Zalate Development Parcel", zone:"San José Corridor", overview:"Parcel Lot 3 El Zalate...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.009318,-109.727416", imgs:[
+{mls:"25-3368",zone:"San José Corridor",overview:"Parcela estratégica de más de 15.9 hectáreas con frente a la Carretera Transpeninsular y vistas dominantes al océano. Ideal para desarrollo residencial, turístico o mixto en una de las zonas con mayor proyección de crecimiento.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg",
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182029171459000000-o.jpg",
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182044560635000000-o.jpg",
 "https://cdn2.photos.sparkplatform.com/cab/20250628182052216198000000.jpg"
 ]},
 
-{ mls:"25-4408", name:"Rancho Cerro Colorado", zone:"San José del Cabo", overview:"A truly rare offering...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.003035,-109.729046", imgs:[
+{mls:"25-4408",zone:"Cerro Colorado / Corridor",overview:"Exclusivo terreno frente al mar de 5.3 hectáreas, una oportunidad única para desarrolladores que buscan un activo irrepetible en el corredor turístico de Los Cabos.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg",
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235440681322000000-o.jpg"
 ]},
 
-{ mls:"25-907", name:"Legado Lot 3", zone:"Palmilla", overview:"Terraced into the desert hillside...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.003049,-109.727499", imgs:[
+{mls:"25-907",zone:"Legado Palmilla",overview:"Terreno escalonado con vistas abiertas al desierto y al mar, ubicado dentro de una de las comunidades más exclusivas de Palmilla.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg",
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232150414885000000-o.jpg"
 ]},
 
-{ mls:"24-774", name:"Legado Lot 10", zone:"Palmilla", overview:"Uniquely positioned...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.003075,-109.726638", imgs:[
+{mls:"24-774",zone:"Legado Palmilla",overview:"Ubicación privilegiada dentro de Legado, ofreciendo privacidad, seguridad y un entorno natural de alto nivel para desarrollo residencial.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg",
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240326170759392368000000-o.jpg"
 ]},
 
-{ mls:"25-906", name:"Custom Dream Lot", zone:"Palmilla", overview:"Perfect location...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.002441,-109.727652", imgs:[
+{mls:"25-906",zone:"Palmilla",overview:"Amplio lote listo para construir, ideal para una residencia personalizada en una de las zonas más codiciadas de Los Cabos.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg",
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215323913287000000-o.jpg"
 ]},
 
-{ mls:"26-475", name:"Caleta Loma Oceanview", zone:"Palmilla", overview:"Build your dream home...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.019932,-109.719522", imgs:[
+{mls:"26-475",zone:"Palmilla",overview:"Terreno con vistas panorámicas al océano y la ciudad, perfecto para desarrollar una propiedad de alto nivel con excelente plusvalía.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260127220512954478000000-o.jpg",
 "https://cdn2.photos.sparkplatform.com/cab/20260127220512954478000000.jpg"
 ]},
 
-{ mls:"25-1340", name:"Punta Bella Lot", zone:"Corridor", overview:"Luxury living...", maps:"https://www.google.com/maps/dir/?api=1&destination=22.999436,-109.726251", imgs:[
+{mls:"25-1340",zone:"Punta Bella",overview:"Ubicado en una comunidad frente al mar, este lote ofrece acceso privilegiado a playa y un entorno residencial de lujo.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251101204059164956000000-o.jpg"
 ]},
 
-{ mls:"25-4077", name:"Palmilla Walk Lot", zone:"Palmilla", overview:"5-minute walk...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.019517,-109.719133", imgs:[
+{mls:"25-4077",zone:"Palmilla",overview:"A solo minutos caminando de la playa Palmilla, este terreno combina ubicación, estilo de vida y alta demanda.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250829183305720835000000-o.jpg"
 ]},
 
-{ mls:"25-4777", name:"Caleta Loma Lot 94", zone:"Palmilla", overview:"Exceptional homesite...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.02103,-109.719288", imgs:[
+{mls:"25-4777",zone:"Caleta Loma Palmilla",overview:"Homesite premium dentro de Caleta Loma, con entorno exclusivo y acceso a amenidades de primer nivel.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250910210000000000000000-o.jpg"
 ]},
 
-{ mls:"25-3336", name:"Caleta Loma Lot 81", zone:"Palmilla", overview:"Rare opportunity...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.017654,-109.720764", imgs:[
+{mls:"25-3336",zone:"Caleta Loma Palmilla",overview:"Oportunidad única para construir dentro de una de las subcomunidades más selectas de Palmilla.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250820190000000000000000-o.jpg"
 ]},
 
-{ mls:"26-587", name:"Caleta Loma Prime", zone:"Palmilla", overview:"Pristine community...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.021921,-109.718568", imgs:[
+{mls:"26-587",zone:"Caleta Loma Palmilla",overview:"Terreno en comunidad consolidada, ideal para proyecto residencial de alto valor con privacidad y vistas.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260115180000000000000000-o.jpg"
 ]},
 
-{ mls:"24-1148", name:"Palmilla Park Lot", zone:"Palmilla", overview:"Community integration...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.023473,-109.745076", imgs:[
+{mls:"24-1148",zone:"Palmilla Park",overview:"Proyecto diseñado para integrar espacios abiertos y vida en comunidad, con excelente ubicación y accesibilidad.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240301180000000000000000-o.jpg"
 ]},
 
-{ mls:"25-5618", name:"Palmilla Canyon Lot 5", zone:"Palmilla", overview:"Luxury homesite...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.018273,-109.7274", imgs:[
+{mls:"25-5618",zone:"Palmilla Canyon",overview:"Homesite con alto potencial en Palmilla Canyon, rodeado de naturaleza y desarrollo residencial de lujo.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251010180000000000000000-o.jpg"
 ]},
 
-{ mls:"26-1764", name:"Palmilla Estates Lot", zone:"Palmilla", overview:"Build opportunity...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.020998,-109.73417", imgs:[
+{mls:"26-1764",zone:"Palmilla Estates",overview:"Ubicación privilegiada dentro de Palmilla Estates, ideal para residencia de lujo con vistas abiertas.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260105180000000000000000-o.jpg"
 ]},
 
-{ mls:"26-929", name:"Palmilla Park Reserve", zone:"Palmilla", overview:"Outdoor living...", maps:"https://www.google.com/maps/dir/?api=1&destination=23.019649,-109.745654", imgs:[
+{mls:"26-929",zone:"Palmilla Park",overview:"Terreno enfocado en estilo de vida exterior, con acceso a áreas verdes y excelente conectividad.",imgs:[
 "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260120180000000000000000-o.jpg"
 ]}
 
 ];
 
-// --- ENGINE ---
-let currentProperty = 0;
-let currentImage = 0;
+// ENGINE
+let currentProp = 0;
+let currentImg = 0;
 
 const track = document.getElementById("fc-track");
 
-function render(){
-  const p = luxuryAssets[currentProperty];
+// capa visual
+const bg = document.createElement("div");
+bg.style.position="absolute";
+bg.style.inset="0";
+bg.style.backgroundSize="cover";
+bg.style.backgroundPosition="center";
+bg.style.transition="opacity 0.8s";
+bg.style.zIndex="1";
+track.appendChild(bg);
 
-  track.innerHTML = `
-    <div style="position:absolute;inset:0;background:url('${p.imgs[currentImage]}') center/cover no-repeat; transition:opacity .8s;"></div>
-  `;
+// render
+function render(){
+  const p = luxuryAssets[currentProp];
+
+  bg.style.opacity = 0;
+
+  setTimeout(()=>{
+    bg.style.backgroundImage = `url('${p.imgs[currentImg]}')`;
+    bg.style.opacity = 1;
+  },150);
 
   document.getElementById("fc-mls-val").textContent = p.mls;
   document.getElementById("fc-zone-val").textContent = p.zone;
 }
 
-// cambiar imagen interna
+// rotar imagen interna
 setInterval(()=>{
-  const imgs = luxuryAssets[currentProperty].imgs;
-  currentImage = (currentImage + 1) % imgs.length;
+  const imgs = luxuryAssets[currentProp].imgs;
+  currentImg = (currentImg + 1) % imgs.length;
   render();
 },3000);
 
-// cambiar propiedad
+// rotar propiedad
 setInterval(()=>{
-  currentProperty = (currentProperty + 1) % luxuryAssets.length;
-  currentImage = 0;
+  currentProp = (currentProp + 1) % luxuryAssets.length;
+  currentImg = 0;
   render();
 },6000);
 
 // flechas
 window.fcMove = function(step){
-  currentProperty = (currentProperty + step + luxuryAssets.length) % luxuryAssets.length;
-  currentImage = 0;
+  currentProp = (currentProp + step + luxuryAssets.length) % luxuryAssets.length;
+  currentImg = 0;
   render();
 };
 
 // init
 render();
 
-})();
+});
 </script>
+</section>
 
   <!-- CONFIANZA -->
   <section id="confianza">
