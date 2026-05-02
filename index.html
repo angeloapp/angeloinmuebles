@@ -1455,39 +1455,207 @@
 (function(){
 
 const luxuryData = [
-  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor.", lat: "23.009318", lng: "-109.727416", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182029171459000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182044560635000000-o.jpg",
-    "https://cdn2.photos.sparkplatform.com/cab/20250628182024937046000000.jpg",
-    "https://cdn2.photos.sparkplatform.com/cab/20250628182029171459000000.jpg",
-    "https://cdn2.photos.sparkplatform.com/cab/20250628182044560635000000.jpg",
-    "https://cdn2.photos.sparkplatform.com/cab/20250628182052216198000000.jpg",
-    "https://cdn2.photos.sparkplatform.com/cab/20250628182057306229000000.jpg",
-    "https://cdn2.photos.sparkplatform.com/cab/20250628182103175363000000.jpg"
-  ]},
-  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", lat: "23.003035", lng: "-109.729046", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235440681322000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235532991468000000-o.jpg",
-    "https://cdn0.photos.sparkplatform.com/cab/20251004195157259617000000.jpg",
-    "https://cdn0.photos.sparkplatform.com/cab/20251105235440681322000000.jpg"
-  ]},
-  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", lat: "23.003049", lng: "-109.727499", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232150414885000000-o.jpg",
-    "https://cdn1.photos.sparkplatform.com/cab/20250115232139984971000000.jpg"
-  ]},
-  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", lat: "23.003075", lng: "-109.726638", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240326170759392368000000-o.jpg",
-    "https://cdn1.photos.sparkplatform.com/cab/20240217203155858915000000.jpg"
-  ]},
-  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", lat: "23.002441", lng: "-109.727652", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215323913287000000-o.jpg",
-    "https://cdn1.photos.sparkplatform.com/cab/20250115215308812065000000.jpg"
-  ]}
+  { 
+    mls: "25-3368", 
+    name: "El Zalate Development Parcel", 
+    zone: "San José Corridor", 
+    price: "Development Opportunity", 
+    overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor.", 
+    lat: "23.009318", 
+    lng: "-109.727416", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg",
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182029171459000000-o.jpg",
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182044560635000000-o.jpg",
+      "https://cdn2.photos.sparkplatform.com/cab/20250628182024937046000000.jpg",
+      "https://cdn2.photos.sparkplatform.com/cab/20250628182029171459000000.jpg",
+      "https://cdn2.photos.sparkplatform.com/cab/20250628182044560635000000.jpg",
+      "https://cdn2.photos.sparkplatform.com/cab/20250628182052216198000000.jpg",
+      "https://cdn2.photos.sparkplatform.com/cab/20250628182057306229000000.jpg",
+      "https://cdn2.photos.sparkplatform.com/cab/20250628182103175363000000.jpg"
+    ]
+  },
+  { 
+    mls: "25-4408", 
+    name: "Rancho Cerro Colorado", 
+    zone: "San José del Cabo", 
+    price: "Developer Opportunity", 
+    overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", 
+    lat: "23.003035", 
+    lng: "-109.729046", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg",
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235440681322000000-o.jpg",
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235532991468000000-o.jpg",
+      "https://cdn0.photos.sparkplatform.com/cab/20251004195157259617000000.jpg",
+      "https://cdn0.photos.sparkplatform.com/cab/20251105235440681322000000.jpg"
+    ]
+  },
+  { 
+    mls: "25-907", 
+    name: "Legado Lot 3", 
+    zone: "Palmilla", 
+    price: "Ocean Views", 
+    overview: "Terraced into the desert hillside...", 
+    lat: "23.003049", 
+    lng: "-109.727499", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg",
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232150414885000000-o.jpg",
+      "https://cdn1.photos.sparkplatform.com/cab/20250115232139984971000000.jpg"
+    ]
+  },
+  { 
+    mls: "24-774", 
+    name: "Legado Lot 10", 
+    zone: "Palmilla", 
+    price: "Private Sanctuary", 
+    overview: "Uniquely positioned in the heart of the Legado development...", 
+    lat: "23.003075", 
+    lng: "-109.726638", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg",
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240326170759392368000000-o.jpg",
+      "https://cdn1.photos.sparkplatform.com/cab/20240217203155858915000000.jpg"
+    ]
+  },
+  { 
+    mls: "25-906", 
+    name: "Custom Dream Lot", 
+    zone: "Palmilla", 
+    price: "Prime Location", 
+    overview: "This ample lot is the perfect location...", 
+    lat: "23.002441", 
+    lng: "-109.727652", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg",
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215323913287000000-o.jpg",
+      "https://cdn1.photos.sparkplatform.com/cab/20250115215308812065000000.jpg"
+    ]
+  },
+  { 
+    mls: "26-475", 
+    name: "Caleta Loma Oceanview", 
+    zone: "Palmilla", 
+    price: "Build Ready", 
+    overview: "Build your dream home with ocean and city views...", 
+    lat: "23.019932", 
+    lng: "-109.719522", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260127220512954478000000-o.jpg",
+      "https://cdn2.photos.sparkplatform.com/cab/20260127220512954478000000.jpg"
+    ]
+  },
+  { 
+    mls: "25-1340", 
+    name: "Punta Bella Lot", 
+    zone: "Corridor", 
+    price: "Beachside Living", 
+    overview: "Discover the epitome of luxury living...", 
+    lat: "22.999436", 
+    lng: "-109.726251", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251101204059164956000000-o.jpg",
+      "https://cdn0.photos.sparkplatform.com/cab/20251101204059164956000000.jpg"
+    ]
+  },
+  { 
+    mls: "25-4077", 
+    name: "Palmilla Walk Lot", 
+    zone: "Palmilla", 
+    price: "Beach Proximity", 
+    overview: "Just a 5-minute walk to Palmilla Beach...", 
+    lat: "23.019517", 
+    lng: "-109.719133", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250829183305720835000000-o.jpg",
+      "https://cdn2.photos.sparkplatform.com/cab/20250829183305720835000000.jpg"
+    ]
+  },
+  { 
+    mls: "25-4777", 
+    name: "Caleta Loma Lot 94", 
+    zone: "Palmilla", 
+    price: "Premium Homesite", 
+    overview: "Caleta Loma Lot 94...", 
+    lat: "23.02103", 
+    lng: "-109.719288", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250910210000000000000000-o.jpg"
+    ]
+  },
+  { 
+    mls: "25-3336", 
+    name: "Caleta Loma Lot 81", 
+    zone: "Palmilla", 
+    price: "Exclusive Lot", 
+    overview: "Caleta Loma Lot 81...", 
+    lat: "23.017654", 
+    lng: "-109.720764", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250820190000000000000000-o.jpg"
+    ]
+  },
+  { 
+    mls: "26-587", 
+    name: "Caleta Loma Prime", 
+    zone: "Palmilla", 
+    price: "Ocean View Lot", 
+    overview: "Caleta Loma premium lot...", 
+    lat: "23.021921", 
+    lng: "-109.718568", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260115180000000000000000-o.jpg"
+    ]
+  },
+  { 
+    mls: "24-1148", 
+    name: "Palmilla Park Lot", 
+    zone: "Palmilla", 
+    price: "Community Living", 
+    overview: "Palmilla Park...", 
+    lat: "23.023473", 
+    lng: "-109.745076", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240301180000000000000000-o.jpg"
+    ]
+  },
+  { 
+    mls: "25-5618", 
+    name: "Palmilla Canyon Lot 5", 
+    zone: "Palmilla", 
+    price: "Luxury Homesite", 
+    overview: "Palmilla Canyon...", 
+    lat: "23.018273", 
+    lng: "-109.7274", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251010180000000000000000-o.jpg"
+    ]
+  },
+  { 
+    mls: "26-1764", 
+    name: "Palmilla Estates Lot", 
+    zone: "Palmilla", 
+    price: "Golf & Ocean Views", 
+    overview: "Palmilla Estates...", 
+    lat: "23.020998", 
+    lng: "-109.73417", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260105180000000000000000-o.jpg"
+    ]
+  },
+  { 
+    mls: "26-929", 
+    name: "Palmilla Park Reserve", 
+    zone: "Palmilla", 
+    price: "Outdoor Living", 
+    overview: "Palmilla Park...", 
+    lat: "23.019649", 
+    lng: "-109.745654", 
+    imgs: [
+      "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260120180000000000000000-o.jpg"
+    ]
+  }
 ];
 
 let curIdx = 0;
