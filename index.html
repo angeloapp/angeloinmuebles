@@ -1366,7 +1366,24 @@
 }
 
 /* Visual Side */
-.du-visual-box { position: relative; background: #000; overflow: hidden; }
+.du-visual-box { 
+  position: relative; 
+  background: #0A1F3F; /* mismo color navy de tu sitio */
+  overflow: hidden; 
+}
+
+.du-slide-img {
+  width: 100%; 
+  height: 100%; 
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 12s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.du-slide.active .du-slide-img { 
+  transform: scale(1.09); 
+}
 .du-track { position: absolute; inset: 0; }
 .du-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out; }
 .du-slide.active { opacity: 1; z-index: 5; }
@@ -1448,6 +1465,14 @@
   .du-info-panel { margin-top: -60px; border-radius: 40px 40px 0 0; background: var(--navy-lux); }
   .du-content-wrapper { padding: 40px 25px; }
   .du-nav-group { bottom: 80px; left: 0; right: 0; justify-content: center; }
+}
+.du-zoom-engine {
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+.du-zoom-target {
+  image-rendering: -webkit-optimize-contrast;
+  filter: contrast(1.05) saturate(1.08);
 }
 </style>
 
@@ -1909,7 +1934,7 @@ const targetImg = document.getElementById("du-zoom-target");
 // Renderizar Slides (Carga solo la primera imagen imgs)
 track.innerHTML = luxuryData.map((p, i) => `
   <div class="du-slide ${i === 0 ? 'active' : ''}">
-    <div class="du-slide-img" style="background-image: url('${p.imgs}');"></div>
+    <div class="du-slide-img" style="background-image: url('${p.imgs[0]}');"></div>
   </div>
 `).join("");
 
