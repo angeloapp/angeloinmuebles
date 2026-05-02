@@ -1312,7 +1312,7 @@
   </div>
 
   <!-- PROPÓSITO -->
-  <section id="proposito">
+<section id="proposito">
   <div class="container">
     
     <div class="proposito-img reveal">
@@ -1320,22 +1320,23 @@
         <div class="fc-progress" id="fc-progress"></div>
         
         <div class="fc-track" id="fc-track">
-          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px; letter-spacing:2px; text-transform:uppercase;">
-            Sincronizando Activos de Lujo...
+          <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; background:#050a14; z-index:1;">
+            <p style="font-family:var(--sans); font-size:10px; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; opacity:0.6;">Sincronizando Propiedades Élite</p>
+            <div class="spinner-simple" style="width:20px; height:20px; border:2px solid rgba(255,255,255,0.1); border-top-color:var(--accent); border-radius:50%; animation: spin 1s linear infinite;"></div>
           </div>
         </div>
         
-        <button class="fc-arrow fc-prev" onclick="fcMove(-1)">&#8249;</button>
-        <button class="fc-arrow fc-next" onclick="fcMove(1)">&#8250;</button>
+        <button class="fc-arrow fc-prev" onclick="fcMove(-1)" aria-label="Anterior">&#8249;</button>
+        <button class="fc-arrow fc-next" onclick="fcMove(1)" aria-label="Siguiente">&#8250;</button>
 
         <div class="fc-info-strip">
           <div class="fc-info-item" style="border-right: 1px solid rgba(255,255,255,0.1); padding-right:20px; margin-right:20px;">
-            <span style="display:block; font-size:8px; color:#D4AF37; letter-spacing:1px; text-transform:uppercase;">Ubicación</span>
-            <span id="fc-zone-val" style="color:#fff; font-size:12px; font-weight:600;">Los Cabos, BCS</span>
+            <span style="display:block; font-size:8px; color:#D4AF37; letter-spacing:1px; text-transform:uppercase; font-weight:600;">Ubicación</span>
+            <span id="fc-zone-val" style="color:#fff; font-size:12px; font-weight:600; font-family:var(--sans);">Los Cabos, BCS</span>
           </div>
           <div class="fc-info-item">
-            <span style="display:block; font-size:8px; color:#D4AF37; letter-spacing:1px; text-transform:uppercase;">Identificador</span>
-            <span id="fc-mls-val" style="color:#fff; font-size:12px; font-weight:600;">MLS # --</span>
+            <span style="display:block; font-size:8px; color:#D4AF37; letter-spacing:1px; text-transform:uppercase; font-weight:600;">Identificador</span>
+            <span id="fc-mls-val" style="color:#fff; font-size:12px; font-weight:600; font-family:var(--sans);">MLS # --</span>
           </div>
         </div>
       </div>
@@ -1351,16 +1352,18 @@
       </p>
       
       <p class="reveal reveal-delay-2">
-        Como <strong>Arquitecto Patrimonial</strong>, utilizo tecnología de <strong>Gemelos Digitales</strong> y estructuras financieras de <strong>SBL</strong> para asegurar que cada inversión en Baja California Sur sea un legado sólido y escalable. [3, 4]
+        Como <strong>Arquitecto Patrimonial</strong>, utilizo tecnología de <strong>Gemelos Digitales</strong> y estructuras financieras de <strong>Security-Based Loans (SBL)</strong> para asegurar que cada inversión sea un legado sólido y escalable en Los Cabos. [3, 1]
       </p>
       
       <div class="proposito-quote reveal reveal-delay-3">
-        <p>Cada activo que selecciono lleva el estándar de rigor <strong>ISO 9001</strong> que define mi marca personal: <strong>iAngelo Aranda Montaño</strong>.</p>
+        <p>Cada proyecto que acepto lleva mi nombre. Por eso selecciono cada activo con la rigurosidad <strong>ISO 9001</strong> con la que usted ha construido su patrimonio: <strong>iAngelo Aranda Montaño</strong>.</p>
       </div>
     </div>
 
   </div>
 </section>
+
+<style> @keyframes spin { to { transform: rotate(360deg); } } </style>
 
   <!-- CONFIANZA -->
   <section id="confianza">
