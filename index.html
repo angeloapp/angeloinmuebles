@@ -1313,76 +1313,96 @@
 
   <!-- PROPÓSITO -->
 <section id="proposito" class="dossier-ultra-section">
-  <div class="dossier-ultra-grid">
-    
-    <div class="du-visual">
-      <div id="du-track" class="du-track"></div>
+  <div class="dossier-ultra-container">
+    <div class="dossier-ultra-grid">
       
-      <div class="du-overlay"></div>
-      
-      <div class="du-badge">PORTAFOLIO EXCLUSIVO</div>
-      
-      <div class="du-nav">
-        <button onclick="duMove(-1)" aria-label="Anterior">❮</button>
-        <button onclick="duMove(1)" aria-label="Siguiente">❯</button>
-      </div>
-    </div>
-
-    <div class="du-data">
-      <div class="du-data-inner">
+      <div class="du-visual" id="du-visual-touch">
+        <div id="du-track" class="du-track"></div>
         
-        <h2 class="du-main-title">Propósito</h2>
-        <div class="gold-line" style="margin: 15px 0 25px; width: 60px; height: 2px; background: #D4AF37;"></div>
+        <div class="du-overlay"></div>
         
-        <p id="du-zone" class="du-zone"></p>
-        <h3 id="du-name" class="du-title"></h3>
-        <div id="du-price" class="du-price"></div>
+        <div class="du-badge">PORTAFOLIO EXCLUSIVO</div>
         
-        <div class="du-specs-card">
-          <span class="du-spec-title">Análisis del Activo</span>
-          <p id="du-overview"></p>
-        </div>
-
-        <div class="du-map-wrapper">
-          <iframe id="du-map-frame" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-
-        <div class="du-action-area">
-          <p class="du-quote">"Mi sueño es la materialización del tuyo."</p>
-          <a id="du-cta" href="#" target="_blank" class="du-btn-gold">
-            SOLICITAR PRESENTACIÓN HD
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" style="margin-left:8px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+        <div class="du-nav">
+          <button onclick="duMove(-1)" aria-label="Anterior">❮</button>
+          <button id="du-play-pause" onclick="duTogglePlay()" aria-label="Pausar/Reproducir" style="font-size: 14px;">⏸</button>
+          <button onclick="duMove(1)" aria-label="Siguiente">❯</button>
         </div>
       </div>
-    </div>
 
+      <div class="du-data">
+        <div class="du-data-inner">
+          
+          <h2 class="du-main-title">Propósito</h2>
+          <div class="gold-line" style="margin: 15px 0 25px; width: 60px; height: 3px; background: #D4AF37; border-radius: 5px;"></div>
+          
+          <p id="du-zone" class="du-zone"></p>
+          <h3 id="du-name" class="du-title"></h3>
+          <div id="du-price" class="du-price"></div>
+          
+          <div class="du-specs-card">
+            <span class="du-spec-title">Análisis del Activo</span>
+            <p id="du-overview"></p>
+          </div>
+
+          <div class="du-map-wrapper">
+            <iframe id="du-map-frame" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="du-action-area">
+            <p class="du-quote">"Mi sueño es la materialización del tuyo."</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+              <a id="du-cta" href="#" target="_blank" class="du-btn-gold">
+                SOLICITAR PRESENTACIÓN HD
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" style="margin-left:8px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              
+              <a id="du-mls-link" href="#" target="_blank" class="du-btn-outline">
+                VER GALERÍA Y BUSCADOR MLS
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 <style>
-/* Estilos Ultra-Lujo Extendido */
+/* Estilos Ultra-Lujo (Fondo Gradiente) */
 .dossier-ultra-section {
   width: 100%;
-  background-color: var(--deep-navy, #0A1F3F);
-  overflow: hidden;
-  position: relative;
+  /* Gradiente exterior de lujo */
+  background: linear-gradient(135deg, #050a14 0%, #0A1F3F 100%);
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.dossier-ultra-container {
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .dossier-ultra-grid {
   display: grid;
-  grid-template-columns: 55% 45%; /* Más balanceado para que los textos respiren */
-  min-height: 90vh; /* Extendido */
-  background-color: var(--deep-navy, #0A1F3F);
+  grid-template-columns: 55% 45%;
+  min-height: 85vh;
+  /* Cero esquinas puntiagudas en el contenedor principal */
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  background: linear-gradient(180deg, #0A1F3F 0%, #03070E 100%);
 }
 
 /* Visuales (Carrusel) */
 .du-visual {
   position: relative;
   overflow: hidden;
-  background: var(--navy, #132A4A);
-  border-radius: 0 35px 35px 0; /* Esquinas redondeadas sin picos */
-  box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+  background: #000;
   z-index: 10;
+  /* Touch action para facilitar el swipe en móviles */
+  touch-action: pan-y; 
 }
 
 .du-track {
@@ -1405,18 +1425,18 @@
   opacity: 1;
 }
 
-/* Efecto Ken Burns */
+/* Zoom Cinemático */
 .du-slide-img {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
   transform: scale(1);
-  transition: transform 8s linear;
+  transition: transform 10s linear;
 }
 
 .du-slide.active .du-slide-img {
-  transform: scale(1.08); /* Zoom lento */
+  transform: scale(1.08);
 }
 
 .du-overlay {
@@ -1439,21 +1459,22 @@
   font-weight: 700;
   letter-spacing: 2px;
   z-index: 10;
-  border-radius: 30px; /* Redondeado, sin esquinas */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
+/* Controles de Navegación */
 .du-nav {
   position: absolute;
   bottom: 40px;
   left: 40px;
   z-index: 10;
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
 
 .du-nav button {
-  background: rgba(10,31,63,0.7);
+  background: rgba(10,31,63,0.8);
   border: 1px solid var(--gold, #D4AF37);
   color: var(--gold, #D4AF37);
   width: 55px;
@@ -1474,9 +1495,8 @@
   transform: scale(1.05);
 }
 
-/* Datos (App-Style Panel) */
+/* Datos */
 .du-data {
-  background-color: var(--deep-navy, #0A1F3F);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1495,7 +1515,7 @@
 .du-main-title {
   color: var(--gold, #D4AF37);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem; /* Letra grande y lujosa */
+  font-size: 3rem;
   font-weight: 500;
   margin: 0;
   line-height: 1;
@@ -1529,10 +1549,10 @@
 }
 
 .du-specs-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(212,175,55,0.15);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(212,175,55,0.2);
   padding: 25px;
-  border-radius: 20px; /* Bordes suaves */
+  border-radius: 25px; /* Bordes suaves */
   margin-bottom: 30px;
 }
 
@@ -1553,23 +1573,23 @@
   margin: 0;
 }
 
-/* Envoltura del mapa sin esquinas puntiagudas */
+/* Envoltura del mapa realista (Sin filtros) */
 .du-map-wrapper {
   width: 100%;
   height: 250px;
-  border-radius: 20px; /* Adiós esquinas puntiagudas */
+  border-radius: 25px; /* Cero esquinas puntiagudas */
   overflow: hidden;
-  border: 1px solid rgba(212,175,55,0.3);
+  border: 2px solid rgba(212,175,55,0.4);
   margin-bottom: 40px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  background: var(--navy, #132A4A);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  background: #000;
 }
 
 .du-map-wrapper iframe {
   width: 100%;
   height: 100%;
   border: none;
-  filter: grayscale(1) invert(1) contrast(0.85); /* Estilo nocturno/elegante */
+  /* Eliminado el filtro para que se vea el pin rojo y colores realistas */
 }
 
 .du-action-area {
@@ -1596,8 +1616,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  border-radius: 12px; /* Redondeado suave */
+  padding: 18px;
+  border-radius: 20px; /* Redondeado suave */
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(212,175,55,0.2);
 }
@@ -1607,44 +1627,62 @@
   box-shadow: 0 15px 25px rgba(212,175,55,0.3);
 }
 
-/* ====== RESPONSIVO TIPO APP (MOBILE) ====== */
+.du-btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.du-btn-outline:hover {
+  border-color: var(--gold, #D4AF37);
+  color: var(--gold, #D4AF37);
+}
+
+/* ====== RESPONSIVO TIPO APP IPHONE ====== */
 @media (max-width: 992px) {
+  .dossier-ultra-section { padding: 15px 10px; }
+  
   .dossier-ultra-grid {
     grid-template-columns: 1fr;
     min-height: auto;
   }
   
   .du-visual {
-    height: 65vh; 
-    border-radius: 0 0 35px 35px; /* Redondeado por debajo en móvil */
+    height: 55vh; 
   }
 
   .du-overlay {
-    background: linear-gradient(to top, rgba(10,31,63,1) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(3,7,14,1) 0%, transparent 60%);
   }
 
+  /* Efecto Bottom-Sheet (Superposición tipo iPhone) */
   .du-data {
-    margin-top: -60px; /* Efecto bottom-sheet */
-    border-radius: 35px 35px 0 0;
-    box-shadow: 0 -15px 40px rgba(0,0,0,0.6);
+    margin-top: -50px; 
+    border-radius: 40px 40px 0 0;
+    box-shadow: 0 -15px 40px rgba(0,0,0,0.5);
+    background: linear-gradient(180deg, #0A1F3F 0%, #03070E 100%);
   }
 
-  .du-data-inner {
-    padding: 40px 25px;
-  }
-
-  .du-main-title {
-    font-size: 2.5rem;
-  }
-
-  .du-title {
-    font-size: 2rem;
-  }
+  .du-data-inner { padding: 40px 25px; }
+  .du-main-title { font-size: 2.5rem; }
+  .du-title { font-size: 2rem; }
 
   .du-nav {
-    bottom: 80px; 
-    right: 20px;
-    left: auto;
+    bottom: 70px; 
+    right: 0;
+    left: 0;
+    justify-content: center; /* Centrado en móvil */
   }
 }
 </style>
@@ -1652,7 +1690,6 @@
 <script>
 (function(){
 
-// Incluímos lat y lng reales de Los Cabos para que el mapa funcione 100%
 const luxuryData = [
   { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor.", lat: "23.009318", lng: "-109.727416", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg" },
   { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", lat: "23.003035", lng: "-109.729046", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg" },
@@ -1663,6 +1700,8 @@ const luxuryData = [
 
 let duCurrent = 0;
 const duTrack = document.getElementById("du-track");
+let isPlaying = true;
+let slideInterval;
 
 // Generar DOM de diapositivas
 duTrack.innerHTML = luxuryData.map((p, i) => `
@@ -1680,12 +1719,14 @@ function updateDuDossier() {
   document.getElementById("du-price").textContent = p.price;
   document.getElementById("du-overview").textContent = p.overview;
   
-  // URL nativa de Google Maps Embed (Solución al error del iframe)
-  const mapUrl = `https://maps.google.com/maps?q=${p.lat},${p.lng}&t=k&z=16&ie=UTF8&iwloc=&output=embed`;
+  // Mapa realista y con Pin Rojo automático (Eliminado el filtro CSS)
+  const mapUrl = `https://maps.google.com/maps?q=$${p.lat},${p.lng}&t=k&z=16&ie=UTF8&iwloc=&output=embed`;
   document.getElementById("du-map-frame").src = mapUrl;
 
-  // Actualizar CTA WhatsApp
+  // Botones
   document.getElementById("du-cta").href = `https://wa.me/526244334131?text=Hola%20Angelo%2C%20deseo%20el%20dossier%20HD%20de%20${encodeURIComponent(p.name)}%20(MLS%20${p.mls})`;
+  // Enlace directo al buscador MLS
+  document.getElementById("du-mls-link").href = `https://caboone.com/property-detail?mls=${p.mls}`;
 }
 
 window.duMove = function(step) {
@@ -1698,11 +1739,45 @@ window.duMove = function(step) {
   updateDuDossier();
 }
 
-// Inicializar la primera propiedad
-updateDuDossier();
+// Botón Stop/Play
+window.duTogglePlay = function() {
+  const btn = document.getElementById("du-play-pause");
+  if(isPlaying) {
+    clearInterval(slideInterval);
+    btn.innerHTML = "▶"; // Cambia a Play
+    isPlaying = false;
+  } else {
+    slideInterval = setInterval(() => duMove(1), 7000);
+    btn.innerHTML = "⏸"; // Cambia a Pausa
+    isPlaying = true;
+    duMove(1);
+  }
+}
 
-// Autoplay suave cada 7 segundos
-setInterval(() => duMove(1), 7000);
+// Swipe táctil tipo iPhone
+let touchstartX = 0;
+let touchendX = 0;
+const touchArea = document.getElementById('du-visual-touch');
+
+touchArea.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches.screenX;
+}, {passive: true});
+
+touchArea.addEventListener('touchend', e => {
+  touchendX = e.changedTouches.screenX;
+  if (touchendX < touchstartX - 40) {
+    duMove(1); // Swipe izquierda -> Siguiente
+    if(isPlaying) duTogglePlay(); // Pausa auto al interactuar
+  }
+  if (touchendX > touchstartX + 40) {
+    duMove(-1); // Swipe derecha -> Anterior
+    if(isPlaying) duTogglePlay(); // Pausa auto al interactuar
+  }
+}, {passive: true});
+
+// Iniciar
+updateDuDossier();
+slideInterval = setInterval(() => duMove(1), 7000);
 
 })();
 </script>
