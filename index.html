@@ -1147,105 +1147,6 @@
   letter-spacing: 0.05em;
 }
   
-/* ── Luxury Carousel Section ── */
-.fc-section {
-  position: relative;
-  width: 100%;
-  height: 550px; /* Ajustado para el diseño de Propósito */
-  border-radius: 8px;
-  overflow: hidden;
-  background: #050a14;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.fc-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  pointer-events: none;
-}
-
-.fc-slide.active { opacity: 1; pointer-events: auto; }
-
-.fc-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: transform 8s linear;
-}
-
-.fc-slide.active.fc-bg { transform: scale(1.15); }
-
-/* Badge de "Destacado" */
-.fc-featured-tag {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(19, 42, 74, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  z-index: 10;
-}
-
-/* Capa de Información sobre la imagen */
-.fc-overlay-content {
-  position: absolute;
-  bottom: 80px;
-  left: 30px;
-  right: 30px;
-  z-index: 10;
-}
-
-.fc-overlay-content h3 {
-  font-family: 'Cormorant Garamond', serif;
-  color: #fff;
-  font-size: 1.8rem;
-  margin-bottom: 5px;
-}
-
-.fc-overlay-price {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-/* Tira inferior técnica */
-.fc-info-strip {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: rgba(10, 31, 63, 0.9);
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  backdrop-filter: blur(5px);
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.fc-info-label { display: block; font-size: 8px; color: var(--gold); letter-spacing: 1px; }
-.fc-info-val { color: #fff; font-size: 12px; font-weight: 600; }
-.fc-info-zone { border-right: 1px solid rgba(255,255,255,0.1); padding-right: 20px; margin-right: 20px; }
-
-.fc-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--gold);
-  width: 0%;
-  z-index: 20;
-}
-
 /* ===== MLS GALLERY & RICH CARD ENHANCEMENT ===== */
 .property-rich-group{display:flex;flex-direction:column;gap:0.9rem;margin-top:auto;}
 .property-inline-description{font-family:var(--sans);font-size:0.8rem;line-height:1.8;color:var(--text-mid);background:linear-gradient(180deg,rgba(0,168,204,.05),rgba(10,31,63,.03));border:1px solid rgba(0,168,204,.12);border-radius:16px;padding:0.95rem 1rem;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
@@ -1369,51 +1270,35 @@
     </blockquote>
   </div>
 
-<section id="proposito">
-  <div class="container">
-    <div class="proposito-img reveal">
-      <div class="fc-section" id="fc-section">
-        <div class="fc-progress" id="fc-progress"></div>
-        <div class="fc-track" id="fc-track">
-          </div>
-        
-        <button class="fc-arrow fc-arrow-prev" id="fc-prev" aria-label="Anterior">&#8249;</button>
-        <button class="fc-arrow fc-arrow-next" id="fc-next" aria-label="Siguiente">&#8250;</button>
-
-        <div class="fc-info-strip">
-          <div class="fc-info-zone">
-            <span class="fc-info-label">UBICACIÓN</span>
-            <span class="fc-info-val" id="fc-zone-val">Los Cabos</span>
-          </div>
-          <div class="fc-info-mls">
-            <span class="fc-info-label">MLS #</span>
-            <span class="fc-info-val" id="fc-mls-val">--</span>
-          </div>
-          <div class="fc-dots" id="fc-dots">
-            </div>
+  <!-- PROPÓSITO -->
+  <section id="proposito">
+    <div class="container">
+      <div class="proposito-img reveal">
+        <img src="https://cdn.pixabay.com/photo/2016/09/17/14/34/mexico-1676272_960_720.jpg" alt="Arquitecto de Realidades Patrimoniales" loading="lazy" />
+        <div class="proposito-img-badge">
+          <p>Cabo San Lucas · Baja California Sur</p>
+          <span>Donde el lujo encuentra su propósito</span>
+        </div>
+      </div>
+      <div class="proposito-text">
+        <p class="section-label reveal">Propósito</p>
+        <span class="gold-line gold-line--left reveal"></span>
+        <h2 class="reveal">
+          Mi sueño es la<br/>
+          <em>materialización del tuyo</em>
+        </h2>
+        <p class="reveal reveal-delay-1">
+          He dedicado mi carrera a ser el puente entre el capital de mis clientes y el espacio donde verán crecer su futuro. No es una transacción; es una alianza estratégica construida sobre confianza, visión y una comprensión profunda de lo que realmente importa.
+        </p>
+        <p class="reveal reveal-delay-2">
+          Tener el capital es solo el inicio. Saber dónde y con quién colocarlo es la verdadera maestría. Esa maestría es lo que ofrezco: no promesas, sino resultados que perduran generaciones.
+        </p>
+        <div class="proposito-quote reveal reveal-delay-3">
+          <p>Cada proyecto que acepto lleva mi nombre. Por eso selecciono con la misma rigurosidad con la que usted ha construido su patrimonio.</p>
         </div>
       </div>
     </div>
-
-    <div class="proposito-text">
-      <p class="section-label reveal">Propósito</p>
-      <span class="gold-line gold-line--left reveal"></span>
-      <h2 class="reveal">
-        Mi sueño es la<br/>
-        <em>materialización del tuyo</em>
-      </h2>
-      <p class="reveal reveal-delay-1">
-        He dedicado mi carrera a ser el puente entre el capital de mis clientes y el espacio donde verán crecer su futuro. No es una transacción; es una alianza estratégica construida sobre confianza, visión y una comprensión profunda de lo que realmente importa.[1, 2]
-      </p>
-      <p class="reveal reveal-delay-2">
-        Como <strong>Arquitecto Patrimonial</strong>, entiendo que tener el capital es solo el inicio. Saber dónde colocarlo, apoyado en tecnología de <strong>Gemelos Digitales</strong> y estructuras financieras de <strong>SBL</strong>, es la verdadera maestría que pongo a su disposición.
-      </p>
-      <div class="proposito-quote reveal reveal-delay-3">
-        <p>Cada proyecto que acepto lleva mi nombre: <strong>iAngelo Aranda Montaño</strong>. Por eso selecciono cada activo con la misma rigurosidad con la que usted ha construido su patrimonio.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- CONFIANZA -->
   <section id="confianza">
