@@ -1322,9 +1322,9 @@
         <div class="du-badge-top">PORTAFOLIO EXCLUSIVO</div>
         
         <div class="du-controls">
-          <button onclick="duMove(-1)" class="du-arrow">❮</button>
-          <button id="du-btn-play" onclick="duTogglePlay()" class="du-play-pause">⏸</button>
-          <button onclick="duMove(1)" class="du-arrow">❯</button>
+          <button type="button" onclick="duMove(-1)" class="du-arrow">❮</button>
+          <button type="button" id="du-btn-play" onclick="duTogglePlay()" class="du-play-pause">⏸</button>
+          <button type="button" onclick="duMove(1)" class="du-arrow">❯</button>
         </div>
       </div>
 
@@ -1355,7 +1355,7 @@
               <a id="du-link-wa" href="#" target="_blank" class="du-btn-prime">
                 SOLICITAR PRESENTACIÓN HD
               </a>
-              <button onclick="openInteractiveGallery()" class="du-btn-sec">
+              <button type="button" onclick="openInteractiveGallery()" class="du-btn-sec">
                 VER GALERÍA COMPLETA (ZOOM)
               </button>
             </div>
@@ -1367,16 +1367,16 @@
   </div>
 
   <div id="du-gallery-modal" class="du-gallery-modal">
-    <button class="du-close-gallery" onclick="closeInteractiveGallery()">✕</button>
+    <button type="button" class="du-close-gallery" onclick="closeInteractiveGallery()">✕</button>
     <div class="du-gallery-viewport">
        <div id="du-zoom-container" class="du-zoom-container">
-          <img id="du-zoom-img" src="" alt="Zoom View">
+          <img id="du-zoom-img" src="" alt="Vista Zoom">
        </div>
     </div>
     <div class="du-gallery-nav">
-       <button onclick="changeGalleryImg(-1)">❮</button>
+       <button type="button" onclick="changeGalleryImg(-1)">❮</button>
        <span id="du-gallery-counter">1 / 1</span>
-       <button onclick="changeGalleryImg(1)">❯</button>
+       <button type="button" onclick="changeGalleryImg(1)">❯</button>
     </div>
     <div class="du-gallery-hint">Usa el scroll o pellizca para hacer Zoom • Arrastra para mover</div>
   </div>
@@ -1407,7 +1407,7 @@
   grid-template-columns: 58% 42%;
   min-height: 88vh;
   background: linear-gradient(180deg, var(--l-navy) 0%, #03070E 100%);
-  border-radius: 40px; /* Cero esquinas puntiagudas */
+  border-radius: 40px; 
   overflow: hidden;
   box-shadow: 0 40px 100px rgba(0,0,0,0.7);
 }
@@ -1421,7 +1421,7 @@
   width: 100%; height: 100%; background-position: center; background-size: cover;
   transition: transform 10s linear;
 }
-.du-slide.active .du-slide-img { transform: scale(1.1); }
+.du-slide.active .du-slide-img { transform: scale(1.08); }
 
 .du-overlay-gradient {
   position: absolute; inset: 0;
@@ -1442,7 +1442,7 @@
 .du-arrow, .du-play-pause {
   background: rgba(10,31,63,0.85); border: 1px solid var(--accent-gold);
   color: var(--accent-gold); width: 55px; height: 55px; border-radius: 50%;
-  cursor: pointer; transition: 0.3s; font-size: 20px;
+  cursor: pointer; transition: 0.3s; font-size: 20px; display: flex; justify-content: center; align-items: center;
 }
 .du-arrow:hover, .du-play-pause:hover { background: var(--accent-gold); color: #000; }
 
@@ -1450,17 +1450,17 @@
 .du-info-panel { display: flex; flex-direction: column; position: relative; z-index: 10; }
 .du-content-scroll { padding: 50px; height: 100%; overflow-y: auto; }
 
-.du-header-label { color: var(--accent-gold); font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin: 0; }
+.du-header-label { color: var(--accent-gold); font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin: 0; font-weight: 500;}
 .du-gold-divider { width: 80px; height: 3px; background: var(--accent-gold); margin: 20px 0; border-radius: 10px; }
 
 .du-tag-zone { color: var(--accent-blue); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; margin-bottom: 5px; }
-.du-main-name { font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 2.5rem; margin: 0 0 10px; line-height: 1.1; }
+.du-main-name { font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 2.5rem; margin: 0 0 10px; line-height: 1.1; font-weight: 500;}
 .du-main-price { color: #fff; font-size: 1.8rem; font-weight: 200; margin-bottom: 35px; }
 
 .du-analysis-card { background: rgba(255,255,255,0.04); padding: 25px; border-radius: 25px; border: 1px solid rgba(212,175,55,0.15); margin-bottom: 30px; }
 .du-analysis-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .du-analysis-title { color: var(--accent-gold); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
-.du-mls-pill { background: var(--accent-gold); color: #000; padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: 700; }
+.du-mls-pill { background: var(--accent-gold); color: #000; padding: 5px 12px; border-radius: 15px; font-size: 11px; font-weight: 700; }
 .du-analysis-text { color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.7; margin: 0; font-weight: 300; }
 
 /* MAPA REALISTA */
@@ -1468,9 +1468,11 @@
 .du-iframe-map { width: 100%; height: 100%; border: none; }
 
 .du-btn-group { display: flex; flex-direction: column; gap: 12px; }
-.du-btn-prime { background: var(--accent-gold); color: #000; text-align: center; padding: 20px; border-radius: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; }
-.du-btn-sec { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 18px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-family: inherit; }
+.du-btn-prime { background: var(--accent-gold); color: #000; text-align: center; padding: 20px; border-radius: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; display: block; font-size: 13px; letter-spacing: 1px;}
+.du-btn-sec { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 18px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-family: inherit; font-size: 12px; font-weight: 600; letter-spacing: 1px; width: 100%;}
 .du-btn-prime:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(212,175,55,0.3); }
+.du-btn-sec:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+.du-slogan { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: rgba(255,255,255,0.7); margin-bottom: 20px; text-align: center; }
 
 /* GALERIA INTERACTIVA (LIGHTBOX) */
 .du-gallery-modal {
@@ -1479,166 +1481,212 @@
   backdrop-filter: blur(15px);
 }
 .du-gallery-viewport { width: 90vw; height: 75vh; overflow: hidden; position: relative; border-radius: 20px; cursor: grab; }
+.du-gallery-viewport:active { cursor: grabbing; }
 .du-zoom-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transition: transform 0.1s ease-out; }
 .du-zoom-img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; user-select: none; }
 
-.du-close-gallery { position: absolute; top: 30px; right: 30px; background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
+.du-close-gallery { position: absolute; top: 30px; right: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; transition: 0.3s;}
+.du-close-gallery:hover { background: var(--accent-gold); color: #000; border-color: var(--accent-gold);}
 .du-gallery-nav { display: flex; align-items: center; gap: 30px; margin-top: 30px; color: #fff; }
-.du-gallery-nav button { background: none; border: 1px solid #fff; color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; }
+.du-gallery-nav button { background: none; border: 1px solid #fff; color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; transition: 0.3s;}
+.du-gallery-nav button:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
 .du-gallery-hint { color: var(--accent-gold); font-size: 11px; margin-top: 20px; text-transform: uppercase; letter-spacing: 1px; }
 
 /* RESPONSIVO */
 @media (max-width: 992px) {
   .du-grid { grid-template-columns: 1fr; border-radius: 30px; }
-  .du-visual-box { height: 50vh; border-radius: 0 0 30px 30px; }
+  .du-visual-box { height: 55vh; border-radius: 0 0 35px 35px; }
   .du-overlay-gradient { background: linear-gradient(to top, rgba(3,7,14,1) 0%, transparent 60%); }
   .du-info-panel { margin-top: -60px; border-radius: 35px 35px 0 0; }
   .du-header-label { font-size: 2.8rem; }
+  .du-controls { bottom: 80px; left: 0; right: 0; justify-content: center; }
 }
 </style>
 
 <script>
 (function(){
 
+// Se mantiene tu data intacta con la variable imgs y maps original
 const luxuryData = [
-  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor.", lat: "23.009318", lng: "-109.727416", imgs: [
+  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.009318,-109.727416", imgs: [
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg",
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182029171459000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182044560635000000-o.jpg"
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182044560635000000-o.jpg",
+    "https://cdn2.photos.sparkplatform.com/cab/20250628182024937046000000.jpg",
+    "https://cdn2.photos.sparkplatform.com/cab/20250628182029171459000000.jpg"
   ]},
-  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", lat: "23.003035", lng: "-109.729046", imgs: [
+  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.003035,-109.729046", imgs: [
     "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg",
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235440681322000000-o.jpg"
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235440681322000000-o.jpg",
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235532991468000000-o.jpg"
   ]},
-  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside with views of the Sea of Cortez...", lat: "23.003049", lng: "-109.727499", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg"]},
-  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", lat: "23.003075", lng: "-109.726638", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg"]},
-  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location for your dream home...", lat: "23.002441", lng: "-109.727652", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg"]}
+  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.003049,-109.727499", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg",
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232150414885000000-o.jpg"
+  ]},
+  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.003075,-109.726638", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg",
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240326170759392368000000-o.jpg"
+  ]},
+  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.002441,-109.727652", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg",
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215323913287000000-o.jpg"
+  ]},
+  { mls: "26-475", name: "Caleta Loma Oceanview", zone: "Palmilla", price: "Build Ready", overview: "Build your dream home with ocean and city views...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.019932,-109.719522", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260127220512954478000000-o.jpg"
+  ]},
+  { mls: "25-1340", name: "Punta Bella Lot", zone: "Corridor", price: "Beachside Living", overview: "Discover the epitome of luxury living...", maps: "https://www.google.com/maps/dir/?api=1&destination=22.999436,-109.726251", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251101204059164956000000-o.jpg"
+  ]},
+  { mls: "25-4077", name: "Palmilla Walk Lot", zone: "Palmilla", price: "Beach Proximity", overview: "Just a 5-minute walk to Palmilla Beach...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.019517,-109.719133", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250829183305720835000000-o.jpg"
+  ]},
+  { mls: "25-4777", name: "Caleta Loma Lot 94", zone: "Palmilla", price: "Premium Homesite", overview: "Caleta Loma Lot 94...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.02103,-109.719288", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250910210000000000000000-o.jpg"] },
+  { mls: "25-3336", name: "Caleta Loma Lot 81", zone: "Palmilla", price: "Exclusive Lot", overview: "Caleta Loma Lot 81...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.017654,-109.720764", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250820190000000000000000-o.jpg"] },
+  { mls: "26-587", name: "Caleta Loma Prime", zone: "Palmilla", price: "Ocean View Lot", overview: "Caleta Loma premium lot...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.021921,-109.718568", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260115180000000000000000-o.jpg"] },
+  { mls: "24-1148", name: "Palmilla Park Lot", zone: "Palmilla", price: "Community Living", overview: "Palmilla Park...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.023473,-109.745076", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240301180000000000000000-o.jpg"] },
+  { mls: "25-5618", name: "Palmilla Canyon Lot 5", zone: "Palmilla", price: "Luxury Homesite", overview: "Palmilla Canyon...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.018273,-109.7274", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251010180000000000000000-o.jpg"] },
+  { mls: "26-1764", name: "Palmilla Estates Lot", zone: "Palmilla", price: "Golf & Ocean Views", overview: "Palmilla Estates...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.020998,-109.73417", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260105180000000000000000-o.jpg"] },
+  { mls: "26-929", name: "Palmilla Park Reserve", zone: "Palmilla", price: "Outdoor Living", overview: "Palmilla Park...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.019649,-109.745654", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260120180000000000000000-o.jpg"] }
 ];
 
-let currentIdx = 0;
-let galIdx = 0;
-let isPlaying = true;
-let timer;
+let idxDestacada = 0;
+let idxGaleria = 0;
+let autoPlayActivo = true;
+let intervaloSlide;
 
-const track = document.getElementById("du-main-track");
-const modal = document.getElementById("du-gallery-modal");
-const zoomContainer = document.getElementById("du-zoom-container");
-const zoomImg = document.getElementById("du-zoom-img");
+const trackContenedor = document.getElementById("du-main-track");
+const modalGaleria = document.getElementById("du-gallery-modal");
+const zoomContenedor = document.getElementById("du-zoom-container");
+const imagenZoom = document.getElementById("du-zoom-img");
 
-// Iniciar Slides
-track.innerHTML = luxuryData.map((p, i) => `
+// Iniciar Slides de Portada
+trackContenedor.innerHTML = luxuryData.map((p, i) => `
   <div class="du-slide ${i === 0 ? 'active' : ''}">
     <div class="du-slide-img" style="background-image: url('${p.imgs}');"></div>
   </div>
 `).join("");
 
-function updateUI() {
-  const p = luxuryData[currentIdx];
+function refrescarDatosUI() {
+  const p = luxuryData[idxDestacada];
   document.getElementById("du-txt-name").textContent = p.name;
   document.getElementById("du-txt-zone").textContent = p.zone;
   document.getElementById("du-txt-price").textContent = p.price;
+  
+  // Agregar MLS al lado del análisis
   document.getElementById("du-txt-mls").textContent = "MLS #" + p.mls;
   document.getElementById("du-txt-overview").textContent = p.overview;
   
-  // MAPA REALISTA (t=k activa satélite)
-  const mapUrl = `https://maps.google.com/maps?q=${p.lat},${p.lng}&t=k&z=17&ie=UTF8&iwloc=&output=embed`;
-  document.getElementById("du-iframe-map").src = mapUrl;
+  // MAPA DIRECTO DEL ARRAY DEL USUARIO
+  document.getElementById("du-iframe-map").src = p.maps;
 
-  document.getElementById("du-link-wa").href = `https://wa.me/526244334131?text=Angelo, deseo el dossier HD de ${encodeURIComponent(p.name)} (MLS ${p.mls})`;
+  // Actualizar Botón WhatsApp
+  document.getElementById("du-link-wa").href = `https://wa.me/526244334131?text=Hola%20Angelo%2C%20deseo%20el%20Dossier%20HD%20de%20${encodeURIComponent(p.name)}%20(MLS%20${p.mls})`;
 }
 
-window.duMove = function(step) {
-  const slides = track.children;
-  slides[currentIdx].classList.remove('active');
-  currentIdx = (currentIdx + step + luxuryData.length) % luxuryData.length;
-  slides[currentIdx].classList.add('active');
-  updateUI();
+window.duMove = function(paso) {
+  const slides = trackContenedor.children;
+  slides[idxDestacada].classList.remove('active');
+  idxDestacada = (idxDestacada + paso + luxuryData.length) % luxuryData.length;
+  slides[idxDestacada].classList.add('active');
+  refrescarDatosUI();
 }
 
 window.duTogglePlay = function() {
   const btn = document.getElementById("du-btn-play");
-  if(isPlaying) {
-    clearInterval(timer); btn.innerHTML = "▶";
+  if(autoPlayActivo) {
+    clearInterval(intervaloSlide); 
+    btn.innerHTML = "▶";
   } else {
-    timer = setInterval(() => duMove(1), 7000); btn.innerHTML = "⏸";
+    intervaloSlide = setInterval(() => duMove(1), 7000); 
+    btn.innerHTML = "⏸";
   }
-  isPlaying = !isPlaying;
+  autoPlayActivo = !autoPlayActivo;
 }
 
-/* LÓGICA DE ZOOM Y GALERÍA */
-let scale = 1, startX = 0, startY = 0, moveX = 0, moveY = 0, isDragging = false;
+/* ─── LÓGICA DE ZOOM Y GALERÍA INTERACTIVA (CERO CONFLICTOS) ─── */
+let nivelEscala = 1, arrastreX = 0, arrastreY = 0, offsetX = 0, offsetY = 0, arrastrando = false;
 
 window.openInteractiveGallery = function() {
-  if(isPlaying) duTogglePlay(); // Pausar slider
-  galIdx = 0;
-  resetZoomState();
-  updateGalleryContent();
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden";
+  if(autoPlayActivo) duTogglePlay(); // Pausar slider de fondo automáticamente
+  idxGaleria = 0;
+  resetearZoom();
+  actualizarContenidoGaleria();
+  modalGaleria.style.display = "flex";
+  document.body.style.overflow = "hidden"; // Evitar scroll de la página
 }
 
 window.closeInteractiveGallery = function() {
-  modal.style.display = "none";
+  modalGaleria.style.display = "none";
   document.body.style.overflow = "auto";
 }
 
-function updateGalleryContent() {
-  const imgs = luxuryData[currentIdx].imgs;
-  zoomImg.src = imgs[galIdx];
-  document.getElementById("du-gallery-counter").textContent = `${galIdx + 1} / ${imgs.length}`;
+function actualizarContenidoGaleria() {
+  const arregloFotos = luxuryData[idxDestacada].imgs;
+  imagenZoom.src = arregloFotos[idxGaleria];
+  document.getElementById("du-gallery-counter").textContent = `${idxGaleria + 1} / ${arregloFotos.length}`;
 }
 
-window.changeGalleryImg = function(step) {
-  const imgs = luxuryData[currentIdx].imgs;
-  galIdx = (galIdx + step + imgs.length) % imgs.length;
-  resetZoomState();
-  updateGalleryContent();
+window.changeGalleryImg = function(paso) {
+  const arregloFotos = luxuryData[idxDestacada].imgs;
+  idxGaleria = (idxGaleria + paso + arregloFotos.length) % arregloFotos.length;
+  resetearZoom();
+  actualizarContenidoGaleria();
 }
 
-function resetZoomState() {
-  scale = 1; moveX = 0; moveY = 0;
-  applyTransform();
+function resetearZoom() {
+  nivelEscala = 1; offsetX = 0; offsetY = 0;
+  aplicarTransformacion();
 }
 
-function applyTransform() {
-  zoomContainer.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
+function aplicarTransformacion() {
+  zoomContenedor.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${nivelEscala})`;
 }
 
-// ZOOM CON RUEDA
-modal.addEventListener('wheel', e => {
+// ZOOM CON RUEDA DEL RATÓN
+modalGaleria.addEventListener('wheel', e => {
   e.preventDefault();
   const delta = e.deltaY > 0 ? -0.2 : 0.2;
-  scale = Math.min(Math.max(1, scale + delta), 4);
-  if(scale === 1) { moveX = 0; moveY = 0; }
-  applyTransform();
+  nivelEscala = Math.min(Math.max(1, nivelEscala + delta), 4); // Limite de 1x a 4x
+  if(nivelEscala === 1) { offsetX = 0; offsetY = 0; }
+  aplicarTransformacion();
 }, { passive: false });
 
-// ARRASTRAR (PAN)
-const viewport = document.querySelector('.du-gallery-viewport');
-viewport.addEventListener('mousedown', e => {
-  if(scale > 1) {
-    isDragging = true;
-    startX = e.clientX - moveX;
-    startY = e.clientY - moveY;
-    viewport.style.cursor = "grabbing";
+// ARRASTRAR (PAN) CON RATÓN O DEDO
+const areaViewport = document.querySelector('.du-gallery-viewport');
+
+areaViewport.addEventListener('mousedown', iniciarArrastre);
+areaViewport.addEventListener('touchstart', e => iniciarArrastre(e.touches), {passive: true});
+
+function iniciarArrastre(e) {
+  if(nivelEscala > 1) {
+    arrastrando = true;
+    arrastreX = e.clientX - offsetX;
+    arrastreY = e.clientY - offsetY;
   }
-});
+}
 
-window.addEventListener('mousemove', e => {
-  if(!isDragging) return;
-  moveX = e.clientX - startX;
-  moveY = e.clientY - startY;
-  applyTransform();
-});
+window.addEventListener('mousemove', moverArrastre);
+window.addEventListener('touchmove', e => moverArrastre(e.touches), {passive: false});
 
-window.addEventListener('mouseup', () => {
-  isDragging = false;
-  viewport.style.cursor = "grab";
-});
+function moverArrastre(e) {
+  if(!arrastrando) return;
+  if(e.preventDefault) e.preventDefault();
+  offsetX = e.clientX - arrastreX;
+  offsetY = e.clientY - arrastreY;
+  aplicarTransformacion();
+}
 
-// INICIAR
-updateUI();
-timer = setInterval(() => duMove(1), 7000);
+window.addEventListener('mouseup', finalizarArrastre);
+window.addEventListener('touchend', finalizarArrastre);
+
+function finalizarArrastre() {
+  arrastrando = false;
+}
+
+// INICIALIZACIÓN
+refrescarDatosUI();
+intervaloSlide = setInterval(() => duMove(1), 7000);
 
 })();
 </script>
