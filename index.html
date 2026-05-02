@@ -1312,57 +1312,52 @@
   </div>
 
   <!-- PROPÓSITO -->
-<section id="proposito" class="dossier-ultra-section">
-  <div class="dossier-ultra-container">
-    <div class="dossier-ultra-grid">
+<section id="proposito" class="du-main-section">
+  <div class="du-wrapper">
+    <div class="du-grid">
       
-      <div class="du-visual" id="du-visual-touch">
-        <div id="du-track" class="du-track"></div>
+      <div class="du-visual-box" id="du-area-interactiva">
+        <div id="du-main-track" class="du-track"></div>
+        <div class="du-overlay-gradient"></div>
+        <div class="du-badge-top">PORTAFOLIO EXCLUSIVO</div>
         
-        <div class="du-overlay"></div>
-        
-        <div class="du-badge">PORTAFOLIO EXCLUSIVO</div>
-        
-        <button id="du-reset-zoom" class="du-reset-btn" onclick="resetZoom()" style="display:none;" aria-label="Resetear Zoom">⟲ Restaurar Vista</button>
-
-        <div class="du-nav">
-          <button onclick="duMove(-1)" aria-label="Anterior">❮</button>
-          <button id="du-play-pause" onclick="duTogglePlay()" aria-label="Pausar/Reproducir" style="font-size: 14px;">⏸</button>
-          <button onclick="duMove(1)" aria-label="Siguiente">❯</button>
+        <div class="du-controls">
+          <button onclick="duMove(-1)" class="du-arrow">❮</button>
+          <button id="du-btn-play" onclick="duTogglePlay()" class="du-play-pause">⏸</button>
+          <button onclick="duMove(1)" class="du-arrow">❯</button>
         </div>
       </div>
 
-      <div class="du-data">
-        <div class="du-data-inner">
+      <div class="du-info-panel">
+        <div class="du-content-scroll">
+          <h2 class="du-header-label">Propósito</h2>
+          <div class="du-gold-divider"></div>
           
-          <h2 class="du-main-title">Propósito</h2>
-          <div class="gold-line" style="margin: 15px 0 25px; width: 60px; height: 3px; background: #D4AF37; border-radius: 5px;"></div>
+          <p id="du-txt-zone" class="du-tag-zone"></p>
+          <h3 id="du-txt-name" class="du-main-name"></h3>
+          <div id="du-txt-price" class="du-main-price"></div>
           
-          <p id="du-zone" class="du-zone"></p>
-          <h3 id="du-name" class="du-title"></h3>
-          <div id="du-price" class="du-price"></div>
-          
-          <div class="du-specs-card">
-            <span class="du-spec-title">Análisis del Activo</span>
-            <p id="du-overview"></p>
+          <div class="du-analysis-card">
+            <div class="du-analysis-header">
+              <span class="du-analysis-title">Análisis del Activo</span>
+              <span id="du-txt-mls" class="du-mls-pill"></span>
+            </div>
+            <p id="du-txt-overview" class="du-analysis-text"></p>
           </div>
 
-          <div class="du-map-wrapper">
-            <iframe id="du-map-frame" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="du-map-box">
+            <iframe id="du-iframe-map" src="" allowfullscreen="" loading="lazy"></iframe>
           </div>
 
-          <div class="du-action-area">
-            <p class="du-quote">"Mi sueño es la materialización del tuyo."</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-              <a id="du-cta" href="#" target="_blank" class="du-btn-gold">
+          <div class="du-footer-actions">
+            <p class="du-slogan">"Mi sueño es la materialización del tuyo."</p>
+            <div class="du-btn-group">
+              <a id="du-link-wa" href="#" target="_blank" class="du-btn-prime">
                 SOLICITAR PRESENTACIÓN HD
-                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" style="margin-left:8px;"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              
-              <a id="du-mls-link" href="#" target="_blank" class="du-btn-outline">
-                VER GALERÍA Y BUSCADOR MLS
-              </a>
+              <button onclick="openInteractiveGallery()" class="du-btn-sec">
+                VER GALERÍA COMPLETA (ZOOM)
+              </button>
             </div>
           </div>
         </div>
@@ -1371,347 +1366,134 @@
     </div>
   </div>
 
+  <div id="du-gallery-modal" class="du-gallery-modal">
+    <button class="du-close-gallery" onclick="closeInteractiveGallery()">✕</button>
+    <div class="du-gallery-viewport">
+       <div id="du-zoom-container" class="du-zoom-container">
+          <img id="du-zoom-img" src="" alt="Zoom View">
+       </div>
+    </div>
+    <div class="du-gallery-nav">
+       <button onclick="changeGalleryImg(-1)">❮</button>
+       <span id="du-gallery-counter">1 / 1</span>
+       <button onclick="changeGalleryImg(1)">❯</button>
+    </div>
+    <div class="du-gallery-hint">Usa el scroll o pellizca para hacer Zoom • Arrastra para mover</div>
+  </div>
+
+</section>
+
 <style>
-/* Estilos Ultra-Lujo (Fondo Gradiente) */
-.dossier-ultra-section {
+/* VARIABLES Y RESET */
+:root {
+  --d-navy: #050a14;
+  --l-navy: #0A1F3F;
+  --accent-gold: #D4AF37;
+  --accent-blue: #00A8CC;
+}
+
+.du-main-section {
   width: 100%;
-  background: linear-gradient(135deg, #050a14 0%, #0A1F3F 100%);
   padding: 40px 20px;
+  background: linear-gradient(135deg, var(--d-navy) 0%, var(--l-navy) 100%);
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
 
-.dossier-ultra-container {
-  max-width: 1600px;
-  margin: 0 auto;
-}
+.du-wrapper { max-width: 1600px; margin: 0 auto; }
 
-.dossier-ultra-grid {
+.du-grid {
   display: grid;
-  grid-template-columns: 55% 45%;
-  min-height: 85vh;
-  border-radius: 40px;
+  grid-template-columns: 58% 42%;
+  min-height: 88vh;
+  background: linear-gradient(180deg, var(--l-navy) 0%, #03070E 100%);
+  border-radius: 40px; /* Cero esquinas puntiagudas */
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-  background: linear-gradient(180deg, #0A1F3F 0%, #03070E 100%);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
 }
 
-/* Visuales (Carrusel) */
-.du-visual {
-  position: relative;
-  overflow: hidden;
-  background: #000;
-  z-index: 10;
-  /* El pan-y está bien para el scroll vertical global, pero lo deshabilitamos temporalmente al hacer zoom */
-  touch-action: pan-y; 
-  cursor: grab;
-}
-
-.du-visual:active {
-  cursor: grabbing;
-}
-
-.du-track {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.du-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-  overflow: hidden; /* Para contener la imagen al hacer zoom */
-}
-
-.du-slide.active {
-  opacity: 1;
-  z-index: 5;
-}
-
-/* Imagen base para el Zoom */
-.du-slide-img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform-origin: center center;
-  /* La transición se maneja por JS cuando hay interacción, y por CSS para el Ken Burns */
+/* VISUALIZADOR */
+.du-visual-box { position: relative; background: #000; overflow: hidden; }
+.du-track { position: absolute; inset: 0; }
+.du-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out; }
+.du-slide.active { opacity: 1; z-index: 5; }
+.du-slide-img { 
+  width: 100%; height: 100%; background-position: center; background-size: cover;
   transition: transform 10s linear;
-  will-change: transform;
 }
+.du-slide.active .du-slide-img { transform: scale(1.1); }
 
-.du-slide.active.ken-burns .du-slide-img {
-  transform: scale(1.08);
-}
-
-.du-overlay {
-  position: absolute;
-  inset: 0;
+.du-overlay-gradient {
+  position: absolute; inset: 0;
   background: linear-gradient(to right, transparent 50%, rgba(10,31,63,0.95) 100%);
-  z-index: 8;
-  pointer-events: none;
+  z-index: 8; pointer-events: none;
 }
 
-.du-badge {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  background: var(--gold, #D4AF37);
-  color: var(--deep-navy, #0A1F3F);
-  padding: 10px 20px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  z-index: 10;
-  border-radius: 30px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+.du-badge-top {
+  position: absolute; top: 40px; left: 40px; z-index: 10;
+  background: var(--accent-gold); color: var(--d-navy);
+  padding: 10px 20px; border-radius: 30px; font-weight: 700; font-size: 11px; letter-spacing: 2px;
 }
 
-.du-reset-btn {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  background: rgba(10,31,63,0.8);
-  border: 1px solid var(--gold, #D4AF37);
-  color: var(--gold, #D4AF37);
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  cursor: pointer;
-  z-index: 15;
-  backdrop-filter: blur(5px);
-  transition: 0.3s;
+.du-controls {
+  position: absolute; bottom: 40px; left: 40px; z-index: 20;
+  display: flex; gap: 15px; align-items: center;
 }
-
-.du-reset-btn:hover {
-  background: var(--gold, #D4AF37);
-  color: #000;
+.du-arrow, .du-play-pause {
+  background: rgba(10,31,63,0.85); border: 1px solid var(--accent-gold);
+  color: var(--accent-gold); width: 55px; height: 55px; border-radius: 50%;
+  cursor: pointer; transition: 0.3s; font-size: 20px;
 }
+.du-arrow:hover, .du-play-pause:hover { background: var(--accent-gold); color: #000; }
 
-/* Controles de Navegación */
-.du-nav {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  z-index: 10;
-  display: flex;
-  gap: 12px;
+/* PANEL DE INFO */
+.du-info-panel { display: flex; flex-direction: column; position: relative; z-index: 10; }
+.du-content-scroll { padding: 50px; height: 100%; overflow-y: auto; }
+
+.du-header-label { color: var(--accent-gold); font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin: 0; }
+.du-gold-divider { width: 80px; height: 3px; background: var(--accent-gold); margin: 20px 0; border-radius: 10px; }
+
+.du-tag-zone { color: var(--accent-blue); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; margin-bottom: 5px; }
+.du-main-name { font-family: 'Cormorant Garamond', serif; color: #fff; font-size: 2.5rem; margin: 0 0 10px; line-height: 1.1; }
+.du-main-price { color: #fff; font-size: 1.8rem; font-weight: 200; margin-bottom: 35px; }
+
+.du-analysis-card { background: rgba(255,255,255,0.04); padding: 25px; border-radius: 25px; border: 1px solid rgba(212,175,55,0.15); margin-bottom: 30px; }
+.du-analysis-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.du-analysis-title { color: var(--accent-gold); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+.du-mls-pill { background: var(--accent-gold); color: #000; padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: 700; }
+.du-analysis-text { color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.7; margin: 0; font-weight: 300; }
+
+/* MAPA REALISTA */
+.du-map-box { width: 100%; height: 260px; border-radius: 25px; overflow: hidden; border: 2px solid rgba(212,175,55,0.3); margin-bottom: 40px; background: #000; }
+.du-iframe-map { width: 100%; height: 100%; border: none; }
+
+.du-btn-group { display: flex; flex-direction: column; gap: 12px; }
+.du-btn-prime { background: var(--accent-gold); color: #000; text-align: center; padding: 20px; border-radius: 20px; font-weight: 700; text-decoration: none; transition: 0.3s; }
+.du-btn-sec { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 18px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-family: inherit; }
+.du-btn-prime:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(212,175,55,0.3); }
+
+/* GALERIA INTERACTIVA (LIGHTBOX) */
+.du-gallery-modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 10000;
+  display: none; flex-direction: column; align-items: center; justify-content: center;
+  backdrop-filter: blur(15px);
 }
+.du-gallery-viewport { width: 90vw; height: 75vh; overflow: hidden; position: relative; border-radius: 20px; cursor: grab; }
+.du-zoom-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; transition: transform 0.1s ease-out; }
+.du-zoom-img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; user-select: none; }
 
-.du-nav button {
-  background: rgba(10,31,63,0.8);
-  border: 1px solid var(--gold, #D4AF37);
-  color: var(--gold, #D4AF37);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.du-close-gallery { position: absolute; top: 30px; right: 30px; background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; }
+.du-gallery-nav { display: flex; align-items: center; gap: 30px; margin-top: 30px; color: #fff; }
+.du-gallery-nav button { background: none; border: 1px solid #fff; color: #fff; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; }
+.du-gallery-hint { color: var(--accent-gold); font-size: 11px; margin-top: 20px; text-transform: uppercase; letter-spacing: 1px; }
 
-.du-nav button:hover {
-  background: var(--gold, #D4AF37);
-  color: var(--deep-navy, #0A1F3F);
-  transform: scale(1.05);
-}
-
-/* Datos */
-.du-data {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  z-index: 5;
-}
-
-.du-data-inner {
-  padding: 8% 10%;
-  height: 100%;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.du-main-title {
-  color: var(--gold, #D4AF37);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  font-weight: 500;
-  margin: 0;
-  line-height: 1;
-}
-
-.du-zone {
-  color: var(--accent, #00A8CC);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.du-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem;
-  color: #ffffff;
-  line-height: 1.1;
-  margin: 0 0 15px 0;
-  font-weight: 500;
-}
-
-.du-price {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.6rem;
-  color: #ffffff;
-  font-weight: 300;
-  margin-bottom: 30px;
-}
-
-.du-specs-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(212,175,55,0.2);
-  padding: 25px;
-  border-radius: 25px;
-  margin-bottom: 30px;
-}
-
-.du-spec-title {
-  color: var(--gold, #D4AF37);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.du-specs-card p {
-  color: rgba(255,255,255,0.85);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Envoltura del mapa */
-.du-map-wrapper {
-  width: 100%;
-  height: 250px;
-  border-radius: 25px;
-  overflow: hidden;
-  border: 2px solid rgba(212,175,55,0.4);
-  margin-bottom: 40px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  background: #000;
-}
-
-.du-map-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.du-action-area {
-  margin-top: auto;
-}
-
-.du-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.du-btn-gold {
-  background: var(--gold, #D4AF37);
-  color: var(--deep-navy, #0A1F3F);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(212,175,55,0.2);
-}
-
-.du-btn-gold:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px rgba(212,175,55,0.3);
-}
-
-.du-btn-outline {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.3);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.du-btn-outline:hover {
-  border-color: var(--gold, #D4AF37);
-  color: var(--gold, #D4AF37);
-}
-
-/* ====== RESPONSIVO TIPO APP IPHONE ====== */
+/* RESPONSIVO */
 @media (max-width: 992px) {
-  .dossier-ultra-section { padding: 15px 10px; }
-  
-  .dossier-ultra-grid {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  
-  .du-visual {
-    height: 55vh; 
-  }
-
-  .du-overlay {
-    background: linear-gradient(to top, rgba(3,7,14,1) 0%, transparent 60%);
-  }
-
-  .du-data {
-    margin-top: -50px; 
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 -15px 40px rgba(0,0,0,0.5);
-    background: linear-gradient(180deg, #0A1F3F 0%, #03070E 100%);
-  }
-
-  .du-data-inner { padding: 40px 25px; }
-  .du-main-title { font-size: 2.5rem; }
-  .du-title { font-size: 2rem; }
-
-  .du-nav {
-    bottom: 70px; 
-    right: 0;
-    left: 0;
-    justify-content: center;
-  }
+  .du-grid { grid-template-columns: 1fr; border-radius: 30px; }
+  .du-visual-box { height: 50vh; border-radius: 0 0 30px 30px; }
+  .du-overlay-gradient { background: linear-gradient(to top, rgba(3,7,14,1) 0%, transparent 60%); }
+  .du-info-panel { margin-top: -60px; border-radius: 35px 35px 0 0; }
+  .du-header-label { font-size: 2.8rem; }
 }
 </style>
 
@@ -1719,238 +1501,147 @@
 (function(){
 
 const luxuryData = [
-  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor...", maps: "https://maps.google.com/maps?q=23.009318,-109.727416&t=k&z=16&output=embed", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg"
+  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor.", lat: "23.009318", lng: "-109.727416", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg",
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182029171459000000-o.jpg",
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182044560635000000-o.jpg"
   ]},
-  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", maps: "https://maps.google.com/maps?q=23.003035,-109.729046&t=k&z=16&output=embed", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg"
+  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", lat: "23.003035", lng: "-109.729046", imgs: [
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg",
+    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235440681322000000-o.jpg"
   ]},
-  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", maps: "https://maps.google.com/maps?q=23.003049,-109.727499&t=k&z=16&output=embed", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg"
-  ]},
-  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", maps: "https://maps.google.com/maps?q=23.003075,-109.726638&t=k&z=16&output=embed", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg"
-  ]},
-  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", maps: "https://maps.google.com/maps?q=23.002441,-109.727652&t=k&z=16&output=embed", imgs: [
-    "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg"
-  ]}
+  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside with views of the Sea of Cortez...", lat: "23.003049", lng: "-109.727499", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg"]},
+  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", lat: "23.003075", lng: "-109.726638", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg"]},
+  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location for your dream home...", lat: "23.002441", lng: "-109.727652", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg"]}
 ];
 
-let duCurrent = 0;
-const duTrack = document.getElementById("du-track");
+let currentIdx = 0;
+let galIdx = 0;
 let isPlaying = true;
-let slideInterval;
+let timer;
 
-// Variables para Pan y Zoom
-let scale = 1;
-let translateX = 0;
-let translateY = 0;
-let isDragging = false;
-let startX, startY;
+const track = document.getElementById("du-main-track");
+const modal = document.getElementById("du-gallery-modal");
+const zoomContainer = document.getElementById("du-zoom-container");
+const zoomImg = document.getElementById("du-zoom-img");
 
-// Generar DOM de diapositivas usando la primera imagen de cada propiedad
-duTrack.innerHTML = luxuryData.map((p, i) => `
-  <div class="du-slide ${i === 0 ? 'active ken-burns' : ''}" id="slide-${i}">
-    <div class="du-slide-img" id="img-${i}" style="background-image: url('${p.imgs}');"></div>
+// Iniciar Slides
+track.innerHTML = luxuryData.map((p, i) => `
+  <div class="du-slide ${i === 0 ? 'active' : ''}">
+    <div class="du-slide-img" style="background-image: url('${p.imgs}');"></div>
   </div>
 `).join("");
 
-function updateDuDossier() {
-  const p = luxuryData[duCurrent];
+function updateUI() {
+  const p = luxuryData[currentIdx];
+  document.getElementById("du-txt-name").textContent = p.name;
+  document.getElementById("du-txt-zone").textContent = p.zone;
+  document.getElementById("du-txt-price").textContent = p.price;
+  document.getElementById("du-txt-mls").textContent = "MLS #" + p.mls;
+  document.getElementById("du-txt-overview").textContent = p.overview;
   
-  // Actualizar Textos
-  document.getElementById("du-name").textContent = p.name;
-  document.getElementById("du-zone").textContent = p.zone;
-  document.getElementById("du-price").textContent = p.price;
-  document.getElementById("du-overview").textContent = p.overview;
-  
-  // Mapa realista
-  document.getElementById("du-map-frame").src = p.maps;
+  // MAPA REALISTA (t=k activa satélite)
+  const mapUrl = `https://maps.google.com/maps?q=${p.lat},${p.lng}&t=k&z=17&ie=UTF8&iwloc=&output=embed`;
+  document.getElementById("du-iframe-map").src = mapUrl;
 
-  // Botones
-  document.getElementById("du-cta").href = `https://wa.me/526244334131?text=Hola%20Angelo%2C%20deseo%20el%20dossier%20HD%20de%20${encodeURIComponent(p.name)}%20(MLS%20${p.mls})`;
-  document.getElementById("du-mls-link").href = `https://caboone.com/property-detail?mls=${p.mls}`;
-  
-  // Resetear transformaciones visuales
-  resetZoom();
+  document.getElementById("du-link-wa").href = `https://wa.me/526244334131?text=Angelo, deseo el dossier HD de ${encodeURIComponent(p.name)} (MLS ${p.mls})`;
 }
 
-// Lógica de Movimiento
 window.duMove = function(step) {
-  const slides = duTrack.children;
-  slides[duCurrent].classList.remove('active', 'ken-burns');
-  
-  duCurrent = (duCurrent + step + slides.length) % slides.length;
-  
-  slides[duCurrent].classList.add('active', 'ken-burns');
-  updateDuDossier();
+  const slides = track.children;
+  slides[currentIdx].classList.remove('active');
+  currentIdx = (currentIdx + step + luxuryData.length) % luxuryData.length;
+  slides[currentIdx].classList.add('active');
+  updateUI();
 }
 
-// Botón Stop/Play
-window.duTogglePlay = function(forcePause = false) {
-  const btn = document.getElementById("du-play-pause");
-  if(isPlaying || forcePause) {
-    clearInterval(slideInterval);
-    btn.innerHTML = "▶"; // Play
-    isPlaying = false;
-  } else if(!forcePause) {
-    // Restaurar clase ken-burns si reanudamos y no hay zoom manual
-    if(scale === 1) {
-      document.getElementById(`slide-${duCurrent}`).classList.add('ken-burns');
-    }
-    slideInterval = setInterval(() => duMove(1), 7000);
-    btn.innerHTML = "⏸"; // Pausa
-    isPlaying = true;
-    duMove(1);
+window.duTogglePlay = function() {
+  const btn = document.getElementById("du-btn-play");
+  if(isPlaying) {
+    clearInterval(timer); btn.innerHTML = "▶";
+  } else {
+    timer = setInterval(() => duMove(1), 7000); btn.innerHTML = "⏸";
   }
+  isPlaying = !isPlaying;
 }
 
-// --- LÓGICA DE PAN & ZOOM ---
-const visualArea = document.getElementById('du-visual-touch');
-const resetBtn = document.getElementById('du-reset-zoom');
+/* LÓGICA DE ZOOM Y GALERÍA */
+let scale = 1, startX = 0, startY = 0, moveX = 0, moveY = 0, isDragging = false;
 
-function getActiveImage() {
-  return document.getElementById(`img-${duCurrent}`);
+window.openInteractiveGallery = function() {
+  if(isPlaying) duTogglePlay(); // Pausar slider
+  galIdx = 0;
+  resetZoomState();
+  updateGalleryContent();
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+window.closeInteractiveGallery = function() {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+function updateGalleryContent() {
+  const imgs = luxuryData[currentIdx].imgs;
+  zoomImg.src = imgs[galIdx];
+  document.getElementById("du-gallery-counter").textContent = `${galIdx + 1} / ${imgs.length}`;
+}
+
+window.changeGalleryImg = function(step) {
+  const imgs = luxuryData[currentIdx].imgs;
+  galIdx = (galIdx + step + imgs.length) % imgs.length;
+  resetZoomState();
+  updateGalleryContent();
+}
+
+function resetZoomState() {
+  scale = 1; moveX = 0; moveY = 0;
+  applyTransform();
 }
 
 function applyTransform() {
-  const img = getActiveImage();
-  if(!img) return;
-  // Deshabilitar la transición css para que el drag sea instantáneo
-  img.style.transition = 'none';
-  img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-  
-  if (scale > 1) {
-    resetBtn.style.display = 'block';
-    visualArea.style.touchAction = 'none'; // Deshabilita scroll en móviles mientras hay zoom
-    // Pausar auto-play si hay zoom
-    if(isPlaying) duTogglePlay(true);
-    document.getElementById(`slide-${duCurrent}`).classList.remove('ken-burns');
-  } else {
-    resetBtn.style.display = 'none';
-    visualArea.style.touchAction = 'pan-y';
-  }
+  zoomContainer.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
 }
 
-window.resetZoom = function() {
-  scale = 1;
-  translateX = 0;
-  translateY = 0;
-  const img = getActiveImage();
-  if(img) {
-      img.style.transition = 'transform 0.5s ease-out';
-      img.style.transform = 'scale(1) translate(0px, 0px)';
-  }
-  resetBtn.style.display = 'none';
-  visualArea.style.touchAction = 'pan-y';
-  // Restaurar el Ken Burns si la imagen no está interactuada
-  setTimeout(() => {
-     if(scale === 1) document.getElementById(`slide-${duCurrent}`).classList.add('ken-burns');
-  }, 500);
-}
-
-// Zoom con Scroll (Rueda del ratón)
-visualArea.addEventListener('wheel', (e) => {
-  e.preventDefault(); // Prevenir scroll de la página sobre la imagen
-  const zoomFactor = 0.1;
-  if (e.deltaY < 0) {
-    scale += zoomFactor;
-  } else {
-    scale -= zoomFactor;
-  }
-  scale = Math.max(1, Math.min(scale, 4)); // Limitar entre 1x y 4x
-  if(scale === 1) { translateX = 0; translateY = 0; }
+// ZOOM CON RUEDA
+modal.addEventListener('wheel', e => {
+  e.preventDefault();
+  const delta = e.deltaY > 0 ? -0.2 : 0.2;
+  scale = Math.min(Math.max(1, scale + delta), 4);
+  if(scale === 1) { moveX = 0; moveY = 0; }
   applyTransform();
 }, { passive: false });
 
-// Arrastrar (Ratón)
-visualArea.addEventListener('mousedown', (e) => {
-  // Solo arrastrar si hay zoom, si no, lo ignoramos o podríamos usarlo para el swipe
-  if (scale > 1) {
+// ARRASTRAR (PAN)
+const viewport = document.querySelector('.du-gallery-viewport');
+viewport.addEventListener('mousedown', e => {
+  if(scale > 1) {
     isDragging = true;
-    startX = e.clientX - translateX;
-    startY = e.clientY - translateY;
-    visualArea.style.cursor = 'grabbing';
-  } else {
-     // Lógica para swipe en escritorio
-     touchstartX = e.clientX;
+    startX = e.clientX - moveX;
+    startY = e.clientY - moveY;
+    viewport.style.cursor = "grabbing";
   }
 });
 
-visualArea.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-  e.preventDefault();
-  translateX = e.clientX - startX;
-  translateY = e.clientY - startY;
+window.addEventListener('mousemove', e => {
+  if(!isDragging) return;
+  moveX = e.clientX - startX;
+  moveY = e.clientY - startY;
   applyTransform();
 });
 
-visualArea.addEventListener('mouseup', (e) => {
+window.addEventListener('mouseup', () => {
   isDragging = false;
-  visualArea.style.cursor = 'grab';
-  
-  // Lógica swipe escritorio
-  if(scale === 1 && touchstartX !== 0) {
-     touchendX = e.clientX;
-     if (touchendX < touchstartX - 50) { duMove(1); if(isPlaying) duTogglePlay(true); }
-     if (touchendX > touchstartX + 50) { duMove(-1); if(isPlaying) duTogglePlay(true); }
-     touchstartX = 0;
-  }
+  viewport.style.cursor = "grab";
 });
 
-visualArea.addEventListener('mouseleave', () => {
-  isDragging = false;
-  visualArea.style.cursor = 'grab';
-});
-
-// Arrastrar / Swipe (Táctil)
-let touchstartX = 0;
-let touchendX = 0;
-
-visualArea.addEventListener('touchstart', e => {
-  if(e.touches.length === 1) {
-    if(scale > 1) {
-      isDragging = true;
-      startX = e.touches.clientX - translateX;
-      startY = e.touches.clientY - translateY;
-    } else {
-      touchstartX = e.touches.clientX;
-    }
-  }
-}, {passive: true});
-
-visualArea.addEventListener('touchmove', e => {
-  if (!isDragging || e.touches.length !== 1) return;
-  // Si hay zoom, prevenimos el comportamiento por defecto para poder mover la imagen
-  e.preventDefault(); 
-  translateX = e.touches.clientX - startX;
-  translateY = e.touches.clientY - startY;
-  applyTransform();
-}, {passive: false});
-
-visualArea.addEventListener('touchend', e => {
-  isDragging = false;
-  if(scale === 1 && touchstartX !== 0) {
-    touchendX = e.changedTouches.clientX;
-    if (touchendX < touchstartX - 40) {
-      duMove(1); 
-      if(isPlaying) duTogglePlay(true); 
-    }
-    if (touchendX > touchstartX + 40) {
-      duMove(-1); 
-      if(isPlaying) duTogglePlay(true); 
-    }
-    touchstartX = 0;
-  }
-}, {passive: true});
-
-// Iniciar
-updateDuDossier();
-slideInterval = setInterval(() => duMove(1), 7000);
+// INICIAR
+updateUI();
+timer = setInterval(() => duMove(1), 7000);
 
 })();
 </script>
-</section>
 
   <!-- CONFIANZA -->
   <section id="confianza">
