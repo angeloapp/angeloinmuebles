@@ -1314,27 +1314,22 @@
   <!-- PROPÓSITO -->
 <section id="proposito">
   <div class="container">
-    
     <div class="proposito-img reveal">
-      <div class="fc-section" id="fc-main-container">
-        <div class="fc-progress" id="fc-progress"></div>
+      <div class="fc-section" id="fc-main-container" style="position: relative; width: 100%; height: 540px; background: #050a14; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 70px rgba(10,31,63,0.4); z-index: 5;">
+        <div class="fc-progress" id="fc-progress" style="position: absolute; top: 0; left: 0; height: 3px; background: #D4AF37; width: 0%; z-index: 15;"></div>
         
-        <div class="fc-track" id="fc-track">
-          <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; background:#050a14; z-index:1;">
-            <p style="font-family:var(--sans); font-size:10px; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; opacity:0.6;">Sincronizando Propiedades Élite</p>
-            <div class="spinner-simple" style="width:20px; height:20px; border:2px solid rgba(255,255,255,0.1); border-top-color:var(--accent); border-radius:50%; animation: spin 1s linear infinite;"></div>
+        <div class="fc-track" id="fc-track" style="position: absolute; inset: 0; z-index: 1;">
           </div>
-        </div>
         
-        <button class="fc-arrow fc-prev" onclick="fcMove(-1)" aria-label="Anterior">&#8249;</button>
-        <button class="fc-arrow fc-next" onclick="fcMove(1)" aria-label="Siguiente">&#8250;</button>
+        <button class="fc-arrow" onclick="fcMove(-1)" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; backdrop-filter: blur(10px); z-index: 10; font-size: 20px;">&#8249;</button>
+        <button class="fc-arrow" onclick="fcMove(1)" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; backdrop-filter: blur(10px); z-index: 10; font-size: 20px;">&#8250;</button>
 
-        <div class="fc-info-strip">
-          <div class="fc-info-item" style="border-right: 1px solid rgba(255,255,255,0.1); padding-right:20px; margin-right:20px;">
+        <div class="fc-info-strip" style="position: absolute; bottom: 0; left: 0; right: 0; height: 65px; background: rgba(10, 31, 63, 0.95); display: flex; align-items: center; padding: 0 25px; border-top: 1px solid rgba(255,255,255,0.1); z-index: 10;">
+          <div style="border-right: 1px solid rgba(255,255,255,0.1); padding-right:20px; margin-right:20px;">
             <span style="display:block; font-size:8px; color:#D4AF37; letter-spacing:1px; text-transform:uppercase; font-weight:600;">Ubicación</span>
-            <span id="fc-zone-val" style="color:#fff; font-size:12px; font-weight:600; font-family:var(--sans);">Los Cabos, BCS</span>
+            <span id="fc-zone-val" style="color:#fff; font-size:12px; font-weight:600; font-family:var(--sans);">San José Corridor</span>
           </div>
-          <div class="fc-info-item">
+          <div>
             <span style="display:block; font-size:8px; color:#D4AF37; letter-spacing:1px; text-transform:uppercase; font-weight:600;">Identificador</span>
             <span id="fc-mls-val" style="color:#fff; font-size:12px; font-weight:600; font-family:var(--sans);">MLS # --</span>
           </div>
@@ -1346,21 +1341,152 @@
       <p class="section-label reveal">Propósito</p>
       <span class="gold-line gold-line--left reveal"></span>
       <h2 class="reveal">Mi sueño es la<br/><em>materialización del tuyo</em></h2>
-      
       <p class="reveal reveal-delay-1">
-        He dedicado mi carrera a ser el puente entre el capital de mis clientes y el espacio donde verán crecer su futuro. No es una transacción; es una alianza estratégica construida sobre confianza, visión y una comprensión profunda de lo que realmente importa. [1, 2]
+        He dedicado mi carrera a ser el puente entre el capital de mis clientes y el espacio donde verán crecer su futuro. No es una transacción; es una alianza estratégica construida sobre confianza, visión y una comprensión profunda de lo que realmente importa.[2, 3]
       </p>
-      
       <p class="reveal reveal-delay-2">
-        Como <strong>Arquitecto Patrimonial</strong>, utilizo tecnología de <strong>Gemelos Digitales</strong> y estructuras financieras de <strong>Security-Based Loans (SBL)</strong> para asegurar que cada inversión sea un legado sólido y escalable en Los Cabos. [3, 1]
+        Como <strong>Arquitecto Patrimonial</strong>, utilizo tecnología de <strong>Gemelos Digitales</strong> y estructuras financieras de <strong>SBL</strong> para asegurar que cada inversión sea un legado sólido y escalable en Los Cabos.[4, 5]
       </p>
-      
       <div class="proposito-quote reveal reveal-delay-3">
-        <p>Cada proyecto que acepto lleva mi nombre. Por eso selecciono cada activo con la rigurosidad <strong>ISO 9001</strong> con la que usted ha construido su patrimonio: <strong>iAngelo Aranda Montaño</strong>.</p>
+        <p>Cada activo que selecciono lleva mi nombre. Por eso aplico la rigurosidad <strong>ISO 9001</strong> con la que usted ha construido su patrimonio: <strong>iAngelo Aranda Montaño</strong>.</p>
       </div>
     </div>
-
   </div>
+
+  <script>
+    (function() {
+      // BASE DE DATOS LOCAL INCRUSTADA (Datos extraídos por Angelo Aranda Montaño)
+      const luxuryData = },
+
+{ mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.009318,-109.727416", imgs: [
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg",
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182029171459000000-o.jpg",
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182044560635000000-o.jpg",
+"https://cdn2.photos.sparkplatform.com/cab/20250628182024937046000000.jpg",
+"https://cdn2.photos.sparkplatform.com/cab/20250628182029171459000000.jpg",
+"https://cdn2.photos.sparkplatform.com/cab/20250628182044560635000000.jpg",
+"https://cdn2.photos.sparkplatform.com/cab/20250628182052216198000000.jpg",
+"https://cdn2.photos.sparkplatform.com/cab/20250628182057306229000000.jpg",
+"https://cdn2.photos.sparkplatform.com/cab/20250628182103175363000000.jpg"
+]},
+
+{ mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.003035,-109.729046", imgs: [
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg",
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235440681322000000-o.jpg",
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251105235532991468000000-o.jpg",
+"https://cdn0.photos.sparkplatform.com/cab/20251004195157259617000000.jpg",
+"https://cdn0.photos.sparkplatform.com/cab/20251105235440681322000000.jpg"
+]},
+
+{ mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.003049,-109.727499", imgs: [
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg",
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232150414885000000-o.jpg",
+"https://cdn1.photos.sparkplatform.com/cab/20250115232139984971000000.jpg"
+]},
+
+{ mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.003075,-109.726638", imgs: [
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg",
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240326170759392368000000-o.jpg",
+"https://cdn1.photos.sparkplatform.com/cab/20240217203155858915000000.jpg"
+]},
+
+{ mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.002441,-109.727652", imgs: [
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg",
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215323913287000000-o.jpg",
+"https://cdn1.photos.sparkplatform.com/cab/20250115215308812065000000.jpg"
+]},
+
+{ mls: "26-475", name: "Caleta Loma Oceanview", zone: "Palmilla", price: "Build Ready", overview: "Build your dream home with ocean and city views...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.019932,-109.719522", imgs: [
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260127220512954478000000-o.jpg",
+"https://cdn2.photos.sparkplatform.com/cab/20260127220512954478000000.jpg"
+]},
+
+{ mls: "25-1340", name: "Punta Bella Lot", zone: "Corridor", price: "Beachside Living", overview: "Discover the epitome of luxury living...", maps: "https://www.google.com/maps/dir/?api=1&destination=22.999436,-109.726251", imgs: [
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251101204059164956000000-o.jpg",
+"https://cdn0.photos.sparkplatform.com/cab/20251101204059164956000000.jpg"
+]},
+
+{ mls: "25-4077", name: "Palmilla Walk Lot", zone: "Palmilla", price: "Beach Proximity", overview: "Just a 5-minute walk to Palmilla Beach...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.019517,-109.719133", imgs: [
+"https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250829183305720835000000-o.jpg",
+"https://cdn2.photos.sparkplatform.com/cab/20250829183305720835000000.jpg"
+]},
+
+// ⚠️ Las siguientes solo tienen 1–2 imágenes reales disponibles en tu data
+
+{ mls: "25-4777", name: "Caleta Loma Lot 94", zone: "Palmilla", price: "Premium Homesite", overview: "Caleta Loma Lot 94...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.02103,-109.719288", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250910210000000000000000-o.jpg"] },
+
+{ mls: "25-3336", name: "Caleta Loma Lot 81", zone: "Palmilla", price: "Exclusive Lot", overview: "Caleta Loma Lot 81...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.017654,-109.720764", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250820190000000000000000-o.jpg"] },
+
+{ mls: "26-587", name: "Caleta Loma Prime", zone: "Palmilla", price: "Ocean View Lot", overview: "Caleta Loma premium lot...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.021921,-109.718568", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260115180000000000000000-o.jpg"] },
+
+{ mls: "24-1148", name: "Palmilla Park Lot", zone: "Palmilla", price: "Community Living", overview: "Palmilla Park...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.023473,-109.745076", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240301180000000000000000-o.jpg"] },
+
+{ mls: "25-5618", name: "Palmilla Canyon Lot 5", zone: "Palmilla", price: "Luxury Homesite", overview: "Palmilla Canyon...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.018273,-109.7274", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251010180000000000000000-o.jpg"] },
+
+{ mls: "26-1764", name: "Palmilla Estates Lot", zone: "Palmilla", price: "Golf & Ocean Views", overview: "Palmilla Estates...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.020998,-109.73417", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260105180000000000000000-o.jpg"] },
+
+{ mls: "26-929", name: "Palmilla Park Reserve", zone: "Palmilla", price: "Outdoor Living", overview: "Palmilla Park...", maps: "https://www.google.com/maps/dir/?api=1&destination=23.019649,-109.745654", imgs: ["https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260120180000000000000000-o.jpg"] }
+
+];
+      let current = 0;
+      const track = document.getElementById('fc-track');
+
+      // 1. INYECCIÓN DE SLIDES
+      track.innerHTML = luxuryData.map((p, i) => `
+        <div class="fc-slide" style="position: absolute; inset: 0; opacity: ${i === 0? '1' : '0'}; transition: opacity 1s ease-in-out; z-index: ${i === 0? '2' : '1'};">
+          <div style="position: absolute; inset: 0; background-image: url('${p.imgs}'); background-size: cover; background-position: center; transition: transform 8s linear;" class="fc-bg-img"></div>
+          <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,31,63,0.85) 0%, transparent 60%); z-index: 3;"></div>
+          <div style="position: absolute; bottom: 85px; left: 30px; z-index: 10; color: #fff;">
+            <h3 style="font-family: var(--serif); font-size: 1.8rem; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">${p.name}</h3>
+            <p style="color: var(--accent); font-weight: 600; margin: 5px 0 15px; font-family: var(--sans); font-size: 1rem; text-transform: uppercase;">${p.price}</p>
+            <button class="btn btn-gold" onclick="fcLocalTrigger('${p.mls}')" style="font-size: 9px; padding: 10px 24px; border-radius: 50px; border: none; cursor: pointer;">EXPLORAR PROPIEDAD</button>
+          </div>
+        </div>
+      `).join('');
+
+      // 2. LÓGICA DE TRANSICIÓN
+      window.fcMove = function(step) {
+        const slides = document.querySelectorAll('.fc-slide');
+        slides[current].style.opacity = "0";
+        slides[current].style.zIndex = "1";
+        current = (current + step + luxuryData.length) % luxuryData.length;
+        slides[current].style.opacity = "1";
+        slides[current].style.zIndex = "2";
+        
+        // Actualizar strip inferior
+        document.getElementById('fc-mls-val').textContent = luxuryData[current].mls;
+        document.getElementById('fc-zone-val').textContent = luxuryData[current].zone;
+        
+        resetBar();
+      };
+
+      function resetBar() {
+        const prog = document.getElementById('fc-progress');
+        prog.style.transition = 'none'; prog.style.width = '0%';
+        setTimeout(() => { prog.style.transition = 'width 6000ms linear'; prog.style.width = '100%'; }, 50);
+      }
+
+      // 3. ACTIVADOR DE POPUP (Usa los datos locales)
+      window.fcLocalTrigger = function(mlsId) {
+        const p = luxuryData.find(item => item.mls === mlsId);
+        if (p && typeof openModal === 'function') {
+          const fake = document.createElement('div');
+          fake.dataset.mls = p.mls;
+          fake.dataset.name = p.name;
+          fake.dataset.gallery = JSON.stringify(p.imgs);
+          fake.dataset.overview = p.overview;
+          fake.dataset.mapurl = p.maps;
+          openModal(fake);
+        }
+      };
+
+      // INIT
+      setInterval(() => fcMove(1), 6000);
+      resetBar();
+      document.getElementById('fc-mls-val').textContent = luxuryData.mls;
+      document.getElementById('fc-zone-val').textContent = luxuryData.zone;
+    })();
+  </script>
 </section>
 
 <style> @keyframes spin { to { transform: rotate(360deg); } } </style>
@@ -6570,8 +6696,14 @@
 <script>
 (function() {
     // Lista Maestra de iAngelo Aranda Montaño (Sin Hashtags)
-    const featuredMLS = ["25-3368","25-4408","25-907","24-774","25-906","26-475","25-1340","25-4077","25-4777","25-3336","26-587","24-1148","25-5618","26-1764","26-929","24-630","24-635","24-636","23-289","26-860","26-1836","25-5347","25-1142","25-3899","25-4227","25-103","26-542","25-5696","25-2606","25-4675"];
-    
+const featuredMLS = [
+  "#25-3368","#25-4408","#25-907","#24-774","#25-906",
+  "#26-475","#25-1340","#25-4077","#25-4777","#25-3336",
+  "#26-587","#24-1148","#25-5618","#26-1764","#26-929",
+  "#24-630","#24-635","#24-636","#23-289","#26-860",
+  "#26-1836","#25-5347","#25-1142","#25-3899","#25-4227",
+  "#25-103","#26-542","#25-5696","#25-2606","#25-4675"
+];
     let currentIdx = 0;
     const slideInterval = 7000;
 
