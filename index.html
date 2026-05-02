@@ -1330,11 +1330,12 @@
 
     <div class="du-data">
       <div class="du-data-inner">
-        <p class="du-eyebrow">Dossier de Inversión</p>
-        <div class="gold-line" style="margin: 10px 0 20px; width: 40px;"></div>
+        
+        <h2 class="du-main-title">Propósito</h2>
+        <div class="gold-line" style="margin: 15px 0 25px; width: 60px; height: 2px; background: #D4AF37;"></div>
         
         <p id="du-zone" class="du-zone"></p>
-        <h2 id="du-name" class="du-title"></h2>
+        <h3 id="du-name" class="du-title"></h3>
         <div id="du-price" class="du-price"></div>
         
         <div class="du-specs-card">
@@ -1369,15 +1370,19 @@
 
 .dossier-ultra-grid {
   display: grid;
-  grid-template-columns: 60% 40%; /* 60% Imagen, 40% Datos en Desktop */
-  min-height: 85vh; /* Ocupa casi toda la pantalla */
+  grid-template-columns: 55% 45%; /* Más balanceado para que los textos respiren */
+  min-height: 90vh; /* Extendido */
+  background-color: var(--deep-navy, #0A1F3F);
 }
 
-/* Visules (Carrusel) */
+/* Visuales (Carrusel) */
 .du-visual {
   position: relative;
   overflow: hidden;
-  background: #000;
+  background: var(--navy, #132A4A);
+  border-radius: 0 35px 35px 0; /* Esquinas redondeadas sin picos */
+  box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+  z-index: 10;
 }
 
 .du-track {
@@ -1417,44 +1422,44 @@
 .du-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, transparent 70%, rgba(10,31,63,0.8) 100%);
+  background: linear-gradient(to right, transparent 50%, rgba(10,31,63,0.95) 100%);
   z-index: 2;
   pointer-events: none;
 }
 
 .du-badge {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 40px;
+  left: 40px;
   background: var(--gold, #D4AF37);
   color: var(--deep-navy, #0A1F3F);
-  padding: 8px 16px;
+  padding: 10px 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 2px;
   z-index: 10;
-  border-radius: 4px;
+  border-radius: 30px; /* Redondeado, sin esquinas */
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .du-nav {
   position: absolute;
   bottom: 40px;
-  left: 30px;
+  left: 40px;
   z-index: 10;
   display: flex;
   gap: 15px;
 }
 
 .du-nav button {
-  background: rgba(10,31,63,0.6);
+  background: rgba(10,31,63,0.7);
   border: 1px solid var(--gold, #D4AF37);
   color: var(--gold, #D4AF37);
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
@@ -1480,20 +1485,20 @@
 }
 
 .du-data-inner {
-  padding: 10% 12%;
+  padding: 8% 10%;
   height: 100%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
 
-.du-eyebrow {
+.du-main-title {
   color: var(--gold, #D4AF37);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; /* Letra grande y lujosa */
+  font-weight: 500;
   margin: 0;
+  line-height: 1;
 }
 
 .du-zone {
@@ -1508,7 +1513,7 @@
 
 .du-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   color: #ffffff;
   line-height: 1.1;
   margin: 0 0 15px 0;
@@ -1517,7 +1522,7 @@
 
 .du-price {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #ffffff;
   font-weight: 300;
   margin-bottom: 30px;
@@ -1525,15 +1530,15 @@
 
 .du-specs-card {
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(212,175,55,0.2);
+  border: 1px solid rgba(212,175,55,0.15);
   padding: 25px;
-  border-radius: 12px;
+  border-radius: 20px; /* Bordes suaves */
   margin-bottom: 30px;
 }
 
 .du-spec-title {
   color: var(--gold, #D4AF37);
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: block;
@@ -1548,19 +1553,23 @@
   margin: 0;
 }
 
+/* Envoltura del mapa sin esquinas puntiagudas */
 .du-map-wrapper {
   width: 100%;
   height: 250px;
-  border-radius: 12px;
+  border-radius: 20px; /* Adiós esquinas puntiagudas */
   overflow: hidden;
   border: 1px solid rgba(212,175,55,0.3);
   margin-bottom: 40px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  background: var(--navy, #132A4A);
 }
 
 .du-map-wrapper iframe {
   width: 100%;
   height: 100%;
-  filter: grayscale(1) invert(1) contrast(0.9); /* Estilo mapa oscuro/lujo */
+  border: none;
+  filter: grayscale(1) invert(1) contrast(0.85); /* Estilo nocturno/elegante */
 }
 
 .du-action-area {
@@ -1570,9 +1579,9 @@
 .du-quote {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 1.3rem;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 25px;
   text-align: center;
 }
 
@@ -1588,7 +1597,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px; /* Redondeado suave */
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(212,175,55,0.2);
 }
@@ -1606,34 +1615,34 @@
   }
   
   .du-visual {
-    height: 60vh; /* Ocupa el 60% de la pantalla en celular */
+    height: 65vh; 
+    border-radius: 0 0 35px 35px; /* Redondeado por debajo en móvil */
   }
 
   .du-overlay {
-    background: linear-gradient(to top, rgba(10,31,63,1) 0%, transparent 50%);
+    background: linear-gradient(to top, rgba(10,31,63,1) 0%, transparent 60%);
   }
 
-  /* Efecto Bottom-Sheet (Superposición) */
   .du-data {
-    margin-top: -40px; /* Sube sobre la imagen */
-    border-radius: 30px 30px 0 0;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+    margin-top: -60px; /* Efecto bottom-sheet */
+    border-radius: 35px 35px 0 0;
+    box-shadow: 0 -15px 40px rgba(0,0,0,0.6);
   }
 
   .du-data-inner {
     padding: 40px 25px;
   }
 
-  .du-title {
-    font-size: 2.2rem;
+  .du-main-title {
+    font-size: 2.5rem;
   }
 
-  .du-price {
-    font-size: 1.5rem;
+  .du-title {
+    font-size: 2rem;
   }
 
   .du-nav {
-    bottom: 60px; /* Ajuste para que no lo tape el panel de abajo */
+    bottom: 80px; 
     right: 20px;
     left: auto;
   }
@@ -1643,22 +1652,13 @@
 <script>
 (function(){
 
+// Incluímos lat y lng reales de Los Cabos para que el mapa funcione 100%
 const luxuryData = [
-{ mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate ofrece más de 39 acres de terreno urbanizable con frente a la carretera y vistas al mar.", lat: "23.009318", lng: "-109.727416", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg" },
-  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "Último lote de desarrollador de 5.3 hectáreas frente al mar entre Palmilla y Rancho Cerro Colorado.", lat: "23.003035", lng: "-109.729046", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg" },
-  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean View Lot", overview: "Terreno elevado con vistas panorámicas al mar y perfecto para una residencia de dos niveles.", lat: "23.003049", lng: "-109.727499", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg" },
-  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Lote amplio en el corazón de Legado, ideal para una residencia de una sola planta con gran privacidad.", lat: "23.003075", lng: "-109.726638", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg" },
-  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Building Site", overview: "Amplio lote perfecto para casa de ensueño con vistas al horizonte azul del mar.", lat: "23.002441", lng: "-109.727652", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg" },
-  { mls: "26-475", name: "Caleta Loma Oceanview Lot", zone: "Palmilla", price: "Last Chance Lot", overview: "Uno de los últimos lotes disponibles en Caleta Loma con vistas al océano y al campo de golf.", lat: "23.019932", lng: "-109.719522", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260127220512954478000000-o.jpg" },
-  { mls: "25-1340", name: "Punta Bella Corner Lot", zone: "Corridor", price: "Beach Proximity", overview: "Esquina privilegiada en Punta Bella con vistas al océano y cerca de la playa nadable.", lat: "22.999436", lng: "-109.726251", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251101204059164956000000-o.jpg" },
-  { mls: "25-4077", name: "Palmilla Ready-to-Build Lot", zone: "Palmilla", price: "Turnkey Opportunity", overview: "Lote listo para construir con planos aprobados, licencias pagadas y a minutos de la playa de Palmilla.", lat: "23.019517", lng: "-109.719133", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250829183305720835000000-o.jpg" },
-  { mls: "25-4777", name: "Caleta Loma Lot 94", zone: "Palmilla", price: "Oceanfront Lot", overview: "Excepcional lote frente al mar en una de las zonas más exclusivas de Palmilla.", lat: "23.02103", lng: "-109.719288", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251028163539156923000000-o.jpg" },
-  { mls: "25-3336", name: "Caleta Loma Lot 81", zone: "Palmilla", price: "Cul-de-sac Lot", overview: "Lote en cul-de-sac privado con vistas al golf y al resort One&Only Palmilla.", lat: "23.017654", lng: "-109.720764", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251216224355645743000000-o.jpg" },
-  { mls: "26-587", name: "Caleta Loma Oceanfront Lot", zone: "Palmilla", price: "Premium Position", overview: "Lote con vistas 180° al océano y al One&Only Palmilla Resort.", lat: "23.021921", lng: "-109.718568", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260415190134503562000000-o.jpg" },
-  { mls: "24-1148", name: "Palmilla Park Lot", zone: "Palmilla", price: "Family Community", overview: "Lote amplio en Palmilla Park rodeado de áreas verdes y senderos.", lat: "23.023473", lng: "-109.745076", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240306232101061524000000-o.jpg" },
-  { mls: "25-5618", name: "Palmilla Canyon Homesite 5", zone: "Palmilla", price: "Canyon View Lot", overview: "Vista directa al mar y a las montañas desde un cañón lleno de palmeras.", lat: "23.018273", lng: "-109.7274", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251209031632363143000000-o.jpg" },
-  { mls: "26-1764", name: "Palmilla Estates Lot 56", zone: "Palmilla", price: "Golf & Ocean View", overview: "Lote frente al fairway con vistas al océano en Palmilla Estates.", lat: "23.020998", lng: "-109.73417", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260410033932052741000000-o.jpg" },
-  { mls: "26-929", name: "Palmilla Park Reserve Lot 14", zone: "Palmilla", price: "Nature Reserve Lot", overview: "Lote generoso con vistas a la reserva natural y acceso al Reserve Club.", lat: "23.019649", lng: "-109.745654", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20260219010614905164000000-o.jpg" }
+  { mls: "25-3368", name: "El Zalate Development Parcel", zone: "San José Corridor", price: "Development Opportunity", overview: "Parcel Lot 3 El Zalate offers over 39 acre (15.94 hectares) of development land located in the San José Corridor.", lat: "23.009318", lng: "-109.727416", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250628182024937046000000-o.jpg" },
+  { mls: "25-4408", name: "Rancho Cerro Colorado", zone: "San José del Cabo", price: "Developer Opportunity", overview: "A truly rare offering, this 5.3-hectare oceanside parcel is the last remaining developer lot...", lat: "23.003035", lng: "-109.729046", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20251004195157259617000000-o.jpg" },
+  { mls: "25-907", name: "Legado Lot 3", zone: "Palmilla", price: "Ocean Views", overview: "Terraced into the desert hillside...", lat: "23.003049", lng: "-109.727499", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115232139984971000000-o.jpg" },
+  { mls: "24-774", name: "Legado Lot 10", zone: "Palmilla", price: "Private Sanctuary", overview: "Uniquely positioned in the heart of the Legado development...", lat: "23.003075", lng: "-109.726638", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20240217203155858915000000-o.jpg" },
+  { mls: "25-906", name: "Custom Dream Lot", zone: "Palmilla", price: "Prime Location", overview: "This ample lot is the perfect location...", lat: "23.002441", lng: "-109.727652", img: "https://cdn.resize.sparkplatform.com/cab/1280x1024/true/20250115215308812065000000-o.jpg" }
 ];
 
 let duCurrent = 0;
@@ -1680,8 +1680,8 @@ function updateDuDossier() {
   document.getElementById("du-price").textContent = p.price;
   document.getElementById("du-overview").textContent = p.overview;
   
-  // Actualizar Mapa (URL embebida satelital)
-  const mapUrl = `https://maps.google.com/maps?q=$${p.lat},${p.lng}&t=k&z=16&ie=UTF8&iwloc=&output=embed`;
+  // URL nativa de Google Maps Embed (Solución al error del iframe)
+  const mapUrl = `https://maps.google.com/maps?q=${p.lat},${p.lng}&t=k&z=16&ie=UTF8&iwloc=&output=embed`;
   document.getElementById("du-map-frame").src = mapUrl;
 
   // Actualizar CTA WhatsApp
