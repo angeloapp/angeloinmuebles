@@ -7072,8 +7072,440 @@ slideTimer = setInterval(() => duMove(1), 7000);
         </div>
     </div>
 </div>
-<style>#amsita-btn{position:fixed;bottom:28px;right:28px;z-index:9999999;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#d4af37,#b8922a);border:none;cursor:pointer;box-shadow:0 8px 32px rgba(212,175,55,.45);display:flex;align-items:center;justify-content:center;transition:all .3s ease;font-size:26px}#amsita-btn:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(212,175,55,.6)}#amsita-btn .amsita-notif{position:absolute;top:-4px;right:-4px;background:#e74c3c;color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700}#amsita-panel{position:fixed;bottom:100px;right:28px;z-index:9999998;width:370px;max-height:560px;background:linear-gradient(160deg,#0d1117 0%,#12082a 100%);border:1px solid rgba(212,175,55,.25);border-radius:20px;box-shadow:0 24px 80px rgba(0,0,0,.7);display:none;flex-direction:column;overflow:hidden;font-family:'Cormorant Garamond','Georgia',serif}#amsita-panel.open{display:flex}#amsita-header{background:linear-gradient(90deg,rgba(212,175,55,.15),rgba(212,175,55,.05));padding:16px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(212,175,55,.2)}#amsita-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#d4af37,#8b6914);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}#amsita-info h4{margin:0;color:#d4af37;font-size:1rem;font-weight:600;letter-spacing:.03em}#amsita-info p{margin:0;color:rgba(245,237,224,.6);font-size:.75rem;font-family:'Montserrat',sans-serif}#amsita-close{margin-left:auto;background:none;border:none;color:rgba(245,237,224,.5);cursor:pointer;font-size:20px;padding:4px;transition:color .2s}#amsita-close:hover{color:#d4af37}#amsita-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:360px;scrollbar-width:thin;scrollbar-color:rgba(212,175,55,.3) transparent}#amsita-msgs::-webkit-scrollbar{width:4px}#amsita-msgs::-webkit-scrollbar-thumb{background:rgba(212,175,55,.3);border-radius:2px}.amsita-msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.88rem;line-height:1.6;letter-spacing:.01em}.amsita-msg.bot{background:rgba(255,255,255,.06);color:#f5ede0;border:1px solid rgba(212,175,55,.12);align-self:flex-start;border-bottom-left-radius:4px}.amsita-msg.user{background:linear-gradient(135deg,rgba(212,175,55,.25),rgba(212,175,55,.12));color:#f5ede0;border:1px solid rgba(212,175,55,.3);align-self:flex-end;border-bottom-right-radius:4px}.amsita-typing{display:flex;gap:5px;align-items:center;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.12);border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;width:56px}.amsita-typing span{width:7px;height:7px;border-radius:50%;background:#d4af37;animation:amsitaDot 1.2s infinite}.amsita-typing span:nth-child(2){animation-delay:.2s}.amsita-typing span:nth-child(3){animation-delay:.4s}@keyframes amsitaDot{0%,80%,100%{opacity:.25;transform:scale(.8)}40%{opacity:1;transform:scale(1)}}#amsita-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid rgba(212,175,55,.15);background:rgba(0,0,0,.2)}#amsita-input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:10px 14px;color:#f5ede0;font-family:'Montserrat',sans-serif;font-size:.85rem;outline:none;resize:none;height:40px;transition:border-color .2s}#amsita-input::placeholder{color:rgba(245,237,224,.35)}#amsita-input:focus{border-color:rgba(212,175,55,.5)}#amsita-send{background:linear-gradient(135deg,#d4af37,#b8922a);border:none;border-radius:10px;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;font-size:16px}#amsita-send:hover{transform:scale(1.08)}@media(max-width:420px){#amsita-panel{width:calc(100vw - 24px);right:12px}}</style><div id="amsita-btn" onclick="amsitaToggle()" title="Habla con Amsita">🏡<span class="amsita-notif">1</span></div><div id="amsita-panel"><div id="amsita-header"><div id="amsita-avatar">🤖</div><div id="amsita-info"><h4>Amsita</h4><p>Agente Inmobiliaria · Angelo Inmuebles</p></div><button id="amsita-close" onclick="amsitaToggle()">✕</button></div><div id="amsita-msgs"></div><div id="amsita-input-row"><input id="amsita-input" placeholder="Escríbeme..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();amsitaSend()}"/><button id="amsita-send" onclick="amsitaSend()">➤</button></div></div>
+<style>
+/* AMSITA: Premium chat UI (drop-in replacement) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:wght@600&display=swap');
+
+:root{
+  --deep-navy:#0A1F3F;
+  --obsidian:#050A14;
+  --main-gold:#D4AF37;
+  --gold-2:#B8922A;
+  --sand:#F5EDE0;
+  --muted:rgba(245,237,224,.6);
+  --glass:rgba(255,255,255,0.04);
+  --panel-radius:35px;
+  --btn-radius:22px;
+}
+
+/* Floating button (IDs preserved) */
+#amsita-btn{
+  position:fixed;
+  bottom:28px;
+  right:28px;
+  z-index:9999999;
+  width:65px;
+  height:65px;
+  border-radius:var(--btn-radius);
+  background:linear-gradient(135deg,var(--main-gold) 0%,var(--gold-2) 100%);
+  border:1px solid rgba(255,255,255,0.12);
+  cursor:pointer;
+  box-shadow:0 12px 32px rgba(212,175,55,0.4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .42s cubic-bezier(.175,.885,.32,1.275), box-shadow .32s, filter .18s;
+  -webkit-tap-highlight-color: transparent;
+  outline:none;
+  will-change:transform,box-shadow;
+  touch-action:manipulation;
+}
+#amsita-btn:hover{ transform:translateY(-5px) scale(1.05); box-shadow:0 15px 40px rgba(212,175,55,0.6); filter:drop-shadow(0 8px 20px rgba(212,175,55,0.12)); }
+#amsita-btn:active,#amsita-btn.touch-active{ transform:translateY(0) scale(.98); box-shadow:0 6px 18px rgba(0,0,0,.45); transition:transform .08s linear; }
+#amsita-btn:focus-visible{ box-shadow:0 6px 22px rgba(212,175,55,0.28),0 0 0 4px rgba(212,175,55,0.08); transform:translateY(-3px) scale(1.03); }
+#amsita-btn .amsita-notif{ position:absolute; top:-6px; right:-6px; background:#e74c3c; color:#fff; border-radius:50%; width:18px; height:18px; font-size:10px; display:flex; align-items:center; justify-content:center; font-weight:700; box-shadow:0 2px 6px rgba(0,0,0,.35); transition:transform .18s ease; }
+#amsita-btn:hover .amsita-notif{ transform:scale(1.06); }
+
+/* Panel */
+#amsita-panel{
+  position:fixed;
+  bottom:110px;
+  right:28px;
+  z-index:9999998;
+  width:380px;
+  max-height:600px;
+  background:rgba(10,31,63,0.85);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border:1px solid rgba(212,175,55,0.28);
+  border-radius:var(--panel-radius);
+  box-shadow:0 30px 100px rgba(0,0,0,0.8);
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  font-family:'Cormorant Garamond','Georgia',serif;
+  transform-origin:bottom right;
+  transition:opacity .22s ease, transform .22s ease;
+}
+#amsita-panel.open{ display:flex; }
+
+/* Header */
+#amsita-header{ background:rgba(212,175,55,0.08); padding:20px 24px; display:flex; align-items:center; gap:15px; border-bottom:1px solid rgba(212,175,55,0.12); }
+#amsita-avatar{ width:48px; height:48px; border-radius:16px; background:linear-gradient(135deg,var(--main-gold),#8b6914); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:transform .18s ease, box-shadow .18s ease; -webkit-tap-highlight-color: transparent; }
+#amsita-avatar:hover,#amsita-avatar:focus{ transform:translateY(-2px) scale(1.03); box-shadow:0 10px 30px rgba(0,0,0,.35); }
+#amsita-info h4{ margin:0; color:var(--main-gold); font-size:1.1rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; font-family:'Cormorant Garamond',serif; }
+#amsita-info p{ margin:0; color:rgba(255,255,255,0.78); font-size:.75rem; font-family:'Montserrat',sans-serif; font-weight:400; }
+#amsita-close{ margin-left:auto; background:none; border:none; color:rgba(255,255,255,0.8); cursor:pointer; font-size:18px; padding:6px; transition:transform .12s ease, color .12s ease; }
+#amsita-close:hover{ transform:translateY(-2px); color:var(--main-gold); }
+
+/* Messages */
+#amsita-msgs{ flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:10px; max-height:420px; scrollbar-width:thin; scrollbar-color:rgba(212,175,55,.28) transparent; -webkit-overflow-scrolling:touch; }
+#amsita-msgs::-webkit-scrollbar{ width:6px; } #amsita-msgs::-webkit-scrollbar-thumb{ background:linear-gradient(180deg, rgba(212,175,55,.28), rgba(212,175,55,.18)); border-radius:6px; }
+
+/* Date separator */
+.amsita-date-sep{ display:flex; align-items:center; gap:12px; color:rgba(245,237,224,.6); font-size:.75rem; justify-content:center; padding:6px 0; }
+.amsita-date-sep::before,.amsita-date-sep::after{ content:''; height:1px; flex:1; background:linear-gradient(90deg, transparent, rgba(212,175,55,.06), transparent); }
+
+/* Bubbles */
+.amsita-msg{ max-width:80%; padding:12px 18px; font-size:.95rem; line-height:1.5; margin-bottom:8px; transition:transform .28s ease, box-shadow .28s ease; border-radius:20px; position:relative; word-break:break-word; }
+.amsita-msg.bot{ background:rgba(255,255,255,0.08); color:#f5ede0; border-radius:20px 20px 20px 5px; border:1px solid rgba(255,255,255,0.06); align-self:flex-start; padding-right:56px; font-family:'Montserrat',sans-serif; }
+.amsita-msg.user{ background:linear-gradient(135deg,var(--main-gold),var(--gold-2)); color:var(--obsidian); border-radius:20px 20px 5px 20px; font-weight:600; align-self:flex-end; box-shadow:0 8px 20px rgba(212,175,55,0.18); padding-right:64px; font-family:'Montserrat',sans-serif; }
+
+/* Grouping */
+.msg-group-cont{ margin-top:4px; } .msg-group-start{ margin-top:12px; }
+
+/* Meta */
+.amsita-meta{ position:absolute; bottom:8px; right:12px; font-size:.68rem; color:rgba(255,255,255,0.72); display:flex; gap:6px; align-items:center; }
+
+/* Typing */
+.amsita-typing{ display:flex; gap:5px; align-items:center; padding:10px 14px; background:rgba(255,255,255,0.06); border:1px solid rgba(212,175,55,.12); border-radius:14px; align-self:flex-start; width:64px; }
+.amsita-typing span{ width:7px; height:7px; border-radius:50%; background:var(--main-gold); animation:amsitaDot 1.2s infinite; }
+.amsita-typing span:nth-child(2){ animation-delay:.18s } .amsita-typing span:nth-child(3){ animation-delay:.36s }
+@keyframes amsitaDot{ 0%,80%,100%{ opacity:.25; transform:scale(.8) } 40%{ opacity:1; transform:scale(1) } }
+
+/* Input row */
+#amsita-input-row{ padding:18px 20px; background:rgba(0,0,0,0.28); display:flex; gap:12px; align-items:center; border-top:1px solid rgba(255,255,255,0.02); }
+#amsita-input{ background:rgba(255,255,255,0.05); border:1px solid rgba(212,175,55,0.18); border-radius:15px; padding:12px 16px; color:#fff; font-family:'Montserrat',sans-serif; font-size:.9rem; outline:none; height:46px; width:100%; transition:box-shadow .18s ease, border-color .18s ease; }
+#amsita-input::placeholder{ color:rgba(255,255,255,0.5); } #amsita-input:focus{ box-shadow:0 10px 30px rgba(212,175,55,0.06); border-color:rgba(212,175,55,0.36); }
+
+/* Send */
+#amsita-send{ background:var(--main-gold); border-radius:12px; width:45px; height:45px; display:inline-flex; align-items:center; justify-content:center; border:none; cursor:pointer; transition:transform .3s cubic-bezier(.4,0,.2,1), box-shadow .2s; }
+#amsita-send:hover{ transform:scale(1.1) rotate(-10deg); box-shadow:0 12px 30px rgba(212,175,55,0.18); } #amsita-send:active{ transform:scale(.98) rotate(-6deg); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } #amsita-btn, #amsita-panel{ transform:none !important; } }
+
+/* Mobile adjustments */
+@media (max-width:420px){
+  #amsita-panel{ width:92vw; right:4vw; bottom:100px; border-radius:30px; backdrop-filter:blur(8px) saturate(140%); -webkit-backdrop-filter:blur(8px) saturate(140%); box-shadow:0 18px 48px rgba(0,0,0,0.6); }
+  #amsita-btn{ right:12px; bottom:20px; width:60px; height:60px; border-radius:18px; }
+  #amsita-input{ height:52px; }
+}
+</style>
+
+<!-- HTML (IDs and inline handlers preserved) -->
+<div id="amsita-btn" onclick="amsitaToggle()" title="Habla con Amsita" role="button" aria-label="Abrir chat Amsita" aria-pressed="false">
+  <!-- Replace interior with complex SVG -->
+ <svg id="amsita-btn-svg" width="38" height="38" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gold-cslp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7DFA0"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+    <filter id="cslp-glow">
+      <feGaussianBlur stdDeviation="2.5" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="5" y="5" width="110" height="110" rx="22" fill="rgba(255,255,255,0.02 )" stroke="url(#gold-cslp)" stroke-width="0.5" opacity="0.4"/>
+  <g transform="translate(15,15) scale(0.75)" filter="url(#cslp-glow)">
+    <path d="M60 5 Q60 25 60 40 M60 10 Q45 5 35 15 M60 10 Q75 5 85 15" stroke="url(#gold-cslp)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M30 70 L30 50 L60 40 L90 50 L90 70" stroke="url(#gold-cslp)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+    <path d="M20 90 L40 70 L60 80 L80 65 L100 90" stroke="url(#gold-cslp)" stroke-width="5" fill="none" stroke-linejoin="round"/>
+    <path d="M45 90 Q60 75 75 90" stroke="url(#gold-cslp)" stroke-width="3" fill="none"/>
+    <path d="M20 90 L60 110 L100 90 Z" stroke="url(#gold-cslp)" stroke-width="3" fill="none"/>
+  </g>
+  <path d="M20 20 L100 100" stroke="white" stroke-width="0.5" opacity="0.1"/>
+</svg>
+
+
+  <span class="amsita-notif" aria-hidden="true">1</span>
+</div>
+
+<div id="amsita-panel" role="dialog" aria-label="Chat con Amsita" aria-hidden="true">
+  <div id="amsita-header">
+    <div id="amsita-avatar" tabindex="0" role="img" aria-label="Avatar Amsita">
+      <!-- Avatar complex SVG -->
+      <svg id="amsita-avatar" width="56" height="56" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shield-obsidian" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A1F3F"/>
+      <stop offset="100%" stop-color="#050A14"/>
+    </linearGradient>
+    <linearGradient id="gold-bevel-master" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7DFA0"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+  </defs>
+  <path d="M60 6 L104 26 V65 C104 92 60 114 60 114 C60 114 16 92 16 65 V26 L60 6 Z" fill="url(#shield-obsidian )" stroke="url(#gold-bevel-master)" stroke-width="3"/>
+  <path d="M60 10 V110" stroke="rgba(212,175,55,0.2)" stroke-width="0.5"/>
+  <g transform="translate(35,30) scale(0.42)" stroke="url(#gold-bevel-master)" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 5 Q60 30 60 45 M60 10 Q40 0 20 20 M60 10 Q80 0 100 20" />
+    <path d="M20 80 L20 50 L60 35 L100 50 L100 80" />
+    <path d="M10 110 L35 80 L60 95 L85 75 L110 110" />
+    <path d="M45 110 Q60 90 75 110" />
+    <path d="M10 110 L60 140 L110 110 Z" />
+  </g>
+  <path d="M30 30 L60 12 L90 30" stroke="white" stroke-width="1.5" opacity="0.1"/>
+</svg>
+
+    </div>
+
+    <div id="amsita-info">
+      <h4>Concierge Digital</h4>
+      <p>Estratega de Realidades Patrimoniales</p>
+    </div>
+
+    <button id="amsita-close" onclick="amsitaToggle()" title="Cerrar chat" aria-label="Cerrar chat">✕</button>
+  </div>
+
+  <div id="amsita-msgs" aria-live="polite" aria-atomic="false"></div>
+
+  <div id="amsita-input-row">
+    <input id="amsita-input" placeholder="¿Cómo puedo elevar su patrimonio?" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();amsitaSend()}"/>
+    <button id="amsita-send" onclick="amsitaSend()" title="Enviar mensaje" aria-label="Enviar mensaje">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#050a14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+/* AMSITA UI Enhancer: timestamps, grouping, safe wrappers (non-destructive) */
+(function(){
+  'use strict';
+
+  /* Utilities */
+  function pad(n){ return n < 10 ? '0' + n : String(n); }
+  function formatTime(d){ return pad(d.getHours()) + ':' + pad(d.getMinutes()); }
+  function formatDateLabel(d){
+    const today = new Date();
+    const t = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const dd = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    const diff = Math.round((dd - t) / (1000*60*60*24));
+    if(diff === 0) return 'Hoy';
+    if(diff === -1) return 'Ayer';
+    return d.toLocaleDateString(undefined, { day:'numeric', month:'short' });
+  }
+  function escapeHtml(s){ if(s == null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;'); }
+
+  function statusIcon(status){
+    if(status === 'read') return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#b8922a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    if(status === 'delivered') return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12h20" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+
+  /* Append message */
+  function appendMessage({text, who='bot', timestamp=new Date(), status='delivered', id=null}){
+    const container = document.getElementById('amsita-msgs');
+    if(!container) return;
+    const msgDate = new Date(timestamp);
+    const dateKey = msgDate.toDateString();
+    const lastDateSep = container.querySelector('.amsita-date-sep:last-of-type');
+    const lastDate = lastDateSep ? lastDateSep.getAttribute('data-date') : null;
+    if(lastDate !== dateKey){
+      const sep = document.createElement('div');
+      sep.className = 'amsita-date-sep';
+      sep.setAttribute('data-date', dateKey);
+      sep.textContent = formatDateLabel(msgDate);
+      container.appendChild(sep);
+    }
+    const lastMsg = container.querySelector('.amsita-msg:last-of-type');
+    let groupClass = 'msg-group-start';
+    if(lastMsg){
+      const lastAuthor = lastMsg.classList.contains('user') ? 'user' : 'bot';
+      const lastTs = lastMsg.getAttribute('data-ts');
+      if(lastAuthor === who && lastTs){
+        const diffMin = (msgDate - new Date(lastTs)) / (1000*60);
+        if(diffMin >= 0 && diffMin <= 5) groupClass = 'msg-group-cont';
+      }
+    }
+    const bubble = document.createElement('div');
+    bubble.className = `amsita-msg ${who} ${groupClass}`;
+    bubble.setAttribute('data-ts', msgDate.toISOString());
+    if(id) bubble.setAttribute('data-id', id);
+    const content = document.createElement('div');
+    content.className = 'amsita-content';
+    content.innerHTML = escapeHtml(text).replace(/\n/g,'<br>');
+    bubble.appendChild(content);
+    const meta = document.createElement('div');
+    meta.className = 'amsita-meta';
+    const timeSpan = document.createElement('span');
+    timeSpan.className = 'time';
+    timeSpan.textContent = formatTime(msgDate);
+    meta.appendChild(timeSpan);
+    const statusSpan = document.createElement('span');
+    statusSpan.className = 'status ' + (status === 'read' ? 'status-read' : status === 'delivered' ? 'status-delivered' : 'status-sent');
+    statusSpan.innerHTML = statusIcon(status);
+    meta.appendChild(statusSpan);
+    bubble.appendChild(meta);
+    container.appendChild(bubble);
+    container.scrollTop = container.scrollHeight - container.clientHeight + 20;
+  }
+
+  /* Public API */
+  window.amsitaUI = {
+    appendMessage,
+    markLastAsDelivered: function(){
+      const container = document.getElementById('amsita-msgs'); if(!container) return;
+      const lastUser = container.querySelector('.amsita-msg.user[data-ts]:last-of-type');
+      if(lastUser){ const status = lastUser.querySelector('.status'); if(status) status.className = 'status status-delivered', status.innerHTML = statusIcon('delivered'); }
+    },
+    markLastAsRead: function(){
+      const container = document.getElementById('amsita-msgs'); if(!container) return;
+      const lastUser = container.querySelector('.amsita-msg.user[data-ts]:last-of-type');
+      if(lastUser){ const status = lastUser.querySelector('.status'); if(status) status.className = 'status status-read', status.innerHTML = statusIcon('read'); }
+    }
+  };
+
+  /* Observe incoming nodes inserted by amsita.js */
+  function observeIncoming(){
+    const container = document.getElementById('amsita-msgs'); if(!container) return;
+    const mo = new MutationObserver(muts=>{
+      muts.forEach(m=>{
+        m.addedNodes.forEach(node=>{
+          if(node.nodeType !== 1) return;
+          if(node.classList && node.classList.contains('amsita-msg')){
+            if(!node.querySelector('.amsita-meta')){
+              const ts = node.getAttribute('data-ts') ? new Date(node.getAttribute('data-ts')) : new Date();
+              const meta = document.createElement('div'); meta.className = 'amsita-meta';
+              const timeSpan = document.createElement('span'); timeSpan.className = 'time'; timeSpan.textContent = formatTime(ts); meta.appendChild(timeSpan);
+              const statusSpan = document.createElement('span'); statusSpan.className = 'status status-delivered'; statusSpan.innerHTML = statusIcon('delivered'); meta.appendChild(statusSpan);
+              node.appendChild(meta);
+            }
+          }
+        });
+      });
+    });
+    mo.observe(container, { childList:true, subtree:false });
+  }
+
+  /* Safe wrapper for amsitaSend */
+  (function wrapSend(){
+    if(typeof window.amsitaSend === 'function'){
+      const original = window.amsitaSend;
+      window.amsitaSend = function(){
+        try{
+          const input = document.getElementById('amsita-input');
+          const text = input ? input.value.trim() : '';
+          const ts = new Date();
+          if(text) appendMessage({ text, who:'user', timestamp:ts, status:'sent' });
+        }catch(e){ console.error(e); }
+        return original.apply(this, arguments);
+      };
+    } else {
+      window.amsitaSend = function(){
+        const input = document.getElementById('amsita-input');
+        const text = input ? input.value.trim() : '';
+        const ts = new Date();
+        if(text){ appendMessage({ text, who:'user', timestamp:ts, status:'sent' }); if(input) input.value = ''; }
+      };
+    }
+  })();
+
+  /* Safe wrapper for amsitaToggle */
+  (function wrapToggle(){
+    const panel = document.getElementById('amsita-panel');
+    if(typeof window.amsitaToggle === 'function'){
+      const original = window.amsitaToggle;
+      window.amsitaToggle = function(){
+        const res = original.apply(this, arguments);
+        setTimeout(()=>{
+          if(!panel) return;
+          const isOpen = panel.classList.contains('open');
+          panel.setAttribute('aria-hidden', String(!isOpen));
+          if(isOpen){ const input = document.getElementById('amsita-input'); if(input) input.focus(); panel.style.opacity = '1'; panel.style.transform = 'translateY(0)'; } else { panel.style.opacity = ''; panel.style.transform = ''; }
+          const btn = document.getElementById('amsita-btn'); if(btn) btn.setAttribute('aria-pressed', String(isOpen));
+        }, 8);
+        return res;
+      };
+    } else {
+      window.amsitaToggle = function(){
+        if(!panel) return;
+        const isOpen = panel.classList.toggle('open');
+        panel.setAttribute('aria-hidden', String(!isOpen));
+        if(isOpen){ const input = document.getElementById('amsita-input'); if(input) input.focus(); }
+        const btn = document.getElementById('amsita-btn'); if(btn) btn.setAttribute('aria-pressed', String(isOpen));
+      };
+    }
+  })();
+
+  /* Interactions: pointer + touch */
+  (function interactions(){
+    const btn = document.getElementById('amsita-btn');
+    if(!btn) return;
+    try { const clone = btn.cloneNode(true); btn.parentNode.replaceChild(clone, btn); } catch(e){}
+    const freshBtn = document.getElementById('amsita-btn');
+    const freshSvg = document.getElementById('amsita-btn-svg');
+    freshBtn.addEventListener('pointerenter', ()=> { freshBtn.style.transform = 'translateY(-5px) scale(1.05)'; freshBtn.style.boxShadow = '0 15px 40px rgba(212,175,55,0.6)'; if(freshSvg) freshSvg.style.filter = 'drop-shadow(0 8px 20px rgba(212,175,55,0.12))'; });
+    freshBtn.addEventListener('pointerleave', ()=> { freshBtn.style.transform = ''; freshBtn.style.boxShadow = ''; if(freshSvg) freshSvg.style.filter = ''; });
+    let touchTimer = null;
+    freshBtn.addEventListener('touchstart', ()=> { freshBtn.classList.add('touch-active'); if(navigator.vibrate) navigator.vibrate(8); clearTimeout(touchTimer); touchTimer = setTimeout(()=> freshBtn.classList.remove('touch-active'), 220); }, {passive:true});
+    freshBtn.addEventListener('touchend', ()=> { clearTimeout(touchTimer); freshBtn.classList.remove('touch-active'); });
+    freshBtn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); freshBtn.click(); } });
+
+    const avatar = document.getElementById('amsita-avatar');
+    if(avatar){
+      avatar.addEventListener('pointerenter', ()=> avatar.style.transform = 'translateY(-2px) scale(1.03)');
+      avatar.addEventListener('pointerleave', ()=> avatar.style.transform = '');
+      avatar.addEventListener('focus', ()=> avatar.style.transform = 'translateY(-2px) scale(1.03)');
+      avatar.addEventListener('blur', ()=> avatar.style.transform = '');
+      avatar.addEventListener('touchstart', ()=> {
+        const pulse = document.createElement('span');
+        pulse.style.position = 'absolute'; pulse.style.width = '8px'; pulse.style.height = '8px'; pulse.style.borderRadius = '50%';
+        pulse.style.background = 'rgba(212,175,55,0.12)'; pulse.style.left = '50%'; pulse.style.top = '50%';
+        pulse.style.transform = 'translate(-50%,-50%) scale(0.6)'; pulse.style.pointerEvents = 'none';
+        pulse.style.transition = 'transform .36s ease, opacity .36s ease';
+        avatar.appendChild(pulse);
+        requestAnimationFrame(()=> { pulse.style.transform = 'translate(-50%,-50%) scale(2.6)'; pulse.style.opacity = '0'; });
+        setTimeout(()=> pulse.remove(), 420);
+      }, {passive:true});
+    }
+  })();
+
+  /* aria observer */
+  (function ariaObserver(){
+    const panel = document.getElementById('amsita-panel');
+    if(!panel) return;
+    const mo = new MutationObserver(()=> {
+      const isOpen = panel.classList.contains('open');
+      panel.setAttribute('aria-hidden', String(!isOpen));
+      const btn = document.getElementById('amsita-btn'); if(btn) btn.setAttribute('aria-pressed', String(isOpen));
+    });
+    mo.observe(panel, { attributes:true, attributeFilter:['class'] });
+  })();
+
+  /* notif pulse */
+  (function notifPulse(){
+    const msgs = document.getElementById('amsita-msgs');
+    const notif = document.querySelector('#amsita-btn .amsita-notif');
+    if(!msgs || !notif) return;
+    const mo = new MutationObserver((mutations)=>{
+      for(const m of mutations){
+        if(m.addedNodes && m.addedNodes.length){
+          notif.animate([{ transform:'scale(1)', boxShadow:'0 2px 6px rgba(0,0,0,.35)' },{ transform:'scale(1.28)', boxShadow:'0 8px 18px rgba(0,0,0,.45)' },{ transform:'scale(1)', boxShadow:'0 2px 6px rgba(0,0,0,.35)' }], { duration:420, easing:'cubic-bezier(.2,.9,.2,1)' });
+          break;
+        }
+      }
+    });
+    mo.observe(msgs, { childList:true, subtree:false });
+  })();
+
+  /* init */
+  document.addEventListener('DOMContentLoaded', function(){ observeIncoming(); const msgs = document.getElementById('amsita-msgs'); if(msgs && msgs.children.length === 0){ appendMessage({ text: 'Bienvenido a Cabo Saint Lucas Properties. ¿En qué propiedad de lujo puedo ayudarte hoy?', who:'bot', timestamp:new Date(), status:'delivered' });
+ } });
+
+})();
+</script>
+
 <script src="/amsita.js"></script>
+
 <script>
 /* ===== MLS GALLERY & CARD ENRICHMENT ===== */
 (function(){
