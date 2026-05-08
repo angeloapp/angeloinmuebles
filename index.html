@@ -1589,10 +1589,10 @@ window.addEventListener('load', function() {
         if (cleanPrice > 0) {
             priceEl.textContent = "$" + cleanPrice.toLocaleString('en-US') + " USD";
         } else {
-            priceEl.textContent = "PRECIO A CONSULTAR";
+            priceEl.textContent = "CONSULTAR";
         }
     } else {
-        priceEl.textContent = "PRECIO A CONSULTAR";
+        priceEl.textContent = "CONSULTAR";
     }
 
     document.getElementById('i-val-desc').textContent = item.overview || item.Overview || "Información clasificada.";
@@ -8229,7 +8229,59 @@ slideTimer = setInterval(() => duMove(1), 7000);
   loadMLS();
 })();
 </script>
+<style>
+  /* Evitar selección de texto en toda la página */
+  body {
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Estándar */
+  }
+  
+  /* Permitir interacción solo en inputs, textareas y el buscador */
+  input, textarea, select {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+  }
+</style>
 
+<script>
+  (function() {
+    // 1. Bloquear Clic Derecho
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // 2. Bloquear Teclas de Hackers/Copiones (Windows y Mac)
+    document.addEventListener('keydown', function(e) {
+      // Bloquear F12 (Herramientas de desarrollador)
+      if (e.keyCode === 123) {
+        e.preventDefault();
+      }
+      // Bloquear Ctrl+U (Código fuente), Ctrl+S (Guardar), Ctrl+C (Copiar), Ctrl+P (Imprimir)
+      if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 67 || e.keyCode === 80)) {
+        e.preventDefault();
+      }
+      // Bloquear Cmd+U, Cmd+S, Cmd+C, Cmd+P en Mac
+      if (e.metaKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 67 || e.keyCode === 80)) {
+        e.preventDefault();
+      }
+      // Bloquear Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C (Inspectores)
+      if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+        e.preventDefault();
+      }
+    });
+
+    // 3. Bloquear arrastre de imágenes (Drag & Drop)
+    document.addEventListener('dragstart', function(e) {
+      if (e.target.nodeName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+  })();
+</script>
 </body>
 <script>
 (function() {
