@@ -1263,12 +1263,168 @@
   </section>
 
   <!-- INTRO BAND -->
-  <div id="intro-band">
-    <blockquote class="reveal">
-      "No gestiono metros cuadrados.<br/>
-      Custodio el esfuerzo de una vida y lo convierto en el espacio donde <strong>crece el futuro</strong>."
-    </blockquote>
+<!-- CARRUSEL MLS + MAPA -->
+<section id="mls-explorer" style="background:#0a0a0a; padding: 3rem 0 0;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 1.5rem;">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(0.7rem,1vw,0.85rem); letter-spacing:0.25em; text-transform:uppercase; color:#b8964a; margin-bottom:0.5rem;">Portafolio MLS · Cabo San Lucas</p>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3vw,2.8rem); color:#f5f0e8; font-weight:400; margin-bottom:2rem; line-height:1.1;">Propiedades Disponibles</h2>
+
+    <!-- Tarjeta activa grande -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:start;">
+
+      <!-- Carrusel de imágenes -->
+      <div style="position:relative; border-radius:4px; overflow:hidden; aspect-ratio:4/3; background:#111;">
+        <div id="mls-slides" style="display:flex; transition:transform 0.5s cubic-bezier(0.16,1,0.3,1); height:100%; will-change:transform;"></div>
+        <button onclick="mlsSlide(-1)" aria-label="Anterior" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); border:1px solid rgba(255,255,255,0.15); color:#fff; width:38px; height:38px; border-radius:50%; font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px);">&#8249;</button>
+        <button onclick="mlsSlide(1)" aria-label="Siguiente" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); border:1px solid rgba(255,255,255,0.15); color:#fff; width:38px; height:38px; border-radius:50%; font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px);">&#8250;</button>
+        <div id="mls-img-counter" style="position:absolute; bottom:10px; right:14px; background:rgba(0,0,0,0.55); color:#fff; font-size:0.7rem; letter-spacing:0.12em; padding:3px 9px; border-radius:20px; backdrop-filter:blur(4px);"></div>
+        <div id="mls-badge" style="position:absolute; top:12px; left:12px; background:#b8964a; color:#0a0a0a; font-size:0.65rem; font-weight:700; letter-spacing:0.2em; padding:4px 10px; border-radius:2px;"></div>
+      </div>
+
+      <!-- Info panel -->
+      <div style="display:flex; flex-direction:column; gap:1rem; padding:0.5rem 0;">
+        <div>
+          <p id="mls-num" style="font-size:0.7rem; letter-spacing:0.2em; color:#b8964a; text-transform:uppercase; margin-bottom:0.4rem;"></p>
+          <p id="mls-overview" style="color:#c8c0b0; font-size:0.88rem; line-height:1.7; max-height:160px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#333 transparent;"></p>
+        </div>
+
+        <!-- Mapa -->
+        <div id="mls-map" style="width:100%; height:220px; border-radius:4px; overflow:hidden; border:1px solid rgba(255,255,255,0.08);"></div>
+
+        <a id="mls-maps-link" href="#" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; color:#b8964a; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; transition:opacity 0.2s;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ver en Google Maps
+        </a>
+      </div>
+    </div>
+
+    <!-- Miniaturas selectoras -->
+    <div id="mls-thumbs" style="display:flex; gap:0.75rem; margin-top:1.5rem; overflow-x:auto; padding-bottom:0.5rem; scrollbar-width:thin; scrollbar-color:#333 transparent;"></div>
   </div>
+</section>
+
+<!-- Leaflet (mapa ligero, sin API key) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+(function(){
+  const JSON_URL = 'https://raw.githubusercontent.com/angeloapp/angeloinmuebles/main/CSLPMLS.json';
+  let properties = [], activeIdx = 0, imgIdx = 0, mlsMap = null, mlsMarker = null;
+
+  function clampStr(str, max){
+    if(!str) return '';
+    return str.length > max ? str.slice(0, max) + '…' : str;
+  }
+
+  function renderProperty(idx){
+    const p = properties[idx];
+    if(!p) return;
+    imgIdx = 0;
+
+    // Slides de imágenes
+    const slides = document.getElementById('mls-slides');
+    slides.innerHTML = '';
+    slides.style.transform = 'translateX(0)';
+    const imgs = (p.images||[]).slice(0,12);
+    imgs.forEach(src => {
+      const div = document.createElement('div');
+      div.style.cssText = 'min-width:100%; height:100%; flex-shrink:0; background:#111;';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Propiedad ' + (p.mls||'');
+      img.style.cssText = 'width:100%; height:100%; object-fit:cover; display:block;';
+      img.onerror = ()=>{ img.style.display='none'; };
+      div.appendChild(img);
+      slides.appendChild(div);
+    });
+    updateImgCounter(imgs.length);
+
+    // Info
+    document.getElementById('mls-num').textContent = p.mls || '';
+    document.getElementById('mls-overview').textContent = clampStr(p.overview, 520);
+    document.getElementById('mls-badge').textContent = p.mls || 'MLS';
+    const mapsLink = document.getElementById('mls-maps-link');
+    mapsLink.href = p.googleMapsUrl || ('#');
+
+    // Mapa Leaflet
+    const lat = parseFloat(p.latitude), lng = parseFloat(p.longitude);
+    if(!isNaN(lat) && !isNaN(lng)){
+      if(!mlsMap){
+        mlsMap = L.map('mls-map', {zoomControl:true, scrollWheelZoom:false}).setView([lat, lng], 14);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          attribution:'&copy; CartoDB',
+          subdomains:'abcd', maxZoom:19
+        }).addTo(mlsMap);
+        const goldIcon = L.divIcon({
+          html:'<div style="width:14px;height:14px;background:#b8964a;border-radius:50%;border:2px solid #fff;box-shadow:0 0 6px rgba(184,150,74,0.8);"></div>',
+          iconSize:[14,14], iconAnchor:[7,7], className:''
+        });
+        mlsMarker = L.marker([lat, lng], {icon: goldIcon}).addTo(mlsMap);
+      } else {
+        mlsMap.setView([lat, lng], 14);
+        mlsMarker.setLatLng([lat, lng]);
+        setTimeout(()=>mlsMap.invalidateSize(), 50);
+      }
+    }
+
+    // Miniaturas activas
+    document.querySelectorAll('.mls-thumb').forEach((el, i) => {
+      el.style.outline = i === idx ? '2px solid #b8964a' : '2px solid transparent';
+      el.style.opacity = i === idx ? '1' : '0.55';
+    });
+  }
+
+  function updateImgCounter(total){
+    const el = document.getElementById('mls-img-counter');
+    if(el) el.textContent = (imgIdx+1) + ' / ' + total;
+  }
+
+  window.mlsSlide = function(dir){
+    const p = properties[activeIdx];
+    if(!p) return;
+    const imgs = (p.images||[]).slice(0,12);
+    imgIdx = (imgIdx + dir + imgs.length) % imgs.length;
+    const slides = document.getElementById('mls-slides');
+    slides.style.transform = `translateX(-${imgIdx * 100}%)`;
+    updateImgCounter(imgs.length);
+  };
+
+  fetch(JSON_URL)
+    .then(r => r.json())
+    .then(data => {
+      properties = data.slice(0, 20); // primeras 20 propiedades
+      const thumbs = document.getElementById('mls-thumbs');
+      properties.forEach((p, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'mls-thumb';
+        btn.title = p.mls || ('Prop ' + (i+1));
+        btn.setAttribute('aria-label', 'Ver propiedad ' + (p.mls || (i+1)));
+        btn.style.cssText = 'flex-shrink:0; width:80px; height:56px; border-radius:3px; overflow:hidden; background:#111; border:none; cursor:pointer; padding:0; outline:2px solid transparent; transition:opacity 0.2s, outline 0.2s;';
+        if(p.images && p.images[1]){
+          const img = document.createElement('img');
+          img.src = p.images[1];
+          img.alt = p.mls || '';
+          img.style.cssText = 'width:100%; height:100%; object-fit:cover; display:block; pointer-events:none;';
+          img.onerror = ()=>{ img.style.display='none'; };
+          btn.appendChild(img);
+        }
+        btn.addEventListener('click', ()=>{ activeIdx = i; renderProperty(i); });
+        thumbs.appendChild(btn);
+      });
+      renderProperty(0);
+    })
+    .catch(err => console.warn('MLS JSON error:', err));
+})();
+</script>
+
+<!-- INTRO BAND -->
+<div id="intro-band">
+  <blockquote class="reveal">
+    "No gestiono metros cuadrados.<br/>
+    Custodio el esfuerzo de una vida y lo convierto en el espacio donde <strong>crece el futuro</strong>."
+  </blockquote>
+</div>
 
   <!-- PROPÓSITO -->
  <section id="proposito" class="du-main-section">
