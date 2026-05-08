@@ -1523,12 +1523,15 @@ window.addEventListener('load', function() {
 
   function extractImages(item){
     var candidates = [item.images, item.Images, item.imageUrls, item.photos];
+    let found = [];
     for(var i=0; i<candidates.length; i++){
       var src = candidates[i];
-      if(Array.isArray(src)) return src.map(normalizeUrl).filter(Boolean);
-      if(typeof src === 'string' && src.includes('http')) return src.split(',').map(s => normalizeUrl(s.trim())).filter(Boolean);
+      if(Array.isArray(src)) found = src.map(s => normalizeUrl(s)).filter(Boolean);
+      else if(typeof src === 'string') found = src.split(',').map(s => normalizeUrl(s.trim())).filter(Boolean);
+      if(found.length > 0) break;
     }
-    return [];
+    // Evitamos la imagen stock de 2016
+    return found.filter(url => !url.includes('20160127015633238472000000'));
   }
 
   function shuffleArray(array) {
@@ -1549,7 +1552,7 @@ window.addEventListener('load', function() {
         if(!item.latitude || !item.longitude) return false;
         if(!item.overview || item.overview.trim() === '') return false;
         const ims = extractImages(item);
-        if(ims.length > 0 && ims.includes('20160127015633238472000000')) return false;
+        if(ims.length === 0) return false;
         return true;
       });
 
@@ -1566,7 +1569,6 @@ window.addEventListener('load', function() {
         }).addTo(iMap);
 
         iMarkers = L.layerGroup().addTo(iMap);
-
         iUpdateVisuals();
         setTimeout(() => { iMap.invalidateSize(); }, 800);
       }, 500);
@@ -1610,7 +1612,8 @@ window.addEventListener('load', function() {
     const imgs = extractImages(item);
     if(imgs.length === 0) imgs.push(FALLBACK_IMG);
 
-    imgs.forEach((url, i) => {
+    // Renderizamos las primeras 5 fotos en la galería principal
+    imgs.slice(0, 5).forEach((url, i) => {
       const img = document.createElement('img');
       img.src = url;
       img.setAttribute('referrerpolicy', 'no-referrer');
@@ -1619,7 +1622,7 @@ window.addEventListener('load', function() {
       gal.appendChild(img);
     });
 
-    document.getElementById('i-gal-counter').textContent = `1 / ${imgs.length}`;
+    document.getElementById('i-gal-counter').textContent = `1 / ${Math.min(imgs.length, 5)}`;
 
     document.querySelectorAll('.i-thumb').forEach((t, i) => {
         if(i === idx) {
@@ -1680,7 +1683,9 @@ window.addEventListener('load', function() {
       }
 
       const imgs = extractImages(item);
-      const imgUrl = imgs.length > 0 ? imgs : FALLBACK_IMG;
+      
+      // MAGIA AQUÍ: Usamos la ÚLTIMA imagen (imgs.length - 1) para que el servidor no detecte choque.
+      const imgUrl = imgs.length > 0 ? imgs[imgs.length - 1] : FALLBACK_IMG;
       const itemMls = item.mls || item.MLS || "N/A";
 
       thumbsHTML += `
