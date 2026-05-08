@@ -1375,154 +1375,259 @@
     .thumb-item.active { opacity: 1; border-color: var(--onyx-gold); }
 </style>
 
-<section id="mls-section">
+<style>
+    :root {
+        --iangelox-gold: #b8964a;
+        --iangelox-blue: #13b0e1;
+        --iangelox-glass: rgba(10, 10, 10, 0.9);
+        --iangelox-border: rgba(184, 150, 74, 0.4);
+    }
+
+    #iangelox-section {
+        background: #000;
+        padding: 60px 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #f5f0e8;
+    }
+
+    .iangelox-search-bar {
+        background: var(--iangelox-glass);
+        border: 1px solid var(--iangelox-border);
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        gap: 15px;
+        margin-bottom: 40px;
+        z-index: 100;
+        position: relative;
+    }
+
+    .iangelox-search-bar input, .iangelox-search-bar select {
+        background: #000;
+        border: 1px solid #333;
+        color: #fff;
+        padding: 12px;
+        outline: none;
+        border-radius: 0;
+    }
+
+    .iangelox-btn {
+        background: var(--iangelox-gold);
+        color: #000;
+        border: none;
+        padding: 0 30px;
+        font-weight: 800;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .iangelox-card-3d {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: #0a0a0a;
+        border: 1px solid var(--iangelox-border);
+        min-height: 500px;
+    }
+
+    .iangelox-gallery {
+        position: relative;
+        overflow: hidden;
+        background: #111;
+    }
+
+    .iangelox-img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+    }
+
+    .iangelox-img.active { opacity: 1; }
+
+    .iangelox-details {
+        padding: 40px;
+        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    }
+
+    #iangelox-global-map {
+        width: 100%;
+        height: 550px;
+        background: #000;
+        border-top: 1px solid var(--iangelox-gold);
+        border-bottom: 1px solid var(--iangelox-gold);
+    }
+
+    .iangelox-thumbs {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 20px 0;
+    }
+
+    .i-thumb {
+        flex: 0 0 80px;
+        height: 60px;
+        border: 1px solid #222;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+    }
+
+    .i-thumb.active { opacity: 1; border-color: var(--iangelox-gold); }
+
+    @media (max-width: 768px) {
+        .iangelox-card-3d { grid-template-columns: 1fr; }
+        .iangelox-search-bar { grid-template-columns: 1fr; }
+    }
+</style>
+
+<section id="iangelox-section">
     <div style="max-width:1200px; margin: 0 auto; padding: 0 1.5rem;">
         
         <header style="text-align: center; margin-bottom: 40px;">
-            <p style="font-size: 0.7rem; letter-spacing: 6px; color: var(--onyx-gold); text-transform: uppercase; margin:0;">Real Estate Intelligence</p>
-            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3rem; font-weight: 400; margin: 10px 0;">Catálogo MLS BCS</h2>
+            <p style="font-size: 0.7rem; letter-spacing: 6px; color: var(--iangelox-gold); text-transform: uppercase;">Real Estate Intelligence</p>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3rem; font-weight: 400; margin: 10px 0;">Catálogo iAngelox MLS</h2>
         </header>
 
-        <div class="onyx-search-bar">
-            <input type="text" id="onyx-search" placeholder="Zona (Ej: El Tezal, La Paz, Centro...)">
-            <select id="onyx-price-filter">
+        <div class="iangelox-search-bar">
+            <input type="text" id="i-search" placeholder="Zona (Ej: El Tezal, La Paz, Centro...)">
+            <select id="i-price">
                 <option value="0">Cualquier Precio</option>
                 <option value="500000">Hasta $500,000</option>
                 <option value="1500000">$500,000 - $1.5M</option>
                 <option value="99999999">Lujo +$1.5M</option>
             </select>
-            <button class="onyx-btn" onclick="applyOnyxFilter()">Buscar</button>
+            <button class="iangelox-btn" onclick="window.filterIangelox()">Buscar</button>
         </div>
 
-        <div class="perspective-container">
-            <div class="card-3d-wrap" id="onyx-main-card">
-                <div class="onyx-gallery" id="onyx-gallery">
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: var(--onyx-gold);">Cargando galería...</div>
-                </div>
-                <div class="onyx-details">
-                    <p id="onyx-p-area" style="font-size: 0.7rem; letter-spacing: 3px; color: var(--onyx-blue); text-transform: uppercase; margin:0;"></p>
-                    <h3 id="onyx-p-price" style="font-size: 2.2rem; color: var(--onyx-gold); margin: 10px 0; font-weight: 900;"></h3>
-                    <p id="onyx-p-mls" style="color: #666; font-size: 0.7rem; margin-bottom: 20px;"></p>
-                    <p id="onyx-p-desc" style="font-size: 0.85rem; line-height: 1.7; color: #ccc; margin-bottom: 25px; height: 120px; overflow-y: auto; border-left: 2px solid var(--onyx-gold); padding-left: 15px;"></p>
-                    <a id="onyx-p-link" href="#" target="_blank" class="onyx-btn" style="display: block; text-decoration: none; padding: 15px; text-align: center;">Ver en Google Maps</a>
-                </div>
+        <div class="iangelox-card-3d" id="i-main-card">
+            <div class="iangelox-gallery" id="i-gallery">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: var(--iangelox-gold);">Iniciando iAngelox Engine...</div>
+            </div>
+            <div class="iangelox-details">
+                <p id="i-p-area" style="font-size: 0.7rem; letter-spacing: 3px; color: var(--iangelox-blue); text-transform: uppercase; margin:0;"></p>
+                <h3 id="i-p-price" style="font-size: 2.2rem; color: var(--iangelox-gold); margin: 10px 0; font-weight: 900;"></h3>
+                <p id="i-p-mls" style="color: #666; font-size: 0.7rem; margin-bottom: 20px;"></p>
+                <p id="i-p-desc" style="font-size: 0.85rem; line-height: 1.7; color: #ccc; margin-bottom: 25px; height: 120px; overflow-y: auto; border-left: 2px solid var(--iangelox-gold); padding-left: 15px;"></p>
+                <a id="i-p-link" href="#" target="_blank" class="iangelox-btn" style="display: block; text-decoration: none; padding: 15px; text-align: center;">Ver en Google Maps</a>
             </div>
         </div>
 
-        <div class="onyx-thumbs" id="onyx-thumbs"></div>
+        <div class="iangelox-thumbs" id="i-thumbs"></div>
     </div>
 
-    <div id="onyx-global-map"></div>
+    <div id="iangelox-global-map"></div>
 </section>
 
 <script>
 (function(){
     const JSON_URL = 'https://raw.githubusercontent.com/angeloapp/angeloinmuebles/main/CSLPMLS.json';
-    let properties = [], filtered = [], activeIdx = 0;
+    let properties = [], filtered = [];
     let mainMap, markerLayer;
 
-    async function init() {
+    async function initIangelox() {
         try {
             const r = await fetch(JSON_URL);
             const data = await r.json();
             properties = Array.isArray(data) ? data : [];
             filtered = properties;
             
-            setupMap();
-            applyOnyxFilter(); // Carga inicial
-        } catch(e) { console.error("Error MLS:", e); }
+            setupIangeloxMap();
+            window.filterIangelox(); 
+        } catch(e) { console.error("Error iAngelox MLS:", e); }
     }
 
-    function setupMap() {
-        mainMap = L.map('onyx-global-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.5, -110.3], 8);
+    function setupIangeloxMap() {
+        mainMap = L.map('iangelox-global-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.5, -110.3], 8);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(mainMap);
         markerLayer = L.layerGroup().addTo(mainMap);
     }
 
-    window.renderOnyxProperty = function(idx) {
+    window.renderIangeloxProperty = function(idx) {
         const p = filtered[idx];
         if(!p) return;
-        activeIdx = idx;
 
-        document.getElementById('onyx-p-area').textContent = p.area + " | " + (p.subdivision || "");
-        document.getElementById('onyx-p-price').textContent = "$" + parseFloat(p.price).toLocaleString();
-        document.getElementById('onyx-p-mls').textContent = "Property Reference: " + p.mls;
-        document.getElementById('onyx-p-desc').textContent = p.overview;
-        document.getElementById('onyx-p-link').href = p.googleMapsUrl;
+        document.getElementById('i-p-area').textContent = (p.area || "") + " | " + (p.subdivision || "");
+        document.getElementById('i-p-price').textContent = "$" + parseFloat(p.price || 0).toLocaleString();
+        document.getElementById('i-p-mls').textContent = "Property Reference: " + p.mls;
+        document.getElementById('i-p-desc').textContent = p.overview || "";
+        document.getElementById('i-p-link').href = p.googleMapsUrl || "#";
 
-        // Galería
-        const gal = document.getElementById('onyx-gallery');
+        const gal = document.getElementById('i-gallery');
         gal.innerHTML = '';
-        (p.images || []).slice(0, 5).forEach((src, i) => {
+        const images = Array.isArray(p.images) ? p.images : [];
+        images.slice(0, 5).forEach((src, i) => {
             const img = document.createElement('img');
             img.src = src;
-            img.className = 'gallery-img' + (i === 0 ? ' active' : '');
+            img.className = 'iangelox-img' + (i === 0 ? ' active' : '');
             gal.appendChild(img);
         });
 
-        // Loop galería simple
+        if(window.iGalInterval) clearInterval(window.iGalInterval);
         let cur = 0;
-        if(window.galTimer) clearInterval(window.galInterval);
-        window.galInterval = setInterval(() => {
-            const imgs = gal.querySelectorAll('.gallery-img');
+        window.iGalInterval = setInterval(() => {
+            const imgs = gal.querySelectorAll('.iangelox-img');
             if(imgs.length < 2) return;
             imgs[cur].classList.remove('active');
             cur = (cur + 1) % imgs.length;
             imgs[cur].classList.add('active');
         }, 3500);
-    }
+    };
 
-    window.applyOnyxFilter = function() {
-        const search = document.getElementById('onyx-search').value.toLowerCase();
-        const priceLimit = parseFloat(document.getElementById('onyx-price-filter').value);
+    window.filterIangelox = function() {
+        const search = document.getElementById('i-search').value.toLowerCase();
+        const priceLimit = document.getElementById('i-price').value;
 
         filtered = properties.filter(p => {
             const text = (p.area + p.subdivision + p.address + p.mls).toLowerCase();
-            const mLoc = text.includes(search);
-            const mPrice = priceLimit === 0 || parseFloat(p.price) <= priceLimit;
-            return mLoc && mPrice;
+            const matchLoc = text.includes(search);
+            const pVal = parseFloat(p.price || 0);
+            
+            let matchPrice = true;
+            if(priceLimit === "500000") matchPrice = pVal <= 500000;
+            else if(priceLimit === "1500000") matchPrice = pVal > 500000 && pVal <= 1500000;
+            else if(priceLimit === "99999999") matchPrice = pVal > 1500000;
+
+            return matchLoc && matchPrice;
         });
 
-        // LIMPIAR Y REDIBUJAR PUNTOS DE ORO EN MAPA
         markerLayer.clearLayers();
         filtered.forEach((p, i) => {
-            if(!p.latitude || isNaN(p.latitude)) return;
-            
-            // Usamos circleMarker para máximo rendimiento con 4,500 puntos
-            const dot = L.circleMarker([p.latitude, p.longitude], {
+            if(!p.latitude) return;
+            const dot = L.circleMarker([parseFloat(p.latitude), parseFloat(p.longitude)], {
                 radius: 5,
-                fillColor: "#b8964a", // ORO
+                fillColor: "#b8964a",
                 color: "#fff",
                 weight: 1,
                 fillOpacity: 0.8
             }).addTo(markerLayer);
 
             dot.on('click', () => {
-                renderOnyxProperty(i);
-                document.getElementById('onyx-main-card').scrollIntoView({behavior:'smooth'});
+                window.renderIangeloxProperty(i);
+                document.getElementById('i-main-card').scrollIntoView({behavior:'smooth'});
             });
         });
 
-        // Actualizar miniaturas (Limitado a 60 por fluidez)
-        const thumbCont = document.getElementById('onyx-thumbs');
+        const thumbCont = document.getElementById('i-thumbs');
         thumbCont.innerHTML = '';
         filtered.slice(0, 60).forEach((p, i) => {
             const div = document.createElement('div');
-            div.className = 'thumb-item';
-            div.style.backgroundImage = `url(${p.images})`;
-            div.onclick = () => renderOnyxProperty(i);
+            div.className = 'i-thumb';
+            div.style.backgroundImage = `url(${p.images ? p.images : ''})`;
+            div.onclick = () => window.renderIangeloxProperty(i);
             thumbCont.appendChild(div);
         });
 
-        if(filtered.length > 0) renderOnyxProperty(0);
-        
-        // Auto-zoom si se busca algo específico
+        if(filtered.length > 0) window.renderIangeloxProperty(0);
         if(search !== "" && filtered.length > 0) {
-            mainMap.flyTo([filtered.latitude, filtered.longitude], 11);
+            mainMap.flyTo([parseFloat(filtered.latitude), parseFloat(filtered.longitude)], 11);
         }
-    }
+    };
 
-    init();
+    initIangelox();
 })();
 </script>
 
