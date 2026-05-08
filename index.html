@@ -1270,255 +1270,206 @@
     </blockquote>
   </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   :root {
     --i-gold: #b8964a;
-    --i-bg: #0a0a0a;
-    --i-card: #111111;
-    --i-soft-radius: 24px; /* Cero bordes puntiagudos, lujo absoluto */
+    --i-bg: #050505;
+    --i-card: #0d0d0d;
+    --i-text: #e0e0e0;
+    --i-rad: 20px; /* Bordes suaves y elegantes */
   }
 
   #iangelox-engine {
     background: var(--i-bg);
-    padding: 4rem 0 0;
+    padding: 5rem 0;
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    overflow: hidden;
+    color: var(--i-text);
     position: relative;
-    z-index: 10;
+    z-index: 5; 
   }
 
-  /* Buscador Luxury */
-  .i-filter-bar {
-    max-width: 1100px;
-    margin: 0 auto 3rem;
-    background: rgba(20, 20, 20, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(184, 150, 74, 0.2);
-    padding: 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
+  .i-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  
+  /* Buscador Minimalista de Lujo */
+  .i-search {
+    background: rgba(20,20,20,0.8);
+    border: 1px solid rgba(184,150,74,0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
     gap: 1rem;
-    border-radius: var(--i-soft-radius);
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
-
-  .i-filter-bar input, .i-filter-bar select {
-    background: #000;
-    border: 1px solid #222;
-    color: #fff;
-    padding: 12px 20px;
-    outline: none;
-    border-radius: var(--i-soft-radius);
-    font-family: inherit;
+  .i-search input {
+    flex: 1; background: transparent; border: none; color: #fff;
+    font-size: 1rem; outline: none; font-family: inherit;
   }
-  .i-filter-bar input:focus, .i-filter-bar select:focus {
-    border-color: var(--i-gold);
-  }
-
-  .i-btn-search {
-    background: var(--i-gold);
-    color: #000;
-    font-weight: 800;
-    text-transform: uppercase;
-    padding: 0 35px;
-    border: none;
-    cursor: pointer;
-    border-radius: var(--i-soft-radius);
+  .i-search button {
+    background: var(--i-gold); color: #000; font-weight: 800;
+    border: none; padding: 0.8rem 2.5rem; border-radius: 50px; 
+    cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; 
     transition: 0.3s;
   }
-  .i-btn-search:hover { background: #fff; transform: translateY(-2px); }
+  .i-search button:hover { background: #fff; }
 
-  /* Pantalla Principal (Card) */
-  .i-monitor {
-    max-width: 1200px;
-    margin: 0 auto;
+  /* Tarjeta Principal (Dossier) */
+  .i-dossier {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     background: var(--i-card);
-    border: 1px solid rgba(184, 150, 74, 0.15);
-    border-radius: var(--i-soft-radius);
-    min-height: 550px;
+    border-radius: var(--i-rad);
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-  }
-
-  .i-visual-engine {
-    position: relative;
-    background: #000;
-    height: 100%;
-  }
-
-  .i-main-img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1.2s ease;
-  }
-  .i-main-img.active { opacity: 1; }
-
-  /* Detalles de la Propiedad */
-  .i-data-panel {
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: linear-gradient(135deg, #0a0a0a, #151515);
-  }
-
-  .i-val-price { 
-    font-size: 2.8rem; 
-    color: var(--i-gold); 
-    font-weight: 900; 
-    margin-bottom: 1.5rem; 
-    letter-spacing: -1px; 
+    border: 1px solid #1a1a1a;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+    min-height: 550px;
   }
   
-  .i-val-desc { 
-    font-size: 0.95rem; 
-    line-height: 1.8; 
-    color: #bbb; 
-    margin-bottom: 1rem; 
-    height: 180px; 
-    overflow-y: auto; 
-    padding-right: 15px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--i-gold) transparent;
+  .i-gallery { position: relative; background: #000; }
+  .i-slide { 
+    width: 100%; height: 100%; 
+    object-fit: cover; position: absolute; 
+    opacity: 0; transition: opacity 1.2s ease; 
+  }
+  .i-slide.active { opacity: 1; }
+
+  .i-info { 
+    padding: 2.5rem 3rem; 
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  
+  /* Jerarquía de la Ficha */
+  .i-price { font-size: 2.6rem; color: var(--i-gold); font-weight: 900; margin: 0 0 15px 0; }
+  
+  .i-desc {
+    font-size: 0.95rem; line-height: 1.8; color: #ccc;
+    height: 180px; overflow-y: auto; padding-right: 15px; margin-bottom: 1rem;
+    scrollbar-width: thin; scrollbar-color: var(--i-gold) transparent;
+  }
+  
+  .i-mls {
+    font-size: 0.85rem; color: #444; font-weight: 800;
+    letter-spacing: 4px; margin-bottom: 1.5rem; 
+  }
+  
+  /* Botones de Contacto de Lujo */
+  .i-contact-group {
+    display: flex; gap: 10px; margin-bottom: 1.5rem; flex-wrap: wrap;
+  }
+  .i-contact-btn {
+    flex: 1; text-align: center; padding: 12px 10px; font-size: 0.8rem;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    border-radius: 50px; text-decoration: none; transition: 0.3s;
+    cursor: pointer; display: flex; justify-content: center; align-items: center;
+  }
+  .i-btn-gold { background: var(--i-gold); color: #000; border: 1px solid var(--i-gold); }
+  .i-btn-gold:hover { background: #fff; color: #000; border-color: #fff; }
+  
+  .i-btn-dark { background: transparent; color: #fff; border: 1px solid #444; }
+  .i-btn-dark:hover { background: #222; border-color: #fff; }
+  
+  .i-btn-map {
+    background: transparent; border: 1px solid var(--i-gold); color: var(--i-gold);
+    padding: 15px; text-align: center; font-weight: 700; text-transform: uppercase;
+    border-radius: 50px; cursor: pointer; transition: 0.3s; margin-bottom: 1.5rem;
+    letter-spacing: 2px; width: 100%;
+  }
+  .i-btn-map:hover { background: var(--i-gold); color: #000; }
+  
+  .i-loc {
+    font-size: 0.75rem; color: #888; text-align: center; text-transform: uppercase; 
+    letter-spacing: 5px; border-top: 1px solid #1a1a1a; padding-top: 1.5rem;
   }
 
-  .i-val-mls { 
-    font-size: 0.8rem; 
-    color: #444; 
-    letter-spacing: 3px; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    margin-bottom: 2rem; 
+  /* Carrusel de Miniaturas Interactivo */
+  .i-thumbs {
+    display: flex; gap: 12px; margin-top: 2rem; padding-bottom: 1.5rem;
+    overflow-x: auto; scrollbar-width: none; cursor: grab;
+    -webkit-overflow-scrolling: touch;
   }
+  .i-thumbs:active { cursor: grabbing; }
+  .i-thumbs::-webkit-scrollbar { display: none; }
+  
+  .i-thumb {
+    flex: 0 0 110px; height: 75px; border-radius: 16px; overflow: hidden;
+    position: relative; opacity: 0.4; transition: 0.3s; border: 2px solid transparent;
+    user-select: none;
+  }
+  .i-thumb img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .i-thumb.active, .i-thumb:hover { opacity: 1; border-color: var(--i-gold); transform: scale(1.05); }
 
-  .i-btn-trigger-map {
-    background: transparent;
-    border: 1px solid var(--i-gold);
-    color: var(--i-gold);
-    padding: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: var(--i-soft-radius);
-    margin-bottom: 2rem;
-    transition: 0.3s;
-    width: 100%;
-    letter-spacing: 2px;
+  /* Mapa de Lujo */
+  .i-map-wrap {
+    width: 100vw; height: 650px; position: relative;
+    left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
+    margin-top: 5rem; border-top: 1px solid var(--i-gold); border-bottom: 1px solid var(--i-gold);
   }
-  .i-btn-trigger-map:hover { background: var(--i-gold); color: #000; }
+  #i-map { width: 100%; height: 100%; background: #000; z-index: 1; }
 
-  .i-val-location {
-    text-align: center;
-    border-top: 1px solid #1a1a1a;
-    padding-top: 1.5rem;
-    color: #666;
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin: 0;
-  }
-
-  /* Miniaturas */
-  .i-thumbnails {
-    max-width: 1200px;
-    margin: 2rem auto;
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scrollbar-width: none;
-  }
-  .i-thumb-box {
-    flex: 0 0 110px; 
-    height: 75px;
-    border-radius: 16px;
-    background-size: cover; 
-    background-position: center;
-    cursor: pointer; 
-    opacity: 0.4; 
-    transition: 0.3s;
-    border: 2px solid transparent;
-  }
-  .i-thumb-box.active, .i-thumb-box:hover { opacity: 1; border-color: var(--i-gold); transform: scale(1.05); }
-
-  /* Mapa de Extremo a Extremo */
-  .i-global-map-wrapper {
-    width: 100vw;
-    height: 600px;
-    margin-top: 4rem;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-  }
-
-  #iangelox-map {
-    width: 100%; height: 100%;
-    background: #000;
-    border-top: 1px solid var(--i-gold);
-    border-bottom: 1px solid var(--i-gold);
-  }
-
-  @media (max-width: 900px) {
-    .i-monitor { grid-template-columns: 1fr; }
-    .i-filter-bar { grid-template-columns: 1fr; margin: 0 1rem 2rem; }
-    .i-visual-engine { height: 300px; }
+  @media (max-width: 900px) { 
+    .i-dossier { grid-template-columns: 1fr; } 
+    .i-search { flex-direction: column; border-radius: 20px; }
+    .i-search button { border-radius: 20px; padding: 1rem; }
   }
 </style>
 
 <section id="iangelox-engine">
-  <div class="container">
+  <div class="i-container">
     
-    <div class="i-filter-bar">
-      <input type="text" id="i-input-loc" placeholder="Filtrar por palabra clave o zona...">
-      <select id="i-input-price">
-        <option value="0">Cualquier presupuesto</option>
-        <option value="500000">Hasta $500,000</option>
-        <option value="1500000">$500k - $1.5M</option>
-        <option value="99999999">Luxury (+ $1.5M)</option>
-      </select>
-      <button class="i-btn-search" onclick="iApplyFilters()">Explorar</button>
+    <div class="i-search">
+      <input type="text" id="i-keyword" placeholder="Búsqueda libre en portafolio (Ej: Todos Santos, Oceanfront)...">
+      <button onclick="iFilter()">Explorar Colección</button>
     </div>
 
-    <div class="i-monitor" id="i-monitor-anchor">
-      <div class="i-visual-engine" id="i-gallery">
-          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: var(--i-gold);">Iniciando iAngelox Engine...</div>
-      </div>
-      <div class="i-data-panel">
+    <div class="i-dossier" id="i-dossier-card">
+      <div class="i-gallery" id="i-pic-container"></div>
+      
+      <div class="i-info">
         <div>
-          <div class="i-val-price" id="i-price">$--</div>
-          <div class="i-val-desc" id="i-desc"></div>
-          <div class="i-val-mls" id="i-mls">MLS: --</div>
+          <h3 class="i-price" id="i-val-price">$--</h3>
+          <div class="i-desc" id="i-val-desc"></div>
+          <div class="i-mls" id="i-val-mls"></div>
         </div>
+        
         <div>
-          <button class="i-btn-trigger-map" onclick="iScrollToMap()">Ver Ubicación Exacta</button>
-          <div class="i-val-location" id="i-location">Cabo San Lucas</div>
+          <div class="i-contact-group">
+            <a id="i-btn-wa" href="#" target="_blank" class="i-contact-btn i-btn-gold">WhatsApp</a>
+            <a id="i-btn-call" href="tel:+526244334131" class="i-contact-btn i-btn-dark">Llamar</a>
+            <a id="i-btn-email" href="#" class="i-contact-btn i-btn-dark">Email</a>
+          </div>
+          
+          <button class="i-btn-map" onclick="iFlyToMap()">Ver Ubicación Satelital</button>
+          <div class="i-loc" id="i-val-loc"></div>
         </div>
       </div>
     </div>
 
-    <div class="i-thumbnails" id="i-thumbs"></div>
+    <div class="i-thumbs" id="i-thumb-list"></div>
   </div>
 
-  <div class="i-global-map-wrapper" id="i-map-section">
-    <div id="iangelox-map"></div>
+  <div class="i-map-wrap" id="i-map-anchor">
+    <div id="i-map"></div>
   </div>
 </section>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-(function(){
+  if(!document.querySelector('link[href*="leaflet.css"]')) {
+    let l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(l);
+  }
+  if(!document.querySelector('script[src*="leaflet.js"]')) {
+    let s = document.createElement('script'); s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    document.body.appendChild(s);
+  }
+</script>
+
+<script>
+window.addEventListener('load', function() {
   const DATA_URL = 'https://raw.githubusercontent.com/angeloapp/angeloinmuebles/main/CSLPMLS.json';
-  let iData = [], iFiltered = [], iActiveIdx = 0;
+  let iData = [], iFiltered = [], iActive = 0;
   let iMap, iMarkers;
 
-  // --- FUNCIONES DE SEGURIDAD PARA IMÁGENES ---
+  // Extracción blindada de imágenes (compatible con JSON)
   function normalizeUrl(url){
     if(!url) return '';
     url = String(url).trim();
@@ -1537,162 +1488,186 @@
     }
     return [];
   }
-  // ---------------------------------------------
 
-  async function initEngine() {
+  // Barajar array (Aleatoriedad para que siempre se vea fresco)
+  function shuffleArray(array) {
+    let curId = array.length;
+    while (0 !== curId) {
+      let randId = Math.floor(Math.random() * curId);
+      curId -= 1;
+      let tmp = array[curId];
+      array[curId] = array[randId];
+      array[randId] = tmp;
+    }
+    return array;
+  }
+
+  async function iInit() {
     try {
       const res = await fetch(DATA_URL);
       const raw = await res.json();
-      iData = Array.isArray(raw) ? raw : (raw.results || raw.properties || raw.listings || []);
+      let parsedData = Array.isArray(raw) ? raw : [];
+      
+      // Aplicar aleatoriedad inicial
+      iData = shuffleArray(parsedData);
       iFiltered = iData;
       
-      // Iniciar Mapa con estilo oscuro
-      iMap = L.map('iangelox-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.4, -110], 8);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(iMap);
-      iMarkers = L.layerGroup().addTo(iMap);
+      setTimeout(() => {
+        iMap = L.map('i-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.4, -110], 8);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(iMap);
+        iMarkers = L.layerGroup().addTo(iMap);
 
-      iApplyFilters(); // Ejecuta carga inicial
-      
-      // Forzar renderizado correcto del mapa
-      setTimeout(() => { iMap.invalidateSize(); }, 800);
+        iUpdateVisuals();
+        setTimeout(() => { iMap.invalidateSize(); }, 800);
+      }, 500);
 
-    } catch(e) { console.warn("iAngelox Engine Error", e); }
+    } catch(e) { console.error("iAngelox Error:", e); }
   }
 
-  window.iRenderDisplay = function(idx) {
-    const p = iFiltered[idx];
-    if(!p) return;
-    iActiveIdx = idx;
+  window.iRenderItem = function(idx) {
+    const item = iFiltered[idx];
+    if(!item) return;
+    iActive = idx;
 
-    // 1. INYECTAR TEXTOS (Respetando la jerarquía)
-    let rawPrice = p.price || p.Price;
+    // Llenar Ficha
+    const rawPrice = item.price || item.Price;
     if(rawPrice) {
         let cleanPrice = parseFloat(rawPrice.toString().replace(/[^0-9.]/g, ''));
-        document.getElementById('i-price').innerText = "$" + cleanPrice.toLocaleString();
+        document.getElementById('i-val-price').textContent = "$" + cleanPrice.toLocaleString() + " USD";
     } else {
-        document.getElementById('i-price').innerText = "Consultar";
+        document.getElementById('i-val-price').textContent = "$ Consultar";
     }
 
-    document.getElementById('i-desc').innerText = p.overview || p.Overview || p.description || "Información clasificada. Solicite el dossier privado.";
-    document.getElementById('i-mls').innerText = "MLS: " + (p.mls || p.MLS || p.ListingId || "N/A");
+    document.getElementById('i-val-desc').textContent = item.overview || item.Overview || "Información clasificada. Solicite el dossier privado.";
+    const mlsNum = item.mls || item.MLS || "N/A";
+    document.getElementById('i-val-mls').textContent = "MLS: " + mlsNum;
+    
+    let locText = [item.area, item.subdivision].filter(Boolean).join(" · ");
+    document.getElementById('i-val-loc').textContent = locText || "Baja California Sur";
 
-    let locStr = [p.area, p.subdivision].filter(Boolean).join(" · ");
-    document.getElementById('i-location').innerText = locStr || "Baja California Sur";
+    // Enlaces Dinámicos de Contacto
+    const propName = item.subdivision || item.area || "Propiedad Exclusiva";
+    const waMsg = encodeURIComponent(`Hola Angelo, me interesa la propiedad en ${propName} - MLS ${mlsNum}`);
+    document.getElementById('i-btn-wa').href = `https://wa.me/526244334131?text=${waMsg}`;
+    document.getElementById('i-btn-email').href = `mailto:angelo@caboapp.com?subject=Interés%20en%20MLS%20${mlsNum}`;
 
-    // 2. GALERÍA (Máximo 3 imágenes para evitar sobrecarga visual)
-    const gal = document.getElementById('i-gallery');
+    // Galería
+    const gal = document.getElementById('i-pic-container');
     gal.innerHTML = '';
-    const imgArray = extractImages(p);
-    if(imgArray.length === 0) imgArray.push('https://i.imgur.com/yBhoQaR.png'); // Fallback de seguridad
+    const imgs = extractImages(item);
+    if(imgs.length === 0) imgs.push('https://i.imgur.com/yBhoQaR.png');
 
-    imgArray.slice(0, 3).forEach((src, i) => {
+    imgs.slice(0, 3).forEach((url, i) => {
       const img = document.createElement('img');
-      img.src = src;
-      img.className = 'i-main-img' + (i === 0 ? ' active' : '');
+      img.src = url;
+      img.className = 'i-slide' + (i === 0 ? ' active' : '');
       gal.appendChild(img);
     });
 
-    // Auto-slide de galería
-    if(window.iSlideInt) clearInterval(window.iSlideInt);
-    let cur = 0;
-    window.iSlideInt = setInterval(() => {
-      const slides = gal.querySelectorAll('.i-main-img');
-      if(slides.length < 2) return;
-      slides[cur].classList.remove('active');
-      cur = (cur + 1) % slides.length;
-      slides[cur].classList.add('active');
-    }, 4000);
+    if(window.iSlideTimer) clearInterval(window.iSlideTimer);
+    let sIdx = 0;
+    window.iSlideTimer = setInterval(() => {
+      const s = gal.querySelectorAll('.i-slide');
+      if(s.length < 2) return;
+      s[sIdx].classList.remove('active');
+      sIdx = (sIdx + 1) % s.length;
+      s[sIdx].classList.add('active');
+    }, 4500);
 
-    // 3. ACTUALIZAR MINIATURAS ACTIVAS
-    document.querySelectorAll('.i-thumb-box').forEach((t, i) => {
-        if(i === idx) t.classList.add('active');
-        else t.classList.remove('active');
-    });
-  };
-
-  window.iApplyFilters = function() {
-    const q = document.getElementById('i-input-loc').value.toLowerCase();
-    const pLimit = parseInt(document.getElementById('i-input-price').value);
-
-    iFiltered = iData.filter(p => {
-      const text = ((p.mls||"") + " " + (p.overview||"") + " " + (p.area||"")).toLowerCase();
-      const matchText = text.includes(q);
-      
-      const val = parseFloat((p.price || "0").toString().replace(/[^0-9.]/g, ''));
-      let matchPrice = true;
-      if(pLimit === 500000) matchPrice = val <= 500000;
-      else if(pLimit === 1500000) matchPrice = val > 500000 && val <= 1500000;
-      else if(pLimit === 99999999) matchPrice = val > 1500000;
-
-      return matchText && matchPrice;
-    });
-
-    iDrawMapPoints();
-    iRenderThumbs();
-    
-    if(iFiltered.length > 0) {
-        iRenderDisplay(0);
-        if(q !== "" && iFiltered.latitude) {
-            iMap.flyTo([parseFloat(iFiltered.latitude), parseFloat(iFiltered.longitude)], 11);
+    // Activar miniatura visualmente
+    document.querySelectorAll('.i-thumb').forEach((t, i) => {
+        if(i === idx) {
+            t.classList.add('active');
+            // Hacer que el slider scrollee automáticamente hacia el elemento clickeado
+            t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+            t.classList.remove('active');
         }
-    }
+    });
   };
 
-  function iDrawMapPoints() {
+  window.iFilter = function() {
+    const kw = document.getElementById('i-keyword').value.toLowerCase();
+    iFiltered = iData.filter(item => {
+      const t = ((item.mls||"") + " " + (item.overview||"") + " " + (item.area||"")).toLowerCase();
+      return t.includes(kw);
+    });
+    iUpdateVisuals();
+  };
+
+  function iUpdateVisuals() {
     iMarkers.clearLayers();
-    iFiltered.forEach((p, i) => {
-      const lat = parseFloat(p.latitude || p.Latitude);
-      const lng = parseFloat(p.longitude || p.Longitude);
+    
+    // String HTML super rápido para renderizar miles de propiedades sin congelar
+    let thumbsHTML = '';
+
+    iFiltered.forEach((item, idx) => {
+      // Dibujar Mapa
+      const lat = parseFloat(item.latitude || item.Latitude);
+      const lng = parseFloat(item.longitude || item.Longitude);
       if(!isNaN(lat) && !isNaN(lng)) {
         L.circleMarker([lat, lng], {
-          radius: 6, fillColor: "#b8964a", color: "#000", weight: 1.5, fillOpacity: 0.9
+          radius: 5, fillColor: "#b8964a", color: "#000", weight: 1.5, fillOpacity: 0.9
         }).addTo(iMarkers).on('click', () => {
-          iRenderDisplay(i);
-          document.getElementById('i-monitor-anchor').scrollIntoView({behavior:'smooth', block: 'center'});
+          iRenderItem(idx);
+          document.getElementById('i-dossier-card').scrollIntoView({behavior:'smooth', block:'center'});
         });
       }
-    });
-    setTimeout(() => { if(iMap) iMap.invalidateSize(); }, 400);
-  }
 
-  function iRenderThumbs() {
-    const container = document.getElementById('i-thumbs');
-    container.innerHTML = '';
-    // Límite de 40 miniaturas para no saturar el DOM, pero el buscador funciona con las 4500
-    iFiltered.slice(0, 40).forEach((p, i) => {
-      const imgs = extractImages(p);
-      const bgUrl = imgs.length > 0 ? imgs : 'https://i.imgur.com/yBhoQaR.png';
+      // Preparar miniatura (Lazy Loading activo)
+      const imgs = extractImages(item);
+      const imgUrl = imgs.length > 0 ? imgs : 'https://i.imgur.com/yBhoQaR.png';
       
-      const div = document.createElement('div');
-      div.className = 'i-thumb-box' + (i === iActiveIdx ? ' active' : '');
-      div.style.backgroundImage = `url("${bgUrl}")`;
-      div.onclick = () => {
-          iRenderDisplay(i);
-          // Opcional: Centrar miniatura al clickear
-          div.scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
-      };
-      container.appendChild(div);
+      // Creamos la miniatura con <img> y loading="lazy" para soportar 4,500 ítems
+      thumbsHTML += `<div class="i-thumb" id="thumb-${idx}" onclick="iRenderItem(${idx})">
+                        <img src="${imgUrl}" loading="lazy" alt="Thumb">
+                     </div>`;
     });
+
+    document.getElementById('i-thumb-list').innerHTML = thumbsHTML;
+
+    if(iFiltered.length > 0) iRenderItem(0);
+    if(iMap) setTimeout(() => { iMap.invalidateSize(); }, 500);
   }
 
-  window.iScrollToMap = function() {
-    const p = iFiltered[iActiveIdx];
-    document.getElementById('i-map-section').scrollIntoView({behavior:'smooth'});
-    if(p) {
-        const lat = parseFloat(p.latitude || p.Latitude);
-        const lng = parseFloat(p.longitude || p.Longitude);
+  window.iFlyToMap = function() {
+    const item = iFiltered[iActive];
+    document.getElementById('i-map-anchor').scrollIntoView({behavior: 'smooth', block: 'center'});
+    if(item) {
+        const lat = parseFloat(item.latitude || item.Latitude);
+        const lng = parseFloat(item.longitude || item.Longitude);
         if(!isNaN(lat) && !isNaN(lng)) {
-            setTimeout(() => { 
-                iMap.invalidateSize();
-                iMap.flyTo([lat, lng], 16, {duration: 1.5}); 
-            }, 600);
+            setTimeout(() => {
+                iMap.invalidateSize(); 
+                iMap.flyTo([lat, lng], 15, {duration: 1.5});
+            }, 500);
         }
     }
   };
 
-  // Iniciar al cargar la ventana
-  initEngine();
-})();
+  // ----- Lógica de Interfaz Táctil (Drag to scroll) para el Carrusel -----
+  const slider = document.getElementById('i-thumb-list');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => { isDown = false; });
+  slider.addEventListener('mouseup', () => { isDown = false; });
+  slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // Velocidad de scroll
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  iInit();
+});
 </script>
 
   <!-- PROPÓSITO -->
