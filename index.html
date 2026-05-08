@@ -1220,58 +1220,223 @@
 </section>
 
 <style>
-    :root { --i-gold: #b8964a; --i-blue: #13b0e1; --i-glass: rgba(10, 10, 10, 0.95); }
-    #i-explorer { background: #000; padding: 80px 0; font-family: 'Montserrat', sans-serif; color: #f5f0e8; }
-    .i-search-box { background: var(--i-glass); border: 1px solid rgba(184,150,74,0.3); padding: 25px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 15px; margin-bottom: 50px; }
-    .i-search-box input, .i-search-box select { background: #000; border: 1px solid #333; color: #fff; padding: 12px; outline: none; border-radius: 0; }
-    .i-main-card { display: grid; grid-template-columns: 1.2fr 0.8fr; background: #0a0a0a; border: 1px solid rgba(184,150,74,0.4); min-height: 550px; box-shadow: 0 40px 80px rgba(0,0,0,0.8); }
-    .i-gallery { position: relative; overflow: hidden; background: #000; border-right: 1px solid #222; height: 100%; }
-    .i-slide { width: 100%; height: 100%; object-fit: cover; position: absolute; opacity: 0; transition: opacity 1s ease-in-out; }
+    :root {
+        --i-gold: #b8964a;
+        --i-dark: #0a0a0a;
+        --i-glass: rgba(15, 15, 15, 0.95);
+        --i-border: rgba(184, 150, 74, 0.3);
+        --i-radius: 16px; /* Bordes suaves y elegantes, cero puntas */
+    }
+    
+    #iangelox-explorer { 
+        background: #000; 
+        padding: 60px 0; 
+        font-family: 'Montserrat', sans-serif; 
+        color: #f5f0e8; 
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Buscador */
+    .i-search-bar {
+        background: var(--i-glass); 
+        border: 1px solid var(--i-border);
+        padding: 20px; 
+        display: grid; 
+        grid-template-columns: 1fr 1fr auto; 
+        gap: 15px; 
+        margin-bottom: 40px;
+        border-radius: var(--i-radius);
+    }
+    .i-search-bar input, .i-search-bar select {
+        background: #111; 
+        border: 1px solid #333; 
+        color: #fff; 
+        padding: 15px; 
+        outline: none; 
+        border-radius: 8px;
+        font-family: inherit;
+    }
+    .i-search-bar input:focus, .i-search-bar select:focus {
+        border-color: var(--i-gold);
+    }
+    
+    /* Ficha Principal */
+    .i-main-display {
+        display: grid; 
+        grid-template-columns: 1.2fr 0.8fr;
+        background: var(--i-dark); 
+        border: 1px solid var(--i-border); 
+        min-height: 550px;
+        border-radius: var(--i-radius);
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+    .i-gallery { 
+        position: relative; 
+        background: #000; 
+        height: 100%; 
+        border-right: 1px solid #222; 
+    }
+    .i-slide { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        position: absolute; 
+        opacity: 0; 
+        transition: opacity 0.8s ease; 
+    }
     .i-slide.active { opacity: 1; }
-    .i-details { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-    .i-price { font-size: 2.8rem; color: var(--i-gold); font-weight: 900; margin: 0; }
-    #i-global-map { width: 100%; height: 600px; background: #000; border-top: 1px solid var(--i-gold); }
-    .i-thumbs { display: flex; gap: 10px; overflow-x: auto; padding: 20px 0; scrollbar-width: none; }
-    .i-thumb-item { flex: 0 0 100px; height: 70px; border: 1px solid #333; cursor: pointer; background-size: cover; background-position: center; opacity: 0.4; }
-    .i-thumb-item.active { opacity: 1; border-color: var(--i-gold); }
-    @media (max-width: 900px) { .i-main-card { grid-template-columns: 1fr; } .i-search-box { grid-template-columns: 1fr; } }
+    
+    .i-details { 
+        padding: 40px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+    }
+    .i-price { 
+        font-size: 2.5rem; 
+        color: var(--i-gold); 
+        font-weight: 900; 
+        margin: 0 0 15px 0; 
+    }
+    .i-desc {
+        font-size: 0.9rem; 
+        line-height: 1.8; 
+        color: #ccc; 
+        height: 180px; 
+        overflow-y: auto; 
+        margin-bottom: 15px;
+        padding-right: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--i-gold) transparent;
+    }
+    .i-mls-tag {
+        font-size: 0.75rem;
+        color: #444; /* Oscuro, con presencia pero sutil */
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+    .i-btn-map {
+        background: var(--i-gold);
+        color: #000;
+        border: none;
+        padding: 18px;
+        font-weight: 800;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 8px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .i-btn-map:hover {
+        background: #fff;
+        transform: translateY(-2px);
+    }
+    .i-location {
+        font-size: 0.8rem;
+        color: #888;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+        border-top: 1px solid #222;
+        padding-top: 20px;
+    }
+    
+    /* Carrusel Miniaturas */
+    .i-thumbs { 
+        display: flex; 
+        gap: 12px; 
+        overflow-x: auto; 
+        padding: 20px 0; 
+        scrollbar-width: none; 
+    }
+    .i-thumb-item { 
+        flex: 0 0 120px; 
+        height: 80px; 
+        border: 2px solid #222; 
+        cursor: pointer; 
+        background-size: cover; 
+        background-position: center; 
+        opacity: 0.5; 
+        transition: 0.3s; 
+        border-radius: 8px;
+    }
+    .i-thumb-item.active, .i-thumb-item:hover { 
+        opacity: 1; 
+        border-color: var(--i-gold); 
+    }
+
+    /* Mapa Contenido */
+    .i-map-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto 60px auto;
+        border-radius: var(--i-radius);
+        overflow: hidden;
+        border: 1px solid var(--i-gold);
+        position: relative;
+        z-index: 10;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    #i-global-map { 
+        width: 100%; 
+        height: 500px; 
+        background: #000; 
+    }
+
+    @media (max-width: 900px) { 
+        .i-main-display { grid-template-columns: 1fr; } 
+        .i-search-bar { grid-template-columns: 1fr; } 
+    }
 </style>
 
-<section id="i-explorer">
-    <div class="container">
+<section id="iangelox-explorer">
+    <div style="max-width:1200px; margin: 0 auto; padding: 0 1.5rem;">
         <header style="text-align: center; margin-bottom: 40px;">
-            <p style="font-size: 0.7rem; letter-spacing: 8px; color: var(--i-gold); text-transform: uppercase;">Intelligence Portfolio</p>
+            <p style="font-size: 0.75rem; letter-spacing: 8px; color: var(--i-gold); text-transform: uppercase;">Intelligence Portfolio</p>
             <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3rem; font-weight: 300;">Catálogo iAngelox MLS</h2>
         </header>
 
-        <div class="i-search-box">
-          <input type="text" id="i-search" placeholder="Zona (Ej: El Tezal, La Paz, Centro...)">
-          <select id="i-price-filter">
-              <option value="all">Cualquier presupuesto</option>
-              <option value="500000">Hasta $500k</option>
-              <option value="1500000">$500k - $1.5M</option>
-              <option value="luxury">Luxury Elite (+ $1.5M)</option>
-          </select>
-          <button class="btn btn-gold" onclick="updateIangelox()" style="border-radius:0; height:100%;">Buscar</button>
+        <div class="i-search-bar">
+            <input type="text" id="i-search-input" placeholder="Buscar zona (Ej: El Tezal, Pedregal...)">
+            <select id="i-price-filter">
+                <option value="all">Cualquier presupuesto</option>
+                <option value="500000">Hasta $500,000</option>
+                <option value="1500000">$500,000 - $1.5M</option>
+                <option value="luxury">Luxury Elite (+ $1.5M)</option>
+            </select>
+            <button class="i-btn-map" onclick="updateIangeloxEngine()" style="margin:0; height:100%;">Buscar Propiedades</button>
         </div>
 
-        <div class="i-main-card" id="i-display">
-            <div class="i-gallery" id="i-gallery-engine"></div>
+        <div class="i-main-display" id="i-display-anchor">
+            <div class="i-gallery" id="i-gallery-container"></div>
+            
             <div class="i-details">
-                <div id="i-tag-mls" style="font-size: 0.7rem; color: #555; letter-spacing: 3px; margin-bottom: 10px;"></div>
-                <h3 class="i-price" id="i-tag-price">$ --</h3>
-                <p id="i-tag-desc" style="font-size: 0.9rem; line-height: 1.8; color: #aaa; margin: 20px 0; height: 150px; overflow-y: auto; border-left: 1px solid #333; padding-left: 20px;"></p>
-                <a id="i-tag-link" href="#" target="_blank" class="btn btn-gold" style="border-radius:0; text-align:center;">Ver Ubicación en GPS</a>
+                <div>
+                    <h3 class="i-price" id="i-ref-price">$ --</h3>
+                    <p id="i-ref-desc" class="i-desc"></p>
+                    <div id="i-ref-mls" class="i-mls-tag">MLS: --</div>
+                </div>
+                
+                <div>
+                    <button onclick="focusOnMap()" class="i-btn-map">Ver en Mapa Interactivo</button>
+                    <p id="i-ref-location" class="i-location"></p>
+                </div>
             </div>
         </div>
 
-        <div class="i-thumbs" id="i-thumbs-engine"></div>
+        <div class="i-thumbs" id="i-thumbs-container"></div>
     </div>
 </section>
 
-<div id="global-map-area">
-    <div style="padding: 20px; background: #000; text-align: center; color: var(--i-gold); letter-spacing: 3px; font-size: 0.8rem; border-top: 1px solid #222;">
-        MAPA DINÁMICO BCS · PUNTOS DE INVERSIÓN
+<div class="i-map-container" id="map-scroll-target">
+    <div style="padding: 15px; background: #0a0a0a; text-align: center; color: var(--i-gold); letter-spacing: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">
+        Radar de Inversión · BCS
     </div>
     <div id="i-global-map"></div>
 </div>
@@ -1280,90 +1445,123 @@
 <script>
 (function(){
     const JSON_URL = 'https://raw.githubusercontent.com/angeloapp/angeloinmuebles/main/CSLPMLS.json';
-    let allP = [], filtered = [];
-    let map, markers;
+    let allItems = [], filteredItems = [], currentActive = 0;
+    let mainMap, markerLayer;
 
-    async function init(){
+    async function initEngine() {
         try {
             const r = await fetch(JSON_URL);
-            allP = await r.json();
+            allItems = await r.json();
             
-            map = L.map('i-global-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.4, -110.1], 8);
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
-            markers = L.layerGroup().addTo(map);
+            // Iniciar Mapa 
+            mainMap = L.map('i-global-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.4, -110.1], 8);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(mainMap);
+            markerLayer = L.layerGroup().addTo(mainMap);
 
-            window.updateIangelox();
-        } catch(e) { console.error("Error Engine:", e); }
+            window.updateIangeloxEngine();
+        } catch(e) { console.error("iAngelox Engine Error:", e); }
     }
 
-    window.loadSingle = function(idx) {
-        const p = filtered[idx];
+    window.loadIangeloxProperty = function(idx) {
+        const p = filteredItems[idx];
         if(!p) return;
-        document.getElementById('i-tag-mls').textContent = "MLS ID: " + p.mls;
-        document.getElementById('i-tag-price').textContent = "$" + parseFloat(p.price || 0).toLocaleString();
-        document.getElementById('i-tag-desc').textContent = p.overview;
-        document.getElementById('i-tag-link').href = p.googleMapsUrl;
+        currentActive = idx;
 
-        const gal = document.getElementById('i-gallery-engine');
-        gal.innerHTML = '';
-        (p.images || []).slice(0, 6).forEach((url, i) => {
+        // Llenar Ficha (Precio -> Desc -> MLS -> Botón -> Locación)
+        document.getElementById('i-ref-price').textContent = p.price ? "$" + parseFloat(p.price.toString().replace(/[^0-9.]/g, '')).toLocaleString() : "Consultar";
+        document.getElementById('i-ref-desc').textContent = p.overview || "Solicita el dossier completo de esta propiedad para conocer más detalles exclusivos.";
+        document.getElementById('i-ref-mls').textContent = "MLS: " + (p.mls || "N/A");
+        document.getElementById('i-ref-location').textContent = (p.area || "") + " · " + (p.subdivision || "");
+
+        // Actualizar Galería
+        const gallery = document.getElementById('i-gallery-container');
+        gallery.innerHTML = '';
+        const imgList = Array.isArray(p.images) ? p.images : [];
+        imgList.slice(0, 6).forEach((url, i) => {
             const img = document.createElement('img');
-            img.src = url; img.className = 'i-slide' + (i === 0 ? ' active' : '');
-            gal.appendChild(img);
+            img.src = url;
+            img.className = 'i-slide' + (i === 0 ? ' active' : '');
+            gallery.appendChild(img);
         });
 
-        let cur = 0;
-        if(window.iInt) clearInterval(window.iInt);
-        window.iInt = setInterval(() => {
-            const ss = gal.querySelectorAll('.i-slide');
-            if(ss.length<2) return;
-            ss[cur].classList.remove('active');
-            cur = (cur+1)%ss.length;
-            ss[cur].classList.add('active');
+        // Loop de Galería
+        if(window.iTimer) clearInterval(window.iTimer);
+        let s = 0;
+        window.iTimer = setInterval(() => {
+            const slides = gallery.querySelectorAll('.i-slide');
+            if(slides.length < 2) return;
+            slides[s].classList.remove('active');
+            s = (s + 1) % slides.length;
+            slides[s].classList.add('active');
         }, 4000);
 
-        if(p.latitude) map.flyTo([p.latitude, p.longitude], 14);
+        // Estilos de Miniaturas Activas
+        const thumbs = document.querySelectorAll('.i-thumb-item');
+        thumbs.forEach((t, i) => {
+            t.classList.toggle('active', i === idx);
+        });
     };
 
-    window.updateIangelox = function() {
-        const q = document.getElementById('i-search').value.toLowerCase();
+    // Función del Botón: Baja al mapa y hace zoom en la propiedad sin salir de tu web
+    window.focusOnMap = function() {
+        const p = filteredItems[currentActive];
+        if(p && p.latitude && p.longitude) {
+            document.getElementById('map-scroll-target').scrollIntoView({behavior:'smooth', block: 'center'});
+            setTimeout(() => {
+                mainMap.flyTo([parseFloat(p.latitude), parseFloat(p.longitude)], 16, { duration: 1.5 });
+            }, 500);
+        }
+    };
+
+    window.updateIangeloxEngine = function() {
+        const q = document.getElementById('i-search-input').value.toLowerCase();
         const f = document.getElementById('i-price-filter').value;
 
-        filtered = allP.filter(p => {
-            const matchQ = (p.mls + " " + p.overview).toLowerCase().includes(q);
-            const val = parseFloat(p.price || 0);
-            let matchP = true;
-            if(f === '500000') matchP = val <= 500000;
-            else if(f === '1500000') matchP = val > 500000 && val <= 1500000;
-            else if(f === 'luxury') matchP = val > 1500000;
-            return matchQ && matchP;
+        filteredItems = allItems.filter(item => {
+            const text = ((item.area||"") + " " + (item.subdivision||"") + " " + (item.address||"")).toLowerCase();
+            const val = parseFloat(item.price ? item.price.toString().replace(/[^0-9.]/g, '') : 0);
+            
+            let mP = true;
+            if(f === '500000') mP = val <= 500000;
+            else if(f === '1500000') mP = val > 500000 && val <= 1500000;
+            else if(f === 'luxury') mP = val > 1500000;
+            
+            return text.includes(q) && mP;
         });
 
-        markers.clearLayers();
-        filtered.forEach((p, i) => {
+        // Actualizar Mapa con Círculos de Oro
+        markerLayer.clearLayers();
+        filteredItems.forEach((p, i) => {
             if(!p.latitude) return;
-            L.circleMarker([p.latitude, p.longitude], {
-                radius: 5, fillColor: "#b8964a", color: "#fff", weight: 1, fillOpacity: 0.8
-            }).addTo(markers).on('click', () => {
-                window.loadSingle(i);
-                document.getElementById('i-explorer').scrollIntoView({behavior:'smooth'});
+            L.circleMarker([parseFloat(p.latitude), parseFloat(p.longitude)], {
+                radius: 6, fillColor: "#b8964a", color: "#000", weight: 1.5, fillOpacity: 0.9
+            }).addTo(markerLayer).on('click', () => {
+                loadIangeloxProperty(i);
+                document.getElementById('i-display-anchor').scrollIntoView({behavior:'smooth', block: 'center'});
             });
         });
 
-        const ths = document.getElementById('i-thumbs-engine');
-        ths.innerHTML = '';
-        filtered.slice(0, 60).forEach((p, i) => {
+        // Crear Miniaturas (CORREGIDO con comillas para que carguen siempre)
+        const thumbs = document.getElementById('i-thumbs-container');
+        thumbs.innerHTML = '';
+        filteredItems.slice(0, 60).forEach((item, i) => {
+            const bgUrl = (item.images && item.images.length > 0) ? item.images : '';
             const d = document.createElement('div');
-            d.className = 'i-thumb-card'; // Nota: corregido a i-thumb-item en CSS si prefieres
-            d.style.cssText = `flex:0 0 100px; height:70px; border:1px solid #333; cursor:pointer; background-image:url(${p.images}); background-size:cover;`;
-            d.onclick = () => window.loadSingle(i);
-            ths.appendChild(d);
+            d.className = 'i-thumb-item' + (i === 0 ? ' active' : '');
+            d.style.backgroundImage = `url('${bgUrl}')`;
+            d.onclick = () => loadIangeloxProperty(i);
+            thumbs.appendChild(d);
         });
 
-        if(filtered.length > 0) window.loadSingle(0);
+        if(filteredItems.length > 0) {
+            loadIangeloxProperty(0);
+            if(q !== "") {
+                mainMap.flyTo([parseFloat(filteredItems.latitude), parseFloat(filteredItems.longitude)], 10);
+            }
+        }
     };
 
-    init();
+    initEngine();
 })();
 </script>
 
