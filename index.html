@@ -1383,12 +1383,22 @@
         z-index: 10;
         box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     }
+#global-map-area {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+    
     #i-global-map { 
         width: 100%; 
-        height: 500px; 
+        height: 600px; 
         background: #000; 
+        border-top: 1px solid var(--i-gold); 
+        border-bottom: 1px solid var(--i-gold); 
     }
-
     @media (max-width: 900px) { 
         .i-main-display { grid-template-columns: 1fr; } 
         .i-search-bar { grid-template-columns: 1fr; } 
@@ -1462,29 +1472,28 @@
         } catch(e) { console.error("iAngelox Engine Error:", e); }
     }
 
-    window.loadIangeloxProperty = function(idx) {
+window.loadIangeloxProperty = function(idx) {
         const p = filteredItems[idx];
         if(!p) return;
         currentActive = idx;
 
-        // Llenar Ficha (Precio -> Desc -> MLS -> Botón -> Locación)
+        // Textos con validación (para que no salga 'undefined')
         document.getElementById('i-ref-price').textContent = p.price ? "$" + parseFloat(p.price.toString().replace(/[^0-9.]/g, '')).toLocaleString() : "Consultar";
-        document.getElementById('i-ref-desc').textContent = p.overview || "Solicita el dossier completo de esta propiedad para conocer más detalles exclusivos.";
+        document.getElementById('i-ref-desc').textContent = p.overview || "Solicita el dossier completo de esta propiedad.";
         document.getElementById('i-ref-mls').textContent = "MLS: " + (p.mls || "N/A");
-        document.getElementById('i-ref-location').textContent = (p.area || "") + " · " + (p.subdivision || "");
+        document.getElementById('i-ref-location').textContent = p.area ? (p.area + " · " + (p.subdivision || "")) : "Ubicación Exclusiva";
 
-        // Actualizar Galería
+        // Galería: Solo toma las primeras 3 imágenes (slice(0, 3))
         const gallery = document.getElementById('i-gallery-container');
         gallery.innerHTML = '';
         const imgList = Array.isArray(p.images) ? p.images : [];
-        imgList.slice(0, 6).forEach((url, i) => {
+        imgList.slice(0, 3).forEach((url, i) => {
             const img = document.createElement('img');
             img.src = url;
             img.className = 'i-slide' + (i === 0 ? ' active' : '');
             gallery.appendChild(img);
         });
 
-        // Loop de Galería
         if(window.iTimer) clearInterval(window.iTimer);
         let s = 0;
         window.iTimer = setInterval(() => {
@@ -1495,13 +1504,11 @@
             slides[s].classList.add('active');
         }, 4000);
 
-        // Estilos de Miniaturas Activas
         const thumbs = document.querySelectorAll('.i-thumb-item');
         thumbs.forEach((t, i) => {
             t.classList.toggle('active', i === idx);
         });
     };
-
     // Función del Botón: Baja al mapa y hace zoom en la propiedad sin salir de tu web
     window.focusOnMap = function() {
         const p = filteredItems[currentActive];
@@ -1513,12 +1520,13 @@
         }
     };
 
-    window.updateIangeloxEngine = function() {
+window.updateIangeloxEngine = function() {
         const q = document.getElementById('i-search-input').value.toLowerCase();
         const f = document.getElementById('i-price-filter').value;
 
         filteredItems = allItems.filter(item => {
-            const text = ((item.area||"") + " " + (item.subdivision||"") + " " + (item.address||"")).toLowerCase();
+            // FIX: Solo busca en los campos que realmente existen en tu JSON
+            const text = ((item.mls || "") + " " + (item.overview || "")).toLowerCase();
             const val = parseFloat(item.price ? item.price.toString().replace(/[^0-9.]/g, '') : 0);
             
             let mP = true;
@@ -1529,6 +1537,42 @@
             return text.includes(q) && mP;
         });
 
+        // Actualizar Mapa
+        markerLayer.clearLayers();
+        filteredItems.forEach((p, i) => {
+            if(!p.latitude) return;
+            L.circleMarker([parseFloat(p.latitude), parseFloat(p.longitude)], {
+                radius: 6, fillColor: "#b8964a", color: "#000", weight: 1.5, fillOpacity: 0.9
+            }).addTo(markerLayer).on('click', () => {
+                loadIangeloxProperty(i);
+                document.getElementById('i-display-anchor').scrollIntoView({behavior:'smooth', block: 'center'});
+            });
+        });
+
+        // Crear Miniaturas
+        const thumbs = document.getElementById('i-thumbs-container');
+        thumbs.innerHTML = '';
+        filteredItems.slice(0, 60).forEach((item, i) => {
+            const bgUrl = (item.images && item.images.length > 0) ? item.images : '';
+            const d = document.createElement('div');
+            d.className = 'i-thumb-item' + (i === 0 ? ' active' : '');
+            d.style.backgroundImage = `url('${bgUrl}')`;
+            d.onclick = () => loadIangeloxProperty(i);
+            thumbs.appendChild(d);
+        });
+
+        if(filteredItems.length > 0) {
+            loadIangeloxProperty(0);
+        }
+
+        // FIX MAPA CORTADO: Forzamos a Leaflet a reajustar los mosaicos después de medio segundo
+        setTimeout(() => {
+            if(mainMap) mainMap.invalidateSize();
+            if(q !== "" && filteredItems.length > 0) {
+                mainMap.flyTo([parseFloat(filteredItems.latitude), parseFloat(filteredItems.longitude)], 10);
+            }
+        }, 500);
+    };
         // Actualizar Mapa con Círculos de Oro
         markerLayer.clearLayers();
         filteredItems.forEach((p, i) => {
