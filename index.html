@@ -1270,12 +1270,13 @@
     </blockquote>
   </div>
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   :root {
     --i-gold: #b8964a;
     --i-bg: #0a0a0a;
     --i-card: #111111;
-    --i-soft-radius: 24px; /* Cero bordes puntiagudos */
+    --i-soft-radius: 24px; /* Cero bordes puntiagudos, lujo absoluto */
   }
 
   #iangelox-engine {
@@ -1284,6 +1285,8 @@
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     overflow: hidden;
+    position: relative;
+    z-index: 10;
   }
 
   /* Buscador Luxury */
@@ -1306,8 +1309,11 @@
     color: #fff;
     padding: 12px 20px;
     outline: none;
-    border-radius: 12px;
+    border-radius: var(--i-soft-radius);
     font-family: inherit;
+  }
+  .i-filter-bar input:focus, .i-filter-bar select:focus {
+    border-color: var(--i-gold);
   }
 
   .i-btn-search {
@@ -1318,9 +1324,10 @@
     padding: 0 35px;
     border: none;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: var(--i-soft-radius);
     transition: 0.3s;
   }
+  .i-btn-search:hover { background: #fff; transform: translateY(-2px); }
 
   /* Pantalla Principal (Card) */
   .i-monitor {
@@ -1356,37 +1363,52 @@
     padding: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0a0a0a, #151515);
   }
 
-  .i-val-price { font-size: 2.8rem; color: var(--i-gold); font-weight: 900; margin-bottom: 1.5rem; letter-spacing: -1px; }
+  .i-val-price { 
+    font-size: 2.8rem; 
+    color: var(--i-gold); 
+    font-weight: 900; 
+    margin-bottom: 1.5rem; 
+    letter-spacing: -1px; 
+  }
   
   .i-val-desc { 
     font-size: 0.95rem; 
     line-height: 1.8; 
     color: #bbb; 
     margin-bottom: 1rem; 
-    height: 200px; 
+    height: 180px; 
     overflow-y: auto; 
     padding-right: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--i-gold) transparent;
   }
-  .i-val-desc::-webkit-scrollbar { width: 3px; }
-  .i-val-desc::-webkit-scrollbar-thumb { background: var(--i-gold); }
 
-  .i-val-mls { font-size: 0.7rem; color: #333; letter-spacing: 3px; font-weight: 700; text-transform: uppercase; margin-bottom: 2rem; }
+  .i-val-mls { 
+    font-size: 0.8rem; 
+    color: #444; 
+    letter-spacing: 3px; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    margin-bottom: 2rem; 
+  }
 
   .i-btn-trigger-map {
     background: transparent;
     border: 1px solid var(--i-gold);
     color: var(--i-gold);
-    padding: 15px;
+    padding: 18px;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: var(--i-soft-radius);
     margin-bottom: 2rem;
     transition: 0.3s;
+    width: 100%;
+    letter-spacing: 2px;
   }
   .i-btn-trigger-map:hover { background: var(--i-gold); color: #000; }
 
@@ -1398,6 +1420,7 @@
     font-size: 0.75rem;
     letter-spacing: 4px;
     text-transform: uppercase;
+    margin: 0;
   }
 
   /* Miniaturas */
@@ -1408,16 +1431,20 @@
     gap: 12px;
     overflow-x: auto;
     padding-bottom: 1rem;
+    scrollbar-width: none;
   }
-  .i-thumbnails::-webkit-scrollbar { height: 4px; }
   .i-thumb-box {
-    flex: 0 0 100px; height: 65px;
-    border-radius: 12px;
-    background-size: cover; background-position: center;
-    cursor: pointer; opacity: 0.4; transition: 0.3s;
+    flex: 0 0 110px; 
+    height: 75px;
+    border-radius: 16px;
+    background-size: cover; 
+    background-position: center;
+    cursor: pointer; 
+    opacity: 0.4; 
+    transition: 0.3s;
     border: 2px solid transparent;
   }
-  .i-thumb-box.active { opacity: 1; border-color: var(--i-gold); }
+  .i-thumb-box.active, .i-thumb-box:hover { opacity: 1; border-color: var(--i-gold); transform: scale(1.05); }
 
   /* Mapa de Extremo a Extremo */
   .i-global-map-wrapper {
@@ -1429,43 +1456,48 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    border-radius: 0; /* Solo el contenedor externo es cuadrado, pero le daremos estilo al mapa */
   }
 
   #iangelox-map {
     width: 100%; height: 100%;
     background: #000;
+    border-top: 1px solid var(--i-gold);
+    border-bottom: 1px solid var(--i-gold);
   }
 
   @media (max-width: 900px) {
     .i-monitor { grid-template-columns: 1fr; }
     .i-filter-bar { grid-template-columns: 1fr; margin: 0 1rem 2rem; }
+    .i-visual-engine { height: 300px; }
   }
 </style>
 
 <section id="iangelox-engine">
   <div class="container">
+    
     <div class="i-filter-bar">
-      <input type="text" id="i-input-loc" placeholder="Filtrar ubicación o MLS...">
+      <input type="text" id="i-input-loc" placeholder="Filtrar por palabra clave o zona...">
       <select id="i-input-price">
         <option value="0">Cualquier presupuesto</option>
-        <option value="500000">Bajo $500k</option>
+        <option value="500000">Hasta $500,000</option>
         <option value="1500000">$500k - $1.5M</option>
         <option value="99999999">Luxury (+ $1.5M)</option>
       </select>
-      <button class="i-btn-search" onclick="applyFilters()">Filtrar</button>
+      <button class="i-btn-search" onclick="iApplyFilters()">Explorar</button>
     </div>
 
-    <div class="i-monitor">
-      <div class="i-visual-engine" id="i-gallery"></div>
+    <div class="i-monitor" id="i-monitor-anchor">
+      <div class="i-visual-engine" id="i-gallery">
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: var(--i-gold);">Iniciando iAngelox Engine...</div>
+      </div>
       <div class="i-data-panel">
         <div>
           <div class="i-val-price" id="i-price">$--</div>
           <div class="i-val-desc" id="i-desc"></div>
-          <div class="i-val-mls" id="i-mls">REF: --</div>
+          <div class="i-val-mls" id="i-mls">MLS: --</div>
         </div>
         <div>
-          <button class="i-btn-trigger-map" onclick="scrollToMap()">Explorar en Mapa Interactivo</button>
+          <button class="i-btn-trigger-map" onclick="iScrollToMap()">Ver Ubicación Exacta</button>
           <div class="i-val-location" id="i-location">Cabo San Lucas</div>
         </div>
       </div>
@@ -1474,57 +1506,93 @@
     <div class="i-thumbnails" id="i-thumbs"></div>
   </div>
 
-  <div class="i-global-map-wrapper">
+  <div class="i-global-map-wrapper" id="i-map-section">
     <div id="iangelox-map"></div>
   </div>
 </section>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
   const DATA_URL = 'https://raw.githubusercontent.com/angeloapp/angeloinmuebles/main/CSLPMLS.json';
-  let properties = [], filtered = [], activeIdx = 0;
-  let map, markers;
+  let iData = [], iFiltered = [], iActiveIdx = 0;
+  let iMap, iMarkers;
 
-  async function init() {
-    try {
-      const r = await fetch(DATA_URL);
-      properties = await r.json();
-      filtered = properties;
-      
-      // Iniciar Mapa con estilo oscuro
-      map = L.map('iangelox-map', { zoomControl: false, scrollWheelZoom: false }).setView([23, -110], 8);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
-      markers = L.layerGroup().addTo(map);
-
-      renderDisplay(0);
-      drawMapPoints();
-      renderThumbs();
-    } catch(e) { console.warn("Engine Load Error", e); }
+  // --- FUNCIONES DE SEGURIDAD PARA IMÁGENES ---
+  function normalizeUrl(url){
+    if(!url) return '';
+    url = String(url).trim();
+    if(url.startsWith('https://') || url.startsWith('http://')) return url;
+    if(url.startsWith('httpswww')) return url.replace('httpswww','https://www.');
+    if(/^https[^:/]/.test(url)) return url.replace(/^https/,'https://');
+    return url;
   }
 
-  function renderDisplay(idx) {
-    const p = filtered[idx];
+  function extractImages(item){
+    var candidates = [item.images, item.Images, item.imageUrls, item.ImageUrls, item.photos, item.Photos];
+    for(var i=0; i<candidates.length; i++){
+      var src = candidates[i];
+      if(Array.isArray(src)) return src.map(normalizeUrl).filter(Boolean);
+      if(typeof src === 'string' && src.includes('http')) return src.split(',').map(s => normalizeUrl(s.trim())).filter(Boolean);
+    }
+    return [];
+  }
+  // ---------------------------------------------
+
+  async function initEngine() {
+    try {
+      const res = await fetch(DATA_URL);
+      const raw = await res.json();
+      iData = Array.isArray(raw) ? raw : (raw.results || raw.properties || raw.listings || []);
+      iFiltered = iData;
+      
+      // Iniciar Mapa con estilo oscuro
+      iMap = L.map('iangelox-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.4, -110], 8);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(iMap);
+      iMarkers = L.layerGroup().addTo(iMap);
+
+      iApplyFilters(); // Ejecuta carga inicial
+      
+      // Forzar renderizado correcto del mapa
+      setTimeout(() => { iMap.invalidateSize(); }, 800);
+
+    } catch(e) { console.warn("iAngelox Engine Error", e); }
+  }
+
+  window.iRenderDisplay = function(idx) {
+    const p = iFiltered[idx];
     if(!p) return;
-    activeIdx = idx;
+    iActiveIdx = idx;
 
-    // Inyectar datos (Buscamos precio en el texto si no hay llave de precio)
-    document.getElementById('i-price').innerText = p.overview.match(/\$[0-9,.]+/g) || "$ Contactar";
-    document.getElementById('i-desc').innerText = p.overview;
-    document.getElementById('i-mls').innerText = "Property ID: " + p.mls;
-    document.getElementById('i-location').innerText = p.overview.split(',') || "Baja California Sur";
+    // 1. INYECTAR TEXTOS (Respetando la jerarquía)
+    let rawPrice = p.price || p.Price;
+    if(rawPrice) {
+        let cleanPrice = parseFloat(rawPrice.toString().replace(/[^0-9.]/g, ''));
+        document.getElementById('i-price').innerText = "$" + cleanPrice.toLocaleString();
+    } else {
+        document.getElementById('i-price').innerText = "Consultar";
+    }
 
-    // Galería (Primeras 3 imágenes)
+    document.getElementById('i-desc').innerText = p.overview || p.Overview || p.description || "Información clasificada. Solicite el dossier privado.";
+    document.getElementById('i-mls').innerText = "MLS: " + (p.mls || p.MLS || p.ListingId || "N/A");
+
+    let locStr = [p.area, p.subdivision].filter(Boolean).join(" · ");
+    document.getElementById('i-location').innerText = locStr || "Baja California Sur";
+
+    // 2. GALERÍA (Máximo 3 imágenes para evitar sobrecarga visual)
     const gal = document.getElementById('i-gallery');
     gal.innerHTML = '';
-    const imgList = (p.images || []).slice(0, 3);
-    imgList.forEach((src, i) => {
+    const imgArray = extractImages(p);
+    if(imgArray.length === 0) imgArray.push('https://i.imgur.com/yBhoQaR.png'); // Fallback de seguridad
+
+    imgArray.slice(0, 3).forEach((src, i) => {
       const img = document.createElement('img');
       img.src = src;
       img.className = 'i-main-img' + (i === 0 ? ' active' : '');
       gal.appendChild(img);
     });
 
-    // Auto-slide
+    // Auto-slide de galería
     if(window.iSlideInt) clearInterval(window.iSlideInt);
     let cur = 0;
     window.iSlideInt = setInterval(() => {
@@ -1535,61 +1603,95 @@
       slides[cur].classList.add('active');
     }, 4000);
 
-    // Activar miniatura
-    document.querySelectorAll('.i-thumb-box').forEach((t, i) => t.classList.toggle('active', i === idx));
-  }
+    // 3. ACTUALIZAR MINIATURAS ACTIVAS
+    document.querySelectorAll('.i-thumb-box').forEach((t, i) => {
+        if(i === idx) t.classList.add('active');
+        else t.classList.remove('active');
+    });
+  };
 
-  window.applyFilters = function() {
+  window.iApplyFilters = function() {
     const q = document.getElementById('i-input-loc').value.toLowerCase();
     const pLimit = parseInt(document.getElementById('i-input-price').value);
 
-    filtered = properties.filter(p => {
-      const text = (p.mls + " " + p.overview).toLowerCase();
-      return text.includes(q);
+    iFiltered = iData.filter(p => {
+      const text = ((p.mls||"") + " " + (p.overview||"") + " " + (p.area||"")).toLowerCase();
+      const matchText = text.includes(q);
+      
+      const val = parseFloat((p.price || "0").toString().replace(/[^0-9.]/g, ''));
+      let matchPrice = true;
+      if(pLimit === 500000) matchPrice = val <= 500000;
+      else if(pLimit === 1500000) matchPrice = val > 500000 && val <= 1500000;
+      else if(pLimit === 99999999) matchPrice = val > 1500000;
+
+      return matchText && matchPrice;
     });
 
-    drawMapPoints();
-    renderThumbs();
-    if(filtered.length > 0) renderDisplay(0);
+    iDrawMapPoints();
+    iRenderThumbs();
+    
+    if(iFiltered.length > 0) {
+        iRenderDisplay(0);
+        if(q !== "" && iFiltered.latitude) {
+            iMap.flyTo([parseFloat(iFiltered.latitude), parseFloat(iFiltered.longitude)], 11);
+        }
+    }
   };
 
-  function drawMapPoints() {
-    markers.clearLayers();
-    filtered.forEach((p, i) => {
-      if(!p.latitude) return;
-      // Usamos circleMarker para aguantar los 4,500 puntos sin lag
-      L.circleMarker([parseFloat(p.latitude), parseFloat(p.longitude)], {
-        radius: 6, fillColor: "#b8964a", color: "#fff", weight: 1, fillOpacity: 0.8
-      }).addTo(markers).on('click', () => {
-        renderDisplay(i);
-        document.getElementById('i-monitor').scrollIntoView({behavior:'smooth'});
-      });
+  function iDrawMapPoints() {
+    iMarkers.clearLayers();
+    iFiltered.forEach((p, i) => {
+      const lat = parseFloat(p.latitude || p.Latitude);
+      const lng = parseFloat(p.longitude || p.Longitude);
+      if(!isNaN(lat) && !isNaN(lng)) {
+        L.circleMarker([lat, lng], {
+          radius: 6, fillColor: "#b8964a", color: "#000", weight: 1.5, fillOpacity: 0.9
+        }).addTo(iMarkers).on('click', () => {
+          iRenderDisplay(i);
+          document.getElementById('i-monitor-anchor').scrollIntoView({behavior:'smooth', block: 'center'});
+        });
+      }
     });
-    // Forzar reajuste de tamaño por si el mapa estaba oculto
-    setTimeout(() => map.invalidateSize(), 400);
+    setTimeout(() => { if(iMap) iMap.invalidateSize(); }, 400);
   }
 
-  function renderThumbs() {
+  function iRenderThumbs() {
     const container = document.getElementById('i-thumbs');
     container.innerHTML = '';
-    filtered.slice(0, 60).forEach((p, i) => {
+    // Límite de 40 miniaturas para no saturar el DOM, pero el buscador funciona con las 4500
+    iFiltered.slice(0, 40).forEach((p, i) => {
+      const imgs = extractImages(p);
+      const bgUrl = imgs.length > 0 ? imgs : 'https://i.imgur.com/yBhoQaR.png';
+      
       const div = document.createElement('div');
-      div.className = 'i-thumb-box' + (i === activeIdx ? ' active' : '');
-      div.style.backgroundImage = `url('${p.images}')`;
-      div.onclick = () => renderDisplay(i);
+      div.className = 'i-thumb-box' + (i === iActiveIdx ? ' active' : '');
+      div.style.backgroundImage = `url("${bgUrl}")`;
+      div.onclick = () => {
+          iRenderDisplay(i);
+          // Opcional: Centrar miniatura al clickear
+          div.scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'});
+      };
       container.appendChild(div);
     });
   }
 
-  window.scrollToMap = function() {
-    const p = filtered[activeIdx];
-    document.getElementById('iangelox-map').scrollIntoView({behavior:'smooth'});
-    if(p.latitude) {
-      setTimeout(() => map.flyTo([p.latitude, p.longitude], 15), 600);
+  window.iScrollToMap = function() {
+    const p = iFiltered[iActiveIdx];
+    document.getElementById('i-map-section').scrollIntoView({behavior:'smooth'});
+    if(p) {
+        const lat = parseFloat(p.latitude || p.Latitude);
+        const lng = parseFloat(p.longitude || p.Longitude);
+        if(!isNaN(lat) && !isNaN(lng)) {
+            setTimeout(() => { 
+                iMap.invalidateSize();
+                iMap.flyTo([lat, lng], 16, {duration: 1.5}); 
+            }, 600);
+        }
     }
   };
 
-  init();
+  // Iniciar al cargar la ventana
+  initEngine();
 })();
 </script>
 
