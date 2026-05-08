@@ -1392,8 +1392,8 @@
 
   fetch(JSON_URL)
     .then(r => r.json())
-    .then(data => {
-      properties = data.slice(0, 20); // primeras 20 propiedades
+.then(data => {
+  properties = Array.isArray(data) ? data : [];
       const thumbs = document.getElementById('mls-thumbs');
       properties.forEach((p, i) => {
         const btn = document.createElement('button');
