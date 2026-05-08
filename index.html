@@ -1267,85 +1267,68 @@
     :root {
         --onyx-gold: #b8964a;
         --onyx-blue: #13b0e1;
-        --onyx-glass: rgba(10, 10, 10, 0.85);
-        --onyx-border: rgba(184, 150, 74, 0.3);
+        --onyx-glass: rgba(10, 10, 10, 0.9);
+        --onyx-border: rgba(184, 150, 74, 0.4);
     }
 
     #mls-section {
         background: #000;
-        padding: 80px 0;
+        padding: 60px 0;
         font-family: 'Montserrat', sans-serif;
         color: #f5f0e8;
-        overflow: hidden;
     }
 
-    /* Buscador Glassmorphism */
+    /* Buscador Angular */
     .onyx-search-bar {
         background: var(--onyx-glass);
-        backdrop-filter: blur(15px);
         border: 1px solid var(--onyx-border);
-        padding: 25px;
+        padding: 20px;
         display: grid;
         grid-template-columns: 1fr 1fr auto;
-        gap: 20px;
-        margin-bottom: 60px;
-        position: relative;
+        gap: 15px;
+        margin-bottom: 40px;
         z-index: 100;
+        position: relative;
     }
 
     .onyx-search-bar input, .onyx-search-bar select {
-        background: rgba(255,255,255,0.05);
+        background: #000;
         border: 1px solid #333;
         color: #fff;
-        padding: 15px;
-        font-size: 0.9rem;
+        padding: 12px;
         outline: none;
+        border-radius: 0; /* Sin redondez */
+    }
+
+    .onyx-btn {
+        background: var(--onyx-gold);
+        color: #000;
+        border: none;
+        padding: 0 30px;
+        font-weight: 800;
+        text-transform: uppercase;
+        cursor: pointer;
         transition: 0.3s;
     }
 
-    .onyx-search-bar input:focus { border-color: var(--onyx-blue); }
-
-    .onyx-btn {
-        background: linear-gradient(90deg, var(--onyx-gold) 0%, #e0c389 100%);
-        color: #000;
-        border: none;
-        padding: 0 40px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        cursor: pointer;
-        transition: 0.4s;
-    }
-
-    .onyx-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(184,150,74,0.4); }
-
-    /* Contenedor 3D */
+    /* Card Principal 3D */
     .perspective-container {
-        perspective: 2000px;
-        height: 600px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        perspective: 1500px;
+        margin-bottom: 30px;
     }
 
     .card-3d-wrap {
-        width: 100%;
-        max-width: 1000px;
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-columns: 1fr 1fr;
         background: #0a0a0a;
         border: 1px solid var(--onyx-border);
-        box-shadow: 0 50px 100px rgba(0,0,0,0.8);
-        transform-style: preserve-3d;
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        min-height: 500px;
     }
 
-    /* Galería Ken Burns */
     .onyx-gallery {
         position: relative;
-        height: 500px;
         overflow: hidden;
-        border-right: 1px solid var(--onyx-border);
+        background: #111;
     }
 
     .gallery-img {
@@ -1353,106 +1336,80 @@
         object-fit: cover;
         position: absolute;
         opacity: 0;
-        transition: opacity 1s ease-in-out, transform 8s linear;
+        transition: opacity 0.8s ease;
     }
 
-    .gallery-img.active { opacity: 1; transform: scale(1.1) translateZ(20px); }
+    .gallery-img.active { opacity: 1; }
 
-    /* Detalles de la Propiedad */
     .onyx-details {
         padding: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
     }
-
-    .onyx-price { font-size: 2.5rem; color: var(--onyx-gold); font-weight: 900; margin: 0; }
-    .onyx-area { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--onyx-blue); margin-bottom: 20px; }
-    
-    .onyx-stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin: 20px 0;
-        font-size: 0.8rem;
-        border-top: 1px solid #222;
-        padding-top: 20px;
-    }
-
-    .onyx-stats b { color: #fff; display: block; font-size: 1rem; }
 
     /* Estilo del Mapa Global */
     #onyx-global-map {
         width: 100%;
-        height: 600px;
+        height: 550px;
         background: #000;
         border-top: 1px solid var(--onyx-gold);
+        border-bottom: 1px solid var(--onyx-gold);
     }
 
-    /* Scrollbar de miniaturas */
     .onyx-thumbs {
         display: flex;
-        gap: 10px;
+        gap: 8px;
         overflow-x: auto;
         padding: 20px 0;
-        scrollbar-width: none;
     }
-    .onyx-thumbs::-webkit-scrollbar { display: none; }
-    
-    .thumb-item {
-        flex: 0 0 100px;
-        height: 70px;
-        border: 1px solid #333;
-        cursor: pointer;
-        filter: grayscale(1);
-        transition: 0.3s;
-    }
-    .thumb-item:hover, .thumb-item.active { filter: grayscale(0); border-color: var(--onyx-gold); transform: scale(1.05); }
 
+    .thumb-item {
+        flex: 0 0 80px;
+        height: 60px;
+        border: 1px solid #222;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+    }
+
+    .thumb-item.active { opacity: 1; border-color: var(--onyx-gold); }
 </style>
 
 <section id="mls-section">
-    <div style="max-width:1300px; margin: 0 auto; padding: 0 20px;">
+    <div style="max-width:1200px; margin: 0 auto; padding: 0 1.5rem;">
         
-        <header style="text-align: center; margin-bottom: 50px;">
-            <p style="font-family:'Cormorant Garamond',serif; font-size: 1rem; letter-spacing: 8px; color: var(--onyx-gold); text-transform: uppercase;">Real Estate Intelligence</p>
-            <h2 style="font-family:'Cormorant Garamond',serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; margin: 10px 0;">Portfolio Cabo & La Paz</h2>
+        <header style="text-align: center; margin-bottom: 40px;">
+            <p style="font-size: 0.7rem; letter-spacing: 6px; color: var(--onyx-gold); text-transform: uppercase; margin:0;">Real Estate Intelligence</p>
+            <h2 style="font-family:'Cormorant Garamond',serif; font-size: 3rem; font-weight: 400; margin: 10px 0;">Catálogo MLS BCS</h2>
         </header>
 
         <div class="onyx-search-bar">
-            <input type="text" id="onyx-search" placeholder="Escribe una zona (Ej: Pedregal, El Tezal, Todos Santos...)">
-            <select id="onyx-price">
-                <option value="0">Cualquier presupuesto</option>
+            <input type="text" id="onyx-search" placeholder="Zona (Ej: El Tezal, La Paz, Centro...)">
+            <select id="onyx-price-filter">
+                <option value="0">Cualquier Precio</option>
                 <option value="500000">Hasta $500,000</option>
                 <option value="1500000">$500,000 - $1.5M</option>
-                <option value="999999999">Luxury Global</option>
+                <option value="99999999">Lujo +$1.5M</option>
             </select>
-            <button class="onyx-btn" onclick="applyOnyxFilter()">Explorar</button>
+            <button class="onyx-btn" onclick="applyOnyxFilter()">Buscar</button>
         </div>
 
         <div class="perspective-container">
             <div class="card-3d-wrap" id="onyx-main-card">
                 <div class="onyx-gallery" id="onyx-gallery">
-                    </div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: var(--onyx-gold);">Cargando galería...</div>
+                </div>
                 <div class="onyx-details">
-                    <p id="onyx-p-area" class="onyx-area"></p>
-                    <h3 id="onyx-p-price" class="onyx-price"></h3>
-                    <p id="onyx-p-mls" style="font-size: 0.7rem; color: #666;"></p>
-                    <p id="onyx-p-desc" style="font-size: 0.85rem; line-height: 1.8; color: #aaa; margin: 20px 0; height: 100px; overflow-y: auto;"></p>
-                    
-                    <div class="onyx-stats">
-                        <span>Lote <b id="onyx-p-lot"></b></span>
-                        <span>Construcción <b id="onyx-p-const"></b></span>
-                    </div>
-
-                    <a id="onyx-p-link" href="#" target="_blank" class="onyx-btn" style="text-decoration:none; padding:15px; text-align:center; font-size:0.7rem;">Ubicación en GPS</a>
+                    <p id="onyx-p-area" style="font-size: 0.7rem; letter-spacing: 3px; color: var(--onyx-blue); text-transform: uppercase; margin:0;"></p>
+                    <h3 id="onyx-p-price" style="font-size: 2.2rem; color: var(--onyx-gold); margin: 10px 0; font-weight: 900;"></h3>
+                    <p id="onyx-p-mls" style="color: #666; font-size: 0.7rem; margin-bottom: 20px;"></p>
+                    <p id="onyx-p-desc" style="font-size: 0.85rem; line-height: 1.7; color: #ccc; margin-bottom: 25px; height: 120px; overflow-y: auto; border-left: 2px solid var(--onyx-gold); padding-left: 15px;"></p>
+                    <a id="onyx-p-link" href="#" target="_blank" class="onyx-btn" style="display: block; text-decoration: none; padding: 15px; text-align: center;">Ver en Google Maps</a>
                 </div>
             </div>
         </div>
 
         <div class="onyx-thumbs" id="onyx-thumbs"></div>
-
     </div>
 
     <div id="onyx-global-map"></div>
@@ -1462,23 +1419,24 @@
 (function(){
     const JSON_URL = 'https://raw.githubusercontent.com/angeloapp/angeloinmuebles/main/CSLPMLS.json';
     let properties = [], filtered = [], activeIdx = 0;
-    let mainMap, markerGroup;
+    let mainMap, markerLayer;
 
-    async function initOnyx() {
+    async function init() {
         try {
             const r = await fetch(JSON_URL);
-            properties = await r.json();
+            const data = await r.json();
+            properties = Array.isArray(data) ? data : [];
             filtered = properties;
             
             setupMap();
-            applyOnyxFilter();
-        } catch(e) { console.error("Error cargando base Onyx:", e); }
+            applyOnyxFilter(); // Carga inicial
+        } catch(e) { console.error("Error MLS:", e); }
     }
 
     function setupMap() {
-        mainMap = L.map('onyx-global-map', { zoomControl: false }).setView([23.4, -110], 8);
+        mainMap = L.map('onyx-global-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.5, -110.3], 8);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(mainMap);
-        markerGroup = L.layerGroup().addTo(mainMap);
+        markerLayer = L.layerGroup().addTo(mainMap);
     }
 
     window.renderOnyxProperty = function(idx) {
@@ -1486,16 +1444,13 @@
         if(!p) return;
         activeIdx = idx;
 
-        // Inyectar datos
-        document.getElementById('onyx-p-area').textContent = p.area + " · " + (p.subdivision || "");
+        document.getElementById('onyx-p-area').textContent = p.area + " | " + (p.subdivision || "");
         document.getElementById('onyx-p-price').textContent = "$" + parseFloat(p.price).toLocaleString();
-        document.getElementById('onyx-p-mls').textContent = "Property ID: " + p.mls;
+        document.getElementById('onyx-p-mls').textContent = "Property Reference: " + p.mls;
         document.getElementById('onyx-p-desc').textContent = p.overview;
-        document.getElementById('onyx-p-lot').textContent = (p.m2_lot || "--") + " m²";
-        document.getElementById('onyx-p-const').textContent = (p.m2_living || "--") + " m²";
         document.getElementById('onyx-p-link').href = p.googleMapsUrl;
 
-        // Galería Ken Burns
+        // Galería
         const gal = document.getElementById('onyx-gallery');
         gal.innerHTML = '';
         (p.images || []).slice(0, 5).forEach((src, i) => {
@@ -1505,71 +1460,69 @@
             gal.appendChild(img);
         });
 
-        // Animación de Galería
-        let currentImg = 0;
-        if(window.onyxInterval) clearInterval(window.onyxInterval);
-        window.onyxInterval = setInterval(() => {
+        // Loop galería simple
+        let cur = 0;
+        if(window.galTimer) clearInterval(window.galInterval);
+        window.galInterval = setInterval(() => {
             const imgs = gal.querySelectorAll('.gallery-img');
             if(imgs.length < 2) return;
-            imgs[currentImg].classList.remove('active');
-            currentImg = (currentImg + 1) % imgs.length;
-            imgs[currentImg].classList.add('active');
-        }, 4000);
-
-        // Tilt Animation Card
-        const card = document.getElementById('onyx-main-card');
-        card.style.transform = "rotateY(-5deg) rotateX(2deg)";
-        setTimeout(() => card.style.transform = "rotateY(0) rotateX(0)", 500);
+            imgs[cur].classList.remove('active');
+            cur = (cur + 1) % imgs.length;
+            imgs[cur].classList.add('active');
+        }, 3500);
     }
 
     window.applyOnyxFilter = function() {
         const search = document.getElementById('onyx-search').value.toLowerCase();
-        const price = parseFloat(document.getElementById('onyx-price').value);
+        const priceLimit = parseFloat(document.getElementById('onyx-price-filter').value);
 
         filtered = properties.filter(p => {
-            const text = (p.area + p.subdivision + p.address).toLowerCase();
+            const text = (p.area + p.subdivision + p.address + p.mls).toLowerCase();
             const mLoc = text.includes(search);
-            const mPrice = price === 0 || parseFloat(p.price) <= price;
+            const mPrice = priceLimit === 0 || parseFloat(p.price) <= priceLimit;
             return mLoc && mPrice;
         });
 
-        // Actualizar Mapa Global con TODOS los puntos filtrados
-        markerGroup.clearLayers();
+        // LIMPIAR Y REDIBUJAR PUNTOS DE ORO EN MAPA
+        markerLayer.clearLayers();
         filtered.forEach((p, i) => {
-            if(!p.latitude) return;
-            const marker = L.circleMarker([p.latitude, p.longitude], {
-                radius: 4,
-                fillColor: "#b8964a",
-                color: "#fff",
-                weight: 0.5,
-                fillOpacity: 0.7
-            }).addTo(markerGroup);
+            if(!p.latitude || isNaN(p.latitude)) return;
             
-            marker.on('click', () => {
+            // Usamos circleMarker para máximo rendimiento con 4,500 puntos
+            const dot = L.circleMarker([p.latitude, p.longitude], {
+                radius: 5,
+                fillColor: "#b8964a", // ORO
+                color: "#fff",
+                weight: 1,
+                fillOpacity: 0.8
+            }).addTo(markerLayer);
+
+            dot.on('click', () => {
                 renderOnyxProperty(i);
                 document.getElementById('onyx-main-card').scrollIntoView({behavior:'smooth'});
             });
         });
 
-        // Actualizar miniaturas (Limitamos a 50 por performance visual)
+        // Actualizar miniaturas (Limitado a 60 por fluidez)
         const thumbCont = document.getElementById('onyx-thumbs');
         thumbCont.innerHTML = '';
-        filtered.slice(0, 50).forEach((p, i) => {
+        filtered.slice(0, 60).forEach((p, i) => {
             const div = document.createElement('div');
             div.className = 'thumb-item';
             div.style.backgroundImage = `url(${p.images})`;
-            div.style.backgroundSize = 'cover';
             div.onclick = () => renderOnyxProperty(i);
             thumbCont.appendChild(div);
         });
 
         if(filtered.length > 0) renderOnyxProperty(0);
-        if(filtered.length > 0 && search !== "") {
+        
+        // Auto-zoom si se busca algo específico
+        if(search !== "" && filtered.length > 0) {
             mainMap.flyTo([filtered.latitude, filtered.longitude], 11);
         }
     }
 
-    initOnyx();
+    init();
 })();
 </script>
 
