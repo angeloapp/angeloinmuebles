@@ -1270,7 +1270,430 @@
     </blockquote>
   </div>
 
+<style>
+  :root {
+    --i-gold: #b8964a;
+    --i-bg: #050505;
+    --i-card: #0d0d0d;
+    --i-text: #e0e0e0;
+    --i-rad: 20px; /* Cero bordes puntiagudos */
+  }
 
+  #iangelox-engine {
+    background: var(--i-bg);
+    padding: 5rem 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--i-text);
+    position: relative;
+    z-index: 5; 
+  }
+
+  .i-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  
+  /* Buscador */
+  .i-search {
+    background: rgba(20,20,20,0.8);
+    border: 1px solid rgba(184,150,74,0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .i-search input {
+    flex: 1; background: transparent; border: none; color: #fff;
+    font-size: 1rem; outline: none; font-family: inherit;
+  }
+  .i-search button {
+    background: var(--i-gold); color: #000; font-weight: 800;
+    border: none; padding: 0.8rem 2.5rem; border-radius: 50px; 
+    cursor: pointer; text-transform: uppercase; letter-spacing: 1.5px; 
+    transition: 0.3s;
+  }
+  .i-search button:hover { background: #fff; }
+
+  /* Ficha Principal */
+  .i-dossier {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    background: var(--i-card);
+    border-radius: var(--i-rad);
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+    min-height: 550px;
+  }
+  
+  /* Galería Interactiva */
+  .i-gallery-wrap { position: relative; background: #000; user-select: none; }
+  .i-gallery { width: 100%; height: 100%; position: relative; overflow: hidden; }
+  .i-slide { 
+    width: 100%; height: 100%; 
+    object-fit: cover; position: absolute; 
+    opacity: 0; transition: opacity 0.5s ease; 
+  }
+  .i-slide.active { opacity: 1; }
+  
+  /* Controles Galería */
+  .i-gal-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.5); border: 1px solid rgba(184,150,74,0.5);
+    color: #fff; width: 40px; height: 40px; border-radius: 50%;
+    cursor: pointer; z-index: 10; font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(4px); transition: 0.3s;
+  }
+  .i-gal-btn:hover { background: var(--i-gold); color: #000; }
+  .i-gal-prev { left: 15px; }
+  .i-gal-next { right: 15px; }
+  
+  .i-gal-counter {
+    position: absolute; bottom: 15px; right: 15px;
+    background: rgba(0,0,0,0.7); color: #fff;
+    padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;
+    letter-spacing: 2px; z-index: 10; border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Info Panel */
+  .i-info { 
+    padding: 2.5rem 3rem; 
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .i-price { font-size: 2.6rem; color: var(--i-gold); font-weight: 900; margin: 0 0 15px 0; }
+  
+  .i-desc {
+    font-size: 0.95rem; line-height: 1.8; color: #ccc;
+    height: 180px; overflow-y: auto; padding-right: 15px; margin-bottom: 1rem;
+    scrollbar-width: thin; scrollbar-color: var(--i-gold) transparent;
+  }
+  .i-mls {
+    font-size: 0.85rem; color: #444; font-weight: 800;
+    letter-spacing: 4px; margin-bottom: 1.5rem; 
+  }
+  
+  /* Botones Contacto Lujo */
+  .i-contact-group {
+    display: flex; gap: 10px; margin-bottom: 1.5rem; flex-wrap: wrap;
+  }
+  .i-contact-btn {
+    flex: 1; text-align: center; padding: 12px 10px; font-size: 0.8rem;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    border-radius: 50px; text-decoration: none; transition: 0.3s;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .i-btn-gold { background: var(--i-gold); color: #000; border: 1px solid var(--i-gold); }
+  .i-btn-gold:hover { background: #fff; color: #000; border-color: #fff; }
+  
+  .i-btn-dark { background: transparent; color: #fff; border: 1px solid #444; }
+  .i-btn-dark:hover { background: #222; border-color: #fff; }
+  
+  .i-btn-map {
+    background: transparent; border: 1px solid var(--i-gold); color: var(--i-gold);
+    padding: 15px; text-align: center; font-weight: 700; text-transform: uppercase;
+    border-radius: 50px; cursor: pointer; transition: 0.3s; margin-bottom: 1.5rem;
+    letter-spacing: 2px; width: 100%;
+  }
+  .i-btn-map:hover { background: var(--i-gold); color: #000; }
+  
+  .i-loc {
+    font-size: 0.75rem; color: #888; text-align: center; text-transform: uppercase; 
+    letter-spacing: 5px; border-top: 1px solid #1a1a1a; padding-top: 1.5rem; margin: 0;
+  }
+
+  /* Carrusel Miniaturas Touch */
+  .i-thumbs {
+    display: flex; gap: 12px; margin-top: 2rem; padding-bottom: 1.5rem;
+    overflow-x: auto; scrollbar-width: none; cursor: grab;
+    -webkit-overflow-scrolling: touch;
+  }
+  .i-thumbs:active { cursor: grabbing; }
+  .i-thumbs::-webkit-scrollbar { display: none; }
+  
+  .i-thumb {
+    flex: 0 0 110px; height: 75px; border-radius: 12px; overflow: hidden;
+    position: relative; opacity: 0.4; transition: 0.3s; border: 2px solid transparent;
+    user-select: none;
+  }
+  .i-thumb img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .i-thumb.active, .i-thumb:hover { opacity: 1; border-color: var(--i-gold); transform: scale(1.05); }
+
+  /* Mapa Extremo a Extremo */
+  .i-map-wrap {
+    width: 100vw; height: 650px; position: relative;
+    left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
+    margin-top: 5rem; border-top: 1px solid var(--i-gold); border-bottom: 1px solid var(--i-gold);
+  }
+  #i-map { width: 100%; height: 100%; background: #000; z-index: 1; }
+
+  @media (max-width: 900px) { 
+    .i-dossier { grid-template-columns: 1fr; } 
+    .i-search { flex-direction: column; border-radius: 20px; }
+    .i-search button { border-radius: 20px; padding: 1rem; }
+    .i-gallery-wrap { height: 300px; }
+  }
+</style>
+
+<section id="iangelox-engine">
+  <div class="i-container">
+    
+    <div class="i-search">
+      <input type="text" id="i-keyword" placeholder="Búsqueda libre (Ej: Todos Santos, Beachfront)...">
+      <button onclick="iFilter()">Explorar Colección</button>
+    </div>
+
+    <div class="i-dossier" id="i-dossier-card">
+      
+      <div class="i-gallery-wrap">
+        <div class="i-gallery" id="i-pic-container"></div>
+        <button class="i-gal-btn i-gal-prev" onclick="iNextSlide(-1)">&#8249;</button>
+        <button class="i-gal-btn i-gal-next" onclick="iNextSlide(1)">&#8250;</button>
+        <div class="i-gal-counter" id="i-gal-counter">-- / --</div>
+      </div>
+      
+      <div class="i-info">
+        <div>
+          <h3 class="i-price" id="i-val-price">$--</h3>
+          <div class="i-desc" id="i-val-desc"></div>
+          <div class="i-mls" id="i-val-mls"></div>
+        </div>
+        
+        <div>
+          <div class="i-contact-group">
+            <a id="i-btn-wa" href="#" target="_blank" class="i-contact-btn i-btn-gold">WhatsApp</a>
+            <a id="i-btn-call" href="tel:+526244334131" class="i-contact-btn i-btn-dark">Llamar</a>
+            <a id="i-btn-email" href="#" class="i-contact-btn i-btn-dark">Email</a>
+          </div>
+          <button class="i-btn-map" onclick="iFlyToMap()">Ver Ubicación Satelital</button>
+          <div class="i-loc" id="i-val-loc"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="i-thumbs" id="i-thumb-list"></div>
+  </div>
+
+  <div class="i-map-wrap" id="i-map-anchor">
+    <div id="i-map"></div>
+  </div>
+</section>
+
+<script>
+  if(!document.querySelector('link[href*="leaflet.css"]')) {
+    let l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'; document.head.appendChild(l);
+  }
+  if(!document.querySelector('script[src*="leaflet.js"]')) {
+    let s = document.createElement('script'); s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'; document.body.appendChild(s);
+  }
+</script>
+
+<script>
+window.addEventListener('load', function() {
+  const DATA_URL = 'https://raw.githubusercontent.com/angeloapp/angeloinmuebles/main/CSLPMLS.json';
+  let iData = [], iFiltered = [], iActive = 0, curSlide = 0;
+  let iMap, iMarkers;
+
+  // Normalización estricta de imágenes
+  function normalizeUrl(url){
+    if(!url) return '';
+    url = String(url).trim();
+    if(url.startsWith('https://') || url.startsWith('http://')) return url;
+    if(url.startsWith('httpswww')) return url.replace('httpswww','https://www.');
+    if(/^https[^:/]/.test(url)) return url.replace(/^https/,'https://');
+    return url;
+  }
+
+  function extractImages(item){
+    var candidates = [item.images, item.Images, item.imageUrls, item.photos];
+    for(var i=0; i<candidates.length; i++){
+      var src = candidates[i];
+      if(Array.isArray(src)) return src.map(normalizeUrl).filter(Boolean);
+      if(typeof src === 'string' && src.includes('http')) return src.split(',').map(s => normalizeUrl(s.trim())).filter(Boolean);
+    }
+    return [];
+  }
+
+  // Shuffle para evitar repetición
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  async function iInit() {
+    try {
+      const res = await fetch(DATA_URL);
+      const raw = await res.json();
+      const parsedData = Array.isArray(raw) ? raw : (raw.results || raw.properties || []);
+      
+      // FILTRO DE BUGS: Quitar sin coords, sin desc, y la foto placeholder
+      iData = parsedData.filter(item => {
+        if(!item.latitude || !item.longitude) return false;
+        if(!item.overview || item.overview.trim() === '') return false;
+        const ims = extractImages(item);
+        if(ims.length === 0 || ims.includes('20160127015633238472000000')) return false;
+        return true;
+      });
+
+      iData = shuffleArray(iData);
+      iFiltered = iData;
+      
+      setTimeout(() => {
+        iMap = L.map('i-map', { zoomControl: true, scrollWheelZoom: false }).setView([23.4, -110], 8);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(iMap);
+        iMarkers = L.layerGroup().addTo(iMap);
+
+        iUpdateVisuals();
+        setTimeout(() => { iMap.invalidateSize(); }, 800);
+      }, 500);
+    } catch(e) { console.error("iAngelox Error:", e); }
+  }
+
+  window.iRenderItem = function(idx) {
+    const item = iFiltered[idx];
+    if(!item) return;
+    iActive = idx;
+    curSlide = 0;
+
+    // Ficha de Datos
+    const rawPrice = item.price || item.Price;
+    if(rawPrice) {
+        let cleanPrice = parseFloat(rawPrice.toString().replace(/[^0-9.]/g, ''));
+        document.getElementById('i-val-price').textContent = "$" + cleanPrice.toLocaleString() + " USD";
+    } else {
+        document.getElementById('i-val-price').textContent = "$ Consultar";
+    }
+
+    document.getElementById('i-val-desc').textContent = item.overview || "Solicite el dossier privado.";
+    const mlsNum = item.mls || item.MLS || "N/A";
+    document.getElementById('i-val-mls').textContent = "MLS: " + mlsNum;
+    
+    let locText = [item.area, item.subdivision].filter(Boolean).join(" · ");
+    document.getElementById('i-val-loc').textContent = locText || "Baja California Sur";
+
+    // Enlaces de Botones de Lujo
+    const propName = item.subdivision || item.area || "Propiedad Exclusiva";
+    const msg = encodeURIComponent(`Hola Angelo, me interesa ${propName} - MLS ${mlsNum}`);
+    document.getElementById('i-btn-wa').href = `https://wa.me/526244334131?text=${msg}`;
+    document.getElementById('i-btn-email').href = `mailto:angelo@caboapp.com?subject=Interés%20en%20MLS%20${mlsNum}`;
+
+    // Cargar TODAS las imágenes en el carrusel
+    const gal = document.getElementById('i-pic-container');
+    gal.innerHTML = '';
+    const imgs = extractImages(item);
+    
+    imgs.forEach((url, i) => {
+      const img = document.createElement('img');
+      img.src = url;
+      img.className = 'i-slide' + (i === 0 ? ' active' : '');
+      gal.appendChild(img);
+    });
+
+    document.getElementById('i-gal-counter').textContent = `1 / ${imgs.length}`;
+
+    // Activar miniatura
+    document.querySelectorAll('.i-thumb').forEach((t, i) => {
+        if(i === idx) {
+            t.classList.add('active');
+            t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+            t.classList.remove('active');
+        }
+    });
+  };
+
+  // Navegación Manual y Touch del Carrusel Principal
+  window.iNextSlide = function(dir) {
+      const slides = document.querySelectorAll('.i-slide');
+      if(slides.length < 2) return;
+      slides[curSlide].classList.remove('active');
+      curSlide = (curSlide + dir + slides.length) % slides.length;
+      slides[curSlide].classList.add('active');
+      document.getElementById('i-gal-counter').textContent = `${curSlide + 1} / ${slides.length}`;
+  };
+
+  // Lógica Swipe en Galería
+  let touchstartX = 0;
+  let touchendX = 0;
+  const sliderObj = document.getElementById('i-pic-container');
+  sliderObj.addEventListener('touchstart', e => { touchstartX = e.changedTouches.screenX; }, {passive: true});
+  sliderObj.addEventListener('touchend', e => {
+      touchendX = e.changedTouches.screenX;
+      if (touchstartX - touchendX > 40) iNextSlide(1);
+      if (touchendX - touchstartX > 40) iNextSlide(-1);
+  });
+
+  window.iFilter = function() {
+    const kw = document.getElementById('i-keyword').value.toLowerCase();
+    iFiltered = iData.filter(item => {
+      const t = ((item.mls||"") + " " + (item.overview||"") + " " + (item.area||"")).toLowerCase();
+      return t.includes(kw);
+    });
+    iUpdateVisuals();
+  };
+
+  function iUpdateVisuals() {
+    iMarkers.clearLayers();
+    let thumbsHTML = '';
+
+    iFiltered.forEach((item, idx) => {
+      const lat = parseFloat(item.latitude);
+      const lng = parseFloat(item.longitude);
+      
+      // Añadir al mapa
+      L.circleMarker([lat, lng], {
+        radius: 5, fillColor: "#b8964a", color: "#000", weight: 1.5, fillOpacity: 0.9
+      }).addTo(iMarkers).on('click', () => {
+        iRenderItem(idx);
+        document.getElementById('i-dossier-card').scrollIntoView({behavior:'smooth', block:'center'});
+      });
+
+      // HTML de Thumbnails (CORRECCIÓN VITAL PARA QUE CARGUEN LAS MINIATURAS: imgs)
+      const imgs = extractImages(item);
+      const bgUrl = imgs.length > 0 ? imgs : 'https://i.imgur.com/yBhoQaR.png';
+      thumbsHTML += `<div class="i-thumb" onclick="iRenderItem(${idx})">
+                        <img src="${bgUrl}" loading="lazy" alt="Thumb">
+                     </div>`;
+    });
+
+    document.getElementById('i-thumb-list').innerHTML = thumbsHTML;
+
+    if(iFiltered.length > 0) iRenderItem(0);
+    if(iMap) setTimeout(() => { iMap.invalidateSize(); }, 500);
+  }
+
+  window.iFlyToMap = function() {
+    const item = iFiltered[iActive];
+    document.getElementById('i-map-anchor').scrollIntoView({behavior: 'smooth', block: 'start'});
+    if(item && item.latitude) {
+        setTimeout(() => {
+            iMap.invalidateSize(); 
+            iMap.flyTo([parseFloat(item.latitude), parseFloat(item.longitude)], 15, {duration: 1.5});
+        }, 500);
+    }
+  };
+
+  // Física de arrastre (Drag) para las miniaturas en PC
+  const thumbWrap = document.getElementById('i-thumb-list');
+  let isDown = false; let startX; let scrollLeft;
+
+  thumbWrap.addEventListener('mousedown', (e) => {
+    isDown = true; startX = e.pageX - thumbWrap.offsetLeft; scrollLeft = thumbWrap.scrollLeft;
+  });
+  thumbWrap.addEventListener('mouseleave', () => { isDown = false; });
+  thumbWrap.addEventListener('mouseup', () => { isDown = false; });
+  thumbWrap.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const walk = (e.pageX - thumbWrap.offsetLeft - startX) * 2;
+    thumbWrap.scrollLeft = scrollLeft - walk;
+  });
+
+  iInit();
+});
+</script>
 
   <!-- PROPÓSITO -->
  <section id="proposito" class="du-main-section">
